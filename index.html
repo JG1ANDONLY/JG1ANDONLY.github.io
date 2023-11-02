@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
+<link rel="stylesheet" href="styles.css">
 <head>
   <meta charset="utf-8">
   <title>
@@ -11,17 +11,20 @@
 
 <body>
   <h1>
-  Personal Website Under Maintenance!
+  Personal Website Under Maintenance Slowly!
   </h1>
   <nav>
-    <a href="#about-me">About Me</a>
-    <a href="#education">Education</a>
-    <a href="#">Research</a>
-    <a href="#">CV/Resume</a>
-    <a href="#contact-bar">Contact</a>
+    <a href="#about-me" title="About Me">About Me</a>
+    <a href="#education" title="Education">Education</a>
+    <a href="#" title="Research">Research</a>
+    <a href="#" title="CV/Resume">CV/Resume</a>
+    <a href="#contact-bar" title="Contact">Contact</a>
+    <a href="#gallery" title="Personal Life">Personal Life</a>
   </nav>
 
   <section id="about-me">
+    <img src="images/profile_picture.JPG" width="300" height="330"
+    id="profile-picture" alt="Profile Picture">
     <p>Hi! My name is Zhongyi (James) Guo （过仲懿）, and I am a first-year MS student in
       Epidemiology and Clinical Research at Stanford University. I received my
       BS in Biology (Computational Biology concentration) and Biometry &
@@ -38,13 +41,17 @@
       Honor: Dean's List</div>
   </section>
 
-  <div class="contact-bar">
-    <!-- Replace the '#' in the href attributes with your actual links -->
-    <a href="https://twitter.com/guo_zhongyi" target="_blank"><img class="contact-icon" src="twitter-icon.png" alt="Twitter"></a>
-    <a href="https://instagram.com" target="_blank"><img class="contact-icon" src="instagram-icon.png" alt="Instagram"></a>
-    <a href="https://linkedin.com" target="_blank"><img class="contact-icon" src="linkedin-icon.png" alt="LinkedIn"></a>
-    <a href="mailto: guozy@stanford.edu"><img class="contact-icon email-icon" src="email-icon.png" alt="Email"></a>
-  </div>
+  <section id="contact-bar">
+    <div>
+      <!-- Replace the '#' in the href attributes with your actual links -->
+      <a href="https://twitter.com/guo_zhongyi" target="_blank"><img class="contact-icon" src="twitter-icon.png" alt="Twitter"></a>
+      <a href="https://www.instagram.com/jamesguo.best/" target="_blank"><img class="contact-icon" src="instagram-icon.png" alt="Instagram"></a>
+      <a href="https://www.linkedin.com/in/zhongyi-guo/" target="_blank"><img class="contact-icon" src="linkedin-icon.png" alt="LinkedIn"></a>
+      <a href="mailto: guozy@stanford.edu"><img class="contact-icon email-icon" src="email-icon.png" alt="Email"></a>
+    </div>
+  </section>
 </body>
-
+<footer>
+&copy; Zhongyi Guo. All rights reserved.
+</footer>
 </html>

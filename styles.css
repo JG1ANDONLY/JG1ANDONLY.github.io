@@ -1,0 +1,43 @@
+/* styles.css */
+body {
+    /*background-color: #f0f0f0;*/
+    font-family: Arial, sans-serif;
+}
+
+#profile-picture {
+    border-radius: 50%; /* Adjust the values for the oval shape */
+    overflow: hidden;
+}
+/*nav {
+  background-color: #f0f0f0;
+}*/
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#contact-bar {
+    background-color: #f0f0f0;
+}
+
+/*@keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        } */
+
+/* Apply the animation to the paragraph */
+/*.animated-paragraph {
+            animation: fadeIn 1s ease-out;
+        }*/
