@@ -1,16 +1,81 @@
 /* styles.css */
+/* header {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
 body {
-    /*background-color: #f0f0f0;*/
+    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-#profile-picture {
-    border-radius: 50%; /* Adjust the values for the oval shape */
-    overflow: hidden;
+#nav-bar {
+    overflow: auto;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    white-space: nowrap;
 }
-/*nav {
-  background-color: #f0f0f0;
-}*/
+
+/* nav {
+    display: flex;
+    align-items: center;
+} */
+
+nav a {
+    text-align: center;
+    font-size: 23px;
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+    margin: 0 20px;
+    /* margin-right: 30px; */
+    transition: background-color 0.5s;
+
+}
+
+nav a:hover {
+    background-color: #69B0BF;
+    color: white;
+}
+/*
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        margin: 5px 0; /* Adjust margin for spacing between links in mobile view */
+    }
+} */
+
+
+#logo {
+    float: left;
+    height: auto;
+    width: auto;
+}
+
+
+#profile-picture {
+    border-radius: 10%; /* Adjust the values for the oval shape */
+    /* overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: block;
+    margin: auto;
+}
+
+
+
+
 
 h1 {
     color: #333;
@@ -20,6 +85,7 @@ h1 {
 p {
     font-size: 16px;
     line-height: 1.5;
+    padding: 20px;
 }
 
 #contact-bar {
