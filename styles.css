@@ -56,26 +56,26 @@ h1 {
     text-align: left;
     margin-left: 2vw;
     font-size: 2vw;
+    margin-top: 2vw;
 }
 
+h2 {
+    text-align: left;
+    margin-left: 2vw;
+    font-size: 1vw;
+    margin-top: 2vw;
+}
 .about-me {
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     max-width: 100%;
-
+    margin-bottom: 20px;
 }
 
-
-
 .profile-picture {
-    border-radius: 30%; /* Adjust the values for the oval shape */
-    /* overflow: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* display: flex; */
+    border-radius: 30%;
     height: auto;
     margin-left: 2vw;
     width: 100%;
@@ -93,29 +93,81 @@ h1 {
 .education {
     display: flex;
     flex-direction: column;
-    align-items: left;
     margin-left: 2vw;
     margin-bottom: 20px;
 }
 
-/* .education a {
-    flex-grow: 1;
-} */
-
-/* .stanford-logo {
-    width: 6vw;
-    height: auto;
-    margin-right: 20px;
-} */
-
-
-
-
-#contact-bar {
-    background-color: #f0f0f0;
+.school-logo-degree {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 2vw;
 }
 
+.school-logo {
+    height: 6vw;
+    margin-left: 2vw;
+    width: 100%;
+    max-width: 10vw;
+    margin-bottom: 1vw; /* Adjust as needed */
+}
 
+.degree-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5vw;
+    text-align: left;
+}
+
+.contact-bar {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 100%;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5f5f5; /* Light gray background, you can change this as needed */
+}
+
+.icon-container {
+  border-radius: 50%; /* This will make the icons rounded */
+  overflow: hidden; /* Ensures the images are contained within the rounded shapes */
+  display: block;
+  justify-content: center;
+  width: 4.5vw; /* You can adjust the size as needed */
+  height: 4.5vw;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: Adds a subtle shadow for depth */
+}
+
+.icon-container img {
+  width: 100%;
+  /* align-items: center; */
+  height: 100%; /* This will keep the aspect ratio of the images */
+  display: block;
+}
+
+/* You can add additional styles for each icon if you want to give them individual styling */
+/* For instance, for hover effects: */
+.icon-container:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* This is an optional style if you want to make the icons circular with a border */
+.icon-container.X,
+.icon-container.instagram,
+.icon-container.linkedin,
+.icon-container.github,
+.icon-container.email {
+  border: 2px solid #ccc; /* Light gray border, change the color as needed */
+  padding: 5px; /* Adjust the padding to control the border thickness */
+}
+
+footer {
+    margin-top: 1vw;
+    text-align: right;
+    font-size: 1vw;
+}
 /* testing */
 @media (max-width: 768px) {
   .navbar {
@@ -135,6 +187,12 @@ h1 {
   .profile-picture {
     max-width: 20vw; /* Larger size for the photo on smaller screens */
   }
+
+  .icon-container {
+  width: 40px; /* Smaller width for tablets and small desktops */
+  height: 40px;
+}
+}
 }
 
 @media (max-width: 480px) {
@@ -149,4 +207,11 @@ h1 {
   .profile-picture {
     width: 20vw; /* Adjust photo size for very small screens */
   }
+  .contact-bar {
+  justify-content: space-around; /* Spread out icons on small screens */
+}
+.icon-container {
+  width: 35px; /* Smaller width for mobile screens */
+  height: 35px;
+}
 }
