@@ -4,6 +4,12 @@
   font-family: Arial, Helvetica, sans-serif;
 } */
 
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
 body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
@@ -11,99 +17,136 @@ body {
     padding: 0;
 }
 
-#nav-bar {
+.navbar {
     overflow: auto;
     background-color: white;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 1vw;
+    flex-wrap: wrap;
     white-space: nowrap;
 }
 
-/* nav {
-    display: flex;
-    align-items: center;
-} */
-
 nav a {
     text-align: center;
-    font-size: 23px;
     color: black;
     text-decoration: none;
-    padding: 20px;
-    margin: 0 20px;
-    /* margin-right: 30px; */
-    transition: background-color 0.5s;
-
+    padding: 1vw;
+    font-size: 1.5vw;
+    margin: 1vw;
+    flex-grow: 1;
+    transition: background-color 0.4s;
 }
 
 nav a:hover {
-    background-color: #69B0BF;
+    background-color: #808080;
     color: white;
 }
-/*
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: stretch;
-    }
 
-    nav a {
-        margin: 5px 0; /* Adjust margin for spacing between links in mobile view */
-    }
-} */
-
-
-#logo {
+.logo img{
     float: left;
     height: auto;
-    width: auto;
+    min-width: 5vw;
+    width: 20vw;
+
+}
+
+h1 {
+    text-align: left;
+    margin-left: 2vw;
+    font-size: 2vw;
+}
+
+.about-me {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+
 }
 
 
-#profile-picture {
-    border-radius: 10%; /* Adjust the values for the oval shape */
+
+.profile-picture {
+    border-radius: 30%; /* Adjust the values for the oval shape */
     /* overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center; */
-    display: block;
-    margin: auto;
+    /* display: flex; */
+    height: auto;
+    margin-left: 2vw;
+    width: 100%;
+    max-width: 20vw;
+    /* margin-bottom: 20px; */
 }
 
-
-
-
-
-h1 {
-    color: #333;
-    text-align: center;
-}
-
-p {
-    font-size: 16px;
+.self-intro {
+    font-size: 1.5vw;
     line-height: 1.5;
-    padding: 20px;
+    text-align: left;
+    padding: 2vw;
 }
+
+.education {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 2vw;
+    margin-bottom: 20px;
+}
+
+/* .education a {
+    flex-grow: 1;
+} */
+
+/* .stanford-logo {
+    width: 6vw;
+    height: auto;
+    margin-right: 20px;
+} */
+
+
+
 
 #contact-bar {
     background-color: #f0f0f0;
 }
 
-/*@keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        } */
 
-/* Apply the animation to the paragraph */
-/*.animated-paragraph {
-            animation: fadeIn 1s ease-out;
-        }*/
+/* testing */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack the logo and the nav items vertically on smaller screens */
+  }
+
+  nav a {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-items a {
+    /* padding: 2% 0; /* More padding for vertical layout */ */
+    font-size: 3vw; /* Larger font size for readability */
+  }
+
+  .profile-picture {
+    max-width: 20vw; /* Larger size for the photo on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-items a {
+    font-size: 4vw; /* Even larger font size for smaller screens */
+  }
+
+  .logo img{
+      width: 20vw;
+  }
+
+  .profile-picture {
+    width: 20vw; /* Adjust photo size for very small screens */
+  }
+}
