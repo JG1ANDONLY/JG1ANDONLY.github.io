@@ -81,6 +81,7 @@ h2 {
     margin-left: 2vw;
     font-size: 1.5vw;
     margin-top: 1.5vw;
+
 }
 
 .about-me {
@@ -156,7 +157,7 @@ h2 {
     font-size: 1.3vw;
     text-align: left;
     line-height: 2;
-
+    margin-left: 2vw;
 }
 
 .publication {
@@ -165,6 +166,7 @@ h2 {
     text-align: left;
     margin-right: 2vw;
     line-height: 2;
+    margin-left: 2vw;
 }
 
 
@@ -173,7 +175,29 @@ h3 {
     font-size: 1vw;
 }
 
+.teaching-institute {
+    /* list-style-type: none; */
+    font-weight: bold;
+    font-size: 1.3vw;
+    text-align: left;
+    line-height: 2;
+    margin-left: 2vw;
+}
 
+.teaching-department {
+    font-size: 1.2vw;
+    text-align: left;
+    line-height: 2;
+    margin-left: 2vw;
+}
+
+.teaching-position {
+    list-style-type: disc;
+    font-size: 1.1vw;
+    text-align: left;
+    margin-left: 2vw;
+    line-height: 2;
+}
 
 /* CV & Resume */
 .download-buttons {
