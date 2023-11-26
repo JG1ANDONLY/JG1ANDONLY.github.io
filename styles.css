@@ -115,6 +115,7 @@ h2 {
     /* margin-bottom: 20px; */
 }
 
+
 .self-intro {
     font-size: 1.5vw;
     line-height: 1.5;
@@ -150,6 +151,51 @@ h2 {
     justify-content: space-between;
     font-size: 1.5vw;
     text-align: left;
+}
+
+/* CV & Resume */
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3vw;
+    padding: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 1.5vw; /* Adjust font size relative to the width of the viewport */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    /* outline: none; */
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px #999;
+    max-width: 25vw; /* Auto width to fit the content */
+    flex-grow: 1;
+    /* max-width: calc(50% - 1vw); /* Max width to ensure they don't go over half the container's width */ */
+}
+
+.button:hover { background-color: #3e8e41; }
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .button {
+        padding: 8px 15px;
+        font-size: 2vw; /* Increase font size for readability on small screens */
+        flex-basis: 100%; /* On small screens, buttons take full width */
+        margin-bottom: 1vw; /* Add some margin at the bottom */
+    }
 }
 
 
