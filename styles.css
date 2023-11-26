@@ -176,7 +176,7 @@ h3 {
 }
 
 .teaching-institute {
-    /* list-style-type: none; */
+    list-style-type: none;
     font-weight: bold;
     font-size: 1.3vw;
     text-align: left;
