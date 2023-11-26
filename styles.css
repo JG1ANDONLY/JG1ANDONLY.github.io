@@ -90,8 +90,8 @@ hr {
 h2 {
     text-align: left;
     margin-left: 2vw;
-    font-size: 1vw;
-    margin-top: 2vw;
+    font-size: 1.5vw;
+    margin-top: 1.5vw;
 }
 
 .about-me {
@@ -152,6 +152,34 @@ h2 {
     font-size: 1.5vw;
     text-align: left;
 }
+
+/* Research */
+
+/* Publication */
+
+.programming{
+    list-style-type: none;
+    font-size: 1.3vw;
+    text-align: left;
+    line-height: 2;
+
+}
+
+.publication {
+    list-style-type: none;
+    font-size: 1.3vw;
+    text-align: left;
+    margin-right: 2vw;
+    line-height: 2;
+}
+
+
+h3 {
+    margin-left: 2vw;
+    font-size: 1vw;
+}
+
+
 
 /* CV & Resume */
 .download-buttons {
