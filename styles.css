@@ -69,12 +69,22 @@ h1 {
     margin-top: 2vw;
 }
 
+/* h1::before {
+    content: "";
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+    pointer-events: none;
+} */
+
 hr {
     margin-left: 2vw;
     height: 0.2vw; /* Adjust the value to set the thickness */
     border: none; /* Remove the default border */
     background-color: black;
     margin-right: 3vw;
+    margin-bottom: 2vw;
 }
 
 h2 {
