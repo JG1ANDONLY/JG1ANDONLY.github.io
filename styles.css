@@ -63,7 +63,7 @@ h1 {
     text-align: left;
     margin-left: 2vw;
     font-size: 2vw;
-    margin-top: 2vw;
+    margin-top: 1vw;
 }
 
 
@@ -244,56 +244,35 @@ h3 {
     }
 }
 
-
-
 .contact-bar {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  max-width: 100%;
-  align-items: center;
-  padding: 10px;
-  background-color: #f5f5f5; /* Light gray background, you can change this as needed */
-}
-
-.icon-container {
-  border-radius: 50%; /* This will make the icons rounded */
-  overflow: hidden; /* Ensures the images are contained within the rounded shapes */
-  display: block;
   justify-content: center;
-  width: 4.5vw; /* You can adjust the size as needed */
-  height: 4.5vw;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: Adds a subtle shadow for depth */
+  padding: 10px;
 }
 
-.icon-container img {
-  width: 100%;
-  /* align-items: center; */
-  height: 100%; /* This will keep the aspect ratio of the images */
-  display: block;
+.contact-bar .icon-container {
+  margin: 0 15px;
+  transition: transform 0.3s ease; /* Smooth transition for hover effects */
 }
 
-/* You can add additional styles for each icon if you want to give them individual styling */
-/* For instance, for hover effects: */
-.icon-container:hover {
-  opacity: 0.8;
-  cursor: pointer;
+.contact-bar .icon-container:hover {
+  transform: scale(1.2);
 }
 
-/* This is an optional style if you want to make the icons circular with a border */
-.icon-container.X,
-.icon-container.instagram,
-.icon-container.linkedin,
-.icon-container.github,
-.icon-container.email {
-  border: 2px solid #ccc; /* Light gray border, change the color as needed */
-  padding: 5px; /* Adjust the padding to control the border thickness */
+.contact-bar .icon-container img {
+  width: 40px; /* Adjust icon size as needed */
+  height: auto;
 }
+
+
+/* Repeat for each social media link */
+
 
 footer {
     /* margin-top: 1vw; */
     text-align: right;
     font-size: 1vw;
+    margin-right: 2.5vw;
 }
 /* testing */
 @media (max-width: 768px) {
