@@ -260,7 +260,7 @@ h3 {
 }
 
 .contact-bar .icon-container img {
-  width: 4vw; /* Adjust icon size as needed */
+  width: 2.5vw; /* Adjust icon size as needed */
   height: auto;
 }
 
@@ -295,7 +295,7 @@ footer {
   }
 
   .icon-container {
-  width: 4vw; /* Smaller width for tablets and small desktops */
+  width: 2.5vw; /* Smaller width for tablets and small desktops */
   height: auto;
 }
 }
@@ -317,7 +317,7 @@ footer {
   justify-content: space-around; /* Spread out icons on small screens */
 }
 .icon-container {
-  width: 4vw; /* Smaller width for mobile screens */
+  width: 2.5vw; /* Smaller width for mobile screens */
   height: auto;
 }
 }
