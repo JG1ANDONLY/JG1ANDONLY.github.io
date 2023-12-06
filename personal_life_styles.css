@@ -1,3 +1,5 @@
+/* personal_life_styles.css */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -6,10 +8,8 @@ body {
 
 .welcome-container {
     text-align: left;
-    background: linear-gradient(135deg, #ff99cc, #cc66ff); /* pink to purple gradient */
-    /* border-radius: 15px; */
+    background: linear-gradient(135deg, #ff99cc, #cc66ff);
     padding: 0.8vw;
-    /* margin: 10px; */
 }
 
 h1 {
@@ -26,9 +26,9 @@ h2 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
     padding: 10px;
-    border-bottom: 2px solid #D3D3D3; /* A subtle line under the text for definition */
-    width: max-content; /* This will shrink-wrap the width to the content size */
-    margin-left: auto; /* These two margins auto center the element in its container */
+    border-bottom: 2px solid #D3D3D3;
+    width: max-content;
+    margin-left: auto;
     margin-right: auto;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
@@ -37,7 +37,7 @@ h2 {
 
 h3 {
     color: #2E2E2E;
-    font-size:
+    font-size: 1vw;
 }
 
 
@@ -45,7 +45,7 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-start; /* Aligns items to the top */
+    align-items: flex-start;
 }
 
 
@@ -53,7 +53,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(25% - 10px); /* Subtract any margins, for example, 10px */
+    width: calc(25% - 10px);
     box-sizing: border-box; /* This includes padding and borders in the element's width */
     margin: 5px; /* Half of the subtracted amount to maintain spacing on both sides */
     /* Adjust margin as needed, ensure the total width including margin does not exceed 25% */
@@ -77,10 +77,9 @@ h3 {
 
 .song-bar {
     width: 20vw;
-    height: 5.3vw;
+    height: 4vw;
     border-radius: 0;
     transition: transform 0.3s ease;
-    /* margin-top: 0.5vw; */
 }
 
 
@@ -89,8 +88,6 @@ h3 {
     text-align: center;
     color: grey;
 }
-
-
 
 
 .song-bar:hover {
