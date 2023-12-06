@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-container {
+    text-align: left;
+    background: linear-gradient(135deg, #ff99cc, #cc66ff); /* pink to purple gradient */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px; /* add a little margin */
+}
+
+h1 {
+    overflow: visible;
+    font-size: 2.5em;
+    color: #ffffff; /* white color for the text */
+    text-shadow: 2px 2px 4px #999999; /* light grey shadow */
+}
+
+h2 {
+    font-family: 'Arial', sans-serif; /* This is a common, clean font. You could choose another like 'Helvetica' or a Google Font like 'Roboto' */
+    font-size: 2.5em; /* Adjust size as needed */
+    color: #2E2E2E; /* A deep gray that's softer than black */
+    text-align: center; /* Centers the text if the container allows for it */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* A subtle shadow to lift the text off the page */
+    margin: 20px 0; /* Adds space above and below the heading */
+    padding: 10px; /* Optional padding */
+    border-bottom: 2px solid #D3D3D3; /* A subtle line under the text for definition */
+    width: max-content; /* This will shrink-wrap the width to the content size */
+    margin-left: auto; /* These two margins auto center the element in its container */
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.8); /* A slight white background to stand out from a colored/complex background */
+    border-radius: 10px; /* Rounded corners for the background */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* A larger shadow to create depth behind the heading */
+}
+
+
+.artists-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start; /* Aligns items to the top */
+}
+
+
+.artist-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(25% - 10px); /* Subtract any margins, for example, 10px */
+    box-sizing: border-box; /* This includes padding and borders in the element's width */
+    margin: 5px; /* Half of the subtracted amount to maintain spacing on both sides */
+    /* Adjust margin as needed, ensure the total width including margin does not exceed 25% */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.artist-name {
+    /* Additional styles if needed */
+}
+
+.song-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    overflow-y: scroll;
+    width: 25vw;
+}
+
+.song-bar {
+    width: 20vw;
+    height: 5.3vw;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+    margin-top: 1vw;
+}
+
+
+
+
+
+
+
+.song-bar:hover {
+    transform: scale(1.05);
+}
