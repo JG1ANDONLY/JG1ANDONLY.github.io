@@ -322,3 +322,187 @@ footer {
   height: auto;
 }
 }
+
+.logo img {
+    animation: logoAnimation 2s ease-in-out;
+}
+
+@keyframes logoAnimation {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.profile-picture {
+    animation: fadeInLeft 2s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+h1 {
+    animation: slideDown 2s ease-in-out;
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+footer {
+    animation: fadeInUp 2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.self-intro {
+    opacity: 0; /* Start with the text being invisible */
+    transform: translateY(20px); /* Start slightly below the final position */
+    animation: fadeInUp 2s ease-in-out forwards; /* Animation properties */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0; /* Initial state of the text */
+        transform: translateY(20px); /* Initial position */
+    }
+    100% {
+        opacity: 1; /* Fully visible text */
+        transform: translateY(0); /* Final position */
+    }
+}
+
+.school-logo {
+    opacity: 0; /* Start with the logo being invisible */
+    transform: scale(0.8); /* Start with the logo slightly smaller */
+    animation: fadeInScaleUp 1.5s ease-out forwards; /* Animation properties */
+}
+
+@keyframes fadeInScaleUp {
+    0% {
+        opacity: 0; /* Initial state of the logo */
+        transform: scale(0.8); /* Initial size */
+    }
+    100% {
+        opacity: 1; /* Fully visible logo */
+        transform: scale(1); /* Final size (original size) */
+    }
+}
+
+.degree-info {
+    opacity: 0; /* Start with the text being invisible */
+    transform: translateX(-50px); /* Start to the left of the final position */
+    animation: slideInFadeIn 1s ease-out forwards; /* Animation properties */
+}
+
+@keyframes slideInFadeIn {
+    0% {
+        opacity: 0; /* Initial state of the text */
+        transform: translateX(-50px); /* Initial position */
+    }
+    100% {
+        opacity: 1; /* Fully visible text */
+        transform: translateX(0); /* Final position */
+    }
+}
+
+.navbar {
+    transform: translateY(-100%); /* Start above the visible area */
+    animation: slideDownNav 0.5s ease-out forwards; /* Animation properties */
+}
+
+@keyframes slideDownNav {
+    from {
+        transform: translateY(-100%); /* Start position */
+    }
+    to {
+        transform: translateY(0); /* End position, where the navbar is fully visible */
+    }
+}
+
+.nav-items a {
+    opacity: 0; /* Start with the menu items being invisible */
+    animation: fadeIn 1s ease-in forwards; /* Animation for fading in */
+    animation-delay: 0.5s; /* Delay to start after navbar slides down */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start of the animation */
+    }
+    to {
+        opacity: 1; /* End of the animation */
+    }
+}
+
+.download-buttons {
+    opacity: 0; /* Start with the buttons being invisible */
+    transform: translateY(30px); /* Start slightly below their final position */
+    animation: fadeInUp 1s ease-out forwards; /* Animation properties */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0; /* Initial state of the buttons */
+        transform: translateY(30px); /* Initial position */
+    }
+    100% {
+        opacity: 1; /* Fully visible buttons */
+        transform: translateY(0); /* Final position */
+    }
+}
+
+.download-buttons .button {
+    animation: bounceIn 0.5s ease-out forwards; /* Bounce effect for each button */
+    animation-delay: 0.5s; /* Delay so it starts after the container fades in */
+}
+
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.download-buttons .button:nth-child(2) {
+    animation-delay: 0.7s; /* Slightly more delay for the second button */
+}
+
+.contact-bar .icon-container {
+    opacity: 0; /* Start with the icons being invisible */
+    transform: scale(0); /* Start with the icons scaled down */
+    animation: popIn 0.5s ease-out forwards; /* Animation properties */
+    animation-delay: 0.2s; /* Initial delay for the first icon */
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0; /* Initial state of the icon */
+        transform: scale(0); /* Initial size */
+    }
+    60% {
+        opacity: 1; /* Make the icon visible */
+        transform: scale(1.2); /* Slightly larger than final size */
+    }
+    100% {
+        opacity: 1; /* Fully visible icon */
+        transform: scale(1); /* Final size */
+    }
+}
+
+/* Staggered delay for each icon */
+.contact-bar .X { animation-delay: 0.3s; }
+.contact-bar .instagram { animation-delay: 0.4s; }
+.contact-bar .linkedin { animation-delay: 0.5s; }
+.contact-bar .github { animation-delay: 0.6s; }
+.contact-bar .email { animation-delay: 0.7s; }
