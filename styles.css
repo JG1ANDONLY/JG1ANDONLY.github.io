@@ -80,8 +80,8 @@ hr {
 h2 {
     text-align: left;
     margin-left: 2vw;
-    font-size: 1.5vw;
-    margin-top: 1.5vw;
+    font-size: 1.6vw;
+    /* margin-top: 1vw; */
 
 }
 
@@ -155,7 +155,7 @@ h2 {
 
 .programming{
     list-style-type: none;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     text-align: left;
     line-height: 2;
     margin-left: 2vw;
@@ -163,7 +163,7 @@ h2 {
 
 .publication {
     list-style-type: none;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     text-align: left;
     margin-right: 2vw;
     line-height: 2;
@@ -172,10 +172,13 @@ h2 {
 
 
 h3 {
-    margin-left: 2vw;
-    font-size: 1vw;
+    margin-left: 3vw;
+    font-size: 1.3vw;
 }
 
+h4 {
+    margin-left: 4.5vw;
+}
 .teaching-institute {
     list-style-type: none;
     font-weight: bold;
@@ -183,6 +186,7 @@ h3 {
     text-align: left;
     line-height: 2;
     margin-left: 2vw;
+
 }
 
 .teaching-department {
@@ -194,7 +198,7 @@ h3 {
 
 .teaching-position {
     list-style-type: disc;
-    font-size: 1.1vw;
+    font-size: 1.2vw;
     text-align: left;
     margin-left: 2vw;
     line-height: 2;
@@ -212,22 +216,24 @@ h3 {
 .button {
     display: inline-block;
     padding: 10px 10px;
-    font-size: 1.5vw; /* Adjust font size relative to the width of the viewport */
+    font-size: 1.5vw;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    /* outline: none; */
     color: #fff;
     background-color: #4CAF50;
     border: none;
     border-radius: 15px;
     box-shadow: 0 4px #999;
-    max-width: 25vw; /* Auto width to fit the content */
+    max-width: 25vw;
     flex-grow: 1;
-    /* max-width: calc(50% - 1vw); /* Max width to ensure they don't go over half the container's width */ */
+
 }
 
-.button:hover { background-color: #3e8e41; }
+.button:hover {
+    background-color: #3e8e41;
+    transform: scale(1.2);
+}
 
 .button:active {
     background-color: #3e8e41;
