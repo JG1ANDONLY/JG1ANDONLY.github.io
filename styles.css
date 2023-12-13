@@ -102,10 +102,9 @@ h2 {
     height: auto;
     margin-left: 4vw;
     margin-right: 2vw;
-    margin-top: 2vw;
     width: 100%;
-    max-width: 25vw;
-    margin-bottom: 1.5vw;
+    max-width: 22vw;
+
     /* margin-bottom: 20px; */
 }
 
@@ -120,7 +119,7 @@ h2 {
 .self-intro {
     font-family: 'Helvetica Neue', sans-serif; /* Modern, sans-serif font */
     color: #34495e; /* Deep, sophisticated blue */
-    font-size: 1.3vw; /* Comfortable reading size */
+    font-size: 1.1vw; /* Comfortable reading size */
     line-height: 1.5; /* Balanced line spacing */
     background-color: #ecf0f1; /* Soft, light grey background */
     padding: 15px; /* Consistent padding around the text */
@@ -156,7 +155,7 @@ h2 {
     flex-direction: row;
     align-items: center;
     padding-right: 2vw;
-    margin-bottom: 1vw;
+    /* margin-bottom: 1vw; */
 }
 
 .school-logo {
@@ -177,7 +176,7 @@ h2 {
 .degree-info {
     display: flex;
     justify-content: space-between; /* Keeps elements spaced out */
-    font-size: 1.5vw; /* Fixed font size for consistency */
+    font-size: 1.4vw; /* Fixed font size for consistency */
     text-align: left;
     font-family: 'Garamond', serif; /* Elegant, classic font for a sophisticated look */
     color: #333333; /* Dark color for readability */
@@ -195,13 +194,41 @@ h2 {
 
 /* Publication */
 
-.programming{
+/* .programming{
     list-style-type: none;
     font-size: 1.2vw;
     text-align: left;
     line-height: 2;
     margin-left: 2vw;
+} */
+
+.programming {
+    list-style-type: none;
+    font-size: 1.2vw;
+    text-align: left;
+    line-height: 2;
+    margin-left: 2vw;
+    /* if do not like this style, remove what's under this line */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    border-left: 3px solid #007bff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-width: 92%;
+    margin-bottom: 20px;
 }
+
+
+
+/* Adding a responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .programming {
+        font-size: 3vw;             /* Larger font size for better readability on small screens */
+        margin-left: 1vw;           /* Adjusting left margin for smaller screens */
+    }
+}
+
 
 .publication {
     list-style-type: none;
@@ -210,6 +237,15 @@ h2 {
     margin-right: 2vw;
     line-height: 2;
     margin-left: 2vw;
+    /* if do not like this style, remove what's under this line */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    border-left: 3px solid lightgreen;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-width: 92%;
+    margin-bottom: 20px;
 }
 
 
