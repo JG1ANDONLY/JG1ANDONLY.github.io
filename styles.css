@@ -104,20 +104,45 @@ h2 {
     margin-right: 2vw;
     margin-top: 2vw;
     width: 100%;
-    max-width: 22vw;
+    max-width: 25vw;
     margin-bottom: 1.5vw;
     /* margin-bottom: 20px; */
 }
 
 
-.self-intro {
+/* .self-intro {
     font-size: 1.3vw;
     line-height: 1.4;
     text-align: left;
     margin-right: 1vw;
     padding: 2vw;
+} */
+.self-intro {
+    font-family: 'Helvetica Neue', sans-serif; /* Modern, sans-serif font */
+    color: #34495e; /* Deep, sophisticated blue */
+    font-size: 1.3vw; /* Comfortable reading size */
+    line-height: 1.5; /* Balanced line spacing */
+    background-color: #ecf0f1; /* Soft, light grey background */
+    padding: 15px; /* Consistent padding around the text */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    margin: 30px auto; /* Centered with vertical spacing */
+    max-width: 60%;
+    text-align: left;
 }
 
+.self-intro br {
+    margin-bottom: 10px; /* Space after each line break */
+    display: block; /* Treats breaks as block elements */
+}
+
+/* Styling for list-like items */
+.self-intro br + text {
+    margin-left: 15px; /* Indent for list-like items */
+    display: block; /* Display these as block elements */
+    font-weight: bold; /* Bold for emphasis */
+    color: #16a085; /* Vibrant teal color for list items */
+}
 
 .education {
     display: flex;
@@ -149,7 +174,7 @@ h2 {
     text-align: left;
 }
 
-/* Research */
+/* Experience */
 
 /* Publication */
 
@@ -172,36 +197,63 @@ h2 {
 
 
 h3 {
+    display: inline-block;
     margin-left: 3vw;
     font-size: 1.3vw;
+    color: #2e4053;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #5dade2;
+    max-width: 80%; /* Limits the width */
+/* margin: auto; /* Centers the heading */ */
 }
+
+
 
 h4 {
     margin-left: 4.5vw;
 }
-.teaching-institute {
-    list-style-type: none;
-    font-weight: bold;
-    font-size: 1.3vw;
-    text-align: left;
-    line-height: 2;
-    margin-left: 2vw;
 
-}
 
-.teaching-department {
+/* .teaching-department {
     font-size: 1.2vw;
     text-align: left;
     line-height: 2;
     margin-left: 2vw;
+} */
+
+.teaching-department {
+    display: inline-block;
+    font-size: 1.2vw;
+    text-align: left;
+    line-height: 2;
+    margin-left: 2vw;
+    background-color: #aed6f1; /* Light blue background */
+    padding: 10px 15px; /* Adds space inside the elements */
+    border-radius: 5px; /* Rounded corners */
+    color: #154360; /* Darker text for contrast */
+    margin-bottom: 10px; /* Spacing between departments */
 }
 
-.teaching-position {
+/* .teaching-position {
     list-style-type: disc;
     font-size: 1.2vw;
     text-align: left;
     margin-left: 2vw;
     line-height: 2;
+} */
+.teaching-position {
+    list-style-type: disc;
+    font-size: 1.2vw;
+    text-align: left;
+    margin-left: 4vw; /* Slightly more indentation for hierarchy */
+    line-height: 2;
+    color: #34495e; /* Soft dark color for readability */
+}
+
+.teaching-position li {
+    margin-bottom: 5px; /* Spacing between list items */
+    padding-left: 5px; /* Aligns text away from bullet point */
 }
 
 /* CV & Resume */
