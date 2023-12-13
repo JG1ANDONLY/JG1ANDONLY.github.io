@@ -167,12 +167,29 @@ h2 {
     margin-bottom: 1vw; /* Adjust as needed */
 }
 
-.degree-info {
+/* .degree-info {
     display: flex;
     justify-content: space-between;
     font-size: 1.5vw;
     text-align: left;
+} */
+
+.degree-info {
+    display: flex;
+    justify-content: space-between; /* Keeps elements spaced out */
+    font-size: 1.5vw; /* Fixed font size for consistency */
+    text-align: left;
+    font-family: 'Garamond', serif; /* Elegant, classic font for a sophisticated look */
+    color: #333333; /* Dark color for readability */
+    background-color: transparent; /* No background color */
+    padding: 10px 0; /* Vertical padding for spacing */
+    margin: 15px 0; /* Space above and below the element */
+    line-height: 1.6; /* Enhanced line height for readability */
+    max-width: 100%; /* Full width */
 }
+
+
+
 
 /* Experience */
 
