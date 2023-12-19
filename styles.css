@@ -208,15 +208,7 @@ h2 {
     text-align: left;
     line-height: 2;
     margin-left: 2vw;
-    /* if do not like this style, remove what's under this line */
-    color: #333;
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    border-left: 3px solid #007bff;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    max-width: 92%;
-    margin-bottom: 20px;
+
 }
 
 
@@ -237,15 +229,7 @@ h2 {
     margin-right: 2vw;
     line-height: 2;
     margin-left: 2vw;
-    /* if do not like this style, remove what's under this line */
-    color: #333;
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    border-left: 3px solid lightgreen;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    max-width: 92%;
-    margin-bottom: 20px;
+
 }
 
 
@@ -295,19 +279,22 @@ h4 {
     margin-left: 2vw;
     line-height: 2;
 } */
-.teaching-position {
+.bullet-list {
     list-style-type: disc;
     font-size: 1.2vw;
     text-align: left;
     margin-left: 4vw; /* Slightly more indentation for hierarchy */
     line-height: 2;
     color: #34495e; /* Soft dark color for readability */
+    margin-top:0vw;
 }
 
-.teaching-position li {
+.bullet-list li {
     margin-bottom: 5px; /* Spacing between list items */
     padding-left: 5px; /* Aligns text away from bullet point */
+    margin-right: 5vw;
 }
+
 
 /* CV & Resume */
 .download-buttons {

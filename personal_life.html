@@ -14,6 +14,24 @@
         <div>
             <h2>Announcement</h2>
             <p style="text-align: center"> To be updated...</p>
+            <div id="announcement-section" class="announcement">
+    <!-- Visible Announcements -->
+    <div id="visible-announcements">
+        <p>Announcement 1</p>
+        <p>Announcement 2</p>
+        <p>Announcement 3</p>
+    </div>
+
+    <div id="hidden-announcements" class="content">
+        <p>Announcement 4</p>
+        <p>Announcement 5</p>
+        <!-- Add more announcements as needed -->
+    </div>
+    <!-- Toggle Button -->
+    <button class="toggle-button" id="toggle-button" onclick="toggleAnnouncement()">Click to Expand >>></button>
+</div>
+
+
         </div>
 
         <div>
@@ -391,3 +409,24 @@
 
     </body>
 </html>
+
+<script>
+function toggleAnnouncement() {
+    var hiddenContent = document.getElementById("hidden-announcements");
+    var button = document.getElementById("toggle-button");
+
+    if (hiddenContent.style.maxHeight === "0px") {
+        hiddenContent.style.display = "block";
+        setTimeout(function() {
+            hiddenContent.style.maxHeight = hiddenContent.scrollHeight + "px";
+        }, 10); // Small delay
+        button.textContent = "Click to Close >>>";
+    } else {
+        hiddenContent.style.maxHeight = "0px";
+        setTimeout(function() {
+            hiddenContent.style.display = "none";
+        }, 500); // Delay equal to the transition time
+        button.textContent = "Click to Expand >>>";
+    }
+}
+</script>

@@ -6,6 +6,10 @@ body {
     padding: 0;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
 .welcome-container {
     text-align: left;
     background: linear-gradient(135deg, #ff99cc, #cc66ff);
@@ -34,6 +38,58 @@ h2 {
     border-radius: 10px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
+
+/* #announcement-section {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#announcement-content {
+    margin-top: 10px;
+} */
+
+.announcement {
+    margin: 10px auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background-color: #f9f9f9;
+}
+
+.toggle-button {
+    display: block;
+    margin: 0.1vw auto;
+    padding: 10px 20px;
+    background-color: white;
+    color: blue;
+    border: 1px solid blue;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1vw;
+    text-align: center;
+}
+
+.toggle-button:hover {
+    background-color: grey;
+}
+
+#visible-announcements {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+#hidden-announcements {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    max-height: 0; /* Initially hide the content */
+    display: none; /* Ensure it's not taking up space */
+}
+
+
+
+
 
 h3 {
     color: #2E2E2E;
