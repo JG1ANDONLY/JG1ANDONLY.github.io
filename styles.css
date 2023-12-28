@@ -213,13 +213,6 @@ h2 {
 
 
 
-/* Adding a responsive design for smaller screens */
-@media screen and (max-width: 768px) {
-    .programming {
-        font-size: 3vw;             /* Larger font size for better readability on small screens */
-        margin-left: 1vw;           /* Adjusting left margin for smaller screens */
-    }
-}
 
 
 .publication {
