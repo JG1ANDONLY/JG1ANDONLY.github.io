@@ -207,12 +207,9 @@ h2 {
     font-size: 1.2vw;
     text-align: left;
     line-height: 2;
-    margin-left: 2vw;
+    margin-left: 1vw;
 
 }
-
-
-
 
 
 .publication {
@@ -240,17 +237,24 @@ h3 {
 
 
 
-h4 {
-    margin-left: 4.5vw;
+.past-project {
+    list-style-type: circle;
+    font-size: 1.2vw;
+    text-align: left;
+    margin-right: 2vw;
+    line-height: 2;
+    margin-left: 2vw;
+
 }
 
-
-/* .teaching-department {
+.project-title {
+    display: inline-block;
     font-size: 1.2vw;
     text-align: left;
     line-height: 2;
     margin-left: 2vw;
-} */
+    margin-right: 3vw;
+}
 
 .teaching-department {
     display: inline-block;
@@ -263,6 +267,7 @@ h4 {
     border-radius: 5px; /* Rounded corners */
     color: #154360; /* Darker text for contrast */
     margin-bottom: 10px; /* Spacing between departments */
+    opacity: 0.8;
 }
 
 /* .teaching-position {
@@ -288,6 +293,36 @@ h4 {
     margin-right: 5vw;
 }
 
+
+/* Initially hide all h3 and ul elements */
+h2, h3, ul {
+    opacity: 0;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+h2 {
+    animation: fadeIn 0.5s ease-in-out;
+    animation-delay: 0.5s; /* h3 elements start fading in after 2 seconds */
+    animation-fill-mode: forwards; /* Elements remain visible after animation */
+}
+
+/* Apply the animation to h3 elements */
+h3 {
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 1s; /* h3 elements start fading in after 2 seconds */
+    animation-fill-mode: forwards; /* Elements remain visible after animation */
+}
+
+/* Apply the animation to ul elements */
+ul {
+    animation: fadeIn 1.5s ease-in-out;
+    animation-delay: 1.5s; /* ul elements start fading in after 4 seconds */
+    animation-fill-mode: forwards; /* Elements remain visible after animation */
+}
 
 /* CV & Resume */
 .download-buttons {
@@ -366,6 +401,7 @@ footer {
     font-size: 1vw;
     margin-right: 2.5vw;
 }
+
 /* testing */
 @media (max-width: 768px) {
   .navbar {
@@ -433,7 +469,7 @@ footer {
     100% { transform: translateX(0); opacity: 1; }
 }
 
-h1 {
+h1, hr {
     animation: slideDown 2s ease-in-out;
 }
 
