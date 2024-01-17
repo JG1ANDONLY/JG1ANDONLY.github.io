@@ -137,9 +137,10 @@ h3 {
 }
 
 .song-bar {
-    width: 20vw;
+    width: 19vw;
     height: 100%;
     min-height: 6vw;
+    margin-bottom: -0.5vw;
     border-radius: 0;
     transition: transform 0.3s ease;
     overflow-x: hidden;
@@ -185,4 +186,46 @@ h3 {
     cursor: pointer;
     transform: scale(1.1); /* Slightly increase size */
     transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns, evenly spaced */
+    gap: 2vw;
+    margin: 0 2vw 5vw; /* Adds margin to the left and right */
+}
+
+.gallery-item {
+    position: relative;
+    height: 30vw; /* Adjust this value to make the container shorter */
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without stretching */
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+
+footer {
+    text-align: right;
+    font-size: 1vw;
+    margin-right: 2vw;
 }
