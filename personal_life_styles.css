@@ -57,6 +57,10 @@ h2 {
     background-color: #f9f9f9;
 }
 
+.diary-message {
+    font-size: 1vw;
+    margin-left: 2vw;
+}
 .toggle-button {
     display: block;
     margin: 0.1vw auto;
