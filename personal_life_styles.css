@@ -192,7 +192,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns, evenly spaced */
     gap: 2vw;
-    margin: 0 2vw 5vw; /* Adds margin to the left and right */
+    margin: 0 2vw 3vw; /* Adds margin to the left and right */
 }
 
 .gallery-item {
