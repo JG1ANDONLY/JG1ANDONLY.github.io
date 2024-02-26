@@ -137,19 +137,17 @@ h3 {
 }
 
 .song-bar {
-    width: 19vw;
-    height: 100%;
-    min-height: 6vw;
-    margin-bottom: -0.5vw;
-    border-radius: 0;
+    width: 90%;
+    height: auto;
+    max-width: 320px;
+    max-height: 80px;
+    border-radius: 8px;
     transition: transform 0.3s ease;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 
 .song-script {
-    font-size: 0.6vw;
+    font-size: 0.7vw;
     text-align: center;
     color: grey;
 }
