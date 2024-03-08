@@ -134,6 +134,7 @@ h3 {
     height: 60vh;
     overflow-y: scroll;
     width: 25vw;
+    min-width: 150px;
 }
 
 .song-bar {
