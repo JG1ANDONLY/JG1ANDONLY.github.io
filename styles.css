@@ -1,8 +1,87 @@
 /* styles.css */
 
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeInLeft {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInFadeIn {
+    0% {
+        opacity: 0; /* Initial state of the text */
+        transform: translateX(-50px); /* Initial position */
+    }
+    100% {
+        opacity: 1; /* Fully visible text */
+        transform: translateX(0); /* Final position */
+    }
+}
+
+@keyframes fadeInUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInScaleUp {
+    0% {
+        opacity: 0; /* Initial state of the logo */
+        transform: scale(0.8); /* Initial size */
+    }
+    100% {
+        opacity: 1; /* Fully visible logo */
+        transform: scale(1); /* Final size (original size) */
+    }
+}
+
+@keyframes slideDownNav {
+    from {
+        transform: translateY(-100%); /* Start position */
+    }
+    to {
+        transform: translateY(0); /* End position, where the navbar is fully visible */
+    }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0; /* Initial state of the icon */
+        transform: scale(0); /* Initial size */
+    }
+    60% {
+        opacity: 1; /* Make the icon visible */
+        transform: scale(1.2); /* Slightly larger than final size */
+    }
+    100% {
+        opacity: 1; /* Fully visible icon */
+        transform: scale(1); /* Final size */
+    }
+}
+
+
 body {
     background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -12,7 +91,7 @@ body {
     overflow: visible;
     background-color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 1vw;
     flex-wrap: wrap;
@@ -31,20 +110,12 @@ nav a {
     margin: 1vw;
     flex-grow: 1;
     transition: background-color 0.4s;
+    padding: 0.5vw;
 }
 
 nav a:hover {
     background-color: #808080;
     color: white;
-}
-
-
-.logo img{
-    float: left;
-    height: auto;
-    min-width: 5vw;
-    width: 20vw;
-
 }
 
 :target::before {
@@ -60,7 +131,7 @@ nav a:hover {
 
 
 h1 {
-    font-family: Didot, cursive, times;
+    font-family: Helvetica, times;
     text-align: left;
     margin-left: 2vw;
     font-size: 2vw;
@@ -87,16 +158,12 @@ h2 {
 
 .about-me {
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    /* margin-bottom: 20px; */
 }
 
 .profile-picture {
-    /* display: flex; */
-    /* overflow: hidden; */
     float: left;
     border-radius: 30%;
     height: auto;
@@ -104,18 +171,8 @@ h2 {
     margin-right: 2vw;
     width: 100%;
     max-width: 22vw;
-
-    /* margin-bottom: 20px; */
 }
 
-
-/* .self-intro {
-    font-size: 1.3vw;
-    line-height: 1.4;
-    text-align: left;
-    margin-right: 1vw;
-    padding: 2vw;
-} */
 .self-intro {
     font-family: 'Helvetica Neue', sans-serif; /* Modern, sans-serif font */
     color: #34495e; /* Deep, sophisticated blue */
@@ -163,15 +220,13 @@ h2 {
     margin-left: 2vw;
     width: 100%;
     max-width: 10vw;
-    margin-bottom: 1vw; /* Adjust as needed */
+    margin-bottom: 1vw;
+    opacity: 0; /* Start with the logo being invisible */
+    transform: scale(0.8); /* Start with the logo slightly smaller */
+    animation: fadeInScaleUp 1.5s ease-out forwards; /* Animation properties */
 }
 
-/* .degree-info {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.5vw;
-    text-align: left;
-} */
+
 
 .degree-info {
     display: flex;
@@ -192,24 +247,6 @@ h2 {
 
 /* Experience */
 
-/* Publication */
-
-/* .programming{
-    list-style-type: none;
-    font-size: 1.2vw;
-    text-align: left;
-    line-height: 2;
-    margin-left: 2vw;
-} */
-
-.programming {
-    list-style-type: none;
-    font-size: 1.2vw;
-    text-align: left;
-    line-height: 2;
-    margin-left: 1vw;
-
-}
 
 
 .publication {
@@ -219,7 +256,6 @@ h2 {
     margin-right: 2vw;
     line-height: 2;
     margin-left: 2vw;
-
 }
 
 
@@ -231,8 +267,36 @@ h3 {
     font-weight: bold;
     text-transform: uppercase;
     border-bottom: 2px solid #5dade2;
-    max-width: 80%; /* Limits the width */
-/* margin: auto; /* Centers the heading */ */
+    max-width: 80%;
+}
+
+.accordion-button {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    display: block;
+    width: auto;
+    padding: 0.7vw;
+    text-align: center;
+    background: #f0f0f0;
+    font-size: 1vw;
+    cursor: pointer;
+    border: 2px solid;
+    background-clip: padding-box;
+    border-radius: 1vw;
+    margin-left: 3vw;
+    margin-bottom: 1.2vw;
+    transition: all 0.1s;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.accordion-content {
+    display: none; /* Initially hidden */
+    width: 100%; /* Adjust as necessary, but ensure it allows for vertical layout */
+    /* Other styles for padding, background, etc., as needed */
 }
 
 
@@ -293,15 +357,85 @@ h3 {
     margin-right: 5vw;
 }
 
+.card-container {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 3vw;
+    /* padding-left: 2vw; */
+}
+
+
+
+.card {
+    flex-grow: 1;
+    position: relative; /* Ensure the overlay is positioned relative to the card */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1vw;
+      padding: 30px;
+      width: calc(33.33% - 100px);
+      height: 25vw;
+      max-width: 25vw;
+      max-height: 25vw;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+      background-size: cover;
+}
+
+
+
+.card-title {
+    font-size: 2vw;
+      color: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      font-weight: bolder;
+      z-index: 2;
+}
+
+.card-content {
+  font-size: 1.2vw;
+  color: white;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  z-index: 2;
+  display: none;
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+  line-height: 1.5;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card-content.show {
+  display: block; /* Show card content when the 'show' class is applied */
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
 /* Initially hide all h3 and ul elements */
 h2, h3, ul {
     opacity: 0;
-}
-
-/* Keyframes for fade-in animation */
-@keyframes fadeIn {
-    to { opacity: 1; }
 }
 
 h2 {
@@ -382,9 +516,7 @@ ul {
   transition: transform 0.3s ease; /* Smooth transition for hover effects */
 }
 
-.contact-bar .icon-container:hover {
-  transform: scale(1.2);
-}
+
 
 .contact-bar .icon-container img {
   width: 2.5vw; /* Adjust icon size as needed */
@@ -454,38 +586,23 @@ footer {
     animation: logoAnimation 2s ease-in-out;
 }
 
-@keyframes logoAnimation {
-    0% { transform: scale(0); opacity: 0; }
-    50% { transform: scale(1.1); opacity: 0.5; }
-    100% { transform: scale(1); opacity: 1; }
-}
 
 .profile-picture {
     animation: fadeInLeft 2s ease-in-out;
 }
 
-@keyframes fadeInLeft {
-    0% { transform: translateX(-50px); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-}
+
 
 h1, hr {
     animation: slideDown 2s ease-in-out;
 }
 
-@keyframes slideDown {
-    0% { transform: translateY(-30px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
 
 footer {
     animation: fadeInUp 2s ease-in-out;
 }
 
-@keyframes fadeInUp {
-    0% { transform: translateY(30px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
+
 
 .self-intro {
     opacity: 0; /* Start with the text being invisible */
@@ -493,33 +610,7 @@ footer {
     animation: fadeInUp 2s ease-in-out forwards; /* Animation properties */
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0; /* Initial state of the text */
-        transform: translateY(20px); /* Initial position */
-    }
-    100% {
-        opacity: 1; /* Fully visible text */
-        transform: translateY(0); /* Final position */
-    }
-}
 
-.school-logo {
-    opacity: 0; /* Start with the logo being invisible */
-    transform: scale(0.8); /* Start with the logo slightly smaller */
-    animation: fadeInScaleUp 1.5s ease-out forwards; /* Animation properties */
-}
-
-@keyframes fadeInScaleUp {
-    0% {
-        opacity: 0; /* Initial state of the logo */
-        transform: scale(0.8); /* Initial size */
-    }
-    100% {
-        opacity: 1; /* Fully visible logo */
-        transform: scale(1); /* Final size (original size) */
-    }
-}
 
 .degree-info {
     opacity: 0; /* Start with the text being invisible */
@@ -527,45 +618,21 @@ footer {
     animation: slideInFadeIn 1s ease-out forwards; /* Animation properties */
 }
 
-@keyframes slideInFadeIn {
-    0% {
-        opacity: 0; /* Initial state of the text */
-        transform: translateX(-50px); /* Initial position */
-    }
-    100% {
-        opacity: 1; /* Fully visible text */
-        transform: translateX(0); /* Final position */
-    }
-}
+
 
 .navbar {
     transform: translateY(-100%); /* Start above the visible area */
     animation: slideDownNav 0.5s ease-out forwards; /* Animation properties */
 }
 
-@keyframes slideDownNav {
-    from {
-        transform: translateY(-100%); /* Start position */
-    }
-    to {
-        transform: translateY(0); /* End position, where the navbar is fully visible */
-    }
-}
 
-.nav-items a {
+.navbar a {
     opacity: 0; /* Start with the menu items being invisible */
     animation: fadeIn 1s ease-in forwards; /* Animation for fading in */
     animation-delay: 0.5s; /* Delay to start after navbar slides down */
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0; /* Start of the animation */
-    }
-    to {
-        opacity: 1; /* End of the animation */
-    }
-}
+
 
 .download-buttons {
     opacity: 0; /* Start with the buttons being invisible */
@@ -573,33 +640,13 @@ footer {
     animation: fadeInUp 1s ease-out forwards; /* Animation properties */
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0; /* Initial state of the buttons */
-        transform: translateY(30px); /* Initial position */
-    }
-    100% {
-        opacity: 1; /* Fully visible buttons */
-        transform: translateY(0); /* Final position */
-    }
-}
 
 .download-buttons .button {
     animation: bounceIn 0.5s ease-out forwards; /* Bounce effect for each button */
     animation-delay: 0.5s; /* Delay so it starts after the container fades in */
 }
 
-@keyframes bounceIn {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-}
+
 
 .download-buttons .button:nth-child(2) {
     animation-delay: 0.7s; /* Slightly more delay for the second button */
@@ -607,25 +654,12 @@ footer {
 
 .contact-bar .icon-container {
     opacity: 0; /* Start with the icons being invisible */
-    transform: scale(0); /* Start with the icons scaled down */
+    transform: scale(1); /* Start with the icons scaled down */
+    transition: transform 0.3s ease;
     animation: popIn 0.5s ease-out forwards; /* Animation properties */
     animation-delay: 0.2s; /* Initial delay for the first icon */
 }
 
-@keyframes popIn {
-    0% {
-        opacity: 0; /* Initial state of the icon */
-        transform: scale(0); /* Initial size */
-    }
-    60% {
-        opacity: 1; /* Make the icon visible */
-        transform: scale(1.2); /* Slightly larger than final size */
-    }
-    100% {
-        opacity: 1; /* Fully visible icon */
-        transform: scale(1); /* Final size */
-    }
-}
 
 /* Staggered delay for each icon */
 .contact-bar .X { animation-delay: 0.3s; }
@@ -633,3 +667,8 @@ footer {
 .contact-bar .linkedin { animation-delay: 0.5s; }
 .contact-bar .github { animation-delay: 0.6s; }
 .contact-bar .email { animation-delay: 0.7s; }
+
+.contact-bar .icon-container:hover {
+    transform: scale(1.2); /* Make the icon 20% larger on hover */
+
+}

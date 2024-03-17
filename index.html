@@ -6,14 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Zhongyi (James) Guo 过仲懿 </title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="logo">
-            <img src="images/signature.png" alto="logo">
-        </div>
         <div class="nav-items">
             <a href="#about-me" title="About Me">About&nbsp;Me</a>
             <a href="#education" title="Education">Education</a>
@@ -34,14 +32,14 @@
                 student in Epidemiology and Clinical Research program at
                 Stanford&nbspUniversity. <br> <br>
                 In academia, I am a: <br>
-                - Cancer Epidemiologist <br>
                 - Public Health Data Scientist <br>
-                - Researcher focusing on the application of Machine Learning in
-                Multi-omics Data Analysis <br><br>
+                - Future Actuary interested in life insurance <br>
+                - Researcher focusing on multi-omics data analysis <br><br>
                 Outside of academia, I am a: <br>
                 - Amateur Body Builder <br>
                 - Swimmer (Butterfly is my favorite!) <br>
-                - Fungi Lover and Wine Lover <br>
+                - Part-time Model <br>
+                - Fungi and Wine Lover <br>
                 - And MORE on my Instagram! <br><br>
                 Please do NOT hesitate to contact me (you can find my contact
                 information at the bottom of this page) if you found my academic
@@ -90,15 +88,23 @@
     <h2> Research </h2>
     <div>
         <h3> Programming Skills </h3>
-            <ul class="programming">
-                <li class="programming"> <b>Languages:</b> R, SAS, Python, Java,
-                    Swift, SQL, HTML, CSS, JavaScript, UNIX/Linux, LaTeX </li>
-                <li class="programming"> <b>Developer Tools:</b> Git, GitHub,
-                    Terminal, Jupyter Notebook, RStudio, SAS Studio, Eclipse,
-                    Xcode, Overleaf</li>
-                <li class="programming"> <b>Certification:</b> SAS Base (heading for
-                    SAS Advanced)</li>
-            </ul>
+
+
+
+        <div class="accordion">
+            <button class="accordion-button" data-content="R, SAS (Base certified), Python,
+            Java, Swift, SQL, HTML, CSS, JavaScript, UNIX/Linux, LaTeX">Languages:</button>
+            <button class="accordion-button" data-content="Git, GitHub,
+            RStudio, SAS Studio, Jupyter Notebook, Xcode, Terminal, Eclipse,
+            Overleaf">Developer Tools:</button>
+        </div>
+
+
+
+
+
+
+
         </div>
 
     <h3> Publication </h3>
@@ -112,36 +118,74 @@
     </div>
 
     <h3> Ongoing Projects </h3>
-        <ul>
-            <li class="past-project"> To be updated...</li>
-        </ul>
+    <div class="card-container">
+      <div class="card" onclick="toggleCardInfo(this)"
+      style="background-image: url('images/card_background/metabolomics_data_analysis.png');
+      background-size: cover;">
+        <div class="card-title">Metabolomics Data Analysis</div>
+        <div class="card-content">I utilized ChemRICH to study disparities
+            between black and white men in a prostate cancer pilot study,
+            interpreting lipophilicity plots of subpathway and MeSH Ontology
+            data for various metabolites using R. To achieve this goal, I
+            developed a web-scraping tool using R to retrieve Compound IDs and
+            SMILES from PubChem. <br><br> I also replicated and validated t-test
+            results (mean values and p-values) along with Storey’s q-value using
+            the False Discovery Rate (FDR) approach based on Metabolon’s
+            metabolomics data in R.</div>
+      </div>
+    </div>
 
     <h3> Past Projects </h3>
 
-        <ul class="project-title"> <b>R package: hurdatPro</b> (an unpublished class project)
-            <li class="past-project"> Created an R package in tar.gz format to
-                 analyze HURDAT Atlantic basin tropical cyclone activities </li>
-            <li class="past-project"> Cleaned data, wrote functions for storm
-                plotting (track, position, size) and detecting landfall in US,
-                 computed accumulated cyclone energy of storms, and wrote unit
-                 tests for each function using testthat</li>
-        </ul>
+    <div class="card-container">
+        <div class="card" onclick="toggleCardInfo(this)"
+        style="background-image: url('images/card_background/cyclone.jpg');
+        background-size: cover;">
+            <div class="card-title"> hurdatPro </div>
+            <div class="card-content"> I and my project partner developed an R
+            package in tar.gz form to analyze Atlantic tropical cyclone activities
+            through collaboration. <br><br>
+            Throughout this project, I cleaned data, designed functions for
+            storm plotting (track, position, size), identified U.S. landfalls,
+            computed storm accumulated cyclone energy of storms, and implemented
+            unit tests using testthat.
+            </div>
+        </div>
 
-        <ul class="project-title"> <b>Causal Effect of Type II Diabetes on
-            Prostate Cancer in East Asian Population</b>
-            <li class="past-project"> Performed two-sample Mendelian randomization
-                with the inverse variance weighted method while using MR Egger
-                and weighted median methods as sensitivity analysis on genetic-level data </li>
-            <li class="past-project"> Identified proxy SNPs in linkage disequilibrium
-                (r2 > 0.8) and obtained OR = 0.76, 95% CI = [0.76, 0.89],
-                P-value = 2.26 * 10-6 and similar results in sensitivity analysis</li>
-            <li class="past-project"> Concluded that Type II diabetes has a
-                negative causal effect on prostate cancer using genetic evidence </li>
-        </ul>
+        <div class="card" onclick="toggleCardInfo(this)"
+        style="background-image: url('images/card_background/MR.png');
+        background-size: cover;">
+        <div class="card-title"> Causal Effect of Type II Diabetes on
+            Prostate Cancer in the East Asian Population </div>
+        <div class="card-content"> I performed two-sample Mendelian randomization
+            with the inverse variance weighted method while using MR Egger
+            and weighted median methods as sensitivity analysis on genetic-level data. <br><br>
+            In this project, I identified proxy SNPs in linkage disequilibrium
+            (r2 > 0.8) and obtained OR = 0.76, 95% CI = [0.76, 0.89],
+            P-value = 2.26 * 10-6 and similar results in sensitivity analysis.
+            We reached an conclusion that type II diabetes has a negative causal
+            effect on prostate cancer using genetic evidence
+        </div>
+        </div>
 
-        <ul>
-            <li class="past-project"> To be updated...</li>
-        </ul>
+        <div class="card" onclick="toggleCardInfo(this)"
+        style="background-image: url('images/card_background/booked.png');
+        background-size: cover;">
+        <div class="card-title"> booked </div>
+        <div class="card-content"> We programmatically developed a Cornell
+            library study room booking system iOS app by integrating UIKit,
+            AutoLayout, Navigation, UITable & UICollectionView, MVC, Delegation,
+            and Animation. <br><br>
+            We implemented UI with designers and collaborated with backend API for backend requests using Alamofire. <br><br>
+            Proudly, our prototype was nominated as Honorable Mention for <b>Best UI</b> for Hack Challenge Spring 2022.
+
+        </div>
+        </div>
+</div>
+
+
+
+
 
     <h2> Teaching </h2>
     <h3> Cornell University </h3>
@@ -200,6 +244,7 @@
                 department for marketing strategies</li>
         </ul>
 
+
 <h1 id="CV&Resume"> CV & Resume </h1>
 <hr>
 <div class="download-buttons">
@@ -211,9 +256,6 @@
         Download Resume
     </a>
 </div>
-
-
-
 
 
     <h1 id="contact-bar"> Contact Me </h1>
@@ -248,7 +290,46 @@
 
 </body>
 <footer>
-Last Edited: Jan 16, 2024<br>
+Last Edited: March 17, 2024<br>
 &copy; Designed and implemented by Zhongyi Guo 2024. All rights reserved.
 </footer>
 </html>
+<script>
+function toggleCardInfo(card) {
+  let content = card.querySelector('.card-content');
+  let title = card.querySelector('.card-title');
+  if (!content.classList.contains('show')) {
+    content.classList.add('show'); // Show card content
+    title.style.display = 'none'; // Hide card title
+  } else {
+    content.classList.remove('show'); // Hide card content
+    title.style.display = 'flex'; // Show card title
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var accButtons = document.getElementsByClassName('accordion-button');
+
+    // Initialize each button with its current text as the 'data-original-text'
+    for (var i = 0; i < accButtons.length; i++) {
+        var button = accButtons[i];
+        button.setAttribute('data-original-text', button.innerText); // Set the original text
+
+        button.addEventListener('click', function() {
+            var originalText = this.getAttribute('data-original-text'); // The original title text
+            var contentText = this.getAttribute('data-content'); // The additional content text
+            var isContentShown = this.getAttribute('data-content-shown') === 'true'; // Whether content is currently shown
+
+            // Toggle content visibility
+            if (isContentShown) {
+                this.textContent = originalText; // Show only the original text
+                this.setAttribute('data-content-shown', 'false');
+            } else {
+                this.textContent = originalText + " " + contentText; // Show original text with content
+                this.setAttribute('data-content-shown', 'true');
+            }
+        });
+    }
+});
+
+</script>
