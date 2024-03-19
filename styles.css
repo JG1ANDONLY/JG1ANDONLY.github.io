@@ -351,7 +351,7 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-between;
+    justify-content:flex-start;
     margin: 3vw;
     /* padding-left: 2vw; */
 }
