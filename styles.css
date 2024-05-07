@@ -81,7 +81,7 @@
 
 body {
     background-color: #f0f0f0;
-    font-family: Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -106,7 +106,7 @@ nav a {
     color: black;
     text-decoration: none;
     padding: 1vw;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     margin: 1vw;
     flex-grow: 1;
     transition: background-color 0.4s;
@@ -135,24 +135,14 @@ h1 {
     font-family: Helvetica, times;
     text-align: left;
     margin-left: 2vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin-top: 1vw;
-}
-
-
-hr {
-    margin-left: 2vw;
-    height: 0.2vw;
-    border: none;
-    background-color: black;
-    margin-right: 3vw;
-    margin-bottom: 2vw;
 }
 
 h2 {
     text-align: left;
     margin-left: 2vw;
-    font-size: 1.6vw;
+    font-size: 1.4vw;
     /* margin-top: 1vw; */
 
 }
@@ -175,7 +165,7 @@ h2 {
 }
 
 .self-intro {
-    font-family: 'Helvetica Neue', sans-serif; /* Modern, sans-serif font */
+    font-family: "Calibri", sans-serif; /* Modern, sans-serif font */
     color: #34495e; /* Deep, sophisticated blue */
     font-size: 1.1vw; /* Comfortable reading size */
     line-height: 1.5; /* Balanced line spacing */
@@ -184,7 +174,7 @@ h2 {
     border-radius: 10px; /* Rounded corners for a softer look */
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
     margin: 30px auto; /* Centered with vertical spacing */
-    max-width: 60%;
+    max-width: 65%;
     text-align: left;
 }
 
