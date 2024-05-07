@@ -81,7 +81,7 @@
 
 body {
     background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    font-family: "Trebuchet MS", Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -132,7 +132,7 @@ nav a:hover {
 
 
 h1 {
-    font-family: Helvetica, times;
+    font-family: "Trebuchet MS", Arial, sans-serif;
     text-align: left;
     margin-left: 2vw;
     font-size: 1.5vw;
@@ -140,11 +140,10 @@ h1 {
 }
 
 h2 {
+    font-family: "Trebuchet MS", Arial, sans-serif;
     text-align: left;
-    margin-left: 2vw;
+    margin-left: 2.2vw;
     font-size: 1.4vw;
-    /* margin-top: 1vw; */
-
 }
 
 .about-me {
@@ -165,7 +164,7 @@ h2 {
 }
 
 .self-intro {
-    font-family: "Calibri", sans-serif; /* Modern, sans-serif font */
+    font-family: "Trebuchet MS", Arial, sans-serif; /* Modern, sans-serif font */
     color: #34495e; /* Deep, sophisticated blue */
     font-size: 1.1vw; /* Comfortable reading size */
     line-height: 1.5; /* Balanced line spacing */
@@ -174,7 +173,7 @@ h2 {
     border-radius: 10px; /* Rounded corners for a softer look */
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
     margin: 30px auto; /* Centered with vertical spacing */
-    max-width: 65%;
+    max-width: 60%;
     text-align: left;
 }
 
@@ -224,7 +223,7 @@ h2 {
     justify-content: space-between; /* Keeps elements spaced out */
     font-size: 1.4vw; /* Fixed font size for consistency */
     text-align: left;
-    font-family: 'Garamond', serif; /* Elegant, classic font for a sophisticated look */
+    font-family: "Trebuchet MS", Arial, sans-serif; /* Elegant, classic font for a sophisticated look */
     color: #333333; /* Dark color for readability */
     background-color: transparent; /* No background color */
     padding: 10px 0; /* Vertical padding for spacing */
@@ -241,6 +240,7 @@ h2 {
 
 
 .publication {
+    font-family: "Trebuchet MS", Arial, sans-serif;
     list-style-type: none;
     font-size: 1.2vw;
     text-align: left;
@@ -254,6 +254,7 @@ h2 {
 }
 
 h3 {
+    font-family: "Trebuchet MS", Arial, sans-serif;
     display: inline-block;
     margin-left: 3vw;
     font-size: 1.3vw;
@@ -264,33 +265,14 @@ h3 {
     max-width: 80%;
 }
 
-.accordion-button {
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in-out;
-    animation-delay: 1.5s;
-    animation-fill-mode: forwards;
-    display: block;
-    width: auto;
-    padding: 0.7vw;
-    text-align: center;
-    background: #f0f0f0;
-    font-size: 1vw;
-    cursor: pointer;
-    border: 2px solid;
-    background-clip: padding-box;
-    border-radius: 1vw;
-    margin-left: 3vw;
-    margin-bottom: 1.2vw;
-    transition: all 0.1s;
-    position: relative;
-    overflow: hidden;
-}
 
 
-.accordion-content {
-    display: none; /* Initially hidden */
-    width: 100%; /* Adjust as necessary, but ensure it allows for vertical layout */
-    /* Other styles for padding, background, etc., as needed */
+
+.accordion {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 1.2vw;
+    text-align: left;
+    margin-left: 4.5vw;
 }
 
 
@@ -306,6 +288,7 @@ h3 {
 }
 
 .project-title {
+    font-family: "Trebuchet MS", Arial, sans-serif;
     display: inline-block;
     font-size: 1.2vw;
     text-align: left;
@@ -414,7 +397,7 @@ h3 {
 }
 
 /* Initially hide all h3 and ul elements */
-h2, h3, ul {
+h2, h3, ul, p {
     opacity: 0;
 }
 
@@ -430,7 +413,7 @@ h3 {
     animation-fill-mode: forwards;
 }
 
-ul {
+ul, p {
     animation: fadeIn 1.5s ease-in-out;
     animation-delay: 1.5s;
     animation-fill-mode: forwards;
