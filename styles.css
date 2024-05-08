@@ -258,10 +258,7 @@ h3 {
     display: inline-block;
     margin-left: 3vw;
     font-size: 1.3vw;
-    color: #2e4053;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-bottom: 2px solid #5dade2;
+
     max-width: 80%;
 }
 
