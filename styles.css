@@ -221,7 +221,7 @@ h2 {
 .degree-info {
     display: flex;
     justify-content: space-between; /* Keeps elements spaced out */
-    font-size: 1.4vw; /* Fixed font size for consistency */
+    font-size: 1.1vw; /* Fixed font size for consistency */
     text-align: left;
     font-family: "Trebuchet MS", Arial, sans-serif; /* Elegant, classic font for a sophisticated look */
     color: #333333; /* Dark color for readability */
@@ -337,26 +337,28 @@ h3 {
 
 .card {
     flex-grow: 1;
-    position: relative; /* Ensure the overlay is positioned relative to the card */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 1vw;
-      padding: 30px;
-      width: calc(33.33% - 100px);
-      height: 25vw;
-      max-width: 25vw;
-      max-height: 25vw;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      overflow: hidden;
-      background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    padding: 30px;
+    width: calc(33.33% - 100px);
+    height: 25vw;
+    max-width: 25vw;
+    max-height: 25vw;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
 
 
 .card-title {
+    font-family: "Trebuchet MS", Arial, sans-serif;
     font-size: 2vw;
       color: white;
       text-align: center;
@@ -367,9 +369,10 @@ h3 {
 }
 
 .card-content {
+    font-family: "Trebuchet MS", Arial, sans-serif;
   font-size: 1.2vw;
   color: white;
-  overflow: hidden;
+  overflow: auto;
   transition: height 0.3s ease;
   z-index: 2;
   display: none;
