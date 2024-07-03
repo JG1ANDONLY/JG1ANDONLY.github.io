@@ -250,7 +250,8 @@ h2 {
 }
 
 .no-style-link {
-        color: inherit;
+        color: blue;
+        text-decoration: none;
 }
 
 h3 {
