@@ -27,6 +27,7 @@
                 <a href="personal_life.html" target="_blank" title="Personal Life">Personal&nbsp;Life</a>
             </div>
         </nav>
+        
 
         <h1 id="about-me"> 👤 About Me </h1>
             <div class="about-me">
@@ -60,7 +61,7 @@
                     <img src="images/stanford_logo.svg" alt="Stanford Medicine Logo"
                     class="school-logo">
                     <p class="degree-info"> M.S. Epidemiology and Clinical Research (est. graduation: 06/2025) <br>
-                        GPA: 3.94/4.00
+                        GPA: 3.94/4.00 (by Spring 2024)
                     </p>
                 </div>
 
@@ -120,16 +121,8 @@
                             <div class="card-title">Metabolomic Racial Disparity
                             between Black and White Men</div>
                             <!-- TODO: format continute here -->
-                            <div class="card-content">I utilized ChemRICH to study
-                            disparities between black and white men in a prostate cancer pilot study,
-                            interpreting lipophilicity plots of subpathway and MeSH Ontology
-                            data for various metabolites using R. To achieve this goal, I
-                            developed a web-scraping tool using R to retrieve Compound IDs and
-                            SMILES from PubChem. <br><br> I also replicated and validated t-test
-                            results (mean values and p-values) along with Storey’s q-value using
-                            the False Discovery Rate (FDR) approach based on Metabolon’s
-                            metabolomics data in R. <br><br>
-                            The GitHub repository should be available after this work has been published.
+                            <div class="card-content">Used PCA, PLS-DA, Random Forest, SVM, WGCNA, ChemRICH (set enrichment based on 
+                                chemical similarities) to study racial disparity in prostate cancer between Black and White men.
                             </div>
                         </div>
 
@@ -150,7 +143,12 @@
             style="background-image: url('images/card_background/translational_bioinformatics.webp');
             background-size: cover;">
             <div class="card-title"> Integration of Single-cell Multi-omics Data for Alzheimer’s Disease </div>
-            <div class="card-content"> Coming soon... </div>
+            <div class="card-content"> In Translational Bioinformatics taught by Dr. Sylvia Plevritis, we wrote an NIH-style grant proposal for a 
+                theoretical study on multi-omics integration at a cell-type-specific resolution to provide downstream evidence for Alzheimer's Disease. 
+                Conducted a comprehensive literature review and preliminary integration and analysis of epigenomic, 
+                transcriptomic, and proteomic datasets using MOFA+ (Multi-omics Factor Analysis v2), focusing on microglial 
+                cells in human brains.
+            </div>
         </div>
 
         <div class="card" onclick="toggleCardInfo(this)"
@@ -207,7 +205,7 @@
         style="background-image: url('images/card_background/');
         background-size: cover;">
         <div class="card-title"> GWAS Study: Analysis of Lymphoblastoid Cell Lines (LCL) mRNA Levels </div>
-        <div class="card-content"> 
+        <div class="card-content">  To be updated...
         </div>
         </div>
 
@@ -222,22 +220,22 @@
 
 
 <h2> 📖 Publications </h2>
-<div class="accordion">
-    <p>[1] Lu, J., <b>Guo, Z.</b>, & Rehkopf, D. H. (2024). Towards Causal Interpretation of Sexual Orientation in Regression Analysis: 
+    <div class="accordion">
+        <p>[1] Lu, J., <b>Guo, Z.</b>, & Rehkopf, D. H. (2024). Towards Causal Interpretation of Sexual Orientation in Regression Analysis: 
         Applications and Challenges. arXiv preprint arXiv:2405.02322. <a href="https://arxiv.org/abs/2405.02322"
         target="_blank" class="no-style-link">preprint</a></p>
     
-    <p><i> Note: This paper was an extension of a cool Causal Inference
+        <p><i> Note: This paper was an extension of a cool Causal Inference
         class project with my best friend Junjie Lu. Shout
         out to him! </i> </p>
 
-    <p>[2] <b> Presenter/First Author</b>, Causal effect of type II diabetes on prostate cancer in the East Asian population: A two-sample Mendelian 
+        <p>[2] <b> Presenter/First Author</b>, Causal effect of type II diabetes on prostate cancer in the East Asian population: A two-sample Mendelian 
         randomization study, AACR Special Conference: Aging and Cancer, 2022. 
         <a href="https://aacrjournals.org/cancerres/article/83/2_Supplement_1/B003/712467/Abstract-B003-Causal-effect-of-type-II-diabetes-on"
         target="_blank" class="no-style-link">published</a></p>
 
-    <p>[3] More manuscripts in progress... Hang tight! </p>
-</div>
+        <p>[3] More manuscripts in progress... Hang tight! </p>
+    </div>
 
     <h2> 👨🏻‍🏫 Teaching </h2>
         <p style="margin-left: 4vw; font-size: 1.2vw;">01/2023 – 05/2023, Beta Tester & Teaching Assistant,
@@ -376,5 +374,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
 </script>
