@@ -228,6 +228,11 @@ ul.toggle > li {
 list-style: none;
 }
 
+.toggle summary {
+    cursor: pointer;
+}
+
+
 ul {
 padding-inline-start: 1.7em;
 }
