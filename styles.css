@@ -15,7 +15,7 @@ padding: 0;
 @media only screen {
 body {
 margin: 2em auto;
-max-width: 70%;
+max-width: 75%;
 color: rgb(55, 53, 47);
 }
 }
@@ -76,7 +76,6 @@ word-break: break-all;
 
 .callout {
 border-radius: 3px;
-/* padding: 1rem; */
 }
 
 figure {
@@ -145,30 +144,7 @@ padding-right: 0;
 padding-left: 3em;
 }
 
-.table_of_contents-item {
-display: block;
-font-size: 0.875vw;
-line-height: 1.3;
-padding: 0.125rem;
-}
 
-.table_of_contents-indent-1 {
-margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-text-decoration: none;
-opacity: 0.7;
-border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
 
 table,
 th,
@@ -327,16 +303,19 @@ img.icon {
 border-radius: 3px;
 }
 
-.user-icon {
-width: 1.5em;
-height: 1.5em;
-border-radius: 100%;
-margin-right: 0.5rem;
+.image-row {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 10px;
+  }
+  
+.image-row img {
+    height: 250px; 
+    object-fit: cover; 
+    width: auto;
 }
 
-.user-icon-inner {
-font-size: 0.8vw;
-}
 
 .text-icon {
 border: 1px solid #000;
@@ -522,6 +501,7 @@ fill: rgba(159, 107, 83, 1);
 .highlight-orange {
 color: rgba(217, 115, 13, 1);
 fill: rgba(217, 115, 13, 1);
+font-size: 1.3vw;
 }
 .highlight-yellow {
 color: rgba(203, 145, 47, 1);
@@ -546,7 +526,7 @@ fill: rgba(193, 76, 138, 1);
 .highlight-red {
 color: rgba(212, 76, 71, 1);
 fill: rgba(212, 76, 71, 1);
-font-size: 16pt;
+font-size: 1.2vw;
 }
 .highlight-default_background {
 color: rgba(55, 53, 47, 1);
@@ -672,14 +652,6 @@ height: 16;
 background-size: 16px;
 margin-left: 2px;
 margin-right: 5px;
-}
-
-.checkbox-on {
-background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 
 /* Technical Summary */
