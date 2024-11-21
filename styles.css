@@ -312,9 +312,12 @@ border-radius: 3px;
   
 .image-row img {
     height: 250px; 
+    flex-wrap: nowrap;
     object-fit: cover; 
     width: auto;
+    vertical-align: middle;
 }
+
 
 
 .text-icon {
