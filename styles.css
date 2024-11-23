@@ -176,6 +176,7 @@ ul {
 margin: 0;
 margin-block-start: 0.6em;
 margin-block-end: 0.6em;
+font-size: 1.1vw;
 }
 
 li > ol:first-child,
@@ -308,16 +309,22 @@ border-radius: 3px;
     justify-content: flex-start; 
     align-items: center; 
     gap: 10px;
+
   }
   
 .image-row img {
-    height: 250px; 
-    flex-wrap: nowrap;
+    height: 18vw; 
+    /* flex-wrap: nowrap; */
     object-fit: cover; 
     width: auto;
     vertical-align: middle;
-}
 
+}
+.image-row img:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
 
 .text-icon {
@@ -496,6 +503,7 @@ color: rgba(55, 53, 47, 1);
 .highlight-gray {
 color: rgba(120, 119, 116, 1);
 fill: rgba(120, 119, 116, 1);
+font-size: 1.2vw;
 }
 .highlight-brown {
 color: rgba(159, 107, 83, 1);
@@ -521,6 +529,7 @@ fill: rgba(51, 126, 169, 1);
 .highlight-purple {
 color: rgba(144, 101, 176, 1);
 fill: rgba(144, 101, 176, 1);
+font-size: 1.2vw;
 }
 .highlight-pink {
 color: rgba(193, 76, 138, 1);
@@ -679,7 +688,7 @@ margin-right: 5px;
 }
 
 .item img {
-    max-width: 30px;
+    max-width: 3vw;
     margin-bottom: 10px;
 }
 
