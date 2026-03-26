@@ -5,16 +5,6 @@
 		<title>Zhongyi (James) Guo 过仲懿</title>
 		<link rel="stylesheet" href="styles.css">
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-53H4TYHVTY"></script>
-        <!-- <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-53H4TYHVTY');
-        </script> -->
-		<!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
-		<!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
-		<script><link rel="stylesheet" href="styles.css"></link></script>
-		<!-- <script src="functions.js"></script> -->
 	</head>
 
 	<body>
@@ -29,9 +19,6 @@
 				<hr/>
 				<div class="column-list">
 					<div style="width: 31.25%;" class="column">
-						<div>
-							<img src="images/mario.gif" style="display: block; max-height: 5vw; max-height: auto;"/>
-						</div>
 						<figure class="image">
 							<a><img style="width: 15vw; height: 15vw; border-radius: 50%; object-fit: cover;" src="images/profile_picture.JPG"/></a>
 						</figure>
@@ -160,6 +147,7 @@
 
 						<h1>Log</h1>
 						<hr/>
+						<p>03/26/2026: Added animation and redesigned homepage layout by vide coding using Claude.</p>
 						<p>11/20/2024: Updated research experience. I will update project experience and work experience shortly.</p>
 						<p>11/12/2024: Minor updates applied to the certification section.</p>
 						<p>08/12/2024: I redesigned my website. Now I'm slowing migrating project experience and work experience over.</p>
@@ -243,7 +231,7 @@
 							<p>[2] Poster session presenter and first author, Causal effect of type II diabetes on prostate cancer in the East Asian population: A two-sample Mendelian randomization study, <i class="highlight-blue">AACR Special Conference: Aging and Cancer,</i> 2022. <a href="https://aacrjournals.org/cancerres/article/83/2_Supplement_1/B003/712467/Abstract-B003-Causal-effect-of-type-II-diabetes-on" target="_blank" style="text-decoration: none; color: #528DFA;">Published &#x2197;</a></p>
 							<br/>
 							<p>Manuscripts in preparation</p>
-							<p>[1] (Aiming for <u>BMC Medicine</u>) <b>Guo, Z.‡</b>, Chen, D.‡, Stopsack, K. H., Soule, P., Ajit, D., Ramamoorthy, P., Hoffmann, T. J., Chan, J. M., Mucci L. A., Graff, R. E. (2025). Metabolomic Disparities Between Black and Non-Hispanic White Men with Metastatic Hormone-Sensitive Prostate Cancer: A Pilot Study.</p>
+							<p>[1] (Aiming for <u>BMC Medicine</u>) <b>Guo, Z.‡</b>, Chen, D.‡, Stopsack, K. H., Soule, P., Ajit, D., Ramamoorthy, P., Hoffmann, T. J., Chan, J. M., Mucci L. A., Graff, R. E.. Metabolomic Disparities Between Black and Non-Hispanic White Men with Metastatic Hormone-Sensitive Prostate Cancer: A Pilot Study.</p>
 							<p>[2] (Aiming for <u>Cell</u>) Qu, P., Wang, T., Jessa, S., <b>Guo, Z.</b>, Guo, H., Purmann, C., Monte, E., Jiang, L., Yang, X., Zhou, B., Kundu, S., Kundaje, A., Wong, W., Hallmayer, J. F., Urban, A. E., Snyder, M. P.. Multi-modal functional genomics analysis of bipolar disorder and schizophrenia. <u>(Title is tentative.)</u></p>
 							<p>[3] (Aiming for <u>Nature Neuroscience</u>) Sant, C., <b>Guo, Z.</b>, Corces, M. R.. Preventing false discoveries in Alzheimer’s disease single-cell sequencing data using permutation testing. <u>(Title is tentative.)</u></p>
 							<p style="color: grey;">‡ indicates co-first authorship.</p>
@@ -252,253 +240,246 @@
 						<div style="display: flex; align-items: flex-end;">
 							<h1 id="experience">Experience</h1>
 						</div>
-
-						
 						<hr/>
-						<div style="display: flex; align-items: flex-end;">
-							<h2>Research</h2>
-						</div>
-						
-						<div>
-							<div>
-								<mark class="highlight-red"><strong>Deep Learning + Single-Cell Multiomics to Study Schizophrenia and Bipolar Disorder</strong></mark>
-							</div>
-							<div style="display: flex; justify-content: space-between; align-items: center;">
-								<span class="highlight-purple">Graduate Student Researcher @ Stanford</span>
-								<span><mark class="highlight-gray">04/2024 - 06/2025</mark></span>
-							</div>
-							<div class="image-row">
-								<figure>
-									<img src="images/mark_gerstein_paper.png" alt="Different Chromatin Accessibilities across Cell Types" >
+
+						<!-- ── RESEARCH ── -->
+						<div class="exp-section-label">Research</div>
+
+						<div class="exp-card expandable-card">
+							<div class="card-summary">
+								<span class="card-chevron">&#x25BE;</span>
+								<div class="exp-card-meta">
+									<span class="exp-role-org">Graduate Student Researcher &nbsp;&middot;&nbsp; Stanford (Kundaje Lab)</span>
+									<span class="exp-date-badge">04/2024 &ndash; 06/2025</span>
+								</div>
+								<div class="exp-title">Deep Learning + Single-Cell Multiomics to Study Schizophrenia &amp; Bipolar Disorder</div>
+								<div class="exp-tags">
+									<span class="tag">scRNA-seq</span>
+									<span class="tag">scATAC-seq</span>
+									<span class="tag purple">Seurat</span>
+									<span class="tag purple">ArchR</span>
+									<span class="tag purple">DESeq2</span>
+									<span class="tag purple">MAST</span>
+									<span class="tag green">ChromBPNet</span>
+									<span class="tag">R</span>
+									<span class="tag">Python</span>
+								</div>
+								<div class="exp-images-strip">
+									<img src="images/mark_gerstein_paper.png" alt="Chromatin Accessibilities across Cell Types">
 									<img src="images/chrombpnet.png" alt="ChromBPNet Model Architecture">
-									<figcaption style="font-size: 0.5vw;">Figure Source: <a href="https://www.science.org/doi/10.1126/science.adi5199" target="_blank" style="color: #528DFA;">https://www.science.org/doi/10.1126/science.adi5199</a>; <a href="https://doi.org/10.1016/j.cell.2021.07.039" target="_blank" style="color: #528DFA;">https://doi.org/10.1016/j.cell.2021.07.039</a></figcaption>
-								</figure>
-							</div>
-						</div>
-
-						<div>
-							<p>I was very fortunate to join the <i>PsychENCODE</i> project at Prof. Anshul Kundaje's lab. <b>In this project, I analyzed scRNA-seq and scATAC-seq multiome data of 3 brain regions from <i>PsychENCODE</i> to investigate the pathogenesis of schizophrenia (SCZ) and bipolar disorder (BPD).</b></p>
-							<p>Since chromatin accessibility and gene regulation are highly cell-type-specific, this project aims to analyze them at single-cell resolution. The overarching goal is to understand how variations in chromatin accessibility and gene expression across different cell types contribute to the pathogeneses of SCZ and BPD compared to controls.</p>
-							
-							<p>Here is what I have done:</p>
-							<ul>
-								<li>Pre-processed the single-cell multiome dataset using quality control, dimension reduction, annotation with reference, cell clustering, doublet removal, and marker gene detection.</li>
-								<li>Conducted differential gene expression and peak accessibility analyses (pseudobulk: DESeq2; single-cell: Wilcoxon rank-sum test and MAST) across cell types by sex and disease.</li>
-								<li>Creatively visualized and validated differential patterns for all detected genes and peaks, presenting findings to collaborators.</li>
-							</ul>
-
-							<p>Here is what I will do:</p>
-							<ul>
-								<li>Perform gene ontology analysis to elucidate the biological pathways associated with the identified differentially expressed genes.</li>
-								<li>Cross-reference cell-type-specific <a href="https://github.com/kundajelab/chrombpnet" target="_blank" style="text-decoration: none; color: #528DFA;"><i>ChromBPNet</i>  &#x2197;</a> outputs to address two key questions: 
-									<ul>
-										<li>Which disease variants are causal for SCZ and BP</li>
-										<li>How mutations impact chromatin accessibility and, consequently, gene regulation</li>
-									</ul>
-								</li>
-							</ul>
-
-							<p>Representative packages I have used in this project:</p>
-							<ul>
-								<li>R: Seurat, ArchR, Signac, Azimuth, DoubletFinder, EnsDb, SingleCellExperiment, DESeq2</li>
-								<li>Python: CellBender, chrombpnet</li>
-							</ul>
-
-						</div>
-						<br/>
-
-						<div>
-							<div>
-								<mark class="highlight-red"><strong>Computationally Investigate Black-White Metabolomic Disparities in Prostate Cancer</strong></mark>
-							</div>
-							<div style="display: flex; justify-content: space-between; align-items: center;">
-								<span class="highlight-purple">Graduate Researcher @ UCSF</span>
-								<span><mark class="highlight-gray">10/2023 - Present</mark></span>
-							</div>
-							Download my presentation slide: <a href="files/thesis_presentation_v3.pptx" download="presentation.pptx" style="text-decoration: none; color: #528DFA;">ppt &#x2197;</a> || <a href="files/thesis_presentation_v3.pdf" download="presentation.pdf" style="text-decoration: none; color: #528DFA;">pdf &#x2197;</a>
-							<div class="image-row">
-								<figure>
-									<img src="images/pca_incidence.jpg" alt="PCA Incidence Rates" >
-									<img src="images/pca_incidence_and_mortality.jpg" alt="PCA Incidence and Mortality Rate for All Races">
-									<figcaption style="font-size: 0.5vw;">Figure Source: <a href="https://www.cancer.gov/news-events/cancer-currents-blog/2019/prostate-cancer-death-disparities-black-men" target="_blank" style="color: #528DFA;">https://www.cancer.gov/news-events/cancer-currents-blog/2019/prostate-cancer-death-disparities-black-men</a>; <a href="https://doi.org/10.1016/j.canlet.2022.01.028" target="_blank" style="color: #528DFA;">https://doi.org/10.1016/j.canlet.2022.01.028</a></figcaption>
-								</figure>
-							</div>
-						</div>
-						
-						<div>
-							<p>Black men experience significantly higher incidence and mortality rates of prostate cancer compared to White men. <b>This project aims to investigate this racial disparity through LC-MS metabolomics.</b></p>
-							<p>The cohort included 17 Black men and 17 White men in the United States, from <a href="https://doi.org/10.1200/GO.22.00154" target="_blank" style="text-decoration: none; color: #528DFA;">the IRONMAN Registry &#x2197;</a>.</p>
-							
-							<p>Here is what I have done:</p>
-							<ul>
-								<li>Discovered key contributors through chemical similarity enrichment analysis (ChemRICH) by designing and implementing three methods: sub-pathway information, correlation modules, and predicted Medical Subject Headings (MeSH) classes.</li>
-								<li>Found corroborative contributing metabolites using Principle Component Analysis (PCA), Partial Least Squares Discriminant Analysis (PLS-DA), Random Forest, Support Vector Machine (SVM), logistic regression, quantitative set enrichment, and pathway analysis using MetaboAnalystR.</li>
-								<li>Identified upregulated/downregulated compounds influenced by aging through differential expression analysis using limma, after network construction and module detection using weighted gene co-expression network analysis (WGCNA), motivating research into aging's role.</li>
-							</ul>
-							
-							<p>The manuscript is in preparation. It will also be my thesis for my Master degree.</p>
-							<p>Representative R packages: tidyverse, ggplot2, ChemRICH, WGCNA, MetaboAnalystR, limma</p>
-						</div>
-
-				
-						<div style="display: flex; align-items: flex-end;">
-							<h2>Teaching</h2>
-						</div>
-						<figure class="block-color-purple callout">
-							<div>
-								<div>
-									<mark class="highlight-red"><strong>Beta Tester and Teaching Assistant</strong></mark>
 								</div>
-								<div style="display: flex; justify-content: space-between; align-items: center;">
-									<span class="highlight-purple">INFO 2950 Introduction to Data Science, Cornell University</span>
-									<span><mark class="highlight-gray">01/2023 - 05/2023</mark></span>
-								</div>
-								<ul style="color: black;">
-									<li>Led discussions, graded homework and exams, held office hours, and proofread assignments and solutions before releasing.</li>
-								</ul>
+								<p class="exp-figcaption">Figure Source: <a href="https://www.science.org/doi/10.1126/science.adi5199" target="_blank" style="color:#528DFA;">Science 2024</a> &nbsp;&middot;&nbsp; <a href="https://doi.org/10.1016/j.cell.2021.07.039" target="_blank" style="color:#528DFA;">Cell 2021</a></p>
+								<div class="card-hint">Click to expand &darr;</div>
 							</div>
-						</figure>
-
-						<figure class="block-color-purple callout">
-							<div>
-								<div>
-									<mark class="highlight-red"><strong>Grader</strong></mark>
-								</div>
-								<div style="display: flex; justify-content: space-between; align-items: center;">
-									<span class="highlight-purple">BTRY 3080 Probability Models and Inference, Cornell University</span>
-									<span><mark class="highlight-gray">08/2022 - 12/2022</mark></span>
-								</div>
-								<ul style="color: black;">
-									<li>Graded homework and exams.</li>
-								</ul>
-							</div>
-						
-						</figure>
-
-							<figure class="block-color-purple callout">
-							<div>
-								<div>
-									<mark class="highlight-red"><strong>Teaching Assistant (Summer)</strong></mark>
-								</div>
-								<div style="display: flex; justify-content: space-between; align-items: center;">
-									<span class="highlight-purple">(1) Introductory Biology, and (2) Physics I, JNC Study Abroad Platform</span>
-									<span><mark class="highlight-gray">07/2022 - 08/2022</mark></span>
-								</div>
-								<ul style="color: black;">
-									<li>Led discussions, graded homework and exams, held office hours, and communicated between professors and students.</li>
-								</ul>
-							</div>
-						</figure>
-
-						<figure class="block-color-purple callout">
-							<div>
-								<div>
-									<mark class="highlight-red"><strong>Teaching Assistant</strong></mark>
-								</div>
-								<div style="display: flex; justify-content: space-between; align-items: center;">
-									<span class="highlight-purple">BIOMG 2801 Laboratory in Genetics and Genomics, Cornell University</span>
-									<span><mark class="highlight-gray">01/2021 - 05/2021</mark></span>
-								</div>
-								<ul style="color: black;">
-									<li>Created and stabilized knockout mutations on target gene of fruit flies using CRISPR/Cas9.</li>
-									<li>Assisted with designing and cloning primers with sgRNA and guided 20 students in analyzing
-										mutations vs. wildtype on the UCSC Genome Browser and in locating sgRNA transgenes.</li>
-									<li>Directed me to computational work (sorry let's just be real)</li>
-								</ul>
-							</div>
-						</figure>
-
-
-						<div style="display: flex; align-items: flex-end;">
-							<h2>Class Projects</h2>
-						</div>
-
-						
-						Slowly updating...
-						<div>
-							<div>
-								<mark class="highlight-red"><strong>Use Deep Learning to Study Differential Gene Expression Patterns in Sickle Cell Anemia Ischemic Stroke</strong></mark>
-							</div>
-							<div class="image-row">
-								<figure>
-									<img src="images/sca.jpg" alt="Sickle Cell Anemia" >
-									<img src="images/dna_as_cat.png" alt="Imagine DNA as Cat" style="height: 185px; width: auto;">
-									<figcaption style="font-size: 0.5vw;">Figure Source: <a href="https://my.clevelandclinic.org/health/diseases/4579-sickle-cell-anemia" target="_blank" style="color: #528DFA;">https://my.clevelandclinic.org/health/diseases/4579-sickle-cell-anemia</a>; <a href="https://towardsdatascience.com/modeling-dna-sequences-with-pytorch-de28b0a05036" target="_blank" style="color: #528DFA;">https://towardsdatascience.com/modeling-dna-sequences-with-pytorch-de28b0a05036</a></figcaption>
-								</figure>
-							</div>	
-							<p>to be updated...</p>
-						</div>
-						
-						
-
-						<div style="display: flex; align-items: flex-end;">
-							<h2>Work</h2>
-						</div>
-
-						<br/>
-
-						<div style="display: flex; align-items: center; gap: 30px;">
-							<div>
-								<img src="images/Gladstone.webp" alt="Gladstone Institute at UCSF" style="max-width: 10vw; height: auto;">
-							</div>
-							
-							<div style="flex: 1;">
-								<div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-									<mark class="highlight-red" style="flex: 1;"><strong>Researcher, the Gladstone Institute at UCSF</strong></mark>
-									<mark class="highlight-gray" style="text-align: right;">07/2025 - Present</mark>
-								</div>
-								<div>
-									<ul>
-										<li>Pioneered an R package implementing a permutation-test pipeline to reduce false positives in scRNA-seq differential gene expression analysis of Alzheimer’s disease to identify therapeutic targets, integrating eight public Synapse datasets to demonstrate real-world use.</li>
-										<li>Applied AlphaGenome to study how genetic variants of the MAPT gene alter splicing patterns.</li>
-										<li>Removed doublets, performed dimensionality reduction & clustering of scATAC-seq data in ArchR.</li>
-										<li>Communicated statistical findings and effective visualizations clearly to diverse audiences.</li>
+							<div class="card-detail">
+								<div class="card-detail-inner">
+									<div class="card-divider"></div>
+									<p class="exp-summary">Joined the <i>PsychENCODE</i> project at Prof. Anshul Kundaje's lab. Analyzed scRNA-seq and scATAC-seq multiome data from 3 brain regions to investigate cell-type-specific chromatin accessibility and gene expression patterns underlying schizophrenia (SCZ) and bipolar disorder (BPD).</p>
+									<ul class="exp-bullets">
+										<li>Pre-processed multiome data: QC, dimensionality reduction, cell clustering, doublet removal, and marker gene detection.</li>
+										<li>Ran differential gene expression &amp; peak accessibility analyses (pseudobulk DESeq2; single-cell Wilcoxon + MAST) across cell types stratified by sex and disease.</li>
+										<li>Cross-referencing <a href="https://github.com/kundajelab/chrombpnet" target="_blank" style="color:#528DFA;"><i>ChromBPNet</i></a> outputs to identify causal disease variants and their downstream effects on gene regulation.</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 
-
-						<br/>
-
-						<div style="display: flex; align-items: center; gap: 30px;">
-							<div>
-								<img src="images/match.png" alt="Match Group" style="max-width: 10vw; height: auto;">
-							</div>
-							
-							<div style="flex: 1;">
-								<div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-									<mark class="highlight-red" style="flex: 1;"><strong>Mobile (iOS) Development Intern (Remote), Match Group</strong></mark>
-									<mark class="highlight-gray" style="text-align: right;">07/2022 - 08/2022</mark>
+						<div class="exp-card expandable-card">
+							<div class="card-summary">
+								<span class="card-chevron">&#x25BE;</span>
+								<div class="exp-card-meta">
+									<span class="exp-role-org">Graduate Researcher &nbsp;&middot;&nbsp; UCSF</span>
+									<span class="exp-date-badge">10/2023 &ndash; Present</span>
 								</div>
-								<div>
-									<ul>
-										<li>Revised the <i>Enhanced Interests</i> feature using SwiftUI, allowing users to personalize tags with text and emojis, enabling better expression of personalities.</li>
-										<li>Improved code efficiency by replacing UIKit with SwiftUI and streamlined A/B testing.</li>
+								<div class="exp-title">Computationally Investigating Black&ndash;White Metabolomic Disparities in Prostate Cancer</div>
+								<div class="exp-tags">
+									<span class="tag">LC-MS Metabolomics</span>
+									<span class="tag purple">ChemRICH</span>
+									<span class="tag purple">WGCNA</span>
+									<span class="tag purple">MetaboAnalystR</span>
+									<span class="tag green">limma</span>
+									<span class="tag">R</span>
+								</div>
+								<div class="exp-images-strip">
+									<img src="images/pca_incidence.jpg" alt="PCA Incidence Rates">
+									<img src="images/pca_incidence_and_mortality.jpg" alt="PCA Incidence and Mortality Rates">
+								</div>
+								<p class="exp-figcaption">Figure Source: <a href="https://www.cancer.gov/news-events/cancer-currents-blog/2019/prostate-cancer-death-disparities-black-men" target="_blank" style="color:#528DFA;">NCI 2019</a> &nbsp;&middot;&nbsp; <a href="https://doi.org/10.1016/j.canlet.2022.01.028" target="_blank" style="color:#528DFA;">Cancer Letters 2022</a></p>
+								<div class="card-hint">Click to expand &darr;</div>
+							</div>
+							<div class="card-detail">
+								<div class="card-detail-inner">
+									<div class="card-divider"></div>
+									<p class="exp-summary">Black men face disproportionately higher prostate cancer incidence and mortality. This project leverages LC-MS metabolomics on a cohort of 34 men (17 Black, 17 White) from <a href="https://doi.org/10.1200/GO.22.00154" target="_blank" style="color:#528DFA;">the IRONMAN Registry</a> to uncover underlying metabolomic disparities. Manuscript in preparation &mdash; also my Master's thesis.</p>
+									<ul class="exp-bullets">
+										<li>Applied ChemRICH (three custom methods), PCA, PLS-DA, Random Forest, SVM, and logistic regression to identify key contributing metabolites.</li>
+										<li>Built WGCNA co-expression networks and used limma differential analysis to isolate aging-influenced metabolites.</li>
 									</ul>
+									<div style="margin-top:0.8em;">
+										<a class="exp-download-link" href="files/thesis_presentation_v3.pptx" download="presentation.pptx">&#x2B07; Slides (PPTX)</a>
+										<a class="exp-download-link" href="files/thesis_presentation_v3.pdf" download="presentation.pdf">&#x2B07; Slides (PDF)</a>
+									</div>
 								</div>
 							</div>
 						</div>
-						
-						<br>
-						<div style="display: flex; align-items: center; gap: 30px;">
-							<div>
-								<img src="images/tencent.png" alt="Tencent" style="max-width: 10vw; height: auto;">
-							</div>
-							
-							<div style="flex: 1;">
-								<div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-									<mark class="highlight-red" style="flex: 1;"><strong>Data Analyst Project Intern (Remote), Tencent</strong></mark>
-									<mark class="highlight-gray" style="text-align: right;">07/2021 - 09/2021</mark>
+
+						<!-- ── WORK ── -->
+						<div class="exp-section-label">Work</div>
+
+						<div class="work-card expandable-card">
+							<div class="work-logo"><img src="images/Gladstone.webp" alt="Gladstone Institute at UCSF"></div>
+							<div class="work-content">
+								<div class="card-summary">
+									<span class="card-chevron">&#x25BE;</span>
+									<div class="work-header">
+										<div class="work-role">Researcher</div>
+										<span class="work-date-badge">07/2025 &ndash; Present</span>
+									</div>
+									<div class="work-org">Gladstone Institute at UCSF</div>
+									<div class="exp-tags">
+										<span class="tag">scRNA-seq</span>
+										<span class="tag purple">R Package Dev</span>
+										<span class="tag green">AlphaGenome</span>
+										<span class="tag">ArchR</span>
+										<span class="tag">Synapse</span>
+									</div>
+									<div class="card-hint">Click to expand &darr;</div>
 								</div>
-								<div>
-									<ul>
-										<li>Extracted sales statistics from e-commerce platforms using web scraping in Python.</li>
-										<li>Advised marketing strategies with an evidence-based report that built linear regression models using Sklearn to forecast sales trends by analyzing customer shopping patterns across multiple product categories, and included appealing visualizations created with Matplotlib in Python.</li>
-									</ul>
+								<div class="card-detail">
+									<div class="card-detail-inner">
+										<div class="card-divider"></div>
+										<ul class="work-bullets">
+											<li>Pioneered an R package with a permutation-test pipeline to reduce false positives in scRNA-seq differential gene expression analysis of Alzheimer's disease, integrating eight public Synapse datasets.</li>
+											<li>Applied AlphaGenome to study how MAPT gene variants alter splicing patterns.</li>
+											<li>Removed doublets, performed dimensionality reduction &amp; clustering of scATAC-seq data in ArchR.</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
+
+						<div class="work-card expandable-card">
+							<div class="work-logo"><img src="images/match.png" alt="Match Group"></div>
+							<div class="work-content">
+								<div class="card-summary">
+									<span class="card-chevron">&#x25BE;</span>
+									<div class="work-header">
+										<div class="work-role">Mobile (iOS) Development Intern</div>
+										<span class="work-date-badge">07/2022 &ndash; 08/2022</span>
+									</div>
+									<div class="work-org">Match Group &nbsp;&middot;&nbsp; Remote</div>
+									<div class="exp-tags">
+										<span class="tag purple">SwiftUI</span>
+										<span class="tag">iOS</span>
+										<span class="tag">A/B Testing</span>
+									</div>
+									<div class="card-hint">Click to expand &darr;</div>
+								</div>
+								<div class="card-detail">
+									<div class="card-detail-inner">
+										<div class="card-divider"></div>
+										<ul class="work-bullets">
+											<li>Revised the <i>Enhanced Interests</i> feature in SwiftUI, letting users personalize tags with text and emojis for richer self-expression.</li>
+											<li>Improved code efficiency by migrating UIKit components to SwiftUI and streamlined A/B testing.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="work-card expandable-card">
+							<div class="work-logo"><img src="images/tencent.png" alt="Tencent"></div>
+							<div class="work-content">
+								<div class="card-summary">
+									<span class="card-chevron">&#x25BE;</span>
+									<div class="work-header">
+										<div class="work-role">Data Analyst Project Intern</div>
+										<span class="work-date-badge">07/2021 &ndash; 09/2021</span>
+									</div>
+									<div class="work-org">Tencent &nbsp;&middot;&nbsp; Remote</div>
+									<div class="exp-tags">
+										<span class="tag">Python</span>
+										<span class="tag purple">Sklearn</span>
+										<span class="tag">Matplotlib</span>
+										<span class="tag">Web Scraping</span>
+									</div>
+									<div class="card-hint">Click to expand &darr;</div>
+								</div>
+								<div class="card-detail">
+									<div class="card-detail-inner">
+										<div class="card-divider"></div>
+										<ul class="work-bullets">
+											<li>Scraped e-commerce sales data with Python and built linear regression models via Sklearn to forecast sales trends across product categories.</li>
+											<li>Delivered an evidence-based marketing report with Matplotlib visualizations.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- ── TEACHING ── -->
+						<div class="exp-section-label">Teaching</div>
+
+						<div class="teaching-grid">
+							<div class="teaching-card">
+								<div class="teaching-role">Beta Tester &amp; Teaching Assistant</div>
+								<div class="teaching-course">INFO 2950: Introduction to Data Science</div>
+								<div class="teaching-inst">Cornell University</div>
+								<div class="teaching-date">Jan &ndash; May 2023</div>
+								<p class="teaching-desc">Led discussions, graded homework and exams, held office hours, and proofread problem sets before release.</p>
+							</div>
+							<div class="teaching-card">
+								<div class="teaching-role">Grader</div>
+								<div class="teaching-course">BTRY 3080: Probability Models and Inference</div>
+								<div class="teaching-inst">Cornell University</div>
+								<div class="teaching-date">Aug &ndash; Dec 2022</div>
+								<p class="teaching-desc">Graded homework and exams.</p>
+							</div>
+							<div class="teaching-card">
+								<div class="teaching-role">Teaching Assistant (Summer)</div>
+								<div class="teaching-course">Introductory Biology &amp; Physics I</div>
+								<div class="teaching-inst">JNC Study Abroad Platform</div>
+								<div class="teaching-date">Jul &ndash; Aug 2022</div>
+								<p class="teaching-desc">Led discussions, graded work, held office hours, and bridged communication between professors and students.</p>
+							</div>
+							<div class="teaching-card">
+								<div class="teaching-role">Teaching Assistant</div>
+								<div class="teaching-course">BIOMG 2801: Laboratory in Genetics and Genomics</div>
+								<div class="teaching-inst">Cornell University</div>
+								<div class="teaching-date">Jan &ndash; May 2021</div>
+								<p class="teaching-desc">CRISPR/Cas9 knockout work on fruit flies; guided 20 students in mutation analysis on the UCSC Genome Browser.</p>
+							</div>
+						</div>
+
+						<!-- ── CLASS PROJECTS ── -->
+						<div class="exp-section-label">Class Projects</div>
+
+						<div class="project-card expandable-card">
+							<div class="card-summary">
+								<span class="card-chevron">&#x25BE;</span>
+								<span class="project-status-badge">In Progress</span>
+								<div class="exp-title">Deep Learning to Study Differential Gene Expression in Sickle Cell Anemia Ischemic Stroke</div>
+								<div class="exp-tags">
+									<span class="tag">Deep Learning</span>
+									<span class="tag purple">PyTorch</span>
+									<span class="tag">scRNA-seq</span>
+									<span class="tag green">DEG Analysis</span>
+								</div>
+								<div class="card-hint">Click to expand &darr;</div>
+							</div>
+							<div class="card-detail">
+								<div class="card-detail-inner">
+									<div class="card-divider"></div>
+									<div class="exp-images-strip">
+										<img src="images/sca.jpg" alt="Sickle Cell Anemia">
+										<img src="images/dna_as_cat.png" alt="Modeling DNA sequences">
+									</div>
+									<p class="exp-figcaption">Figure Source: <a href="https://my.clevelandclinic.org/health/diseases/4579-sickle-cell-anemia" target="_blank" style="color:#528DFA;">Cleveland Clinic</a> &nbsp;&middot;&nbsp; <a href="https://towardsdatascience.com/modeling-dna-sequences-with-pytorch-de28b0a05036" target="_blank" style="color:#528DFA;">Towards Data Science</a></p>
+									<p class="exp-summary">Details coming soon.</p>
+								</div>
+							</div>
+						</div>
+
 
 						<div style="display: flex; align-items: flex-end;">
 							<h1 id="technical_summary">Technical Summary</h1>
@@ -556,7 +537,7 @@
 
 						<hd4 class="collection_title" style="display: flex; align-items: center; font-weight: bold;">
 							<img src="images/window_gray.svg" style="height: 1.5em; margin-right: 8px;">
-							Integrated Development Environments (IDEs)
+							IDEs
 						</hd4>
 						<div class="gallery">
 							<div class="item">
@@ -587,6 +568,10 @@
 								<img src="images/sas_icon.png" alt="SAS Icon">
 								<p>SAS OnDemand</p>
 							</div>
+							<div class="item">
+								<img src="images/eclipse.png" alt="SAS Icon">
+								<p>Eclipse</p>
+							</div>
 						</div>
 
 						<hd4 class="collection_title" style="display: flex; align-items: center; font-weight: bold;">
@@ -614,6 +599,10 @@
 								<img src="images/conda.png" alt="Conda Icon">
 								<p>Conda Env</p>
 							</div>
+							<div class="item">
+								<img src="images/claude.svg" alt="UNIX Icon">
+								<p>Claude</p>
+							</div>
 						</div>
 
 						<hd4 class="collection_title" style="display: flex; align-items: center; font-weight: bold;">
@@ -637,6 +626,10 @@
 						</hd4>
 						<div class="gallery">
 							<div class="item">
+								<img src="images/Adobe_Illustrator.png" alt="After Effect Icon">
+								<p>Illustrator</p>
+							</div>
+							<div class="item">
 								<img src="images/photoshop.png" alt="PS Icon">
 								<p>Photoshop</p>
 							</div>
@@ -656,6 +649,7 @@
 		</footer>
 
 		<script src="functions.js"></script>
+	<script src="animations.js"></script>
 		<script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();</script>
 	</body>
 </html>
