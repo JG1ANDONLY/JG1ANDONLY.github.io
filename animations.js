@@ -7,6 +7,25 @@ document.addEventListener('DOMContentLoaded', function () {
     );
     scrollTargets.forEach(el => el.classList.add('animate-on-scroll'));
 
+    /* ── Section labels slide in from left ── */
+    document.querySelectorAll('.exp-section-label').forEach(el => el.classList.add('animate-label'));
+
+    /* ── Filter bars fade in ── */
+    document.querySelectorAll('.work-filter-bar, .project-filter-bar').forEach(el => el.classList.add('animate-filterbar'));
+
+    /* ── Cards scroll in with stagger per section ── */
+    document.querySelectorAll('.exp-card, .project-card, .teaching-card').forEach((el, i) => {
+        el.style.setProperty('--delay', `${(i % 8) * 0.08}s`);
+        el.classList.add('animate-card');
+    });
+    /* Work cards: animate .work-content so the visual card slides in */
+    document.querySelectorAll('.work-card').forEach((card, i) => {
+        const content = card.querySelector('.work-content');
+        if (!content) return;
+        content.style.setProperty('--delay', `${(i % 8) * 0.08}s`);
+        content.classList.add('animate-card');
+    });
+
     /* ── Staggered entrance for tech-gallery items ── */
     document.querySelectorAll('.item').forEach((el, i) => {
         el.style.setProperty('--delay', `${i * 0.06}s`);
@@ -23,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.animate-on-scroll, .animate-stagger')
+    document.querySelectorAll('.animate-on-scroll, .animate-stagger, .animate-card, .animate-label, .animate-filterbar')
         .forEach(el => observer.observe(el));
 
     /* ── Floating profile picture ── */
@@ -45,8 +64,8 @@ function initExpandableCards() {
         card.addEventListener('click', function (e) {
             // Let links navigate normally
             if (e.target.closest('a')) return;
-            // Let lightbox handle images inside an already-expanded card
-            if (e.target.tagName === 'IMG' && this.classList.contains('expanded')) return;
+            // Let lightbox handle content images inside an already-expanded card (not the logo)
+            if (e.target.tagName === 'IMG' && e.target.closest('.exp-images-strip') && this.classList.contains('expanded')) return;
             this.classList.toggle('expanded');
         });
     });
