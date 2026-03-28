@@ -851,7 +851,7 @@
 							</div>
 						</div>
 
-						<div class="exp-card expandable-card" data-lang="sas" id="metabolomics">
+						<div class="exp-card expandable-card" data-lang="sas">
 							<div class="card-summary">
 								<span class="card-chevron">&#x25BE;</span>
 								<div class="exp-card-meta">
@@ -1181,6 +1181,20 @@
 		];
 
 		window.addEventListener('pageshow', () => resets.forEach(r => r()));
+
+		document.querySelectorAll('a.anchor-link').forEach(link => {
+			link.addEventListener('click', function(e) {
+				const targetId = this.getAttribute('href').slice(1);
+				const target = document.getElementById(targetId);
+				if (target && target.classList.contains('exp-card')) {
+					e.preventDefault();
+					resets[0](); // reset project filter to "All"
+					setTimeout(() => {
+						target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					}, 50);
+				}
+			});
+		});
 	</script>
 		<script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();</script>
 	</body>
