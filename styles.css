@@ -1430,7 +1430,13 @@ body.dark .exp-title code {
 
 .edu-panel-courses li::before {
     content: "· ";
-    color: #bbb;
+    color: #666;
+    font-size: 1.6em;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -0.1em;
+    margin-right: 6px;
 }
 
 .edu-legend {
