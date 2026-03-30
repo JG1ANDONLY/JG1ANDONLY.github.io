@@ -309,6 +309,7 @@
                 </div>
 
                 <div class="gallery gallery-stagger">
+                    <div class="gallery-item"><img src="images/gallery/hk_with_brad.jpg" alt="Trip to Hong Kong with Bradley"><div class="overlay">Met Bradley during my trip to Hong Kong 2026!</div></div>
                     <div class="gallery-item"><img src="images/gallery/bkk_2025.JPG" alt="Trip to Bangkok"><div class="overlay">Bangkok 2025</div></div>
                     <div class="gallery-item"><img src="images/gallery/new_phone.jpeg" alt="new phone"><div class="overlay">I love my new phone!</div></div>
                     <div class="gallery-item"><img src="images/gallery/which_one.JPG" alt="Which one should I choose?"><div class="overlay">Which one should I choose?</div></div>
@@ -510,15 +511,23 @@
                 if (e.key === 'ArrowRight')  showNext();
             });
 
+            // --- Scroll progress bar ---
+            const bar = document.createElement('div');
+            bar.id = 'scroll-progress';
+            document.body.prepend(bar);
+
             // --- Back to top button ---
             const btn = document.getElementById('backToTop');
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 500) {
+                const scrolled = window.scrollY;
+                const total = document.documentElement.scrollHeight - window.innerHeight;
+                bar.style.width = total > 0 ? `${(scrolled / total) * 100}%` : '0%';
+                if (scrolled > 500) {
                     btn.classList.add('visible');
                 } else {
                     btn.classList.remove('visible');
                 }
-            });
+            }, { passive: true });
         </script>
     </body>
 </html>

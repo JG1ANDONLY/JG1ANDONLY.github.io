@@ -45,12 +45,58 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.animate-on-scroll, .animate-stagger, .animate-card, .animate-label, .animate-filterbar')
         .forEach(el => observer.observe(el));
 
+    /* ── Social links stagger entrance ── */
+    document.querySelectorAll('.social-link').forEach((el, i) => {
+        el.style.setProperty('--delay', `${i * 0.12}s`);
+        el.classList.add('animate-social');
+        observer.observe(el);
+    });
+
+    /* ── About Me paragraph stagger ── */
+    const aboutH1 = document.querySelector('#about_me');
+    if (aboutH1) {
+        let next = aboutH1.nextElementSibling;
+        let i = 0;
+        while (next && next.tagName !== 'H1') {
+            if (next.tagName === 'P' && next.textContent.trim().length > 0) {
+                next.style.setProperty('--delay', `${i * 0.1}s`);
+                next.classList.add('animate-para');
+                observer.observe(next);
+                i++;
+            }
+            next = next.nextElementSibling;
+        }
+    }
+
+    /* ── Skillset items slide in from left ── */
+    document.querySelectorAll('h1').forEach(h => {
+        if (h.textContent.trim().includes('Skillset')) {
+            let next = h.nextElementSibling;
+            let i = 0;
+            while (next && next.tagName !== 'H1') {
+                if (next.tagName === 'P' && next.textContent.trim().length > 0) {
+                    next.style.setProperty('--delay', `${i * 0.09}s`);
+                    next.classList.add('animate-skill');
+                    observer.observe(next);
+                    i++;
+                }
+                next = next.nextElementSibling;
+            }
+        }
+    });
+
     /* ── Floating profile picture ── */
     const profileImg = document.querySelector('figure.image img');
     if (profileImg) profileImg.classList.add('profile-float');
 
     /* ── Particle background ── */
     spawnParticles();
+
+    /* ── Scroll progress bar ── */
+    initScrollProgress();
+
+    /* ── Cursor spotlight ── */
+    initCursorSpotlight();
 
     /* ── Expandable cards ── */
     initExpandableCards();
@@ -146,8 +192,27 @@ function spawnParticles() {
         a: 0.25 + Math.random() * 0.3
     }));
 
+    const MAX_DIST = 120;
     (function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        /* constellation lines */
+        for (let i = 0; i < dots.length; i++) {
+            for (let j = i + 1; j < dots.length; j++) {
+                const dx = dots[i].x - dots[j].x;
+                const dy = dots[i].y - dots[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < MAX_DIST) {
+                    const alpha = (1 - dist / MAX_DIST) * 0.18;
+                    ctx.beginPath();
+                    ctx.moveTo(dots[i].x, dots[i].y);
+                    ctx.lineTo(dots[j].x, dots[j].y);
+                    ctx.strokeStyle = `rgba(82,141,250,${alpha})`;
+                    ctx.lineWidth = 0.7;
+                    ctx.stroke();
+                }
+            }
+        }
+        /* dots */
         dots.forEach(d => {
             ctx.beginPath();
             ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
@@ -159,4 +224,40 @@ function spawnParticles() {
         });
         requestAnimationFrame(draw);
     })();
+}
+
+/* ── Scroll progress bar + back-to-top visibility ── */
+function initScrollProgress() {
+    const bar = document.createElement('div');
+    bar.id = 'scroll-progress';
+    document.body.prepend(bar);
+
+    const btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = total > 0 ? `${(scrolled / total) * 100}%` : '0%';
+        if (btn) {
+            if (scrolled > 400) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        }
+    }, { passive: true });
+
+    if (btn) {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+}
+
+/* ── Cursor spotlight ── */
+function initCursorSpotlight() {
+    const spot = document.createElement('div');
+    spot.id = 'cursor-spotlight';
+    document.body.appendChild(spot);
+    window.addEventListener('mousemove', e => {
+        spot.style.left = `${e.clientX}px`;
+        spot.style.top  = `${e.clientY}px`;
+    }, { passive: true });
 }

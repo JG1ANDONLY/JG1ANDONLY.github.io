@@ -1929,3 +1929,211 @@ body.dark .exp-bullets,
 body.dark .exp-bullets li {
     color: rgba(200,200,216,0.8);
 }
+
+/* ── Back to top button ── */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #528DFA, #9b59b6);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(82, 141, 250, 0.4);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+    z-index: 200;
+    text-decoration: none;
+}
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.back-to-top:hover {
+    box-shadow: 0 8px 24px rgba(82, 141, 250, 0.55);
+    transform: translateY(-3px);
+}
+body.dark .back-to-top {
+    box-shadow: 0 4px 16px rgba(82, 141, 250, 0.25);
+}
+
+/* ── Scroll progress bar ── */
+#scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #528DFA, #9b59b6, #528DFA);
+    background-size: 200% auto;
+    animation: shimmerLine 3s linear infinite;
+    z-index: 9999;
+    border-radius: 0 2px 2px 0;
+    pointer-events: none;
+}
+
+/* ── Cursor spotlight ── */
+#cursor-spotlight {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(82, 141, 250, 0.06) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    top: -300px; left: -300px;
+    transition: top 0.03s linear, left 0.03s linear;
+}
+
+/* ── Social link scroll entrance ── */
+.animate-social {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+    transition: opacity 0.5s ease var(--delay, 0s),
+                transform 0.5s ease var(--delay, 0s) !important;
+}
+.animate-social.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ── Skill items slide in from left ── */
+.animate-skill {
+    opacity: 0;
+    transform: translateX(-14px);
+    transition: opacity 0.45s ease var(--delay, 0s), transform 0.45s ease var(--delay, 0s);
+}
+.animate-skill.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ── About Me paragraph stagger ── */
+.animate-para {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.55s ease var(--delay, 0s), transform 0.55s ease var(--delay, 0s);
+}
+.animate-para.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Page description link hover underline ── */
+.page-description a {
+    position: relative;
+}
+.page-description a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 2px;
+    background: linear-gradient(90deg, #528DFA, #9b59b6);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+.page-description a:hover::after {
+    width: 100%;
+}
+
+/* ── Mobile Responsiveness ── */
+@media (max-width: 768px) {
+    /* Body layout */
+    body {
+        margin: 1em 5% !important;
+        max-width: 100% !important;
+    }
+
+    /* Stack two-column layout vertically */
+    .column-list {
+        flex-direction: column;
+    }
+    .column,
+    .column:first-child,
+    .column:last-child {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Typography: convert vw to readable sizes */
+    .page-title    { font-size: 6.5vw; }
+    .page-description { font-size: 3.8vw; }
+    h1 { font-size: 5.5vw; margin-top: 5.5vw; }
+    h2 { font-size: 4.5vw; margin-top: 4.5vw; }
+    h3 { font-size: 4vw;   margin-top: 4vw;   }
+    p  { font-size: 3.6vw; }
+
+    /* Inline vw font-sizes in HTML */
+    [style*="font-size: 1vw"]   { font-size: 3.6vw !important; }
+    [style*="font-size: 1.1vw"] { font-size: 3.9vw !important; }
+    [style*="font-size: 1.5vw"] { font-size: 4.5vw !important; }
+    [style*="font-size:1.5vw"]  { font-size: 4.5vw !important; }
+
+    /* Profile picture */
+    figure.image { text-align: center; }
+    figure.image img { width: 36vw !important; height: 36vw !important; }
+
+    /* Certification / highlight text */
+    .highlight-gray { font-size: 3.6vw; }
+
+    /* Nav / page description links */
+    .doc-link { font-size: 3.9vw !important; }
+
+    /* Section labels */
+    .exp-section-label { font-size: 3vw; }
+
+    /* Filter bars */
+    .project-filter-bar,
+    .work-filter-bar { flex-wrap: wrap; }
+    .project-filter-label { font-size: 3.2vw; }
+    .project-filter-btn   { font-size: 3.2vw; padding: 4px 10px; }
+
+    /* Project / research cards */
+    .exp-role-org  { font-size: 3.6vw; }
+    .exp-date-badge {
+        font-size: 3vw;
+        height: auto;
+        padding: 3px 8px;
+    }
+    .exp-title   { font-size: 4.2vw !important; }
+    .exp-summary { font-size: 3.5vw !important; }
+    .exp-bullets { font-size: 3.5vw !important; }
+    .exp-figcaption { font-size: 2.4vw; }
+    .card-hint   { font-size: 2.8vw; }
+    .exp-images-strip img { height: 32vw; }
+
+    /* Tag chips */
+    .tag { font-size: 3vw; padding: 3px 9px; }
+
+    /* Work section cards */
+    .work-role   { font-size: 4.2vw; }
+    .work-date-badge {
+        font-size: 3vw;
+        height: auto;
+        padding: 3px 8px;
+    }
+    .work-org     { font-size: 3.6vw; }
+    .work-bullets { font-size: 3.5vw !important; }
+
+    /* Work timeline: hide decorative line and logos on small screens */
+    .work-timeline::before { display: none; }
+    .work-logo { display: none; }
+
+    /* Teaching grid: single column */
+    .teaching-grid  { grid-template-columns: 1fr; }
+    .teaching-role  { font-size: 3.8vw; }
+    .teaching-course{ font-size: 3.5vw; }
+    .teaching-inst  { font-size: 3.2vw; }
+    .teaching-date  { font-size: 3vw; }
+    .teaching-desc  { font-size: 3.2vw !important; }
+
+    /* Back-to-top button */
+    .back-to-top { bottom: 1rem; right: 1rem; width: 38px; height: 38px; }
+}

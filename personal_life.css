@@ -662,6 +662,23 @@ body {
 .lightbox-prev:hover { background: rgba(255,255,255,0.25); transform: translateY(-50%) scale(1.1); }
 .lightbox-next:hover { background: rgba(255,255,255,0.25); transform: translateY(-50%) scale(1.1); }
 
+/* ===== SCROLL PROGRESS BAR ===== */
+#scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+    background-size: 200% auto;
+    animation: shimmerProgress 3s linear infinite;
+    z-index: 9999;
+    border-radius: 0 2px 2px 0;
+    pointer-events: none;
+}
+@keyframes shimmerProgress {
+    to { background-position: 200% center; }
+}
+
 /* ===== BACK TO TOP ===== */
 .back-to-top {
     position: fixed;
