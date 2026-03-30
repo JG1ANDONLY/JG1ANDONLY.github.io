@@ -1144,7 +1144,7 @@ a[target="_blank"]:not(.doc-link):hover {
 }
 .card-chevron {
     position: absolute;
-    top: 2px;
+    top: 0;
     right: 0;
     width: 26px;
     height: 26px;
@@ -1208,7 +1208,6 @@ a[target="_blank"]:not(.doc-link):hover {
     flex-wrap: wrap;
     gap: 6px;
     margin-bottom: 0.4em;
-    padding-right: calc(9vw + 6px);
 }
 .exp-role-org {
     font-size: 0.9vw;
@@ -1216,12 +1215,11 @@ a[target="_blank"]:not(.doc-link):hover {
     font-weight: 600;
 }
 .exp-date-badge {
-    position: absolute;
-    top: 2px;
-    right: 34px;
     height: 26px;
     display: inline-flex;
     align-items: center;
+    margin-left: auto;
+    flex-shrink: 0;
     font-size: 0.78vw;
     background: rgba(241, 241, 239, 1);
     color: rgba(120, 119, 116, 1);
@@ -1558,7 +1556,6 @@ body.dark .exp-title code {
     align-items: center;
     gap: 8px;
     margin-bottom: 2px;
-    padding-right: calc(9vw + 6px);
 }
 .work-role {
     font-size: 1.05vw;
@@ -1567,12 +1564,11 @@ body.dark .exp-title code {
     margin: 0;
 }
 .work-date-badge {
-    position: absolute;
-    top: 2px;
-    right: 34px;
     height: 26px;
     display: inline-flex;
     align-items: center;
+    margin-left: auto;
+    flex-shrink: 0;
     font-size: 0.78vw;
     background: rgba(241, 241, 239, 1);
     color: rgba(120, 119, 116, 1);
