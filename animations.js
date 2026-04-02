@@ -52,6 +52,12 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(el);
     });
 
+    /* ── Section heading underline slide-in ── */
+    document.querySelectorAll('h1:not(.page-title), h2').forEach(h => {
+        h.classList.add('animate-heading');
+        observer.observe(h);
+    });
+
     /* ── About Me paragraph stagger ── */
     const aboutH1 = document.querySelector('#about_me');
     if (aboutH1) {
@@ -103,6 +109,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ── Lightbox ── */
     initLightbox();
+
+    /* ── Click ripple ── */
+    initClickRipple();
+
+    /* ── Magnetic social links ── */
+    initMagneticLinks();
+
+    /* ── Card shine sweep ── */
+    initCardShine();
+
+    /* ── Parallax profile figure ── */
+    initParallaxProfile();
+
+    /* ── Nav link staggered entrance ── */
+    initNavEntrance();
+
+    /* ── Blinking cursor on page title ── */
+    initTitleCursor();
+
+    /* ── Timeline logo pulse ── */
+    initTimelinePulse();
 });
 
 function initExpandableCards() {
@@ -259,4 +286,111 @@ function initCursorSpotlight() {
     window.addEventListener('mousemove', e => {
         spot.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
     }, { passive: true });
+}
+
+/* ── Click ripple effect ── */
+function initClickRipple() {
+    document.querySelectorAll('.exp-card, .project-card, .work-content, .filter-btn, .project-filter-btn, .work-filter-btn').forEach(el => {
+        el.addEventListener('click', function (e) {
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple-effect';
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            Object.assign(ripple.style, {
+                width:  size + 'px',
+                height: size + 'px',
+                left:   (e.clientX - rect.left - size / 2) + 'px',
+                top:    (e.clientY - rect.top  - size / 2) + 'px',
+            });
+            this.appendChild(ripple);
+            ripple.addEventListener('animationend', () => ripple.remove());
+        });
+    });
+}
+
+/* ── Magnetic pull on social links ── */
+function initMagneticLinks() {
+    document.querySelectorAll('.social-link').forEach(el => {
+        el.addEventListener('mousemove', function (e) {
+            const rect = this.getBoundingClientRect();
+            const cx = rect.left + rect.width  / 2;
+            const cy = rect.top  + rect.height / 2;
+            const dx = (e.clientX - cx) * 0.22;
+            const dy = (e.clientY - cy) * 0.22;
+            this.style.transition = 'transform 0.12s ease';
+            this.style.transform  = `translate(${dx}px, ${dy}px)`;
+        });
+        el.addEventListener('mouseleave', function () {
+            this.style.transition = 'transform 0.45s ease';
+            this.style.transform  = '';
+        });
+    });
+}
+
+/* ── Parallax depth on profile picture figure ── */
+function initParallaxProfile() {
+    const figure = document.querySelector('figure.image');
+    if (!figure) return;
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            const offset = Math.min(window.scrollY * 0.07, 40);
+            figure.style.transform = `translateY(${offset}px)`;
+            ticking = false;
+        });
+    }, { passive: true });
+}
+
+/* ── Staggered entrance for header nav links ── */
+function initNavEntrance() {
+    document.querySelectorAll('.page-description a').forEach((link, i) => {
+        link.style.setProperty('--nav-delay', `${0.35 + i * 0.08}s`);
+        link.classList.add('animate-nav-link');
+    });
+}
+
+/* ── Blinking cursor appended to the page title ── */
+function initTitleCursor() {
+    const title = document.querySelector('.page-title');
+    if (!title) return;
+    const cursor = document.createElement('span');
+    cursor.className = 'title-cursor';
+    title.appendChild(cursor);
+}
+
+/* ── Pulse ring on work-timeline logos when scrolled into view ── */
+function initTimelinePulse() {
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('logo-pulse');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.work-logo').forEach(el => obs.observe(el));
+}
+
+/* ── Shine sweep across cards on hover ── */
+function initCardShine() {
+    document.querySelectorAll('.exp-card, .project-card, .teaching-card').forEach(card => {
+        card.classList.add('shine-host');
+        const shine = document.createElement('span');
+        shine.className = 'card-shine';
+        card.appendChild(shine);
+
+        card.addEventListener('mousemove', function (e) {
+            const rect = this.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width)  * 100;
+            const y = ((e.clientY - rect.top)  / rect.height) * 100;
+            shine.style.background =
+                `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.1) 0%, transparent 65%)`;
+            shine.style.opacity = '1';
+        });
+        card.addEventListener('mouseleave', function () {
+            shine.style.opacity = '0';
+        });
+    });
 }
