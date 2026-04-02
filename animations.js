@@ -257,7 +257,6 @@ function initCursorSpotlight() {
     spot.id = 'cursor-spotlight';
     document.body.appendChild(spot);
     window.addEventListener('mousemove', e => {
-        spot.style.left = `${e.clientX}px`;
-        spot.style.top  = `${e.clientY}px`;
+        spot.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
     }, { passive: true });
 }
