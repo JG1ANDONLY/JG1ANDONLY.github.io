@@ -2288,10 +2288,17 @@ body.dark .back-to-top {
 
     /* Project / research cards */
     .exp-role-org  { font-size: 3.6vw; }
+    .exp-card-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
     .exp-date-badge {
         font-size: 3vw;
         height: auto;
         padding: 3px 8px;
+        margin-left: 0;      /* don't push to far right */
+        white-space: normal; /* allow wrapping if needed */
     }
     .exp-title   { font-size: 4.2vw !important; }
     .exp-summary { font-size: 3.5vw !important; }
@@ -2303,12 +2310,24 @@ body.dark .back-to-top {
     /* Tag chips */
     .tag { font-size: 3vw; padding: 3px 9px; }
 
-    /* Work section cards */
-    .work-role   { font-size: 4.2vw; }
+    /* Work section cards — stack role title above badges */
+    .work-header {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    .work-role {
+        width: 100%;        /* force role onto its own line */
+        font-size: 4.2vw;
+    }
     .work-date-badge {
         font-size: 3vw;
         height: auto;
         padding: 3px 8px;
+        margin-left: 0;      /* align left under the role */
+        white-space: normal;
+    }
+    .upcoming-badge {
+        font-size: 2.6vw;
     }
     .work-org     { font-size: 3.6vw; }
     .work-bullets { font-size: 3.5vw !important; }
