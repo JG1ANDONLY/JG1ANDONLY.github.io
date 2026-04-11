@@ -104,6 +104,12 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ── Cursor spotlight ── */
     initCursorSpotlight();
 
+    /* ── Section collapse (show more / show less) ── */
+    initSectionCollapse();
+
+    /* ── Active nav highlighting ── */
+    initActiveNav();
+
     /* ── Expandable cards ── */
     initExpandableCards();
 
@@ -132,15 +138,105 @@ document.addEventListener('DOMContentLoaded', function () {
     initTimelinePulse();
 });
 
+function initSectionCollapse() {
+    setupCollapse('.work-timeline', '.work-card', 'work-show-more');
+    setupCollapse('#project-timeline', '.exp-card', 'project-show-more');
+}
+
+function setupCollapse(containerSel, cardSel, btnId) {
+    const container = document.querySelector(containerSel);
+    const btn = document.getElementById(btnId);
+    if (!container || !btn) return;
+
+    const cards = Array.from(container.querySelectorAll(cardSel));
+    cards.forEach((card, i) => {
+        if (i >= 2) card.classList.add('section-overflow');
+    });
+
+    let isCollapsed = true;
+
+    function visibleCount() {
+        return cards.filter(c => !c.classList.contains('hidden')).length;
+    }
+
+    function applyCollapse() {
+        const tooFew = visibleCount() <= 2;
+        cards.forEach(c => {
+            // Hide overflow cards only when: collapsed AND enough visible cards remain
+            const shouldHide = isCollapsed && !tooFew && c.classList.contains('section-overflow');
+            c.classList.toggle('section-hidden', shouldHide);
+        });
+    }
+
+    applyCollapse();
+
+    // Re-evaluate whenever the filter toggles .hidden on any card
+    const observer = new MutationObserver(mutations => {
+        const affectsHidden = mutations.some(m => {
+            const oldHidden = m.oldValue ? m.oldValue.split(' ').includes('hidden') : false;
+            const newHidden = m.target.classList.contains('hidden');
+            return oldHidden !== newHidden;
+        });
+        if (affectsHidden) applyCollapse();
+    });
+    cards.forEach(card => {
+        observer.observe(card, { attributes: true, attributeFilter: ['class'], attributeOldValue: true });
+    });
+
+    btn.addEventListener('click', () => {
+        if (isCollapsed) {
+            isCollapsed = false;
+        } else {
+            if (visibleCount() <= 2) return; // too few visible — don't collapse
+            isCollapsed = true;
+        }
+        applyCollapse();
+        btn.innerHTML = isCollapsed ? 'Show more &#x25BE;' : 'Show less &#x25B4;';
+    });
+}
+
+function initActiveNav() {
+    const sectionIds = ['about_me', 'education', 'experience', 'publications', 'technical_summary'];
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+    const navLinks = document.querySelectorAll('.page-description a[href^="#"]');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('nav-active', link.getAttribute('href') === `#${entry.target.id}`);
+                });
+            }
+        });
+    }, { threshold: 0, rootMargin: '-8% 0px -72% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+}
+
 function initExpandableCards() {
     document.querySelectorAll('.expandable-card').forEach(card => {
-        card.addEventListener('click', function (e) {
-            // Let links navigate normally
+        const summary = card.querySelector('.card-summary');
+        const hint    = card.querySelector('.card-hint');
+
+        // Keyboard accessibility
+        if (summary) {
+            summary.setAttribute('tabindex', '0');
+            summary.setAttribute('role', 'button');
+            summary.setAttribute('aria-expanded', 'false');
+            summary.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doToggle(e); }
+            });
+        }
+
+        function doToggle(e) {
             if (e.target.closest('a')) return;
-            // Let lightbox handle content images inside an already-expanded card (not the logo)
-            if (e.target.tagName === 'IMG' && e.target.closest('.exp-images-strip') && this.classList.contains('expanded')) return;
-            this.classList.toggle('expanded');
-        });
+            if (e.target.tagName === 'IMG' && e.target.closest('.exp-images-strip') && card.classList.contains('expanded')) return;
+            const expanded = card.classList.toggle('expanded');
+            if (summary) summary.setAttribute('aria-expanded', String(expanded));
+            if (hint) hint.textContent = expanded ? 'Click to collapse \u25b4' : 'Click to expand \u25be';
+        }
+
+        card.addEventListener('click', doToggle);
     });
 }
 
