@@ -200,17 +200,44 @@ function initActiveNav() {
     const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
     const navLinks = document.querySelectorAll('.page-description a[href^="#"]');
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.classList.toggle('nav-active', link.getAttribute('href') === `#${entry.target.id}`);
-                });
+    function updateActive() {
+        const navEl = document.querySelector('.sticky-nav');
+        const navHeight = navEl ? navEl.offsetHeight : 0;
+        const threshold = navHeight + 16;
+        const viewportH = window.innerHeight;
+
+        // Pick the section whose heading most recently crossed the threshold
+        let currentId = null;
+        let bestTop = -Infinity;
+        sections.forEach(section => {
+            const top = section.getBoundingClientRect().top;
+            if (top <= threshold && top > bestTop) {
+                bestTop = top;
+                currentId = section.id;
             }
         });
-    }, { threshold: 0, rootMargin: '-8% 0px -72% 0px' });
 
-    sections.forEach(s => observer.observe(s));
+        // Special case: activate the last section only when the page is
+        // actually scrolled to the bottom and can't go further — this
+        // handles sections whose heading can never cross the threshold
+        // because there isn't enough content below them to scroll past it.
+        const lastSection = sections[sections.length - 1];
+        const nearBottom = window.scrollY + viewportH >=
+            document.documentElement.scrollHeight - 50;
+        if (nearBottom && lastSection) {
+            const lastTop = lastSection.getBoundingClientRect().top;
+            if (lastTop > threshold && lastTop < viewportH) {
+                currentId = lastSection.id;
+            }
+        }
+
+        navLinks.forEach(link => {
+            link.classList.toggle('nav-active', link.getAttribute('href') === `#${currentId}`);
+        });
+    }
+
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
 }
 
 function initExpandableCards() {
@@ -356,6 +383,9 @@ function initScrollProgress() {
     document.body.prepend(bar);
 
     const btn = document.getElementById('backToTop');
+    const stickyNav = document.querySelector('.sticky-nav');
+    const stickyThreshold = stickyNav ? stickyNav.offsetTop : 0;
+
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         const total = document.documentElement.scrollHeight - window.innerHeight;
@@ -363,6 +393,9 @@ function initScrollProgress() {
         if (btn) {
             if (scrolled > 400) btn.classList.add('visible');
             else btn.classList.remove('visible');
+        }
+        if (stickyNav) {
+            stickyNav.classList.toggle('is-stuck', scrolled >= stickyThreshold);
         }
     }, { passive: true });
 
