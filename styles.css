@@ -2252,6 +2252,9 @@ body.dark .back-to-top {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+    /* Show right column (About Me) before left column (Certifications/Log) on mobile */
+    .column-list > .column:first-child { order: 2; }
+    .column-list > .column:last-child  { order: 1; }
 
     /* Typography: convert vw to readable sizes */
     .page-title    { font-size: 6.5vw; }
