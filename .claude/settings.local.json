@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(open:*)",
+      "Bash(sed -i '' 's/styles_v2\\\\.css/styles_v3.css/g; s/animations_v2\\\\.js/animations_v3.js/g' /Users/zhongyiguo/Desktop/JG1ANDONLY/third_version/index.html)",
+      "Bash(sed -i '' 's/styles_v2\\\\.css/styles_v5.css/g; s/animations_v2\\\\.js/animations_v5.js/g' /Users/zhongyiguo/Desktop/JG1ANDONLY/fifth_version/index.html)",
+      "Bash(sed -i '' 's|href=\"styles_v4.css\"|href=\"styles.css\"|g' index.html)",
+      "Bash(sed -i '' 's|src=\"animations_v4.js\"|src=\"animations.js\"|g' index.html)",
+      "Bash(sed -i '' 's|\"\\\\.\\\\./images/|\"images/|g' index.html)",
+      "Bash(sed -i '' 's|\"\\\\.\\\\./files/|\"files/|g' index.html)",
+      "Bash(sed -i '' 's|\"\\\\.\\\\./personal_life\\\\.html\"|\"personal_life.html\"|g' index.html)"
     ]
   }
 }
