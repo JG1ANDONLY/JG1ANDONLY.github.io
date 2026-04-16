@@ -342,16 +342,21 @@ function initBurgerMenu() {
 function initDarkToggle() {
 	const mobileBtn  = document.getElementById('nightToggle');
 	const desktopBtn = document.getElementById('nightToggleDesktop');
-	const saved = localStorage.getItem('theme-v4');
-	if (saved === 'dark') document.body.classList.add('dark');
+
+	// Sync button emoji with current state (class may already be on body from FOUC script)
+	function syncEmoji() {
+		const isDark = document.body.classList.contains('dark');
+		[mobileBtn, desktopBtn].forEach(btn => {
+			if (btn) btn.textContent = isDark ? '☀️' : '🌙';
+		});
+	}
+	syncEmoji();
 
 	function toggle() {
 		document.body.classList.toggle('dark');
 		const isDark = document.body.classList.contains('dark');
 		localStorage.setItem('theme-v4', isDark ? 'dark' : 'light');
-		[mobileBtn, desktopBtn].forEach(btn => {
-			if (btn) btn.textContent = isDark ? '☀️ Light mode' : '🌙 Dark mode';
-		});
+		syncEmoji();
 	}
 	if (mobileBtn)  mobileBtn.addEventListener('click', toggle);
 	if (desktopBtn) desktopBtn.addEventListener('click', toggle);
@@ -425,7 +430,7 @@ function initCardTilt() {
 
 /* ── Magnetic buttons ── */
 function initMagneticButtons() {
-	document.querySelectorAll('.sidebar-doc-btn, .sidebar-social-btn').forEach(btn => {
+	document.querySelectorAll('.sidebar-social-btn').forEach(btn => {
 		btn.addEventListener('mousemove', function(e) {
 			const rect = this.getBoundingClientRect();
 			const x = e.clientX - rect.left - rect.width / 2;

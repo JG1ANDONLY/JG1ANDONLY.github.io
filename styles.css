@@ -70,12 +70,36 @@ body.dark {
 }
 
 .sidebar-brand {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
 	font-size: 1.6rem;
 	font-weight: 800;
 	letter-spacing: 0.04em;
 	color: var(--accent);
 	margin-bottom: 14px;
-	align-self: flex-start;
+}
+
+.night-toggle-round {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 1px solid var(--border);
+	background: var(--bg2);
+	color: var(--text2);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.9rem;
+	line-height: 1;
+	flex-shrink: 0;
+	transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+.night-toggle-round:hover {
+	border-color: var(--accent);
+	transform: rotate(20deg);
 }
 
 .sidebar-avatar-wrap {
@@ -212,23 +236,6 @@ body.dark {
 }
 .sidebar-doc-btn-outline:hover { background: var(--accent); color: #fff; opacity: 1; }
 
-/* ── Night toggle (desktop, in sidebar footer) ── */
-.night-toggle-desktop {
-	display: block;
-	width: 100%;
-	margin-top: auto;
-	padding-top: 14px;
-	background: none;
-	border: 1px solid var(--border);
-	border-radius: 6px;
-	padding: 7px;
-	font-size: 0.8rem;
-	color: var(--text2);
-	cursor: pointer;
-	text-align: center;
-	transition: background 0.15s;
-}
-.night-toggle-desktop:hover { background: var(--bg2); }
 
 /* ════════════════════════════════
    MOBILE HEADER
@@ -613,6 +620,8 @@ body.dark {
 	border-radius: 20px;
 }
 body.dark .upcoming-badge { background: #451a03; color: #fbbf24; }
+body.dark .sidebar-social-btn img { filter: invert(1); }
+body.dark .work-logo img { filter: brightness(1.5); }
 
 .work-org { font-size: 0.85rem; color: var(--text2); margin-bottom: 6px; }
 
