@@ -141,6 +141,10 @@ body.dark {
 	color: var(--accent);
 	margin-top: 3px;
 	margin-bottom: 4px;
+	line-height: 1.65;
+	min-height: 1.65em;
+	border-right: 2px solid transparent;
+	padding-right: 2px;
 }
 
 .sidebar-divider {
@@ -206,6 +210,8 @@ body.dark {
 	text-decoration: none;
 }
 .sidebar-social-btn img { width: 20px; height: 20px; object-fit: contain; }
+.sidebar-social-btn img[alt="GitHub"] { width: 23px; height: 23px; }
+.sidebar-social-btn img[alt="X"] { width: 26px; height: 26px; }
 .sidebar-social-btn:hover { border-color: var(--accent); background: var(--surface); transform: translateY(-2px); }
 
 /* ── Doc Buttons ── */
@@ -291,6 +297,15 @@ body.dark {
 	cursor: pointer;
 	color: var(--text2);
 	line-height: 1;
+}
+
+.mobile-avatar {
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 1.5px solid var(--border);
+	flex-shrink: 0;
 }
 
 /* ════════════════════════════════
@@ -895,6 +910,9 @@ body.dark .pub-badge.blue   { background: #1e3a5f; color: #93c5fd; }
 	align-self: stretch;
 	display: flex;
 	align-items: center;
+	overflow: hidden;
+	word-break: break-word;
+	overflow-wrap: break-word;
 }
 
 .tech-chips {
@@ -1006,6 +1024,13 @@ a.cert-item:hover { color: var(--accent); text-decoration: none; }
 	line-height: 1.55;
 }
 .log-entry:last-child { margin-bottom: 0; }
+
+/* Project collab note */
+.project-collab-note {
+	font-size: 1rem;
+	color: var(--text3);
+	margin-bottom: 36px;
+}
 
 /* ════════════════════════════════
    TEACHING
@@ -1172,6 +1197,72 @@ a.ext::after {
 a.ext:hover::after { opacity: 1; transform: translate(1px, -1px); }
 
 /* ════════════════════════════════
+   GRADIENT BORDER PULSE
+   ════════════════════════════════ */
+@property --border-angle {
+	syntax: '<angle>';
+	initial-value: 0deg;
+	inherits: false;
+}
+
+@keyframes borderSpin {
+	to { --border-angle: 360deg; }
+}
+
+.work-card::after, .exp-card::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	padding: 1.5px;
+	background: conic-gradient(from var(--border-angle), var(--accent), #7c3aed, var(--accent2), var(--accent));
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask-composite: exclude;
+	opacity: 0;
+	transition: opacity 0.35s;
+	pointer-events: none;
+	z-index: 5;
+}
+.work-card:hover::after, .exp-card:hover::after {
+	opacity: 1;
+	animation: borderSpin 3s linear infinite;
+}
+
+/* ════════════════════════════════
+   FILTER COUNT BADGE
+   ════════════════════════════════ */
+.filter-count-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 17px;
+	height: 17px;
+	font-size: 0.65rem;
+	font-weight: 700;
+	border-radius: 9px;
+	padding: 0 5px;
+	margin-left: 5px;
+	background: var(--bg2);
+	color: var(--text3);
+	transition: background 0.15s, color 0.15s;
+	line-height: 1;
+	vertical-align: middle;
+}
+.project-filter-btn.active .filter-count-badge {
+	background: rgba(255,255,255,0.28);
+	color: #fff;
+}
+
+@keyframes badgePop {
+	0%   { transform: scale(1); }
+	45%  { transform: scale(1.4); }
+	100% { transform: scale(1); }
+}
+.filter-count-badge.pop { animation: badgePop 0.28s ease forwards; }
+
+/* ════════════════════════════════
    ANIMATIONS
    ════════════════════════════════ */
 .animate-on-scroll, .animate-card {
@@ -1193,6 +1284,16 @@ a.ext:hover::after { opacity: 1; transform: translate(1px, -1px); }
 	transition: opacity 0.5s ease;
 }
 .animate-section-title.visible { opacity: 1; }
+
+/* Typewriter cursor */
+@keyframes cursorBlink {
+	0%, 100% { border-right-color: var(--accent); }
+	50%       { border-right-color: transparent; }
+}
+.typewriter-active {
+	border-right-color: var(--accent);
+	animation: cursorBlink 0.65s step-end infinite;
+}
 
 /* Logo pulse */
 @keyframes logoPulse {
@@ -1295,12 +1396,12 @@ a.ext:hover::after { opacity: 1; transform: translate(1px, -1px); }
 	.edu-mobile-list { display: block; }
 
 	.lang-log-grid { grid-template-columns: 1fr; }
-	.tech-cat { width: 90px; min-width: 90px; }
+	.tech-cat { width: 90px; min-width: 90px; padding: 12px 10px; }
 }
 
 @media (max-width: 480px) {
 	.about-kpi-row { grid-template-columns: repeat(3, 1fr); }
 	.cert-grid { grid-template-columns: 1fr; }
 	.teaching-grid { grid-template-columns: 1fr; }
-	.tech-cat { width: 72px; min-width: 72px; font-size: 0.66rem; }
+	.tech-cat { width: 72px; min-width: 72px; font-size: 0.66rem; padding: 10px 8px; letter-spacing: 0; }
 }

@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	).forEach(el => observer.observe(el));
 
 	/* ── All init calls ── */
+	initTypewriter();
 	initScrollProgress();
 	initCursorSpotlight();
 	initActiveSidebarNav();
@@ -58,11 +59,60 @@ document.addEventListener('DOMContentLoaded', function () {
 	initDarkToggle();
 	initWorkFilter();
 	initProjectFilter();
+	initFilterCounts();
 	initKPICounters();
-	initCardTilt();
 	initMagneticButtons();
 	initWorkTimelineDots();
 });
+
+/* ── Typewriter effect for sidebar title ── */
+function initTypewriter() {
+	const el = document.querySelector('.sidebar-title');
+	if (!el) return;
+
+	const phrases = ['DATA SCIENTIST', 'SWIMMER', 'AI-THUSIAST', 'IMMIGRANT'];
+	let phraseIndex = 0;
+	let charIndex   = 0;
+	let isDeleting  = false;
+
+	const TYPE_SPEED   = 85;
+	const DELETE_SPEED = 45;
+	const PAUSE_TYPED  = 1300;
+	const PAUSE_EMPTY  = 320;
+
+	el.textContent = '';
+	el.classList.add('typewriter-active');
+
+	function tick() {
+		const phrase = phrases[phraseIndex];
+
+		if (!isDeleting) {
+			charIndex++;
+			el.textContent = phrase.slice(0, charIndex);
+
+			if (charIndex === phrase.length) {
+				isDeleting = true;
+				setTimeout(tick, PAUSE_TYPED);
+				return;
+			}
+		} else {
+			charIndex--;
+			el.textContent = phrase.slice(0, charIndex);
+
+			if (charIndex === 0) {
+				isDeleting = false;
+				phraseIndex = (phraseIndex + 1) % phrases.length;
+				setTimeout(tick, PAUSE_EMPTY);
+				return;
+			}
+		}
+
+		setTimeout(tick, isDeleting ? DELETE_SPEED : TYPE_SPEED);
+	}
+
+	// Brief delay so page settles before animation starts
+	setTimeout(tick, 600);
+}
 
 /* ── Scroll progress bar ── */
 function initScrollProgress() {
@@ -166,7 +216,7 @@ function setupCollapse(containerSel, cardSel, btnId) {
 
 	function applyCollapse() {
 		const visible = filterVisible();
-		const showCount = Math.min(2, visible.length); // always show up to 2 matching cards
+		const showCount = Math.min(3, visible.length); // always show up to 3 matching cards
 		if (!isCollapsed || visible.length <= showCount) {
 			// Expanded, or not enough results to collapse — show everything
 			cards.forEach(c => c.classList.remove('section-hidden'));
@@ -411,23 +461,6 @@ function initKPICounters() {
 	});
 }
 
-/* ── Card tilt effect (project cards only — work cards have timeline dots that move with transforms) ── */
-function initCardTilt() {
-	document.querySelectorAll('.exp-card').forEach(card => {
-		card.addEventListener('mousemove', function(e) {
-			const rect = this.getBoundingClientRect();
-			const x = (e.clientX - rect.left) / rect.width - 0.5;
-			const y = (e.clientY - rect.top) / rect.height - 0.5;
-			this.style.transform = `perspective(900px) rotateY(${x * 3}deg) rotateX(${-y * 2}deg) translateZ(2px)`;
-			this.style.transition = 'transform 0.08s ease';
-		});
-		card.addEventListener('mouseleave', function() {
-			this.style.transform = '';
-			this.style.transition = 'transform 0.35s ease, box-shadow 0.2s, border-color 0.2s';
-		});
-	});
-}
-
 /* ── Magnetic buttons ── */
 function initMagneticButtons() {
 	document.querySelectorAll('.sidebar-social-btn').forEach(btn => {
@@ -441,6 +474,45 @@ function initMagneticButtons() {
 		btn.addEventListener('mouseleave', function() {
 			this.style.transform = '';
 			this.style.transition = 'transform 0.4s ease';
+		});
+	});
+}
+
+/* ── Filter count badges ── */
+function initFilterCounts() {
+	// Work filter counts
+	const workBtns  = Array.from(document.querySelectorAll('[data-work-filter]'));
+	const workCards = Array.from(document.querySelectorAll('.work-card[data-type]'));
+	workBtns.forEach(btn => {
+		const f = btn.dataset.workFilter;
+		const count = f === 'all' ? workCards.length : workCards.filter(c => c.dataset.type === f).length;
+		const badge = document.createElement('span');
+		badge.className = 'filter-count-badge';
+		badge.textContent = count;
+		btn.appendChild(badge);
+	});
+
+	// Project filter counts
+	const projBtns  = Array.from(document.querySelectorAll('[data-filter]'));
+	const projCards = Array.from(document.querySelectorAll('.exp-card[data-lang]'));
+	projBtns.forEach(btn => {
+		const f = btn.dataset.filter;
+		const count = f === 'all' ? projCards.length : projCards.filter(c => c.dataset.lang.split(' ').includes(f)).length;
+		const badge = document.createElement('span');
+		badge.className = 'filter-count-badge';
+		badge.textContent = count;
+		btn.appendChild(badge);
+	});
+
+	// Pop animation when a button becomes active
+	[...workBtns, ...projBtns].forEach(btn => {
+		btn.addEventListener('click', () => {
+			const badge = btn.querySelector('.filter-count-badge');
+			if (!badge) return;
+			badge.classList.remove('pop');
+			void badge.offsetWidth;
+			badge.classList.add('pop');
+			badge.addEventListener('animationend', () => badge.classList.remove('pop'), { once: true });
 		});
 	});
 }
