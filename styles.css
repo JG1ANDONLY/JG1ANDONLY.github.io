@@ -1000,6 +1000,10 @@ a.cert-item:hover { color: var(--accent); text-decoration: none; }
 	border-radius: var(--radius);
 	padding: 14px;
 }
+.log-box {
+	max-height: 160px;
+	overflow-y: auto;
+}
 .lang-title, .log-title {
 	font-size: 0.78rem;
 	font-weight: 700;
