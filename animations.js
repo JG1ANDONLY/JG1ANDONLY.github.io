@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	initActiveSidebarNav();
 	initExpandableCards();
 	initSectionCollapse();
+	initHashNavigation();
 	initLightbox();
 	initClickRipple();
 	initCardShine();
@@ -515,6 +516,27 @@ function initFilterCounts() {
 			badge.addEventListener('animationend', () => badge.classList.remove('pop'), { once: true });
 		});
 	});
+}
+
+/* ── Hash-based card navigation ── */
+function initHashNavigation() {
+	if (!window.location.hash) return;
+	const id = window.location.hash.slice(1);
+	const card = document.getElementById(id);
+	if (!card || !card.classList.contains('expandable-card')) return;
+
+	card.classList.remove('section-hidden');
+	card.classList.remove('hidden');
+
+	if (!card.classList.contains('expanded')) {
+		card.classList.add('expanded');
+		const summary = card.querySelector('.card-summary');
+		const hint    = card.querySelector('.card-hint');
+		if (summary) summary.setAttribute('aria-expanded', 'true');
+		if (hint)    hint.textContent = 'Click to collapse ▴';
+	}
+
+	setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
 }
 
 /* ── Project filter ── */
