@@ -854,10 +854,12 @@ body.dark .tag.red    { background: #450a0a; color: #fca5a5; }
 	margin-bottom: 7px;
 	letter-spacing: 0.04em;
 }
-.pub-badge-published { background: #f0fdf4; color: #15803d; }
-.pub-badge-prep      { background: #fefce8; color: #a16207; }
-body.dark .pub-badge-published { background: #14532d; color: #86efac; }
-body.dark .pub-badge-prep      { background: #4c3500; color: #fcd34d; }
+.pub-badge-published  { background: #f0fdf4; color: #15803d; }
+.pub-badge-submitted  { background: #eff6ff; color: #1d4ed8; }
+.pub-badge-prep       { background: #fefce8; color: #a16207; }
+body.dark .pub-badge-published  { background: #14532d; color: #86efac; }
+body.dark .pub-badge-submitted  { background: #1e3a5f; color: #93c5fd; }
+body.dark .pub-badge-prep       { background: #4c3500; color: #fcd34d; }
 
 /* green / yellow / blue aliases kept for V2/V3/V5 compatibility */
 .pub-badge.green  { background: #f0fdf4; color: #15803d; }
