@@ -9,7 +9,19 @@
       "Bash(sed -i '' 's|src=\"animations_v4.js\"|src=\"animations.js\"|g' index.html)",
       "Bash(sed -i '' 's|\"\\\\.\\\\./images/|\"images/|g' index.html)",
       "Bash(sed -i '' 's|\"\\\\.\\\\./files/|\"files/|g' index.html)",
-      "Bash(sed -i '' 's|\"\\\\.\\\\./personal_life\\\\.html\"|\"personal_life.html\"|g' index.html)"
+      "Bash(sed -i '' 's|\"\\\\.\\\\./personal_life\\\\.html\"|\"personal_life.html\"|g' index.html)",
+      "Bash(awk '/<div class=\"work-timeline\">/,/^\\\\s*<\\\\/div>\\\\s*$/' /Users/zhongyiguo/Desktop/JG1ANDONLY/index.html)",
+      "Bash(awk 'NR>=14 && NR<=462' /Users/zhongyiguo/Desktop/JG1ANDONLY/index.html)",
+      "Read(//tmp/**)",
+      "Bash(awk 'NR<13 || NR>463' /Users/zhongyiguo/Desktop/JG1ANDONLY/index.html)",
+      "Bash(sed -n '11,15p' /tmp/index_clean.html)",
+      "Read(//Users/zhongyiguo/Desktop/bitcoinAllocation/**)",
+      "Read(//Users/zhongyiguo/Desktop/**)",
+      "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/03-cumulative_returns_all_assets.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_cumulative_returns.png)",
+      "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/03-correlation_heatmap_all_assets.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_correlation_heatmap.png)",
+      "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/03-rolling_beta_btc_vs_spy.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_rolling_beta.png)",
+      "Bash(git *)",
+      "Bash(awk '/@media \\\\\\(max-width: 768px\\\\\\)/,/^}$/' /Users/zhongyiguo/Desktop/JG1ANDONLY/styles.css)"
     ]
   }
 }
