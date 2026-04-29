@@ -21,7 +21,11 @@
       "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/03-correlation_heatmap_all_assets.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_correlation_heatmap.png)",
       "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/03-rolling_beta_btc_vs_spy.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_rolling_beta.png)",
       "Bash(git *)",
-      "Bash(awk '/@media \\\\\\(max-width: 768px\\\\\\)/,/^}$/' /Users/zhongyiguo/Desktop/JG1ANDONLY/styles.css)"
+      "Bash(awk '/@media \\\\\\(max-width: 768px\\\\\\)/,/^}$/' /Users/zhongyiguo/Desktop/JG1ANDONLY/styles.css)",
+      "Bash(cp /Users/zhongyiguo/desktop/predictCryptoReturn/plots/02_combined_curve.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/crypto_combined_curve.png)",
+      "Bash(cp /Users/zhongyiguo/desktop/predictCryptoReturn/plots/03_ml_curves_gross.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/crypto_ml_curves.png)",
+      "Bash(cp /Users/zhongyiguo/desktop/predictCryptoReturn/plots/06_factor_correlation.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/crypto_factor_correlation.png)",
+      "Bash(cp /Users/zhongyiguo/desktop/predictCryptoReturn/plots/01_single_factor_curves.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/crypto_single_factors.png)"
     ]
   }
 }

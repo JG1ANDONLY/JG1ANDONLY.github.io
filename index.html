@@ -231,9 +231,9 @@
 						<span class="md-type-dot" aria-hidden="true"></span>
 					</div>
 					<div class="md-item-main">
+						<span class="upcoming-badge">Upcoming</span>
 						<div class="md-item-line1">
 							<span class="md-role">Biostatistics Intern</span>
-							<span class="upcoming-badge">Upcoming</span>
 						</div>
 						<div class="md-item-line2">
 							<span class="md-org">Corcept Therapeutics</span>
@@ -247,9 +247,9 @@
 						<span class="md-type-dot" aria-hidden="true"></span>
 					</div>
 					<div class="md-item-main">
+						<span class="upcoming-badge">Upcoming</span>
 						<div class="md-item-line1">
 							<span class="md-role">Election Aide Official</span>
-							<span class="upcoming-badge">Upcoming</span>
 						</div>
 						<div class="md-item-line2">
 							<span class="md-org">Santa Clara County</span>
@@ -390,7 +390,8 @@
 					<header class="md-detail-header">
 						<div class="md-detail-logo"><img src="images/corcept.png" alt="Corcept Therapeutics"></div>
 						<div class="md-detail-meta">
-							<h3 class="md-detail-role">Biostatistics Intern <span class="upcoming-badge">Upcoming</span></h3>
+							<span class="upcoming-badge">Upcoming</span>
+							<h3 class="md-detail-role">Biostatistics Intern</h3>
 							<div class="md-detail-org">Corcept Therapeutics &nbsp;&middot;&nbsp; Redwood City, CA</div>
 							<div class="md-detail-date">(est.) 06/2026 &ndash; 08/2026</div>
 						</div>
@@ -410,7 +411,8 @@
 					<header class="md-detail-header">
 						<div class="md-detail-logo"><img src="images/santa_clara_county.png" alt="Election Aide at Santa Clara County"></div>
 						<div class="md-detail-meta">
-							<h3 class="md-detail-role">Election Aide Official <span class="upcoming-badge">Upcoming</span></h3>
+							<span class="upcoming-badge">Upcoming</span>
+							<h3 class="md-detail-role">Election Aide Official</h3>
 							<div class="md-detail-org">Registrar of Voters Office, County of Santa Clara &nbsp;&middot;&nbsp; San Jose, CA</div>
 							<div class="md-detail-date">(est.) 04/2026 &ndash; 06/2026</div>
 						</div>
@@ -641,6 +643,19 @@
 						</div>
 					</div>
 				</li>
+				<li class="proj-md-item" data-target="md-crypto-return" data-lang="python" role="tab" aria-selected="false">
+					<div class="proj-md-thumb">
+						<img src="images/crypto_combined_curve.png" alt="">
+						<span class="proj-md-lang-dot" aria-hidden="true"></span>
+					</div>
+					<div class="proj-md-main">
+						<div class="proj-md-title">Cross-Sectional Crypto Return Prediction</div>
+						<div class="proj-md-meta">
+							<span class="proj-md-org">2026 HKU Summer Camp backup project</span>
+							<span class="proj-md-date">04/2026</span>
+						</div>
+					</div>
+				</li>
 				<li class="proj-md-item" data-target="md-permuteDE" data-lang="r" role="tab" aria-selected="false">
 					<div class="proj-md-thumb">
 						<img src="images/permuteDE.png" alt="">
@@ -788,6 +803,60 @@
 						</ul>
 						<div style="margin-top:0.8em;">
 							<a class="exp-download-link ext" href="https://github.com/JG1ANDONLY/bitcoinAllocation" target="_blank">GitHub Repo</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="proj-md-detail-panel" id="md-crypto-return" data-lang="python" role="tabpanel">
+					<header class="proj-md-detail-header">
+						<h3 class="proj-md-detail-title">Cross-Sectional Crypto Return Prediction</h3>
+						<div class="proj-md-detail-org">2026 HKU Future Leaders Quest – Dean’s Master Fellowship Summer Selection Camp</div>
+						<div class="proj-md-detail-date">05/2026</div>
+					</header>
+					<div class="proj-md-detail-body">
+						<div class="exp-tags">
+							<span class="tag blue">Quant Strategy Research</span>
+							<span class="tag blue">Cross-Sectional Factor Investing</span>
+							<span class="tag blue">Long/Short Backtesting</span>
+							<span class="tag orange">Binance Perpetual Futures</span>
+							<span class="tag orange">Hourly Klines &amp; Funding Rates</span>
+							<span class="tag yellow">Python</span>
+							<span class="tag yellow">SQL</span>
+							<span class="tag purple">Fama&ndash;MacBeth Regression</span>
+							<span class="tag purple">Newey&ndash;West HAC SE</span>
+							<span class="tag purple">Amihud Illiquidity</span>
+							<span class="tag purple">Momentum &amp; Reversal</span>
+							<span class="tag purple">Realized Volatility</span>
+							<span class="tag purple">RandomForest</span>
+							<span class="tag purple">XGBoost</span>
+							<span class="tag purple">LightGBM</span>
+							<span class="tag purple">PyTorch DNN</span>
+							<span class="tag purple">Model Ensembling</span>
+							<span class="tag green">ClickHouse</span>
+							<span class="tag green">pandas</span>
+							<span class="tag green">numpy</span>
+							<span class="tag green">scikit-learn</span>
+							<span class="tag green">statsmodels</span>
+							<span class="tag green">pyarrow</span>
+							<span class="tag green">matplotlib</span>
+						</div>
+						<div class="exp-images-strip">
+							<img src="images/crypto_combined_curve.png" alt="Combined factor blend cumulative PnL">
+							<img src="images/crypto_ml_curves.png" alt="ML stack cumulative PnL (gross)">
+							<img src="images/crypto_single_factors.png" alt="Single-factor cumulative PnL">
+							<img src="images/crypto_factor_correlation.png" alt="Cross-sectional factor correlation">
+						</div>
+						<p class="exp-summary">Daily long/short strategy on ~620 USDT-quoted Binance perpetual futures (2020 &ndash; 2026, 381k symbol-days). Pulled hourly klines and funding rates from a <code>ClickHouse</code> warehouse, built seven literature-backed factors as cross-sectional rank z-scores, validated them with Fama&ndash;MacBeth regressions, and traded a top-<i>N</i> / bottom-<i>N</i> portfolio rebalanced daily &mdash; benchmarking a transparent factor blend against a stack of ML models.</p>
+						<ul class="exp-bullets">
+							<li>Engineered the data pipeline against a remote <code>ClickHouse</code> binance database, pushing OHLCV / funding aggregation server-side (<code>argMin</code> / <code>argMax</code> / <code>HAVING hours = 24</code>) so 11M hourly rows never crossed the wire; cached as parquet and applied a <b>$5M 30-day average dollar-volume filter</b> to control for survivorship and liquidity.</li>
+							<li>Constructed <b>7 factors</b> &mdash; momentum (7d, 30d), 1-day reversal, funding rate, taker-buy imbalance, <b>Amihud illiquidity</b>, 30-day realized volatility &mdash; all standardized as daily cross-sectional rank z-scores under a strict <b>no-lookahead invariant</b> (factors at close of <i>t</i>, return <i>t</i>&rarr;<i>t+1</i>).</li>
+							<li>Ran <b>daily Fama&ndash;MacBeth regressions</b> with <b>Newey&ndash;West (lag 5) HAC standard errors</b>; three factors cleared |t| &gt; 2.5 &mdash; <b>Amihud illiquidity (t = +4.36)</b>, funding rate (t = &minus;2.96, sign consistent with basis-trade theory), and taker-buy imbalance (t = +2.83, the unique-to-Binance signal).</li>
+							<li>Backtested a <b>combined factor blend (top-10 / bot-10, equal-weight, 2&times; gross book)</b> achieving <b>Sharpe 1.89 gross / 1.28 net of 10 bps round-trip</b>, +135% annualized gross return, max drawdown &minus;60% across 2,048 trading days.</li>
+							<li>Benchmarked an <b>ML stack</b> &mdash; OLS, RidgeCV, RandomForest, <b>XGBoost</b>, <b>LightGBM</b>, a small <b>PyTorch DNN</b> (9&rarr;64&rarr;32&rarr;1, BatchNorm + dropout), and an <b>equal-weighted ensemble</b> of the four nonlinear models &mdash; using <b>expanding-window monthly refits</b>, target winsorization, and a chronological 10% validation slice for early stopping; reported OOS R<sup>2</sup> in the Gu&ndash;Kelly&ndash;Xiu (2020) sense. The <b>nonlinear ensemble</b> reached <b>Sharpe 2.14 gross / 1.23 net</b>, beating linear baselines by capturing factor interactions (e.g., funding works harder on illiquid names).</li>
+							<li><b>Conclusion:</b> the simple combined-factor blend is the winner net of costs &mdash; transparent attribution and Sharpe 1.28 net &mdash; while the ensemble's higher gross edge is partly given back through turnover. Three factors carry most of the signal; ML's contribution is interaction terms, not net new alpha.</li>
+						</ul>
+						<div style="margin-top:0.8em;">
+							<a class="exp-download-link ext" href="https://github.com/JG1ANDONLY/predictCryptoReturn" target="_blank">GitHub Repo</a>
 						</div>
 					</div>
 				</article>
