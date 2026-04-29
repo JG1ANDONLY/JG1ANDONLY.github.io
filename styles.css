@@ -1451,6 +1451,9 @@ a.ext:hover::after { opacity: 1; transform: translate(1px, -1px); }
 		height: calc(100vh - var(--nav-h));
 		width: 260px;
 		box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		padding-bottom: 24px;
 	}
 	.sidebar.open { transform: translateX(0); }
 
@@ -1717,10 +1720,26 @@ body.dark .proj-md-thumb img { filter: brightness(0.95); }
 		border-radius: 8px;
 		padding: 6px;
 	}
-	.proj-md-detail { position: static; }
 	.proj-md-detail-header { padding: 16px; }
 	.proj-md-detail-title { font-size: 1.15rem; }
 	.proj-md-detail-body { padding: 14px 16px 18px; }
+
+	/* Hide detail by default; show as fullscreen modal when opened. */
+	.proj-md-detail {
+		display: none;
+		position: static;
+	}
+	.proj-md.modal-open .proj-md-detail {
+		display: block;
+		position: fixed;
+		inset: 0;
+		z-index: 1000;
+		background: var(--bg);
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		padding: 56px 16px 24px;
+		animation: mdFadeIn 0.22s ease;
+	}
 }
 
 .work-md {
@@ -1919,9 +1938,61 @@ body.dark .md-detail-logo img { filter: brightness(1.4); }
 		border-radius: 8px;
 		padding: 6px;
 	}
-	.work-md-detail { position: static; }
 	.md-detail-header { padding: 16px; gap: 12px; }
 	.md-detail-logo img { width: 52px; height: 52px; }
 	.md-detail-role { font-size: 1.15rem; }
 	.md-detail-body { padding: 14px 16px 18px; }
+
+	/* Hide detail by default; show as fullscreen modal when opened. */
+	.work-md-detail {
+		display: none;
+		position: static;
+	}
+	.work-md.modal-open .work-md-detail {
+		display: block;
+		position: fixed;
+		inset: 0;
+		z-index: 1000;
+		background: var(--bg);
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		padding: 56px 16px 24px;
+		max-height: none;
+		animation: mdFadeIn 0.22s ease;
+	}
+}
+
+/* ── Modal close button (X) — only visible on small screens when modal is open ── */
+.md-modal-close {
+	display: none;
+	position: fixed;
+	top: 12px;
+	left: 12px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	border: 1px solid var(--border);
+	background: var(--surface);
+	color: var(--text2);
+	font-size: 1.6rem;
+	line-height: 1;
+	cursor: pointer;
+	z-index: 1001;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+	transition: color 0.18s, background 0.18s, border-color 0.18s, transform 0.18s;
+}
+.md-modal-close:hover {
+	color: #fff;
+	background: #e74c3c;
+	border-color: #e74c3c;
+	transform: scale(1.05);
+}
+@media (max-width: 768px) {
+	.work-md.modal-open .work-md-detail .md-modal-close,
+	.proj-md.modal-open .proj-md-detail .md-modal-close {
+		display: flex;
+	}
 }

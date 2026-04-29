@@ -350,6 +350,7 @@
 			</ul>
 
 			<div class="work-md-detail">
+				<button type="button" class="md-modal-close" id="work-md-close" aria-label="Close">&times;</button>
 				<article class="md-detail-panel active" id="md-w74" data-type="technical" role="tabpanel">
 					<header class="md-detail-header">
 						<div class="md-detail-logo"><img src="images/w74.png" alt="W74"></div>
@@ -734,6 +735,7 @@
 			</ul>
 
 			<div class="proj-md-detail">
+				<button type="button" class="md-modal-close" id="proj-md-close" aria-label="Close">&times;</button>
 				<article class="proj-md-detail-panel active" id="md-corcept-project" data-lang="r" role="tabpanel">
 					<header class="proj-md-detail-header">
 						<h3 class="proj-md-detail-title">Project TBD</h3>
@@ -1256,6 +1258,7 @@
 				// Reset the project filter to "All" so the activated item is visible
 				document.querySelectorAll('[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
 				const container = document.getElementById('proj-md');
+				if (container) openMdModal(container);
 				setTimeout(() => (container || target).scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
 				return;
 			}
@@ -1266,6 +1269,31 @@
 				setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
 			}
 		});
+	});
+
+	/* ── Mobile modal helpers (shared) ── */
+	const isMobileViewport = () => window.matchMedia('(max-width: 768px)').matches;
+	function openMdModal(rootEl) {
+		if (!rootEl || !isMobileViewport()) return;
+		rootEl.classList.add('modal-open');
+		document.body.style.overflow = 'hidden';
+	}
+	function closeMdModal(rootEl) {
+		if (!rootEl) return;
+		rootEl.classList.remove('modal-open');
+		const stillLocked = document.querySelector('.work-md.modal-open, .proj-md.modal-open')
+			|| document.querySelector('.sidebar.open');
+		if (!stillLocked) document.body.style.overflow = '';
+	}
+	document.addEventListener('keydown', e => {
+		if (e.key === 'Escape') {
+			document.querySelectorAll('.work-md.modal-open, .proj-md.modal-open').forEach(el => closeMdModal(el));
+		}
+	});
+	window.addEventListener('resize', () => {
+		if (!isMobileViewport()) {
+			document.querySelectorAll('.work-md.modal-open, .proj-md.modal-open').forEach(el => closeMdModal(el));
+		}
 	});
 
 	/* ── Project master/detail switching + filter ── */
@@ -1285,12 +1313,15 @@
 		}
 
 		items.forEach(item => {
-			item.addEventListener('click', () => activate(item.dataset.target));
+			item.addEventListener('click', () => { activate(item.dataset.target); openMdModal(root); });
 			item.setAttribute('tabindex', '0');
 			item.addEventListener('keydown', e => {
-				if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(item.dataset.target); }
+				if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(item.dataset.target); openMdModal(root); }
 			});
 		});
+
+		const closeBtn = document.getElementById('proj-md-close');
+		if (closeBtn) closeBtn.addEventListener('click', () => closeMdModal(root));
 
 		// Wire project filter buttons (data-filter) to filter the list
 		const filterBtns = document.querySelectorAll('[data-filter]');
@@ -1343,12 +1374,15 @@
 		}
 
 		items.forEach(item => {
-			item.addEventListener('click', () => activate(item.dataset.target));
+			item.addEventListener('click', () => { activate(item.dataset.target); openMdModal(root); });
 			item.setAttribute('tabindex', '0');
 			item.addEventListener('keydown', e => {
-				if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(item.dataset.target); }
+				if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(item.dataset.target); openMdModal(root); }
 			});
 		});
+
+		const closeBtn = document.getElementById('work-md-close');
+		if (closeBtn) closeBtn.addEventListener('click', () => closeMdModal(root));
 
 		// Wire the existing filter buttons to filter list items (and reveal first matching panel)
 		const filterBtns = document.querySelectorAll('[data-work-filter]');
