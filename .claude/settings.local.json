@@ -25,7 +25,11 @@
       "Bash(cp /Users/zhongyiguo/desktop/predictCryptoReturn/plots/02_combined_curve.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/crypto_combined_curve.png)",
       "Bash(cp /Users/zhongyiguo/desktop/predictCryptoReturn/plots/03_ml_curves_gross.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/crypto_ml_curves.png)",
       "Bash(cp /Users/zhongyiguo/desktop/predictCryptoReturn/plots/06_factor_correlation.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/crypto_factor_correlation.png)",
-      "Bash(cp /Users/zhongyiguo/desktop/predictCryptoReturn/plots/01_single_factor_curves.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/crypto_single_factors.png)"
+      "Bash(cp /Users/zhongyiguo/desktop/predictCryptoReturn/plots/01_single_factor_curves.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/crypto_single_factors.png)",
+      "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/03-rolling_beta_btc-usd_vs_spy.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_rolling_beta.png)",
+      "Bash(awk NR>=204 && NR<=212 {printf \"%d:\", NR; for\\(i=1;i<=length\\($0\\);i++\\){c=substr\\($0,i,1\\); if\\(c==\"\\\\t\"\\) printf \"[TAB]\"; else printf \"%s\", c} print \"\"} *)",
+      "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/04-efficient_frontier.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_efficient_frontier.png)",
+      "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/05-bl_portfolio_weights.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_bl_weights.png)"
     ]
   }
 }

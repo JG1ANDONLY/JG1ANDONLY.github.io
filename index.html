@@ -208,6 +208,7 @@
 			<button class="project-filter-btn" data-work-filter="non-technical">Admin/Operation/Service</button>
 		</div>
 
+		<div class="tap-hint" aria-hidden="true"><span class="tap-hint-icon"></span>Tap a card to view full details</div>
 		<div class="work-md" id="work-md">
 			<ul class="work-md-list" role="tablist" aria-label="Work experiences">
 				<li class="work-md-item active" data-target="md-w74" data-type="technical" role="tab" aria-selected="true">
@@ -220,7 +221,7 @@
 							<span class="md-role">Data Scientist I</span>
 						</div>
 						<div class="md-item-line2">
-							<span class="md-org">W74</span>
+							<span class="md-org">W74 Advisors</span>
 							<span class="md-date">03/2026 &ndash; Present</span>
 						</div>
 					</div>
@@ -356,7 +357,7 @@
 						<div class="md-detail-logo"><img src="images/w74.png" alt="W74"></div>
 						<div class="md-detail-meta">
 							<h3 class="md-detail-role">Data Scientist I</h3>
-							<div class="md-detail-org">W74 &nbsp;&middot;&nbsp; Remote</div>
+							<div class="md-detail-org">W74 Advisors &nbsp;&middot;&nbsp; Remote</div>
 							<div class="md-detail-date">03/2026 &ndash; Present</div>
 						</div>
 					</header>
@@ -379,9 +380,9 @@
 							<span class="tag green">Claude CLT</span>
 						</div>
 						<ul class="work-bullets">
-							<li>Provided <b>statistical and deep learning expertise</b> to inform clients' decision on energy consumption.</li>
-							<li><b>Improved performance by 25%</b> using advanced models (DNN, LSTM, Transformer).</li>
-							<li>Used <b>Claude command line tool</b> to <b>vide code</b> and expedite product development.</li>
+							<li><b>Delivered analytical and statistical solutions for client</b> building energy optimization, owning work <b>end-to-end</b> from problem framing to stakeholder reporting.</li>
+							<li><b>Improved model performance by 25%</b> over baseline by benchmarking <b>XGBoost, LightGBM, Random Forest, Transformer, and DNN</b> architectures with <b>Optuna</b>-based hyperparameter tuning; final model achieved a CVMSE of ~0.2, <b>outperforming industry.</b></li>
+							<li>Used <b>Claude Code</b> to <b>accelerate prototyping</b> and <b>maximize productivity.</b></li>
 						</ul>
 					</div>
 				</article>
@@ -616,9 +617,10 @@
 			<button class="project-filter-btn" data-filter="other">Other</button>
 		</div>
 
+		<div class="tap-hint" aria-hidden="true"><span class="tap-hint-icon"></span>Tap a card to view full details</div>
 		<div class="proj-md" id="proj-md">
 			<ul class="proj-md-list" role="tablist" aria-label="Projects">
-				<li class="proj-md-item active" data-target="md-corcept-project" data-lang="r" role="tab" aria-selected="true">
+				<li class="proj-md-item active" data-target="md-corcept-project" data-lang="sas" role="tab" aria-selected="true">
 					<div class="proj-md-thumb proj-md-thumb-empty">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
@@ -643,7 +645,7 @@
 						</div>
 					</div>
 				</li>
-				<li class="proj-md-item" data-target="md-crypto-return" data-lang="python" role="tab" aria-selected="false">
+				<li class="proj-md-item" data-target="md-crypto-return" data-lang="python" role="tab" aria-selected="false" hidden>
 					<div class="proj-md-thumb">
 						<img src="images/crypto_combined_curve.png" alt="">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
@@ -779,7 +781,7 @@
 							<span class="tag yellow">Python</span>
 							<span class="tag purple">Mean&ndash;Variance Optimization</span>
 							<span class="tag purple">CAPM Beta</span>
-							<span class="tag purple">CVaR (Expected Shortfall)</span>
+							<span class="tag purple">Expected Shortfall</span>
 							<span class="tag purple">Black&ndash;Litterman</span>
 							<span class="tag green">cvxpy</span>
 							<span class="tag green">OSQP / SCS</span>
@@ -789,20 +791,24 @@
 							<span class="tag green">matplotlib</span>
 						</div>
 						<div class="exp-images-strip">
-							<img src="images/btc_cumulative_returns.png" alt="Cumulative returns of BTC, SPY, VEU, TLT, and GLD">
-							<img src="images/btc_correlation_heatmap.png" alt="Correlation heatmap across asset classes">
-							<img src="images/btc_rolling_beta.png" alt="Rolling CAPM beta of BTC vs SPY">
+							<img src="images/btc_cumulative_returns.png" alt="Log-scale cumulative return of BTC, SPY, VEU, TLT, and GLD from 2014 to 2026">
+							<img src="images/btc_efficient_frontier.png" alt="Mean-variance efficient frontier with and without BTC-USD">
+							<img src="images/btc_portfolio_weights.png" alt="Mean-variance portfolio weights by optimization scenario with BTC-USD">
+							<img src="images/btc_bl_weights.png" alt="Black-Litterman max-Sharpe portfolio weights vs the market-cap prior">
 						</div>
-						<p class="exp-summary">How much Bitcoin should a moderate-risk household hold alongside a traditional ETF portfolio? This project answers the question end-to-end: data collection, descriptive analysis, mean&ndash;variance optimization under multiple risk constraints, and a forward-looking Black&ndash;Litterman adjustment. Universe: SPY, VEU, TLT, GLD, and BTC-USD; risk-free rate from the 3-month T-Bill (^IRX); ~2,900 trading days from BTC's 2014 listing to present.</p>
+						<p class="exp-summary">How much Bitcoin should a moderate-risk household hold alongside an ETF portfolio? This project answers this question end-to-end: data collection, descriptive analysis, mean&ndash;variance optimization under multiple risk constraints, and a forward-looking Black&ndash;Litterman adjustment.</p>
+						
+						<p>Universe: SPY, VEU, TLT, GLD, and BTC-USD; risk-free rate built dynamically from the 3-month T-Bill (^IRX); 2,917 aligned trading days (2014-09-17 to 2026-04-21). Target client: 5&ndash;10 year horizon, long-only, no leverage, ~15% annualized vol budget.</p>
 						<ul class="exp-bullets">
-							<li>Computed <b>annualized return, volatility, Sharpe, skew, max drawdown,</b> and the <b>full correlation matrix;</b> estimated <b>CAPM beta of BTC vs SPY</b> over full / pre-2017 / post-2017 sub-samples to show BTC's structural shift from idiosyncratic (&beta; &asymp; 0) to risk-asset-like (&beta; &asymp; 1).</li>
-							<li>Solved <b>five long-only mean&ndash;variance scenarios</b> in <code>cvxpy</code> (OSQP / SCS): max-Sharpe with and without BTC, volatility caps at 10% and 15% p.a., a <b>5% daily CVaR / Expected Shortfall</b> constraint, and max-Sharpe with BTC capped at 10%.</li>
-							<li>Implemented <b>He &amp; Litterman (1999) Black&ndash;Litterman</b>: derived the equilibrium prior from market-cap weights and blended in three explicit views (BTC outperforms VEU by 15% p.a.; SPY earns 10% p.a.; GLD outperforms TLT by 3% p.a.), then fed posterior expected returns into a max-Sharpe optimizer.</li>
-							<li>Including BTC <b>lifted the max-Sharpe portfolio from ~0.97 to ~1.25 (+29%);</b> the unconstrained optimizer wanted ~15% BTC, while capping BTC at 10% cost only ~0.02 in Sharpe.</li>
-							<li><b>Recommendation:</b> allocate <b>5&ndash;10% to BTC,</b> anchored on the &ldquo;max-Sharpe with BTC &le; 10%&rdquo; portfolio and validated by Black&ndash;Litterman, with quarterly rebalancing.</li>
+							<li>Computed <b>annualized return, volatility, Sharpe, skew, max drawdown,</b> and the <b>full correlation matrix;</b> estimated <b>CAPM beta of BTC vs SPY</b> over full / pre-2017 / post-2017 sub-samples, showing BTC's structural shift from idiosyncratic (&beta; &asymp; 0.01) to risk-asset-like (&beta; &asymp; 0.97) while pairwise correlations with every other asset stay &le; 0.22.</li>
+							<li>Solved <b>six long-only mean&ndash;variance scenarios across two universes (eleven portfolios total)</b> in <code>cvxpy</code> (OSQP / SCS): max-Sharpe, vol caps at 10% and 15% p.a., a <b>daily 95% Expected Shortfall</b> cap at 5% and a loose 25% sanity check, and a max-return BTC&nbsp;&le;&nbsp;10% cap.</li>
+							<li>Implemented <b>Black&ndash;Litterman algorithm</b> on the <b>post-2017 sample</b> so the prior covariance isn't dominated by the 2017 BTC bubble: reverse-optimized the equilibrium prior from an assumed market-cap-style weight vector and imposed three views (BTC outperforms VEU by 15% p.a.; SPY earns 10% p.a.; GLD outperforms TLT by 3% p.a.), then fed posterior expected returns into a max-Sharpe optimizer.</li>
+							<li>Including BTC <b>lifted max-Sharpe from 0.81 to 1.13 (+40%);</b> the Vol-Cap-15% portfolio with BTC <b>simultaneously raised Sharpe to 1.12 and improved max drawdown from -29.0% to -26.2%,</b> while a return-only objective with a 5% ES cap permitted a 50% BTC weight (drawdown -56%) &mdash; confirming ES alone is the wrong knob.</li>
+							<li><b>Recommendation:</b> allocate <b>5&ndash;10% to BTC,</b> anchored on the <b>Vol-Cap-15% with BTC</b> portfolio (Sharpe 1.12, max DD -26%) and independently validated by Black&ndash;Litterman, which assigned BTC ~9.5% &mdash; almost exactly the 10% cap result. Rebalance quarterly; review annually.</li>
 						</ul>
 						<div style="margin-top:0.8em;">
 							<a class="exp-download-link ext" href="https://github.com/JG1ANDONLY/bitcoinAllocation" target="_blank">GitHub Repo</a>
+							<a class="exp-download-link" href="files/Zhongyi_Guo_bitcoin_allocation.pdf" download="bitcoin_presentation.pdf">&#x2B07; Slides (PDF)</a>
 						</div>
 					</div>
 				</article>
@@ -980,8 +986,8 @@
 							<li>Interpreted <b>complex statistical findings and communicated them through clear scientific writing and effective data visualizations;</b> defended before Stanford Epidemiology faculty and students.</li>
 						</ul>
 						<div style="margin-top:0.8em;">
-							<a class="exp-download-link" href="files/thesis_presentation_v3.pptx" download="presentation.pptx">&#x2B07; Slides (PPTX)</a>
-							<a class="exp-download-link" href="files/thesis_presentation_v3.pdf" download="presentation.pdf">&#x2B07; Slides (PDF)</a>
+							<a class="exp-download-link" href="files/thesis_presentation_v3.pptx" download="thesis_presentation.pptx">&#x2B07; Slides (PPTX)</a>
+							<a class="exp-download-link" href="files/thesis_presentation_v3.pdf" download="thesis_presentation.pdf">&#x2B07; Slides (PDF)</a>
 						</div>
 					</div>
 				</article>
@@ -1208,10 +1214,10 @@
 			<div class="tech-row"><div class="tech-cat">CLI &amp; Cloud</div><div class="tech-chips">
 				<span class="tech-chip"><img src="images/unix_icon.png" alt="">UNIX</span><span class="tech-chip"><img src="images/hyper_logo.png" alt="">Terminal</span><span class="tech-chip"><img src="images/ssh.png" alt="">SSH</span><span class="tech-chip"><img src="images/aws.jpg" alt="">AWS EC2</span><span class="tech-chip"><img src="images/conda.png" alt="">Conda</span><span class="tech-chip"><img src="images/claude.svg" alt="">Claude</span><span class="tech-chip">High Performance Computing</span><span class="tech-chip"><img src="images/git_icon.png" alt="">Git</span><span class="tech-chip"><img src="images/github.png" alt="">GitHub</span>
 			</div></div>
-			<div class="tech-row"><div class="tech-cat">Productivity</div><div class="tech-chips">
+			<div class="tech-row"><div class="tech-cat">Office</div><div class="tech-chips">
 				<span class="tech-chip"><img src="images/word.png" alt="">MS Word</span><span class="tech-chip"><img src="images/excel.png" alt="">MS Excel</span><span class="tech-chip"><img src="images/ppt.png" alt="">MS PowerPoint</span>
 			</div></div>
-			<div class="tech-row"><div class="tech-cat">Creative</div><div class="tech-chips">
+			<div class="tech-row"><div class="tech-cat">Design</div><div class="tech-chips">
 				<span class="tech-chip"><img src="images/Adobe_Illustrator.png" alt="">Illustrator</span><span class="tech-chip"><img src="images/photoshop.png" alt="">Photoshop</span><span class="tech-chip"><img src="images/procreate.png" alt="">Procreate</span><span class="tech-chip"><img src="images/after_effect.png" alt="">After Effects</span>
 			</div></div>
 		</div>
@@ -1264,7 +1270,7 @@
 <!-- Footer -->
 <footer class="site-footer">
 	<div class="footer-inner">
-		<span>Last Edited: April 2026</span>
+		<span>Last Edited: May 2026</span>
 		<span class="footer-sep">|</span>
 		<span>&copy; Designed and implemented by Zhongyi Guo 2023–2026. All rights reserved.</span>
 	</div>

@@ -6,6 +6,18 @@ document.addEventListener('DOMContentLoaded', function () {
 		'.about-bio p, .teaching-card, .kpi'
 	).forEach(el => el.classList.add('animate-on-scroll'));
 
+	/* ── Staggered scroll-reveal: lists/rails where order reads left-to-right or top-to-bottom ── */
+	function applyStagger(selector, step = 0.06, max = 8) {
+		document.querySelectorAll(selector).forEach((el, i) => {
+			el.style.setProperty('--delay', `${(i % max) * step}s`);
+			el.classList.add('animate-on-scroll');
+		});
+	}
+	applyStagger('.tech-row', 0.07, 6);
+	applyStagger('.proj-md-item', 0.05, 10);
+	applyStagger('.work-md-item', 0.05, 10);
+	applyStagger('.cert-item', 0.04, 12);
+
 	/* ── Section labels ── */
 	document.querySelectorAll('.exp-sub-label, .exp-section-label').forEach(el => el.classList.add('animate-label'));
 
@@ -64,7 +76,26 @@ document.addEventListener('DOMContentLoaded', function () {
 	initKPICounters();
 	initMagneticButtons();
 	initWorkTimelineDots();
+	initSmoothNavScroll();
 });
+
+/* ── Smooth scroll for sidebar nav with mobile-header offset ── */
+function initSmoothNavScroll() {
+	const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+	document.querySelectorAll('.sidebar-link[href^="#"]').forEach(link => {
+		link.addEventListener('click', e => {
+			const id = link.getAttribute('href').slice(1);
+			const target = document.getElementById(id);
+			if (!target) return;
+			e.preventDefault();
+			const mobileH = document.getElementById('mobileHeader');
+			const offset = (mobileH && mobileH.offsetParent !== null) ? mobileH.offsetHeight + 8 : 0;
+			const top = target.getBoundingClientRect().top + window.scrollY - offset;
+			window.scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
+			history.replaceState(null, '', `#${id}`);
+		});
+	});
+}
 
 /* ── Typewriter effect for sidebar title ── */
 function initTypewriter() {

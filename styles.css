@@ -430,6 +430,16 @@ body.dark {
 	text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 	pointer-events: none;
 	padding: 0 6px;
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
+/* Narrow desktop range: shrink labels so the 16.67%-wide first segment fits "Case Western Reserve". */
+@media (min-width: 1201px) and (max-width: 1400px) {
+	.edu-segment-label {
+		font-size: 0.72rem;
+		padding: 0 4px;
+		line-height: 1.2;
+	}
 }
 
 .edu-panel {
@@ -508,6 +518,9 @@ body.dark {
 	margin-right: 4px;
 }
 .project-filter-btn {
+	display: inline-flex;
+	align-items: center;
+	line-height: 1;
 	padding: 5px 14px;
 	border-radius: 20px;
 	border: 1px solid var(--border);
@@ -988,7 +1001,7 @@ body.dark .pub-badge.blue   { background: #1e3a5f; color: #93c5fd; }
 	display: flex;
 	align-items: center;
 	overflow: hidden;
-	word-break: break-word;
+	word-break: normal;
 	overflow-wrap: break-word;
 }
 
@@ -1024,6 +1037,14 @@ body.dark .pub-badge.blue   { background: #1e3a5f; color: #93c5fd; }
 	object-fit: contain;
 	display: inline-block;
 	flex-shrink: 0;
+}
+/* Dark-monochrome glyphs disappear on the dark surface; invert just these. */
+body.dark .tech-chip img[src$="github.png"],
+body.dark .tech-chip img[src$="code_gray.svg"],
+body.dark .tech-chip img[src$="snippet_gray.svg"],
+body.dark .tech-chip img[src$="ssh.png"],
+body.dark .tech-chip img[src$="unix_icon.png"] {
+	filter: invert(1);
 }
 
 /* ════════════════════════════════
@@ -1366,6 +1387,15 @@ a.ext:hover::after { opacity: 1; transform: translate(1px, -1px); }
 }
 .animate-section-title.visible { opacity: 1; }
 
+/* Section number badge scales in on entry */
+.animate-section-title .section-num {
+	display: inline-block;
+	transform: scale(0.6);
+	opacity: 0;
+	transition: transform 0.45s cubic-bezier(.34, 1.56, .64, 1) 0.08s, opacity 0.45s ease 0.08s;
+}
+.animate-section-title.visible .section-num { transform: scale(1); opacity: 1; }
+
 /* Typewriter cursor */
 @keyframes cursorBlink {
 	0%, 100% { border-right-color: var(--accent); }
@@ -1452,6 +1482,14 @@ a.ext:hover::after { opacity: 1; transform: translate(1px, -1px); }
 	.site-footer  { padding: 16px 36px; }
 }
 
+/* Sidebar still present but content area is narrow: stack the bio above the KPI cards
+   so the paragraph isn't squeezed into a too-narrow column. */
+@media (min-width: 769px) and (max-width: 1100px) {
+	.about-layout { grid-template-columns: 1fr; }
+	.about-kpi-row { justify-self: start; min-width: 0; max-width: 420px; }
+	.main-content { padding-right: 48px; }
+}
+
 @media (max-width: 768px) {
 	.sidebar {
 		transform: translateX(-100%);
@@ -1476,11 +1514,15 @@ a.ext:hover::after { opacity: 1; transform: translate(1px, -1px); }
 	.about-layout { grid-template-columns: 1fr; }
 	.about-kpi-row { grid-template-columns: repeat(3, 1fr); }
 
-	.edu-bar-wrapper { display: none; }
-	.edu-mobile-list { display: block; }
-
 	.lang-log-grid { grid-template-columns: 1fr; }
 	.tech-cat { width: 90px; min-width: 90px; padding: 12px 10px; }
+}
+
+/* Education bar overflows at intermediate widths (sidebar still present, content area ~400-700px).
+   Collapse to the stacked mobile list earlier than the sidebar/header breakpoint. */
+@media (max-width: 1200px) {
+	.edu-bar-wrapper { display: none; }
+	.edu-mobile-list { display: block; }
 }
 
 @media (max-width: 600px) {
@@ -1503,8 +1545,8 @@ a.ext:hover::after { opacity: 1; transform: translate(1px, -1px); }
 /* Type-colored active/hover states for work filter buttons (matches card accent) */
 .work-filter-bar .project-filter-btn[data-work-filter="technical"]:hover,
 .work-filter-bar .project-filter-btn[data-work-filter="technical"].active {
-	background: #3b82f6;
-	border-color: #3b82f6;
+	background: #60a5fa;
+	border-color: #60a5fa;
 	color: #fff;
 }
 .work-filter-bar .project-filter-btn[data-work-filter="non-technical"]:hover,
@@ -1517,7 +1559,7 @@ a.ext:hover::after { opacity: 1; transform: translate(1px, -1px); }
 /* Lang-colored active/hover states for project filter buttons + matching card accent */
 .project-filter-bar .project-filter-btn[data-filter="r"]:hover,
 .project-filter-bar .project-filter-btn[data-filter="r"].active {
-	background: #3b82f6; border-color: #3b82f6; color: #fff;
+	background: #60a5fa; border-color: #60a5fa; color: #fff;
 }
 .project-filter-bar .project-filter-btn[data-filter="python"]:hover,
 .project-filter-bar .project-filter-btn[data-filter="python"].active {
@@ -1563,6 +1605,7 @@ a.ext:hover::after { opacity: 1; transform: translate(1px, -1px); }
 	align-items: center;
 	position: relative;
 }
+.proj-md-item[hidden] { display: none; }
 .proj-md-item:hover { background: var(--bg2); }
 /* Order: python, sas, other, r — R wins for multi-lang "r python" */
 .proj-md-item[data-lang~="python"].active { border-left-color: #f59e0b; background: color-mix(in srgb, #f59e0b 8%, transparent); }
@@ -1714,7 +1757,7 @@ body.dark .proj-md-thumb img { filter: brightness(0.95); }
 .proj-md-detail-body .exp-bullets li { margin-bottom: 7px; line-height: 1.6; }
 .proj-md-detail-body .exp-bullets b { color: var(--text); }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 	.proj-md {
 		grid-template-columns: 1fr;
 		gap: 16px;
@@ -1938,7 +1981,7 @@ body.dark .md-detail-logo img {
 }
 .md-detail-body .work-bullets b { color: var(--text); }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 	.work-md {
 		grid-template-columns: 1fr;
 		gap: 16px;
@@ -2002,9 +2045,47 @@ body.dark .md-detail-logo img {
 	border-color: #e74c3c;
 	transform: scale(1.05);
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 	.work-md.modal-open .work-md-detail .md-modal-close,
 	.proj-md.modal-open .proj-md-detail .md-modal-close {
 		display: flex;
 	}
+}
+
+/* ── "Tap a card" hint — only visible on small screens where the master/detail
+   layout collapses and the detail panel becomes a tap-to-open modal. ── */
+.tap-hint { display: none; }
+@media (max-width: 1200px) {
+	.tap-hint {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 0.78rem;
+		font-weight: 500;
+		color: var(--text2);
+		margin-bottom: 12px;
+		padding: 9px 12px;
+		background: color-mix(in srgb, var(--accent, #3b82f6) 6%, var(--surface));
+		border: 1px solid color-mix(in srgb, var(--accent, #3b82f6) 22%, var(--border));
+		border-radius: 8px;
+		line-height: 1.3;
+		animation: tapHintPulse 2.4s ease-in-out infinite;
+	}
+	.tap-hint-icon {
+		flex: 0 0 auto;
+		width: 16px;
+		height: 16px;
+		background-color: currentColor;
+		-webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M9 11V5a2 2 0 1 1 4 0v6h1V7a2 2 0 1 1 4 0v6h1V9a2 2 0 1 1 4 0v8a6 6 0 0 1-6 6h-2.5a5 5 0 0 1-3.54-1.46l-5.46-5.46a2 2 0 0 1 2.83-2.83L9 14.5V11z'/></svg>") no-repeat center / contain;
+		        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M9 11V5a2 2 0 1 1 4 0v6h1V7a2 2 0 1 1 4 0v6h1V9a2 2 0 1 1 4 0v8a6 6 0 0 1-6 6h-2.5a5 5 0 0 1-3.54-1.46l-5.46-5.46a2 2 0 0 1 2.83-2.83L9 14.5V11z'/></svg>") no-repeat center / contain;
+	}
+}
+@keyframes tapHintPulse {
+	0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+	50%      { box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.10); }
+}
+@media (prefers-reduced-motion: reduce) {
+	.tap-hint { animation: none; }
+	.animate-section-title .section-num { transition: opacity 0.2s ease; transform: none; }
+	.animate-on-scroll, .animate-card { transition: opacity 0.2s ease; transform: none; }
 }
