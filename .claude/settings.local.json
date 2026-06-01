@@ -29,7 +29,18 @@
       "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/03-rolling_beta_btc-usd_vs_spy.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_rolling_beta.png)",
       "Bash(awk NR>=204 && NR<=212 {printf \"%d:\", NR; for\\(i=1;i<=length\\($0\\);i++\\){c=substr\\($0,i,1\\); if\\(c==\"\\\\t\"\\) printf \"[TAB]\"; else printf \"%s\", c} print \"\"} *)",
       "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/04-efficient_frontier.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_efficient_frontier.png)",
-      "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/05-bl_portfolio_weights.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_bl_weights.png)"
+      "Bash(cp /Users/zhongyiguo/Desktop/bitcoinAllocation/plots/05-bl_portfolio_weights.png /Users/zhongyiguo/Desktop/JG1ANDONLY/images/btc_bl_weights.png)",
+      "Bash(kill btecv9wa0 *)",
+      "Bash(lsof -ti:8765)",
+      "Bash(xargs kill)",
+      "Bash(curl -s http://localhost:8765/animations.js)",
+      "Bash(curl -s http://localhost:8765/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Read(//private/tmp/**)",
+      "Bash(node -c /Users/zhongyiguo/Desktop/JG1ANDONLY/animations.js)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --virtual-time-budget=3000 --window-size=1400,900 --screenshot=/tmp/before_scroll.png http://localhost:8765/)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --virtual-time-budget=4000 --window-size=1400,900 --screenshot=/tmp/after_scroll.png 'http://localhost:8765/#publications')",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --virtual-time-budget=6000 --window-size=1400,900 --screenshot=/tmp/scrolled_dark.png http://localhost:8765/scroll_test_dark.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --virtual-time-budget=4000 --window-size=1400,900 --dump-dom http://localhost:8765/scroll_test2.html)"
     ]
   }
 }
