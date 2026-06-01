@@ -13,6 +13,9 @@
 </head>
 <body>
 
+<!-- ── Page loader ── -->
+<div id="page-loader" aria-hidden="true"><div class="loader-ring"></div></div>
+
 <!-- ── Fixed Left Sidebar ── -->
 <aside class="sidebar" id="sidebar">
 
@@ -739,7 +742,7 @@
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
 					<div class="proj-md-main">
-						<div class="proj-md-title">BOOKED &mdash; iOS App</div>
+						<div class="proj-md-title">BOOKED &mdash; an iOS App</div>
 						<div class="proj-md-meta">
 							<span class="proj-md-org">Cornell University</span>
 							<span class="proj-md-date">04/2022 &ndash; 05/2022</span>
@@ -766,7 +769,7 @@
 				<article class="proj-md-detail-panel" id="md-HKU-summer-2026-project" data-lang="python" role="tabpanel">
 					<header class="proj-md-detail-header">
 						<h3 class="proj-md-detail-title">Bitcoin Portfolio Allocation</h3>
-						<div class="proj-md-detail-org">2026 HKU Future Leaders Quest &ndash; Dean&rsquo;s Master Fellowship Summer Selection Camp</div>
+						<div class="proj-md-detail-org">2026 HKU Future Leaders Quest &ndash; Dean&rsquo;s Master Fellowship Summer Selection Camp &nbsp;&middot;&nbsp; The University of Hong Kong, Hong Kong SAR</div>
 						<div class="proj-md-detail-date">05/2026</div>
 					</header>
 					<div class="proj-md-detail-body">
@@ -795,7 +798,7 @@
 						</div>
 						<p class="exp-summary">How much Bitcoin should a moderate-risk household hold alongside an ETF portfolio? This project answers this question end-to-end: data collection, descriptive analysis, mean&ndash;variance optimization under multiple risk constraints, and a forward-looking Black&ndash;Litterman adjustment.</p>
 						
-						<p>Universe: SPY, VEU, TLT, GLD, and BTC-USD; risk-free rate built dynamically from the 3-month T-Bill (^IRX); 2,917 aligned trading days (2014-09-17 to 2026-04-21). Target client: 5&ndash;10 year horizon, long-only, no leverage, ~15% annualized vol budget.</p>
+						<p class="exp-summary">Universe: SPY, VEU, TLT, GLD, and BTC-USD; risk-free rate built dynamically from the 3-month T-Bill (^IRX); 2,917 aligned trading days (2014-09-17 to 2026-04-21). Target client: 5&ndash;10 year horizon, long-only, no leverage, ~15% annualized vol budget.</p>
 						<ul class="exp-bullets">
 							<li>Computed annualized return, volatility, Sharpe, skew, max drawdown, and the full correlation matrix; estimated CAPM beta of BTC vs SPY over full / pre-2017 / post-2017 sub-samples, showing BTC's structural shift from idiosyncratic (&beta; &asymp; 0.01) to risk-asset-like (&beta; &asymp; 0.97) while pairwise correlations with every other asset stay &le; 0.22.</li>
 							<li>Solved six long-only mean&ndash;variance scenarios across two universes (eleven portfolios total) in <code>cvxpy</code> (OSQP / SCS): max-Sharpe, vol caps at 10% and 15% p.a., a daily 95% Expected Shortfall cap at 5% and a loose 25% sanity check, and a max-return BTC&nbsp;&le;&nbsp;10% cap.</li>
@@ -1172,29 +1175,30 @@
 		<div class="section-rule"></div>
 
 		<div class="pub-list">
-			<div class="pub-item pub-submitted"><span class="pub-badge pub-badge-submitted">Submitted</span>
-				<p>[1] Shin, J.‡, Brady, E.‡, Chen, C., Lauderdale, K., Agrawal, A., Zhang, Y., Jiang, X., Nambiar, P., Herbert, J., Mallen, D., Ly, K., <b>Guo, Z.</b>, Sant, C., Thomas, R., Miller, S., Cobos, I., Palop, J.. APOE4 and A&beta; synergize to drive neuronal network dysfunction and lysosomal-ER proteostasis dysregulation in the preclinical stages of Alzheimer's disease, <i>Nature Neuroscience,</i> 2025. <a href="https://pubmed.ncbi.nlm.nih.gov/41292846/" target="_blank" class="ext" style="text-decoration: none; color: #528DFA;">Submitted</a></p>
+			<div class="pub-item pub-prep"><span class="pub-badge pub-badge-submitted">Submitted</span><span class="tag journal">Cell</span>
+				<p>[1] Bendall, S., Ee, R., Amouzgar, M., Afaghani, J., Vijayaragavan, K., Cannon, B., Mrdjen, D., Tebaykin, D., Spence, A., Sant, C., Aley, D., <b>Guo, Z.</b>, Sedov, K., Zafar, F., Montine, K., Perna, A., Serrano, G., Beach, T., Angelo, M., Schüle, B., Corces, M.R., Montine, T.. APOE4 Drives Uniquely Dysfunctional Human Microglial States in Alzheimer’s Disease. <i>Cell,</i> 2026.</p>
 			</div>
-			<div class="pub-item pub-published"><span class="pub-badge pub-badge-published">Published</span>
-				<p>[2] Poster session presenter and first author, Causal effect of type II diabetes on prostate cancer in the East Asian population: A two-sample Mendelian randomization study, <i>AACR Special Conference: Aging and Cancer,</i> 2022. <a href="https://aacrjournals.org/cancerres/article/83/2_Supplement_1/B003/712467/Abstract-B003-Causal-effect-of-type-II-diabetes-on" target="_blank" class="ext" style="text-decoration: none; color: #528DFA;">Published</a></p>
+
+			<div class="pub-item pub-submitted"><span class="pub-badge pub-badge-submitted">Submitted</span><span class="tag journal">Nature Neuroscience</span>
+				<p>[2] Shin, J.<sup>‡</sup>, Brady, E.<sup>‡</sup>, Chen, C., Lauderdale, K., Agrawal, A., Zhang, Y., Jiang, X., Nambiar, P., Herbert, J., Mallen, D., Ly, K., <b>Guo, Z.</b>, Sant, C., Thomas, R., Miller, S., Cobos, I., Palop, J.. <a href="https://pubmed.ncbi.nlm.nih.gov/41292846/" target="_blank" class="ext">APOE4 and A&beta; synergize to drive neuronal network dysfunction and lysosomal-ER proteostasis dysregulation in the preclinical stages of Alzheimer's disease.</a> <i>Nature Neuroscience,</i> 2025.</p>
+			</div>
+			<div class="pub-item pub-published"><span class="pub-badge pub-badge-published">Published</span><span class="tag journal">AACR Special Conference: Aging and Cancer</span>
+				<p>[3] Poster session presenter and first author, <a href="https://aacrjournals.org/cancerres/article/83/2_Supplement_1/B003/712467/Abstract-B003-Causal-effect-of-type-II-diabetes-on" target="_blank" class="ext">Causal effect of type II diabetes on prostate cancer in the East Asian population: A two-sample Mendelian randomization study.</a> <i>AACR Special Conference: Aging and Cancer,</i> 2022.</p>
 			</div>
 		
 			<div class="pub-item pub-prep"><span class="pub-badge pub-badge-prep">In Preparation</span>
-				<p>[3] (Aiming for <u>BMC Medicine</u>) <b>Guo, Z.‡</b>, Chen, D.‡, Stopsack, K. H., Soule, P., Ajit, D., Ramamoorthy, P., Hoffmann, T. J., Chan, J. M., Mucci L. A., Graff, R. E.. <a href="#metabolomics">Metabolomic Disparities Between Black and Non-Hispanic White Men with Metastatic Hormone-Sensitive Prostate Cancer: A Pilot Study.</a> <u>(Title is tentative.)</u></p>
+				<p>[4] (Aiming for <u>BMC Medicine</u>) <b>Guo, Z.<sup>‡</sup></b>, Chen, D.<sup>‡</sup>, Stopsack, K. H., Soule, P., Ajit, D., Ramamoorthy, P., Hoffmann, T. J., Chan, J. M., Mucci L. A., Graff, R. E.. <a href="#metabolomics" class="anchor-link">Metabolomic Disparities Between Black and Non-Hispanic White Men with Metastatic Hormone-Sensitive Prostate Cancer: A Pilot Study.</a> <u>(Title is tentative.)</u></p>
 			</div>
 			
 			<div class="pub-item pub-prep"><span class="pub-badge pub-badge-prep">In Preparation</span>
-				<p>[4] (Aiming for <u>Cell</u>) Qu, P., Wang, T., Jessa, S., <b>Guo, Z.</b>, Guo, H., Purmann, C., Monte, E., Jiang, L., Yang, X., Zhou, B., Kundu, S., Kundaje, A., Wong, W., Hallmayer, J. F., Urban, A. E., Snyder, M. P.. <a href="#psychencode">Multi-modal functional genomics analysis of bipolar disorder and schizophrenia.</a> <u>(Title is tentative.)</u></p>
+				<p>[5] (Aiming for <u>Cell</u>) Qu, P., Wang, T., Jessa, S., <b>Guo, Z.</b>, Guo, H., Purmann, C., Monte, E., Jiang, L., Yang, X., Zhou, B., Kundu, S., Kundaje, A., Wong, W., Hallmayer, J. F., Urban, A. E., Snyder, M. P.. <a href="#psychencode" class="anchor-link">Multi-modal functional genomics analysis of bipolar disorder and schizophrenia.</a> <u>(Title is tentative.)</u></p>
 			</div>
 			
 			<div class="pub-item pub-prep"><span class="pub-badge pub-badge-prep">In Preparation</span>
-				<p>[5] (Aiming for <u>Nature Neuroscience</u>) Sant, C., <b>Guo, Z.</b>, Corces, M. R.. <a href="#permuteDE">Preventing false discoveries in Alzheimer's disease single-cell sequencing data using permutation testing.</a> <u>(Title is tentative.)</u></p>
+				<p>[6] (Aiming for <u>Nature Neuroscience</u>) Sant, C., <b>Guo, Z.</b>, Corces, M. R.. <a href="#permuteDE" class="anchor-link">Preventing false discoveries in Alzheimer's disease single-cell sequencing data using permutation testing.</a> <u>(Title is tentative.)</u></p>
 			</div>
 
-			<div class="pub-item pub-prep"><span class="pub-badge pub-badge-prep">In Preparation</span>
-				<p>[6] (Aiming for <u>Nature</u>) Ee, R., Amouzgar, M., ..., <b>Guo, Z.</b>, ..., Bendall, S.. APOE4 Drives a Uniquely Dysfuntional Human Microglial State in Alzheimer's Disease. (<u>Author list is tentative.</u>)</p>
-		</div>
-		<p class="pub-footnote">‡ indicates co-first authorship.</p>
+		<p class="pub-footnote"><sup>‡</sup> indicates co-first authorship.</p>
 	</section>
 
 	<!-- ── TECHNICAL SUMMARY ── -->

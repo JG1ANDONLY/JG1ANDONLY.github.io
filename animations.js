@@ -77,7 +77,41 @@ document.addEventListener('DOMContentLoaded', function () {
 	initMagneticButtons();
 	initWorkTimelineDots();
 	initSmoothNavScroll();
+	initImageLoadFade();
 });
+
+/* Hide the page loader as soon as all assets (including images) are loaded.
+   Safety net: force-hide after 4s in case something stalls. */
+window.addEventListener('load', () => {
+	const loader = document.getElementById('page-loader');
+	if (!loader) return;
+	loader.classList.add('hidden');
+	setTimeout(() => loader.remove(), 600);
+});
+setTimeout(() => {
+	const loader = document.getElementById('page-loader');
+	if (loader && !loader.classList.contains('hidden')) {
+		loader.classList.add('hidden');
+		setTimeout(() => loader.remove(), 600);
+	}
+}, 4000);
+
+/* ── Image skeleton shimmer until each <img> finishes loading ── */
+function initImageLoadFade() {
+	document.querySelectorAll('img').forEach(img => {
+		if (img.complete && img.naturalWidth > 0) {
+			img.classList.add('img-loaded');
+			return;
+		}
+		img.classList.add('img-loading');
+		const done = () => {
+			img.classList.remove('img-loading');
+			img.classList.add('img-loaded');
+		};
+		img.addEventListener('load', done, { once: true });
+		img.addEventListener('error', done, { once: true });
+	});
+}
 
 /* ── Smooth scroll for sidebar nav with mobile-header offset ── */
 function initSmoothNavScroll() {
