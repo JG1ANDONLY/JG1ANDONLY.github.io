@@ -80,21 +80,20 @@ document.addEventListener('DOMContentLoaded', function () {
 	initImageLoadFade();
 });
 
-/* Hide the page loader as soon as all assets (including images) are loaded.
-   Safety net: force-hide after 4s in case something stalls. */
-window.addEventListener('load', () => {
+/* Hide the page loader as soon as the DOM is ready — don't wait for all
+   images to download. Safety net: force-hide after 4s in case something stalls. */
+function hidePageLoader() {
 	const loader = document.getElementById('page-loader');
-	if (!loader) return;
+	if (!loader || loader.classList.contains('hidden')) return;
 	loader.classList.add('hidden');
 	setTimeout(() => loader.remove(), 600);
-});
-setTimeout(() => {
-	const loader = document.getElementById('page-loader');
-	if (loader && !loader.classList.contains('hidden')) {
-		loader.classList.add('hidden');
-		setTimeout(() => loader.remove(), 600);
-	}
-}, 4000);
+}
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', hidePageLoader);
+} else {
+	hidePageLoader();
+}
+setTimeout(hidePageLoader, 4000);
 
 /* ── Image skeleton shimmer until each <img> finishes loading ── */
 function initImageLoadFade() {

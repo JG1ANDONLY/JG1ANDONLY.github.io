@@ -48,22 +48,22 @@
 
 	<div class="sidebar-contact">
 		<div class="sidebar-contact-item">
-			<img src="images/mail_gray.svg" alt="" class="sidebar-icon"> zhongyig123 at gmail dot com
+			<img loading="lazy" decoding="async" src="images/mail_gray.svg" alt="" class="sidebar-icon"> zhongyig123 at gmail dot com
 		</div>
 		<div class="sidebar-contact-item">
-			<img src="images/phone.svg" alt="" class="sidebar-icon"> M+P-AMA-DG1J
+			<img loading="lazy" decoding="async" src="images/phone.svg" alt="" class="sidebar-icon"> M+P-AMA-DG1J
 		</div>
 	</div>
 
 	<div class="sidebar-social">
 		<a href="https://www.linkedin.com/in/zhongyi-guo/" target="_blank" class="sidebar-social-btn social-link">
-			<img src="images/linkedin_icon.png" alt="LinkedIn">
+			<img loading="lazy" decoding="async" src="images/linkedin_icon.png" alt="LinkedIn">
 		</a>
 		<a href="https://github.com/JG1ANDONLY" target="_blank" class="sidebar-social-btn social-link">
-			<img src="images/github.png" alt="GitHub">
+			<img loading="lazy" decoding="async" src="images/github.png" alt="GitHub">
 		</a>
 		<a href="https://x.com/zhongy1guo" target="_blank" class="sidebar-social-btn social-link">
-			<img src="images/x_icon.png" alt="X">
+			<img loading="lazy" decoding="async" src="images/x_icon.png" alt="X">
 		</a>
 	</div>
 
@@ -123,65 +123,83 @@
 
 		<div class="edu-bar-wrapper">
 			<div class="edu-bar">
-				<div class="edu-segment" style="width: 16.67%; background: #003071;">
+				<div class="edu-segment" style="width: 16.67%; background: #003071; --edu-accent: #003071;">
 					<div class="edu-segment-label">Case Western Reserve<br/>Biochemistry</div>
-					<div class="edu-panel edu-panel-left">
-						<div class="edu-panel-section">GPA: 4.0</div>
-						<div class="edu-panel-section">Honors: Dean's List</div>
-						<div class="edu-panel-section">Core Courses:</div>
-						<ul class="edu-panel-courses">
-							<li>Microeconomics</li>
-							<li>Calculus I, II, III</li>
-							<li>College Writing</li>
-							<li>Intro-level pre-med</li>
-						</ul>
+					<div class="edu-panel edu-panel-left" role="tooltip">
+						<div class="edu-panel-head">
+							<div class="edu-panel-school">Case Western Reserve University</div>
+							<div class="edu-panel-degree">Biochemistry <span class="edu-panel-dot">&middot;</span> 2019&ndash;2020</div>
+						</div>
+						<div class="edu-panel-stats">
+							<div class="edu-stat"><span class="edu-stat-k">GPA</span><span class="edu-stat-v">4.0</span></div>
+							<div class="edu-stat"><span class="edu-stat-k">Honors</span><span class="edu-stat-v">Dean&rsquo;s List</span></div>
+						</div>
+						<div class="edu-panel-label">Core coursework <span class="edu-panel-count">4</span></div>
+						<div class="edu-panel-courses">
+							<span class="edu-course">Microeconomics</span>
+							<span class="edu-course">Calculus I, II, III</span>
+							<span class="edu-course">College Writing</span>
+							<span class="edu-course">Intro-level pre-med</span>
+						</div>
 					</div>
 				</div>
-				<div class="edu-segment" style="width: 50%; background: #B31B1B;">
+				<div class="edu-segment" style="width: 50%; background: #B31B1B; --edu-accent: #B31B1B;">
 					<div class="edu-segment-label">Cornell<br/>BS in Statistics and Biology</div>
-					<div class="edu-panel edu-panel-center">
-						<div class="edu-panel-section">GPA: 3.57</div>
-						<div class="edu-panel-section">Honors: Dean's List</div>
-						<div class="edu-panel-section">Core Courses:</div>
-						<ul class="edu-panel-courses">
-							<li>Data Science</li>
-							<li>Data Mining &amp; Machine Learning</li>
-							<li>Statistical Computing</li>
-							<li>Computing using Python</li>
-							<li>Object-oriented Programming and Data Structure</li>
-							<li>UNIX Tools and Scripting</li>
-							<li>Linear Algebra</li>
-							<li>Linear Models with Matrices</li>
-							<li>Theory of Statistics</li>
-							<li>Probability Models and Inference</li>
-							<li>Probability</li>
-							<li>Macroeconomics</li>
-							<li>Medical Statistics</li>
-							<li>Biological Statistics</li>
-							<li>Advanced Epidemiology</li>
-							<li>Quantitative Genomics and Genetics</li>
-							<li>Population Genetics</li>
-							<li>Lecture and lab in Genetics and Genomics</li>
-						</ul>
+					<div class="edu-panel edu-panel-center edu-panel-wide" role="tooltip">
+						<div class="edu-panel-head">
+							<div class="edu-panel-school">Cornell University</div>
+							<div class="edu-panel-degree">BS in Statistics and Biology <span class="edu-panel-dot">&middot;</span> 2020&ndash;2023</div>
+						</div>
+						<div class="edu-panel-stats">
+							<div class="edu-stat"><span class="edu-stat-k">GPA</span><span class="edu-stat-v">3.57</span></div>
+							<div class="edu-stat"><span class="edu-stat-k">Honors</span><span class="edu-stat-v">Dean&rsquo;s List</span></div>
+						</div>
+						<div class="edu-panel-label">Core coursework <span class="edu-panel-count">18</span></div>
+						<div class="edu-panel-courses">
+							<span class="edu-course">Data Science</span>
+							<span class="edu-course">Data Mining &amp; Machine Learning</span>
+							<span class="edu-course">Statistical Computing</span>
+							<span class="edu-course">Computing using Python</span>
+							<span class="edu-course">Object-oriented Programming and Data Structure</span>
+							<span class="edu-course">UNIX Tools and Scripting</span>
+							<span class="edu-course">Linear Algebra</span>
+							<span class="edu-course">Linear Models with Matrices</span>
+							<span class="edu-course">Theory of Statistics</span>
+							<span class="edu-course">Probability Models and Inference</span>
+							<span class="edu-course">Probability</span>
+							<span class="edu-course">Macroeconomics</span>
+							<span class="edu-course">Medical Statistics</span>
+							<span class="edu-course">Biological Statistics</span>
+							<span class="edu-course">Advanced Epidemiology</span>
+							<span class="edu-course">Quantitative Genomics and Genetics</span>
+							<span class="edu-course">Population Genetics</span>
+							<span class="edu-course">Genetics and Genomics (lecture &amp; lab)</span>
+						</div>
 					</div>
 				</div>
-				<div class="edu-segment" style="width: 33.33%; background: #8C1515;">
+				<div class="edu-segment" style="width: 33.33%; background: #8C1515; --edu-accent: #8C1515;">
 					<div class="edu-segment-label">Stanford<br/>MS in Epidemiology and Clinical Research</div>
-					<div class="edu-panel edu-panel-right">
-						<div class="edu-panel-section">GPA: 3.86</div>
-						<div class="edu-panel-section">Core Courses:</div>
-						<ul class="edu-panel-courses">
-							<li>Deep Learning</li>
-							<li>Data Management and Analysis in SAS</li>
-							<li>Data Visualization</li>
-							<li>Biostatistics</li>
-							<li>Probability</li>
-							<li>Causal Inference</li>
-							<li>Bioinformatics</li>
-							<li>Design and Conduct of Clinical Trials</li>
-							<li>Epidemiologic Research Methods</li>
-							<li>Meta-analysis</li>
-						</ul>
+					<div class="edu-panel edu-panel-right" role="tooltip">
+						<div class="edu-panel-head">
+							<div class="edu-panel-school">Stanford University</div>
+							<div class="edu-panel-degree">MS in Epidemiology and Clinical Research <span class="edu-panel-dot">&middot;</span> 2023&ndash;2025</div>
+						</div>
+						<div class="edu-panel-stats">
+							<div class="edu-stat"><span class="edu-stat-k">GPA</span><span class="edu-stat-v">3.86</span></div>
+						</div>
+						<div class="edu-panel-label">Core coursework <span class="edu-panel-count">10</span></div>
+						<div class="edu-panel-courses">
+							<span class="edu-course">Deep Learning</span>
+							<span class="edu-course">Data Management and Analysis in SAS</span>
+							<span class="edu-course">Data Visualization</span>
+							<span class="edu-course">Biostatistics</span>
+							<span class="edu-course">Probability</span>
+							<span class="edu-course">Causal Inference</span>
+							<span class="edu-course">Bioinformatics</span>
+							<span class="edu-course">Design and Conduct of Clinical Trials</span>
+							<span class="edu-course">Epidemiologic Research Methods</span>
+							<span class="edu-course">Meta-analysis</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -206,17 +224,48 @@
 		<div class="exp-sub-label">Work</div>
 		<div class="work-filter-bar">
 			<span class="project-filter-label">Filter by</span>
-			<button class="project-filter-btn active" data-work-filter="all">All</button>
-			<button class="project-filter-btn" data-work-filter="technical">Technical</button>
+			<button class="project-filter-btn" data-work-filter="all">All</button>
+			<button class="project-filter-btn active" data-work-filter="technical">Technical</button>
 			<button class="project-filter-btn" data-work-filter="non-technical">Admin/Operation/Service</button>
 		</div>
 
 		<div class="tap-hint" aria-hidden="true"><span class="tap-hint-icon"></span>Tap a card to view full details</div>
 		<div class="work-md" id="work-md">
 			<ul class="work-md-list" role="tablist" aria-label="Work experiences">
-				<li class="work-md-item active" data-target="md-w74" data-type="technical" role="tab" aria-selected="true">
+				<li class="work-md-item active" data-target="md-corcept" data-type="technical" role="tab" aria-selected="true">
 					<div class="md-item-logo">
-						<img src="images/w74.png" alt="">
+						<img loading="lazy" decoding="async" src="images/corcept.png" alt="">
+						<span class="md-type-dot" aria-hidden="true"></span>
+					</div>
+					<div class="md-item-main">
+						<!-- <span class="upcoming-badge">Upcoming</span> -->
+						<div class="md-item-line1">
+							<span class="md-role">Biostatistics Intern</span>
+						</div>
+						<div class="md-item-line2">
+							<span class="md-org">Corcept Therapeutics</span>
+							<span class="md-date">06/2026 &ndash; 08/2026</span>
+						</div>
+					</div>
+				</li>
+				<li class="work-md-item" data-target="md-ob-llc" data-type="non-technical" role="tab" aria-selected="false">
+					<div class="md-item-logo">
+						<img loading="lazy" decoding="async" src="images/ob_llc.png" alt="">
+						<span class="md-type-dot" aria-hidden="true"></span>
+					</div>
+					<div class="md-item-main">
+						<div class="md-item-line1">
+							<span class="md-role">General Manager</span>
+						</div>
+						<div class="md-item-line2">
+							<span class="md-org">Oceans Beyond LLC</span>
+							<span class="md-date">05/2026 &ndash; Present</span>
+						</div>
+					</div>
+				</li>
+				<li class="work-md-item" data-target="md-w74" data-type="technical" role="tab" aria-selected="false">
+					<div class="md-item-logo">
+						<img loading="lazy" decoding="async" src="images/w74.png" alt="">
 						<span class="md-type-dot" aria-hidden="true"></span>
 					</div>
 					<div class="md-item-main">
@@ -229,25 +278,9 @@
 						</div>
 					</div>
 				</li>
-				<li class="work-md-item" data-target="md-corcept" data-type="technical" role="tab" aria-selected="false">
-					<div class="md-item-logo">
-						<img src="images/corcept.png" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<span class="upcoming-badge">Upcoming</span>
-						<div class="md-item-line1">
-							<span class="md-role">Biostatistics Intern</span>
-						</div>
-						<div class="md-item-line2">
-							<span class="md-org">Corcept Therapeutics</span>
-							<span class="md-date">(est.) 06/2026 &ndash; 08/2026</span>
-						</div>
-					</div>
-				</li>
 				<li class="work-md-item" data-target="md-election-official" data-type="non-technical" role="tab" aria-selected="false">
 					<div class="md-item-logo">
-						<img src="images/santa_clara_county.png" alt="">
+						<img loading="lazy" decoding="async" src="images/santa_clara_county.png" alt="">
 						<span class="md-type-dot" aria-hidden="true"></span>
 					</div>
 					<div class="md-item-main">
@@ -262,7 +295,7 @@
 				</li>
 				<li class="work-md-item" data-target="md-gladstone" data-type="technical" role="tab" aria-selected="false">
 					<div class="md-item-logo">
-						<img src="images/Gladstone.webp" alt="">
+						<img loading="lazy" decoding="async" src="images/Gladstone.webp" alt="">
 						<span class="md-type-dot" aria-hidden="true"></span>
 					</div>
 					<div class="md-item-main">
@@ -277,7 +310,7 @@
 				</li>
 				<li class="work-md-item" data-target="md-stanford-ohs" data-type="non-technical" role="tab" aria-selected="false">
 					<div class="md-item-logo">
-						<img src="images/stanford_ohs.png" alt="">
+						<img loading="lazy" decoding="async" src="images/stanford_ohs.png" alt="">
 						<span class="md-type-dot" aria-hidden="true"></span>
 					</div>
 					<div class="md-item-main">
@@ -291,8 +324,9 @@
 					</div>
 				</li>
 				<li class="work-md-item" data-target="md-stanford-ucsf" data-type="technical" role="tab" aria-selected="false">
-					<div class="md-item-logo">
-						<img src="images/stanford.png" alt="">
+					<div class="md-item-logo md-item-logo--dual">
+						<img loading="lazy" decoding="async" src="images/stanford.png" alt="">
+						<img loading="lazy" decoding="async" src="images/ucsf.svg" alt="">
 						<span class="md-type-dot" aria-hidden="true"></span>
 					</div>
 					<div class="md-item-main">
@@ -307,7 +341,7 @@
 				</li>
 				<li class="work-md-item" data-target="md-match-group" data-type="technical" role="tab" aria-selected="false">
 					<div class="md-item-logo">
-						<img src="images/match.png" alt="">
+						<img loading="lazy" decoding="async" src="images/match.png" alt="">
 						<span class="md-type-dot" aria-hidden="true"></span>
 					</div>
 					<div class="md-item-main">
@@ -322,7 +356,7 @@
 				</li>
 				<li class="work-md-item" data-target="md-cornell-ta" data-type="non-technical" role="tab" aria-selected="false">
 					<div class="md-item-logo">
-						<img src="images/cornell.png" alt="">
+						<img loading="lazy" decoding="async" src="images/cornell.png" alt="">
 						<span class="md-type-dot" aria-hidden="true"></span>
 					</div>
 					<div class="md-item-main">
@@ -337,7 +371,7 @@
 				</li>
 				<li class="work-md-item" data-target="md-cornell-dining" data-type="non-technical" role="tab" aria-selected="false">
 					<div class="md-item-logo">
-						<img src="images/cornell.png" alt="">
+						<img loading="lazy" decoding="async" src="images/cornell.png" alt="">
 						<span class="md-type-dot" aria-hidden="true"></span>
 					</div>
 					<div class="md-item-main">
@@ -354,9 +388,29 @@
 
 			<div class="work-md-detail">
 				<button type="button" class="md-modal-close" id="work-md-close" aria-label="Close">&times;</button>
-				<article class="md-detail-panel active" id="md-w74" data-type="technical" role="tabpanel">
+				<article class="md-detail-panel" id="md-ob-llc" data-type="non-technical" role="tabpanel">
 					<header class="md-detail-header">
-						<div class="md-detail-logo"><img src="images/w74.png" alt="W74"></div>
+						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/ob_llc.png" alt="Oceans Beyond LLC"></div>
+						<div class="md-detail-meta">
+							<h3 class="md-detail-role">General Manager</h3>
+							<div class="md-detail-org">Oceans Beyond LLC</div>
+							<div class="md-detail-date">05/2026 &ndash; Present</div>
+						</div>
+					</header>
+					<div class="md-detail-body">
+						<div class="exp-tags">
+							<span class="tag blue">Entrepreneurship</span>
+							<span class="tag blue">Small Business</span>
+						</div>
+						<ul class="work-bullets">
+							<li>Started my own small business.</li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="md-detail-panel" id="md-w74" data-type="technical" role="tabpanel">
+					<header class="md-detail-header">
+						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/w74.png" alt="W74"></div>
 						<div class="md-detail-meta">
 							<h3 class="md-detail-role">Data Scientist I</h3>
 							<div class="md-detail-org">W74 Advisors &nbsp;&middot;&nbsp; Remote</div>
@@ -389,30 +443,43 @@
 					</div>
 				</article>
 
-				<article class="md-detail-panel" id="md-corcept" data-type="technical" role="tabpanel">
+				<article class="md-detail-panel active" id="md-corcept" data-type="technical" role="tabpanel">
 					<header class="md-detail-header">
-						<div class="md-detail-logo"><img src="images/corcept.png" alt="Corcept Therapeutics"></div>
+						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/corcept.png" alt="Corcept Therapeutics"></div>
 						<div class="md-detail-meta">
-							<span class="upcoming-badge">Upcoming</span>
 							<h3 class="md-detail-role">Biostatistics Intern</h3>
 							<div class="md-detail-org">Corcept Therapeutics &nbsp;&middot;&nbsp; Redwood City, CA</div>
-							<div class="md-detail-date">(est.) 06/2026 &ndash; 08/2026</div>
+							<div class="md-detail-date">06/2026 &ndash; 08/2026</div>
 						</div>
 					</header>
 					<div class="md-detail-body">
 						<div class="exp-tags">
+							<span class="tag blue">Clinical Data Management</span>
+							<span class="tag blue">Biostatistics</span>
 							<span class="tag blue">Statistical Programming</span>
+							<span class="tag purple">Survival Analysis</span>
+							<span class="tag purple">Index Date Determination</span>
+							<span class="tag purple">Propensity Score Matching</span>
+							<span class="tag purple">Kaplan-Meier Curve</span>
+							<span class="tag purple">Log-rank Test</span>
+							<span class="tag purple">Cox Regression</span>
+							<span class="tag purple">Equivalence Test</span>
+							<span class="tag yellow">R</span>
 							<span class="tag yellow">SAS</span>
+							<span class="tag green">Medidata Clinical Data Studio</span>
+
 						</div>
 						<ul class="work-bullets">
-							<li>To be updated...</li>
+							<li>Developed strategies to match 120+ external controls from RWD using propensity score, emulating index dates and analyzing outcome with Kaplan-Meier curves, log-rank tests, and Cox proportional hazards models.</li>
+							<li>Built and validated patient profiles across ~20 panels in Medidata Clinical Data Studio, mapping data from annotated CRFs and creating derived variables to streamline clinical trial data review.</li>
+							<li>Developed three-tier strategies to guide the venture capital arm’s setup, analyzing <a href="https://www.sec.gov/edgar/browse/?CIK=1088856&owner=exclude" target="_blank" class="ext" style="text-decoration: none; color: #528DFA;">SEC filings</a> for fund size and constructed portfolios ($50M/$100M/$150M) with real-world companies across stages and deal sizes.</li>
 						</ul>
 					</div>
 				</article>
 
 				<article class="md-detail-panel" id="md-election-official" data-type="non-technical" role="tabpanel">
 					<header class="md-detail-header">
-						<div class="md-detail-logo"><img src="images/santa_clara_county.png" alt="Election Official at Santa Clara County"></div>
+						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/santa_clara_county.png" alt="Election Official at Santa Clara County"></div>
 						<div class="md-detail-meta">
 							<h3 class="md-detail-role">Election Official</h3>
 							<div class="md-detail-org">Registrar of Voters Office, County of Santa Clara &nbsp;&middot;&nbsp; Palo Alto, CA</div>
@@ -434,7 +501,7 @@
 
 				<article class="md-detail-panel" id="md-gladstone" data-type="technical" role="tabpanel">
 					<header class="md-detail-header">
-						<div class="md-detail-logo"><img src="images/Gladstone.webp" alt="Gladstone Institute at UCSF"></div>
+						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/Gladstone.webp" alt="Gladstone Institute at UCSF"></div>
 						<div class="md-detail-meta">
 							<h3 class="md-detail-role">Researcher</h3>
 							<div class="md-detail-org">the Corces Lab @ the Gladstone Institutes &nbsp;&middot;&nbsp; San Francisco, CA</div>
@@ -475,7 +542,7 @@
 
 				<article class="md-detail-panel" id="md-stanford-ohs" data-type="non-technical" role="tabpanel">
 					<header class="md-detail-header">
-						<div class="md-detail-logo"><img src="images/stanford_ohs.png" alt="Stanford OHS"></div>
+						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/stanford_ohs.png" alt="Stanford OHS"></div>
 						<div class="md-detail-meta">
 							<h3 class="md-detail-role">Student Life Assistant</h3>
 							<div class="md-detail-org">Stanford Online High School &nbsp;&middot;&nbsp; Remote</div>
@@ -502,7 +569,7 @@
 
 				<article class="md-detail-panel" id="md-stanford-ucsf" data-type="technical" role="tabpanel">
 					<header class="md-detail-header">
-						<div class="md-detail-logo"><img src="images/stanford.png" alt="Stanford University"><img src="images/ucsf.svg" alt="UCSF"></div>
+						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/stanford.png" alt="Stanford University"><img loading="lazy" decoding="async" src="images/ucsf.svg" alt="UCSF"></div>
 						<div class="md-detail-meta">
 							<h3 class="md-detail-role">Graduate Student Researcher</h3>
 							<div class="md-detail-org">Stanford University and UCSF &nbsp;&middot;&nbsp; Stanford, CA</div>
@@ -535,7 +602,7 @@
 
 				<article class="md-detail-panel" id="md-match-group" data-type="technical" role="tabpanel">
 					<header class="md-detail-header">
-						<div class="md-detail-logo"><img src="images/match.png" alt="Match Group"></div>
+						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/match.png" alt="Match Group"></div>
 						<div class="md-detail-meta">
 							<h3 class="md-detail-role">iOS Development Intern</h3>
 							<div class="md-detail-org">Match Group &nbsp;&middot;&nbsp; Remote</div>
@@ -559,7 +626,7 @@
 
 				<article class="md-detail-panel" id="md-cornell-ta" data-type="non-technical" role="tabpanel">
 					<header class="md-detail-header">
-						<div class="md-detail-logo"><img src="images/cornell.png" alt="Cornell University Seal"></div>
+						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/cornell.png" alt="Cornell University Seal"></div>
 						<div class="md-detail-meta">
 							<h3 class="md-detail-role">Undergraduate Teaching Assistant</h3>
 							<div class="md-detail-org">Cornell University &nbsp;&middot;&nbsp; Ithaca, NY</div>
@@ -583,7 +650,7 @@
 
 				<article class="md-detail-panel" id="md-cornell-dining" data-type="non-technical" role="tabpanel">
 					<header class="md-detail-header">
-						<div class="md-detail-logo"><img src="images/cornell.png" alt="Cornell University Seal"></div>
+						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/cornell.png" alt="Cornell University Seal"></div>
 						<div class="md-detail-meta">
 							<h3 class="md-detail-role">Student Food Assistant</h3>
 							<div class="md-detail-org">Cornell Dining &nbsp;&middot;&nbsp; Ithaca, NY</div>
@@ -602,8 +669,8 @@
 						</ul>
 					</div>
 				</article>
-			</div><!-- /.work-md-detail -->
-		</div><!-- /.work-md -->
+			</div>
+		</div>
 
 
 		<!-- Projects -->
@@ -620,7 +687,7 @@
 		<div class="tap-hint" aria-hidden="true"><span class="tap-hint-icon"></span>Tap a card to view full details</div>
 		<div class="proj-md" id="proj-md">
 			<ul class="proj-md-list" role="tablist" aria-label="Projects">
-				<li class="proj-md-item active" data-target="md-corcept-project" data-lang="sas" role="tab" aria-selected="true">
+				<!-- <li class="proj-md-item active" data-target="md-corcept-project" data-lang="sas" role="tab" aria-selected="true">
 					<div class="proj-md-thumb proj-md-thumb-empty">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
@@ -631,10 +698,10 @@
 							<span class="proj-md-date">(est.) 06/2026 &ndash; 08/2026</span>
 						</div>
 					</div>
-				</li>
+				</li> -->
 				<li class="proj-md-item" data-target="md-HKU-summer-2026-project" data-lang="python" role="tab" aria-selected="false">
 					<div class="proj-md-thumb">
-						<img src="images/Bitcoin.png" alt="">
+						<img loading="lazy" decoding="async" src="images/Bitcoin.png" alt="">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
 					<div class="proj-md-main">
@@ -647,7 +714,7 @@
 				</li>
 				<li class="proj-md-item" data-target="md-crypto-return" data-lang="python" role="tab" aria-selected="false" hidden>
 					<div class="proj-md-thumb">
-						<img src="images/crypto_combined_curve.png" alt="">
+						<img loading="lazy" decoding="async" src="images/crypto_combined_curve.png" alt="">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
 					<div class="proj-md-main">
@@ -660,7 +727,7 @@
 				</li>
 				<li class="proj-md-item" data-target="md-permuteDE" data-lang="r" role="tab" aria-selected="false">
 					<div class="proj-md-thumb">
-						<img src="images/permuteDE.png" alt="">
+						<img loading="lazy" decoding="async" src="images/permuteDE.png" alt="">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
 					<div class="proj-md-main">
@@ -673,7 +740,7 @@
 				</li>
 				<li class="proj-md-item" data-target="md-psychencode" data-lang="r python" role="tab" aria-selected="false">
 					<div class="proj-md-thumb">
-						<img src="images/mark_gerstein_paper.png" alt="">
+						<img loading="lazy" decoding="async" src="images/mark_gerstein_paper.png" alt="">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
 					<div class="proj-md-main">
@@ -686,7 +753,7 @@
 				</li>
 				<li class="proj-md-item" data-target="md-metabolomics" data-lang="r" role="tab" aria-selected="false">
 					<div class="proj-md-thumb">
-						<img src="images/pca_incidence.jpg" alt="">
+						<img loading="lazy" decoding="async" src="images/pca_incidence.jpg" alt="">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
 					<div class="proj-md-main">
@@ -699,7 +766,7 @@
 				</li>
 				<li class="proj-md-item" data-target="md-death-rates" data-lang="other" role="tab" aria-selected="false">
 					<div class="proj-md-thumb">
-						<img src="images/global_central_death_ratesxdevelopmental_indicator.png" alt="">
+						<img loading="lazy" decoding="async" src="images/global_central_death_ratesxdevelopmental_indicator.png" alt="">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
 					<div class="proj-md-main">
@@ -712,7 +779,7 @@
 				</li>
 				<li class="proj-md-item" data-target="md-nih-grant" data-lang="other" role="tab" aria-selected="false">
 					<div class="proj-md-thumb">
-						<img src="images/mofa.png" alt="">
+						<img loading="lazy" decoding="async" src="images/mofa.png" alt="">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
 					<div class="proj-md-main">
@@ -725,7 +792,7 @@
 				</li>
 				<li class="proj-md-item" data-target="md-subarachnoid" data-lang="sas" role="tab" aria-selected="false">
 					<div class="proj-md-thumb">
-						<img src="images/SH_boxplot.png" alt="">
+						<img loading="lazy" decoding="async" src="images/SH_boxplot.png" alt="">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
 					<div class="proj-md-main">
@@ -738,7 +805,7 @@
 				</li>
 				<li class="proj-md-item" data-target="md-booked" data-lang="other" role="tab" aria-selected="false">
 					<div class="proj-md-thumb">
-						<img src="images/booked.png" alt="">
+						<img loading="lazy" decoding="async" src="images/booked.png" alt="">
 						<span class="proj-md-lang-dot" aria-hidden="true"></span>
 					</div>
 					<div class="proj-md-main">
@@ -753,7 +820,7 @@
 
 			<div class="proj-md-detail">
 				<button type="button" class="md-modal-close" id="proj-md-close" aria-label="Close">&times;</button>
-				<article class="proj-md-detail-panel active" id="md-corcept-project" data-lang="r" role="tabpanel">
+				<!-- <article class="proj-md-detail-panel active" id="md-corcept-project" data-lang="r" role="tabpanel">
 					<header class="proj-md-detail-header">
 						<h3 class="proj-md-detail-title">Project TBD</h3>
 						<div class="proj-md-detail-org">Biostatistics Intern &nbsp;&middot;&nbsp; Corcept Therapeutics</div>
@@ -764,9 +831,9 @@
 							<li>To be udpated...</li>
 						</ul>
 					</div>
-				</article>
+				</article> -->
 
-				<article class="proj-md-detail-panel" id="md-HKU-summer-2026-project" data-lang="python" role="tabpanel">
+				<article class="proj-md-detail-panel active" id="md-HKU-summer-2026-project" data-lang="python" role="tabpanel">
 					<header class="proj-md-detail-header">
 						<h3 class="proj-md-detail-title">Bitcoin Portfolio Allocation</h3>
 						<div class="proj-md-detail-org">2026 HKU Future Leaders Quest &ndash; Dean&rsquo;s Master Fellowship Summer Selection Camp &nbsp;&middot;&nbsp; The University of Hong Kong, Hong Kong SAR</div>
@@ -791,10 +858,10 @@
 							<span class="tag green">matplotlib</span>
 						</div>
 						<div class="exp-images-strip">
-							<img src="images/btc_cumulative_returns.png" alt="Log-scale cumulative return of BTC, SPY, VEU, TLT, and GLD from 2014 to 2026">
-							<img src="images/btc_efficient_frontier.png" alt="Mean-variance efficient frontier with and without BTC-USD">
-							<img src="images/btc_portfolio_weights.png" alt="Mean-variance portfolio weights by optimization scenario with BTC-USD">
-							<img src="images/btc_bl_weights.png" alt="Black-Litterman max-Sharpe portfolio weights vs the market-cap prior">
+							<img loading="lazy" decoding="async" src="images/btc_cumulative_returns.png" alt="Log-scale cumulative return of BTC, SPY, VEU, TLT, and GLD from 2014 to 2026">
+							<img loading="lazy" decoding="async" src="images/btc_efficient_frontier.png" alt="Mean-variance efficient frontier with and without BTC-USD">
+							<img loading="lazy" decoding="async" src="images/btc_portfolio_weights.png" alt="Mean-variance portfolio weights by optimization scenario with BTC-USD">
+							<img loading="lazy" decoding="async" src="images/btc_bl_weights.png" alt="Black-Litterman max-Sharpe portfolio weights vs the market-cap prior">
 						</div>
 						<p class="exp-summary">How much Bitcoin should a moderate-risk household hold alongside an ETF portfolio? This project answers this question end-to-end: data collection, descriptive analysis, mean&ndash;variance optimization under multiple risk constraints, and a forward-looking Black&ndash;Litterman adjustment.</p>
 						
@@ -847,10 +914,10 @@
 							<span class="tag green">matplotlib</span>
 						</div>
 						<div class="exp-images-strip">
-							<img src="images/crypto_combined_curve.png" alt="Combined factor blend cumulative PnL">
-							<img src="images/crypto_ml_curves.png" alt="ML stack cumulative PnL (gross)">
-							<img src="images/crypto_single_factors.png" alt="Single-factor cumulative PnL">
-							<img src="images/crypto_factor_correlation.png" alt="Cross-sectional factor correlation">
+							<img loading="lazy" decoding="async" src="images/crypto_combined_curve.png" alt="Combined factor blend cumulative PnL">
+							<img loading="lazy" decoding="async" src="images/crypto_ml_curves.png" alt="ML stack cumulative PnL (gross)">
+							<img loading="lazy" decoding="async" src="images/crypto_single_factors.png" alt="Single-factor cumulative PnL">
+							<img loading="lazy" decoding="async" src="images/crypto_factor_correlation.png" alt="Cross-sectional factor correlation">
 						</div>
 						<p class="exp-summary">Daily long/short strategy on ~620 USDT-quoted Binance perpetual futures (2020 &ndash; 2026, 381k symbol-days). Pulled hourly klines and funding rates from a <code>ClickHouse</code> warehouse, built seven literature-backed factors as cross-sectional rank z-scores, validated them with Fama&ndash;MacBeth regressions, and traded a top-<i>N</i> / bottom-<i>N</i> portfolio rebalanced daily &mdash; benchmarking a transparent factor blend against a stack of ML models.</p>
 						<ul class="exp-bullets">
@@ -890,9 +957,9 @@
 							<span class="tag green">ggplot2</span>
 						</div>
 						<div class="exp-images-strip">
-							<img src="images/permuteDE.png" alt="`permuteDE` logo">
-							<img src="images/volcano_plot.jpg" alt="`permuteDE` Volcano Plot">
-							<img src="images/histogram.jpg" alt="`permuteDE` Histogram">
+							<img loading="lazy" decoding="async" src="images/permuteDE.png" alt="`permuteDE` logo">
+							<img loading="lazy" decoding="async" src="images/volcano_plot.jpg" alt="`permuteDE` Volcano Plot">
+							<img loading="lazy" decoding="async" src="images/histogram.jpg" alt="`permuteDE` Histogram">
 						</div>
 						<p class="exp-summary">Differential expression analyses are susceptible to false positives. <code>permuteDE</code> uses permutation testing to identify which comparisons have a higher number of significant differentially expressed features than would be expected by chance.</p>
 						<ul class="exp-bullets">
@@ -933,9 +1000,9 @@
 							<span class="tag green">finemo-gpu</span>
 						</div>
 						<div class="exp-images-strip">
-							<img src="images/mark_gerstein_paper.png" alt="Chromatin Accessibilities across Cell Types">
-							<img src="images/chrombpnet.png" alt="ChromBPNet Model Architecture">
-							<img src="images/variant_effect.png" alt="Disruptive Effect of a Variant">
+							<img loading="lazy" decoding="async" src="images/mark_gerstein_paper.png" alt="Chromatin Accessibilities across Cell Types">
+							<img loading="lazy" decoding="async" src="images/chrombpnet.png" alt="ChromBPNet Model Architecture">
+							<img loading="lazy" decoding="async" src="images/variant_effect.png" alt="Disruptive Effect of a Variant">
 						</div>
 						<p class="exp-figcaption">Figure Source: <a href="https://www.science.org/doi/10.1126/science.adi5199" target="_blank" style="color:#528DFA;">Emani et al., Science 2024</a> &nbsp;&middot;&nbsp; <a href="https://www.biorxiv.org/content/10.1101/2024.12.25.630221v2" target="_blank" style="color:#528DFA;">Pampari et al., bioRxiv preprint 2025</a> &nbsp;&middot;&nbsp; <a href="https://www.sciencedirect.com/science/article/pii/S0092867422015033?via%3Dihub" target="_blank" style="color:#528DFA;">Ameen et al., Cell 2022</a></p>
 						<p class="exp-summary">I joined the <i>PsychENCODE</i> project at Prof. Anshul Kundaje's lab. I led this project analyzing scRNA-seq and scATAC-seq multiome data from three brain regions to investigate cell type-specific chromatin accessibility and gene expression patterns underlying schizophrenia and bipolar disorder to better understand their pathogeneses.</p>
@@ -975,9 +1042,9 @@
 							<span class="tag green">ggplot2</span>
 						</div>
 						<div class="exp-images-strip">
-							<img src="images/pca_incidence.jpg" alt="PCA Incidence Rates">
-							<img src="images/pca_incidence_and_mortality.jpg" alt="PCA Incidence and Mortality Rates">
-							<img src="images/wgcna.jpeg" alt="WGCNA">
+							<img loading="lazy" decoding="async" src="images/pca_incidence.jpg" alt="PCA Incidence Rates">
+							<img loading="lazy" decoding="async" src="images/pca_incidence_and_mortality.jpg" alt="PCA Incidence and Mortality Rates">
+							<img loading="lazy" decoding="async" src="images/wgcna.jpeg" alt="WGCNA">
 						</div>
 						<p class="exp-figcaption">Figure Source: <a href="https://www.cancer.gov/news-events/cancer-currents-blog/2019/prostate-cancer-death-disparities-black-men" target="_blank" style="color:#528DFA;">National Cancer Institute 2019</a> &nbsp;&middot;&nbsp; <a href="https://doi.org/10.1016/j.canlet.2022.01.028" target="_blank" style="color:#528DFA;">Lowder et al., Cancer Letters 2022</a> &nbsp;&middot;&nbsp; <a href="https://link.springer.com/article/10.1186/1471-2105-9-559" target="_blank" style="color:#528DFA;">Langfelder &amp; Horvath, BMC Bioinformatics 2008</a></p>
 						<p class="exp-summary">Black men face higher prostate cancer incidence and mortality than White men. This project leverages LC-MS metabolomics on a cohort of 34 men (17 Black, 17 White) from <a href="https://doi.org/10.1200/GO.22.00154" target="_blank" class="doc-link ext">the IRONMAN Registry</a> to characterize metabolites associated with such disparities. I presented this project as my Master's thesis.</p>
@@ -1009,9 +1076,9 @@
 							<span class="tag purple">D3</span>
 						</div>
 						<div class="exp-images-strip">
-							<img src="images/global_central_death_ratesxdevelopmental_indicator.png" alt="Global Central Death Rates x Developmental Indicators">
-							<img src="images/correlation_between_mortality_and_developmental_conditions.png" alt="Correlation between Mortality and Developmental Conditions">
-							<img src="images/dynamic_bubble_chart.gif" alt="Dynamic Bubble Chart over Time">
+							<img loading="lazy" decoding="async" src="images/global_central_death_ratesxdevelopmental_indicator.png" alt="Global Central Death Rates x Developmental Indicators">
+							<img loading="lazy" decoding="async" src="images/correlation_between_mortality_and_developmental_conditions.png" alt="Correlation between Mortality and Developmental Conditions">
+							<img loading="lazy" decoding="async" src="images/dynamic_bubble_chart.gif" alt="Dynamic Bubble Chart over Time">
 						</div>
 						<p class="exp-summary">This project visualized the interplay between life expectancy (measured by central death rates) and economic development, healthcare access, energy production, and consumption patterns.</p>
 						<ul class="exp-bullets">
@@ -1037,8 +1104,8 @@
 							<span class="tag green">Google Doc</span>
 						</div>
 						<div class="exp-images-strip">
-							<img src="images/mofa.png" alt="Multi-Omics Factor Analysis">
-							<img src="images/multiomics.png" alt="Multi-omics Analysis">
+							<img loading="lazy" decoding="async" src="images/mofa.png" alt="Multi-Omics Factor Analysis">
+							<img loading="lazy" decoding="async" src="images/multiomics.png" alt="Multi-omics Analysis">
 						</div>
 						<p class="exp-figcaption">Figure Source: <a href="https://link.springer.com/article/10.15252/msb.20178124" target="_blank" style="color:#528DFA;">Argelaguet et al., 2018</a> &nbsp;&middot;&nbsp; <a href="https://www.gowinglife.com/longevity-briefs-scientists-discover-new-molecular-driver-of-alzheimers/" target="_blank" style="color:#528DFA;">Growing Life</a></p>
 						<p class="exp-summary">In this project, I practiced NIH-style grant proposal writing by developing a theoretical proposal that integrates single-cell multiomics data to investigate the molecular mechanisms using factor analysis underlying Alzheimer's Disease.</p>
@@ -1072,9 +1139,9 @@
 							<span class="tag green">SAS OnDemand</span>
 						</div>
 						<div class="exp-images-strip">
-							<img src="images/SH_boxplot.png" alt="Boxplot of Body Mass Index">
-							<img src="images/SH_table1.png" alt="Summary Table 1">
-							<img src="images/SH_table2.png" alt="Summary Table 2">
+							<img loading="lazy" decoding="async" src="images/SH_boxplot.png" alt="Boxplot of Body Mass Index">
+							<img loading="lazy" decoding="async" src="images/SH_table1.png" alt="Summary Table 1">
+							<img loading="lazy" decoding="async" src="images/SH_table2.png" alt="Summary Table 2">
 						</div>
 						<p class="exp-summary">This project evaluated associations between multiple exposures (age [categorical and continuous], sex, race, and smoking) and assessed alcohol as an effect modifier of the smoking&ndash;SAH relationship.</p>
 						<ul class="exp-bullets">
@@ -1115,7 +1182,7 @@
 							<span class="tag green">Xcode</span>
 						</div>
 						<div class="exp-images-strip">
-							<img src="images/booked.png" alt="BOOKED">
+							<img loading="lazy" decoding="async" src="images/booked.png" alt="BOOKED">
 						</div>
 						<p class="exp-summary">Nominated as <b>Honorable Mention</b> for <b>Best UI</b> for Hack Challenge Spring 2022.</p>
 						<p class="exp-summary">This project developed an iOS app to ease the booking of a study space on campus in one of Cornell's many open libraries and study spaces.</p>
@@ -1130,8 +1197,8 @@
 						</div>
 					</div>
 				</article>
-			</div><!-- /.proj-md-detail -->
-		</div><!-- /.proj-md -->
+			</div>
+		</div>
 
 		<p class="project-collab-note">Interested in project collab? Email me!</p>
 
@@ -1207,19 +1274,19 @@
 		<div class="section-rule"></div>
 		<div class="tech-table">
 			<div class="tech-row"><div class="tech-cat">Languages</div><div class="tech-chips">
-				<span class="tech-chip"><img src="images/R_icon.png" alt="">R</span><span class="tech-chip"><img src="images/python_icon.webp" alt="">Python</span><span class="tech-chip"><img src="images/java_icon.svg" alt="">Java</span><span class="tech-chip"><img src="images/js.png" alt="">JavaScript</span><span class="tech-chip"><img src="images/swift_icon.png" alt="">Swift</span><span class="tech-chip"><img src="images/code_gray.svg" alt="">HTML</span><span class="tech-chip"><img src="images/snippet_gray.svg" alt="">CSS</span><span class="tech-chip"><img src="images/latex_icon.png" alt="">LaTeX</span>
+				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/R_icon.png" alt="">R</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/python_icon.webp" alt="">Python</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/java_icon.svg" alt="">Java</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/js.png" alt="">JavaScript</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/swift_icon.png" alt="">Swift</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/code_gray.svg" alt="">HTML</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/snippet_gray.svg" alt="">CSS</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/latex_icon.png" alt="">LaTeX</span>
 			</div></div>
 			<div class="tech-row"><div class="tech-cat">IDEs &amp; Editors</div><div class="tech-chips">
-				<span class="tech-chip"><img src="images/jupyter.svg" alt="">Jupyter</span><span class="tech-chip"><img src="images/rstudio_icon.png" alt="">RStudio</span><span class="tech-chip"><img src="images/pycharm.png" alt="">PyCharm</span><span class="tech-chip"><img src="images/vs_code.png" alt="">VS Code</span><span class="tech-chip"><img src="images/overleaf_icon.png" alt="">Overleaf</span><span class="tech-chip"><img src="images/Xcode.png" alt="">Xcode</span><span class="tech-chip"><img src="images/sas_icon.png" alt="">SAS OnDemand</span><span class="tech-chip"><img src="images/eclipse.png" alt="">Eclipse</span>
+				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/jupyter.svg" alt="">Jupyter</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/rstudio_icon.png" alt="">RStudio</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/pycharm.png" alt="">PyCharm</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/vs_code.png" alt="">VS Code</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/overleaf_icon.png" alt="">Overleaf</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/Xcode.png" alt="">Xcode</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/sas_icon.png" alt="">SAS OnDemand</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/eclipse.png" alt="">Eclipse</span>
 			</div></div>
 			<div class="tech-row"><div class="tech-cat">CLI &amp; Cloud</div><div class="tech-chips">
-				<span class="tech-chip"><img src="images/unix_icon.png" alt="">UNIX</span><span class="tech-chip"><img src="images/hyper_logo.png" alt="">Terminal</span><span class="tech-chip"><img src="images/ssh.png" alt="">SSH</span><span class="tech-chip"><img src="images/aws.jpg" alt="">AWS EC2</span><span class="tech-chip"><img src="images/conda.png" alt="">Conda</span><span class="tech-chip"><img src="images/claude.svg" alt="">Claude</span><span class="tech-chip">High Performance Computing</span><span class="tech-chip"><img src="images/git_icon.png" alt="">Git</span><span class="tech-chip"><img src="images/github.png" alt="">GitHub</span>
+				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/unix_icon.png" alt="">UNIX</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/hyper_logo.png" alt="">Terminal</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/ssh.png" alt="">SSH</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/aws.jpg" alt="">AWS EC2</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/conda.png" alt="">Conda</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/claude.svg" alt="">Claude</span><span class="tech-chip">High Performance Computing</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/git_icon.png" alt="">Git</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/github.png" alt="">GitHub</span>
 			</div></div>
 			<div class="tech-row"><div class="tech-cat">Office</div><div class="tech-chips">
-				<span class="tech-chip"><img src="images/word.png" alt="">MS Word</span><span class="tech-chip"><img src="images/excel.png" alt="">MS Excel</span><span class="tech-chip"><img src="images/ppt.png" alt="">MS PowerPoint</span>
+				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/word.png" alt="">MS Word</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/excel.png" alt="">MS Excel</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/ppt.png" alt="">MS PowerPoint</span>
 			</div></div>
 			<div class="tech-row"><div class="tech-cat">Design</div><div class="tech-chips">
-				<span class="tech-chip"><img src="images/Adobe_Illustrator.png" alt="">Illustrator</span><span class="tech-chip"><img src="images/photoshop.png" alt="">Photoshop</span><span class="tech-chip"><img src="images/procreate.png" alt="">Procreate</span><span class="tech-chip"><img src="images/after_effect.png" alt="">After Effects</span>
+				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/Adobe_Illustrator.png" alt="">Illustrator</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/photoshop.png" alt="">Photoshop</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/procreate.png" alt="">Procreate</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/after_effect.png" alt="">After Effects</span>
 			</div></div>
 		</div>
 	</section>
@@ -1256,6 +1323,7 @@
 			</div>
 			<div class="log-box">
 				<h3 class="log-title">Log</h3>
+				<p class="log-entry">08/28/2026: Added Corcept experience.</p>
 				<p class="log-entry">04/28/2026: Redesigned the layout of the experience section.</p>
 				<p class="log-entry">04/11/2026: Added more animations, and filtering functionality.</p>
 				<p class="log-entry">03/26/2026: Added animations and redesigned homepage layout by vibe coding using Claude.</p>
@@ -1290,7 +1358,7 @@
 <script src="animations.js"></script>
 
 <script>
-	function initFilter({ btnAttr, cardSelector, cardAttr, emptyId }) {
+	function initFilter({ btnAttr, cardSelector, cardAttr, emptyId, defaultFilter = 'all' }) {
 		const btns = document.querySelectorAll(`[${btnAttr}]`);
 		const cards = document.querySelectorAll(cardSelector);
 		const emptyEl = emptyId ? document.getElementById(emptyId) : null;
@@ -1305,11 +1373,11 @@
 			if (animate) setTimeout(updateEmpty, 230); else updateEmpty();
 		}
 		btns.forEach(btn => btn.addEventListener('click', () => apply(btn.getAttribute(btnAttr))));
-		return () => apply('all', false);
+		return () => apply(defaultFilter, false);
 	}
 	const resets = [
 		initFilter({ btnAttr: 'data-filter', cardSelector: '.exp-card[data-lang]', cardAttr: 'lang', emptyId: 'project-empty-state' }),
-		initFilter({ btnAttr: 'data-work-filter', cardSelector: '.work-card[data-type]', cardAttr: 'type', emptyId: 'work-empty-state' }),
+		initFilter({ btnAttr: 'data-work-filter', cardSelector: '.work-card[data-type]', cardAttr: 'type', emptyId: 'work-empty-state', defaultFilter: 'technical' }),
 	];
 	window.addEventListener('pageshow', () => resets.forEach(r => r()));
 	document.querySelectorAll('a.anchor-link').forEach(link => {
@@ -1463,24 +1531,29 @@
 		// Wire the existing filter buttons to filter list items (and reveal first matching panel)
 		const filterBtns = document.querySelectorAll('[data-work-filter]');
 		const emptyState = document.getElementById('work-empty-state');
-		filterBtns.forEach(btn => {
-			btn.addEventListener('click', () => {
-				filterBtns.forEach(b => b.classList.toggle('active', b === btn));
-				const f = btn.dataset.workFilter;
-				let firstVisible = null;
-				let activeStillVisible = false;
-				items.forEach(i => {
-					const match = f === 'all' || i.dataset.type === f;
-					i.style.display = match ? '' : 'none';
-					if (match) {
-						if (!firstVisible) firstVisible = i;
-						if (i.classList.contains('active')) activeStillVisible = true;
-					}
-				});
-				if (emptyState) emptyState.style.display = firstVisible ? 'none' : 'block';
-				if (!activeStillVisible && firstVisible) activate(firstVisible.dataset.target);
+		// Work list opens filtered to Technical; DEFAULT_WORK_FILTER is the single source of that default.
+		const DEFAULT_WORK_FILTER = 'technical';
+		function applyWorkFilter(f) {
+			filterBtns.forEach(b => b.classList.toggle('active', b.dataset.workFilter === f));
+			let firstVisible = null;
+			let activeStillVisible = false;
+			items.forEach(i => {
+				const match = f === 'all' || i.dataset.type === f;
+				i.style.display = match ? '' : 'none';
+				if (match) {
+					if (!firstVisible) firstVisible = i;
+					if (i.classList.contains('active')) activeStillVisible = true;
+				}
 			});
+			if (emptyState) emptyState.style.display = firstVisible ? 'none' : 'block';
+			if (!activeStillVisible && firstVisible) activate(firstVisible.dataset.target);
+		}
+		filterBtns.forEach(btn => {
+			btn.addEventListener('click', () => applyWorkFilter(btn.dataset.workFilter));
 		});
+		applyWorkFilter(DEFAULT_WORK_FILTER);
+		// bfcache restores the DOM as-left; re-assert the default so it matches a cold load.
+		window.addEventListener('pageshow', () => applyWorkFilter(DEFAULT_WORK_FILTER));
 
 		// Patch the filter count badges. initFilterCounts runs on DOMContentLoaded and counts .work-card[data-type] (zero in this variant).
 		// Defer our patch so it runs AFTER initFilterCounts has created the badge spans.

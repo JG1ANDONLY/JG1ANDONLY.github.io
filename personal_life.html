@@ -28,7 +28,7 @@
                     <nav class="hero-nav">
                         <a href="#music">🎵 Music</a>
                         <a href="#gallery">📸 Gallery</a>
-                        <a href="index.html" target="_blank">← Back to Main Page</a>
+                        <a href="index.html">← Back to Main Page</a>
                     </nav>
                 </div>
                 <div class="scroll-indicator" onclick="document.getElementById('music').scrollIntoView({behavior:'smooth'})">
@@ -528,6 +528,174 @@
                     btn.classList.remove('visible');
                 }
             }, { passive: true });
+        </script>
+
+        <!-- ===== Spotify: lightweight song cards, load real player on click ===== -->
+        <script>
+            // Each song shows a light "facade" card (cover art + title) instead of a
+            // full Spotify embed. The heavy player is created only when a card is
+            // clicked, and only ONE player ever exists — so cards load instantly and
+            // single-play is automatic.
+            (function () {
+                const containers = document.querySelectorAll('.song-container');
+                if (!containers.length) return;
+
+                const PLAY_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+                const PAUSE_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h3v14H7zM14 5h3v14h-3z"/></svg>';
+
+                // --- Replace every heavy iframe with a light facade card ---
+                const slots = [];
+                containers.forEach((container) => {
+                    container.querySelectorAll('iframe.song-bar').forEach((iframe) => {
+                        const match = iframe.src.match(/track\/([A-Za-z0-9]+)/);
+                        if (!match) return;
+                        const id = match[1];
+
+                        const slot = document.createElement('div');
+                        slot.className = 'song-slot';
+                        slot.dataset.trackId = id;
+                        slot.dataset.uri = 'spotify:track:' + id;
+
+                        const facade = document.createElement('button');
+                        facade.type = 'button';
+                        facade.className = 'song-facade';
+                        facade.innerHTML =
+                            '<img class="song-facade-art" alt="" loading="lazy" />' +
+                            '<span class="song-facade-info">' +
+                                '<span class="song-facade-title">Loading&hellip;</span>' +
+                                '<span class="song-facade-sub">Spotify</span>' +
+                            '</span>' +
+                            '<span class="song-facade-play" aria-hidden="true">' + PLAY_SVG + '</span>';
+                        slot.appendChild(facade);
+                        iframe.replaceWith(slot);
+                        slots.push(slot);
+                    });
+                });
+
+                // --- Lazily fetch cover art + title (tiny JSON, not the whole player) ---
+                const metaObserver = new IntersectionObserver((entries, obs) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+                        const slot = entry.target;
+                        obs.unobserve(slot);
+                        fetch('https://open.spotify.com/oembed?url=https://open.spotify.com/track/' + slot.dataset.trackId)
+                            .then((r) => r.json())
+                            .then((data) => {
+                                const art = slot.querySelector('.song-facade-art');
+                                const title = slot.querySelector('.song-facade-title');
+                                if (data.thumbnail_url && art) art.src = data.thumbnail_url;
+                                if (data.title && title) title.textContent = data.title;
+                            })
+                            .catch(() => {
+                                const title = slot.querySelector('.song-facade-title');
+                                if (title) title.textContent = 'Open in Spotify';
+                            });
+                    });
+                }, { rootMargin: '400px' });
+                slots.forEach((s) => metaObserver.observe(s));
+
+                // --- Real player: built only on click, only ONE at a time ---
+                let apiReadyResolve;
+                const apiReady = new Promise((res) => { apiReadyResolve = res; });
+                window.onSpotifyIframeApiReady = (IFrameAPI) => apiReadyResolve(IFrameAPI);
+
+                // Load the ~small IFrame API script on the first click, not upfront.
+                let apiRequested = false;
+                const ensureApi = () => {
+                    if (apiRequested) return;
+                    apiRequested = true;
+                    const s = document.createElement('script');
+                    s.src = 'https://open.spotify.com/embed/iframe-api/v1';
+                    s.async = true;
+                    document.body.appendChild(s);
+                };
+
+                // A single hidden Spotify player drives the audio. The visible cards
+                // never change — we just toggle the icon and reflect play/pause state.
+                const audioHost = document.createElement('div');
+                audioHost.id = 'spotify-audio-host';
+                audioHost.setAttribute('aria-hidden', 'true');
+                document.body.appendChild(audioHost);
+
+                let controller = null;
+                let controllerReady = false;
+                let activeSlot = null;
+
+                const setIcon = (slot, playing) => {
+                    const btn = slot.querySelector('.song-facade-play');
+                    if (btn) btn.innerHTML = playing ? PAUSE_SVG : PLAY_SVG;
+                };
+
+                // Reflect the hidden player's state on whichever card is active.
+                const reflect = (isPaused) => {
+                    if (!activeSlot) return;
+                    activeSlot.classList.remove('loading');
+                    const playing = isPaused === false;
+                    activeSlot.classList.toggle('playing', playing);
+                    setIcon(activeSlot, playing);
+                };
+
+                const setActive = (slot) => {
+                    if (activeSlot && activeSlot !== slot) {
+                        activeSlot.classList.remove('playing', 'loading');
+                        setIcon(activeSlot, false);
+                    }
+                    activeSlot = slot;
+                };
+
+                const playSlot = (slot) => {
+                    setActive(slot);
+                    slot.classList.add('loading');
+                    const uri = slot.dataset.uri;
+                    ensureApi();
+                    apiReady.then((IFrameAPI) => {
+                        if (activeSlot !== slot) return; // superseded by a later click
+                        // Always build a FRESH player for a new song. Reusing one via
+                        // loadUri() was unreliable — play() raced the load and the next
+                        // song could take ~30s to start (the old preview had to finish).
+                        if (controller) {
+                            try { controller.destroy(); } catch (e) {}
+                            controller = null;
+                            controllerReady = false;
+                        }
+                        audioHost.innerHTML = '';
+                        const m = document.createElement('div');
+                        audioHost.appendChild(m);
+                        IFrameAPI.createController(
+                            m,
+                            { uri: uri, width: '100%', height: '80' },
+                            (c) => {
+                                if (activeSlot !== slot) { try { c.destroy(); } catch (e) {} return; }
+                                controller = c;
+                                c.addListener('ready', () => {
+                                    controllerReady = true;
+                                    c.play();
+                                });
+                                c.addListener('playback_update', (e) => {
+                                    if (e && e.data) reflect(e.data.isPaused);
+                                });
+                            }
+                        );
+                    });
+                };
+
+                const onCardClick = (slot) => {
+                    if (slot === activeSlot && controller && controllerReady) {
+                        controller.togglePlay(); // pause/resume the current song
+                    } else {
+                        playSlot(slot); // start (or switch to) this song
+                    }
+                };
+
+                containers.forEach((container) => {
+                    container.addEventListener('click', (e) => {
+                        const facade = e.target.closest('.song-facade');
+                        if (!facade || !container.contains(facade)) return;
+                        const slot = facade.closest('.song-slot');
+                        if (slot) onCardClick(slot);
+                    });
+                });
+            })();
         </script>
     </body>
 </html>

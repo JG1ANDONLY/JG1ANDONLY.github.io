@@ -40,7 +40,19 @@
       "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --virtual-time-budget=3000 --window-size=1400,900 --screenshot=/tmp/before_scroll.png http://localhost:8765/)",
       "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --virtual-time-budget=4000 --window-size=1400,900 --screenshot=/tmp/after_scroll.png 'http://localhost:8765/#publications')",
       "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --virtual-time-budget=6000 --window-size=1400,900 --screenshot=/tmp/scrolled_dark.png http://localhost:8765/scroll_test_dark.html)",
-      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --virtual-time-budget=4000 --window-size=1400,900 --dump-dom http://localhost:8765/scroll_test2.html)"
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --virtual-time-budget=4000 --window-size=1400,900 --dump-dom http://localhost:8765/scroll_test2.html)",
+      "Bash(node --check animations.js)",
+      "Bash(awk -F: '{print $1}')",
+      "Bash(node --check /tmp/spot_check.js)",
+      "Bash(command -v playwright node)",
+      "Read(//Users/zhongyiguo/.cache/**)",
+      "Bash(node -e \"try{require\\('playwright'\\);console.log\\('playwright: yes'\\)}catch\\(e\\){console.log\\('playwright: no'\\)}\")",
+      "Bash(node -e \"try{require\\('puppeteer'\\);console.log\\('puppeteer: yes'\\)}catch\\(e\\){console.log\\('puppeteer: no'\\)}\")",
+      "Read(//Applications/Google Chrome.app/**)",
+      "Bash(curl -s \"https://open.spotify.com/oembed?url=https://open.spotify.com/track/2kOF946ACR2MPDsuhTtsuA\")",
+      "Bash(curl -s -I -H \"Origin: https://gzy1s.me\" \"https://open.spotify.com/oembed?url=https://open.spotify.com/track/2kOF946ACR2MPDsuhTtsuA\")",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --hide-scrollbars --window-size=1200,2600 --virtual-time-budget=4000 --screenshot=/private/tmp/claude-501/-Users-zhongyiguo-Desktop-JG1ANDONLY/1f4a2568-5201-4bcc-8ad4-2c5336dd02ac/scratchpad/pl.png file:///Users/zhongyiguo/Desktop/JG1ANDONLY/personal_life.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --hide-scrollbars --window-size=1200,1400 --virtual-time-budget=5000 --screenshot=/private/tmp/claude-501/-Users-zhongyiguo-Desktop-JG1ANDONLY/1f4a2568-5201-4bcc-8ad4-2c5336dd02ac/scratchpad/pl_music.png 'file:///Users/zhongyiguo/Desktop/JG1ANDONLY/personal_life.html#music')"
     ]
   }
 }
