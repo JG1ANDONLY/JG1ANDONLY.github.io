@@ -1,627 +1,105 @@
-document.addEventListener('DOMContentLoaded', function () {
-
-	/* ── Scroll-triggered fade-in ── */
-	document.querySelectorAll(
-		'.stat-card, .pub-item, .cert-category, .lang-box, .log-box, ' +
-		'.about-bio p, .teaching-card, .kpi'
-	).forEach(el => el.classList.add('animate-on-scroll'));
-
-	/* ── Staggered scroll-reveal: lists/rails where order reads left-to-right or top-to-bottom ── */
-	function applyStagger(selector, step = 0.06, max = 8) {
-		document.querySelectorAll(selector).forEach((el, i) => {
-			el.style.setProperty('--delay', `${(i % max) * step}s`);
-			el.classList.add('animate-on-scroll');
-		});
-	}
-	applyStagger('.tech-row', 0.07, 6);
-	applyStagger('.proj-md-item', 0.05, 10);
-	applyStagger('.work-md-item', 0.05, 10);
-	applyStagger('.cert-item', 0.04, 12);
-
-	/* ── Section labels ── */
-	document.querySelectorAll('.exp-sub-label, .exp-section-label').forEach(el => el.classList.add('animate-label'));
-
-	/* ── Filter bars ── */
-	document.querySelectorAll('.work-filter-bar, .project-filter-bar').forEach(el => el.classList.add('animate-filterbar'));
-
-	/* ── Cards ── */
-	document.querySelectorAll('.exp-card, .teaching-card').forEach((el, i) => {
-		el.style.setProperty('--delay', `${(i % 8) * 0.07}s`);
-		el.classList.add('animate-card');
-	});
-	document.querySelectorAll('.work-card').forEach((card, i) => {
-		const content = card.querySelector('.work-content');
-		if (!content) return;
-		content.style.setProperty('--delay', `${(i % 8) * 0.07}s`);
-		content.classList.add('animate-card');
-	});
-
-	/* ── Section labels ── */
-	document.querySelectorAll('.section-label').forEach(el => {
-		el.classList.add('animate-section-title');
-	});
-
-	/* ── Intersection Observer ── */
-	const observer = new IntersectionObserver(entries => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('visible');
-				observer.unobserve(entry.target);
-			}
-		});
-	}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-	document.querySelectorAll(
-		'.animate-on-scroll, .animate-card, .animate-label, ' +
-		'.animate-filterbar, .animate-section-title, .kpi, .work-card'
-	).forEach(el => observer.observe(el));
-
-	/* ── All init calls ── */
-	initTypewriter();
-	initScrollProgress();
-	initCursorSpotlight();
-	initActiveSidebarNav();
-	initExpandableCards();
-	initSectionCollapse();
-	initHashNavigation();
-	initLightbox();
-	initClickRipple();
-	initCardShine();
-	initTimelinePulse();
-	initBurgerMenu();
-	initDarkToggle();
-	initWorkFilter();
-	initProjectFilter();
-	initFilterCounts();
-	initKPICounters();
-	initMagneticButtons();
-	initWorkTimelineDots();
-	initSmoothNavScroll();
-	initImageLoadFade();
-});
-
-/* Hide the page loader as soon as the DOM is ready — don't wait for all
-   images to download. Safety net: force-hide after 4s in case something stalls. */
-function hidePageLoader() {
-	const loader = document.getElementById('page-loader');
-	if (!loader || loader.classList.contains('hidden')) return;
-	loader.classList.add('hidden');
-	setTimeout(() => loader.remove(), 600);
-}
-if (document.readyState === 'loading') {
-	document.addEventListener('DOMContentLoaded', hidePageLoader);
-} else {
-	hidePageLoader();
-}
-setTimeout(hidePageLoader, 4000);
-
-/* ── Image skeleton shimmer until each <img> finishes loading ── */
-function initImageLoadFade() {
-	document.querySelectorAll('img').forEach(img => {
-		if (img.complete && img.naturalWidth > 0) {
-			img.classList.add('img-loaded');
-			return;
-		}
-		img.classList.add('img-loading');
-		const done = () => {
-			img.classList.remove('img-loading');
-			img.classList.add('img-loaded');
-		};
-		img.addEventListener('load', done, { once: true });
-		img.addEventListener('error', done, { once: true });
-	});
-}
-
-/* ── Smooth scroll for sidebar nav with mobile-header offset ── */
-function initSmoothNavScroll() {
-	const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-	document.querySelectorAll('.sidebar-link[href^="#"]').forEach(link => {
-		link.addEventListener('click', e => {
-			const id = link.getAttribute('href').slice(1);
-			const target = document.getElementById(id);
-			if (!target) return;
-			e.preventDefault();
-			const mobileH = document.getElementById('mobileHeader');
-			const offset = (mobileH && mobileH.offsetParent !== null) ? mobileH.offsetHeight + 8 : 0;
-			const top = target.getBoundingClientRect().top + window.scrollY - offset;
-			window.scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
-			history.replaceState(null, '', `#${id}`);
-		});
-	});
-}
-
-/* ── Typewriter effect for sidebar title ── */
-function initTypewriter() {
-	const el = document.querySelector('.sidebar-title');
-	if (!el) return;
-
-	const phrases = ['DATA SCIENTIST', 'SWIMMER', 'AI-THUSIAST', 'IMMIGRANT'];
-	let phraseIndex = 0;
-	let charIndex   = 0;
-	let isDeleting  = false;
-
-	const TYPE_SPEED   = 85;
-	const DELETE_SPEED = 45;
-	const PAUSE_TYPED  = 1300;
-	const PAUSE_EMPTY  = 320;
-
-	el.textContent = '';
-	el.classList.add('typewriter-active');
-
-	function tick() {
-		const phrase = phrases[phraseIndex];
-
-		if (!isDeleting) {
-			charIndex++;
-			el.textContent = phrase.slice(0, charIndex);
-
-			if (charIndex === phrase.length) {
-				isDeleting = true;
-				setTimeout(tick, PAUSE_TYPED);
-				return;
-			}
-		} else {
-			charIndex--;
-			el.textContent = phrase.slice(0, charIndex);
-
-			if (charIndex === 0) {
-				isDeleting = false;
-				phraseIndex = (phraseIndex + 1) % phrases.length;
-				setTimeout(tick, PAUSE_EMPTY);
-				return;
-			}
-		}
-
-		setTimeout(tick, isDeleting ? DELETE_SPEED : TYPE_SPEED);
-	}
-
-	// Brief delay so page settles before animation starts
-	setTimeout(tick, 600);
-}
-
-/* ── Scroll progress bar ── */
-function initScrollProgress() {
-	const bar = document.createElement('div');
-	bar.id = 'scroll-progress';
-	document.body.prepend(bar);
-
-	const btn = document.getElementById('backToTop');
-	window.addEventListener('scroll', () => {
-		const scrolled = window.scrollY;
-		const total = document.documentElement.scrollHeight - window.innerHeight;
-		bar.style.width = total > 0 ? `${(scrolled / total) * 100}%` : '0%';
-		if (btn) btn.classList.toggle('visible', scrolled > 400);
-	}, { passive: true });
-
-	if (btn) {
-		btn.addEventListener('click', e => {
-			e.preventDefault();
-			window.scrollTo({ top: 0, behavior: 'smooth' });
-		});
-	}
-}
-
-/* ── Cursor spotlight ── */
-function initCursorSpotlight() {
-	const spot = document.createElement('div');
-	spot.id = 'cursor-spotlight';
-	document.body.appendChild(spot);
-	window.addEventListener('mousemove', e => {
-		spot.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
-	}, { passive: true });
-}
-
-/* ── Active sidebar nav ── */
-function initActiveSidebarNav() {
-	const sectionIds = ['about_me', 'education', 'experience', 'publications', 'technical_summary', 'certifications'];
-	const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
-	const links = document.querySelectorAll('.sidebar-link[data-section]');
-
-	function update() {
-		const mobileH = document.getElementById('mobileHeader');
-		const offset = (mobileH && mobileH.offsetParent !== null) ? mobileH.offsetHeight + 8 : 20;
-		let currentId = null;
-		let bestTop = -Infinity;
-		sections.forEach(sec => {
-			const top = sec.getBoundingClientRect().top;
-			if (top <= offset + 40 && top > bestTop) { bestTop = top; currentId = sec.id; }
-		});
-		const nearBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 60;
-		if (nearBottom && sections.length) currentId = sections[sections.length - 1].id;
-
-		links.forEach(link => {
-			link.classList.toggle('active', link.dataset.section === currentId);
-		});
-	}
-	window.addEventListener('scroll', update, { passive: true });
-	update();
-}
-
-/* ── Expandable cards ── */
-function initExpandableCards() {
-	document.querySelectorAll('.expandable-card').forEach(card => {
-		const summary = card.querySelector('.card-summary');
-		const hint    = card.querySelector('.card-hint');
-		if (summary) {
-			summary.setAttribute('tabindex', '0');
-			summary.setAttribute('role', 'button');
-			summary.setAttribute('aria-expanded', 'false');
-			summary.addEventListener('keydown', e => {
-				if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doToggle(e); }
-			});
-		}
-		function doToggle(e) {
-			if (e.target.closest('a')) return;
-			if (e.target.tagName === 'IMG' && e.target.closest('.exp-images-strip') && card.classList.contains('expanded')) return;
-			const expanded = card.classList.toggle('expanded');
-			if (summary) summary.setAttribute('aria-expanded', String(expanded));
-			if (hint) hint.textContent = expanded ? 'Click to collapse ▴' : 'Click to expand ▾';
-		}
-		card.addEventListener('click', doToggle);
-	});
-}
-
-/* ── Section collapse ── */
-function initSectionCollapse() {
-	setupCollapse('.work-timeline', '.work-card', 'work-show-more');
-	setupCollapse('#project-timeline', '.exp-card', 'project-show-more');
-}
-
-function setupCollapse(containerSel, cardSel, btnId) {
-	const container = document.querySelector(containerSel);
-	const btn = document.getElementById(btnId);
-	if (!container || !btn) return;
-	const cards = Array.from(container.querySelectorAll(cardSel));
-	let isCollapsed = true;
-
-	// Returns cards currently visible (not hidden by a filter)
-	function filterVisible() {
-		return cards.filter(c => !c.classList.contains('hidden'));
-	}
-
-	function applyCollapse() {
-		const visible = filterVisible();
-		const showCount = Math.min(3, visible.length); // always show up to 3 matching cards
-		if (!isCollapsed || visible.length <= showCount) {
-			// Expanded, or not enough results to collapse — show everything
-			cards.forEach(c => c.classList.remove('section-hidden'));
-		} else {
-			// Collapsed — keep first showCount filter-visible cards, hide the rest
-			const keep = new Set(visible.slice(0, showCount));
-			cards.forEach(c => {
-				const shouldHide = !c.classList.contains('hidden') && !keep.has(c);
-				c.classList.toggle('section-hidden', shouldHide);
-			});
-		}
-		btn.innerHTML = isCollapsed ? 'Show more &#x25BE;' : 'Show less &#x25B4;';
-		const btnHidden = visible.length <= showCount;
-		btn.style.display = btnHidden ? 'none' : '';
-		container.style.marginBottom = btnHidden ? '52px' : '';
-	}
-
-	applyCollapse();
-
-	const obs = new MutationObserver(mutations => {
-		const affectsHidden = mutations.some(m => {
-			const oldHidden = m.oldValue ? m.oldValue.split(' ').includes('hidden') : false;
-			const newHidden = m.target.classList.contains('hidden');
-			return oldHidden !== newHidden;
-		});
-		if (affectsHidden) applyCollapse();
-	});
-	cards.forEach(card => obs.observe(card, { attributes: true, attributeFilter: ['class'], attributeOldValue: true }));
-
-	btn.addEventListener('click', () => {
-		isCollapsed = !isCollapsed;
-		applyCollapse();
-	});
-}
-
-/* ── Lightbox ── */
-function initLightbox() {
-	const overlay = document.createElement('div');
-	overlay.className = 'lightbox-overlay';
-	overlay.innerHTML = `
-		<span class="lightbox-close" title="Close">&times;</span>
-		<img class="lightbox-img" src="" alt="">
-		<div class="lightbox-caption"></div>
-	`;
-	document.body.appendChild(overlay);
-	const img = overlay.querySelector('.lightbox-img');
-	const caption = overlay.querySelector('.lightbox-caption');
-
-	function open(src, alt) {
-		img.src = src; img.alt = alt; caption.textContent = alt;
-		overlay.style.display = 'flex';
-		requestAnimationFrame(() => overlay.classList.add('active'));
-		document.body.style.overflow = 'hidden';
-	}
-	function close() {
-		overlay.classList.remove('active');
-		document.body.style.overflow = '';
-		setTimeout(() => { overlay.style.display = 'none'; img.src = ''; }, 260);
-	}
-	document.querySelectorAll('.exp-images-strip img').forEach(el => {
-		el.addEventListener('click', () => open(el.src, el.alt));
-	});
-	overlay.addEventListener('click', e => { if (e.target !== img) close(); });
-	overlay.querySelector('.lightbox-close').addEventListener('click', close);
-	document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('active')) close(); });
-}
-
-/* ── Click ripple ── */
-function initClickRipple() {
-	document.querySelectorAll('.exp-card, .work-card, .project-filter-btn').forEach(el => {
-		el.addEventListener('click', function(e) {
-			const ripple = document.createElement('span');
-			ripple.className = 'ripple-effect';
-			const rect = this.getBoundingClientRect();
-			const size = Math.max(rect.width, rect.height);
-			Object.assign(ripple.style, {
-				width: size + 'px', height: size + 'px',
-				left: (e.clientX - rect.left - size / 2) + 'px',
-				top:  (e.clientY - rect.top  - size / 2) + 'px',
-			});
-			this.appendChild(ripple);
-			ripple.addEventListener('animationend', () => ripple.remove());
-		});
-	});
-}
-
-/* ── Card shine sweep ── */
-function initCardShine() {
-	document.querySelectorAll('.exp-card, .teaching-card, .stat-card, .kpi, .work-card').forEach(card => {
-		card.classList.add('shine-host');
-		const shine = document.createElement('span');
-		shine.className = 'card-shine';
-		card.appendChild(shine);
-		card.addEventListener('mousemove', function(e) {
-			const rect = this.getBoundingClientRect();
-			const x = ((e.clientX - rect.left) / rect.width)  * 100;
-			const y = ((e.clientY - rect.top)  / rect.height) * 100;
-			shine.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(26,86,219,0.07) 0%, transparent 65%)`;
-			shine.style.opacity = '1';
-		});
-		card.addEventListener('mouseleave', function() { shine.style.opacity = '0'; });
-	});
-}
-
-/* ── Work timeline dots (placed as siblings so they're unaffected by card overflow) ── */
-function initWorkTimelineDots() {
-	const timeline = document.querySelector('.work-timeline');
-	if (!timeline) return;
-
-	function placeDots() {
-		timeline.querySelectorAll('.tl-dot').forEach(d => d.remove());
-		const cards = Array.from(timeline.querySelectorAll('.work-card')).filter(
-			c => !c.classList.contains('section-hidden') && !c.classList.contains('hidden')
-		);
-		cards.forEach((card, i) => {
-			const dot = document.createElement('span');
-			dot.className = 'tl-dot';
-			if (i === 0) dot.classList.add('pulse');
-			dot.style.top = (card.offsetTop + 22) + 'px';
-			timeline.appendChild(dot);
-		});
-	}
-
-	requestAnimationFrame(placeDots);
-
-	// Reposition when cards are shown/hidden (filter / show-more)
-	const mo = new MutationObserver(() => setTimeout(placeDots, 60));
-	timeline.querySelectorAll('.work-card').forEach(card => {
-		mo.observe(card, { attributes: true, attributeFilter: ['class'] });
-	});
-	window.addEventListener('resize', () => requestAnimationFrame(placeDots));
-}
-
-/* ── Work logo pulse ── */
-function initTimelinePulse() {
-	const obs = new IntersectionObserver(entries => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) { entry.target.classList.add('logo-pulse'); obs.unobserve(entry.target); }
-		});
-	}, { threshold: 0.6 });
-	document.querySelectorAll('.work-logo').forEach(el => obs.observe(el));
-}
-
-/* ── Burger menu (mobile sidebar toggle) ── */
-function initBurgerMenu() {
-	const burger   = document.getElementById('burgerBtn');
-	const sidebar  = document.getElementById('sidebar');
-	const overlay  = document.createElement('div');
-	overlay.id = 'sidebar-overlay';
-	Object.assign(overlay.style, {
-		position: 'fixed', inset: '0',
-		background: 'rgba(0,0,0,0.4)',
-		zIndex: '199',
-		display: 'none'
-	});
-	document.body.appendChild(overlay);
-
-	function open()  { sidebar.classList.add('open');  burger.classList.add('open');  overlay.style.display = 'block'; document.body.style.overflow = 'hidden'; }
-	function close() { sidebar.classList.remove('open'); burger.classList.remove('open'); overlay.style.display = 'none'; document.body.style.overflow = ''; }
-
-	if (burger) burger.addEventListener('click', () => sidebar.classList.contains('open') ? close() : open());
-	overlay.addEventListener('click', close);
-
-	/* Close sidebar on nav link click (mobile) */
-	document.querySelectorAll('.sidebar-link').forEach(link => {
-		link.addEventListener('click', () => {
-			if (window.innerWidth < 769) close();
-		});
-	});
-}
-
-/* ── Dark mode toggle ── */
-function initDarkToggle() {
-	const mobileBtn  = document.getElementById('nightToggle');
-	const desktopBtn = document.getElementById('nightToggleDesktop');
-
-	// Sync button emoji with current state (class may already be on body from FOUC script)
-	function syncEmoji() {
-		const isDark = document.body.classList.contains('dark');
-		[mobileBtn, desktopBtn].forEach(btn => {
-			if (btn) btn.textContent = isDark ? '☀️' : '🌙';
-		});
-	}
-	syncEmoji();
-
-	function toggle() {
-		document.body.classList.toggle('dark');
-		const isDark = document.body.classList.contains('dark');
-		localStorage.setItem('theme-v4', isDark ? 'dark' : 'light');
-		syncEmoji();
-	}
-	if (mobileBtn)  mobileBtn.addEventListener('click', toggle);
-	if (desktopBtn) desktopBtn.addEventListener('click', toggle);
-}
-
-/* ── Work filter ── */
-function initWorkFilter() {
-	const btns      = document.querySelectorAll('[data-work-filter]');
-	const cards     = document.querySelectorAll('.work-card[data-type]');
-	const emptyState = document.getElementById('work-empty-state');
-
-	btns.forEach(btn => {
-		btn.addEventListener('click', () => {
-			btns.forEach(b => b.classList.remove('active'));
-			btn.classList.add('active');
-			const filter = btn.dataset.workFilter;
-			let visible = 0;
-			cards.forEach(card => {
-				const match = filter === 'all' || card.dataset.type === filter;
-				card.classList.toggle('hidden', !match);
-				if (match) visible++;
-			});
-			if (emptyState) emptyState.style.display = visible === 0 ? 'block' : 'none';
-		});
-	});
-}
-
-/* ── KPI counter animation ── */
-function initKPICounters() {
-	document.querySelectorAll('.kpi-num').forEach(el => {
-		const raw = el.textContent.trim();
-		const num = parseFloat(raw);
-		if (isNaN(num)) return; // skip text-only like "MS", "BS"
-		const suffix = raw.replace(String(num), '');
-		el.textContent = '0' + suffix;
-		const obs = new IntersectionObserver(entries => {
-			entries.forEach(entry => {
-				if (!entry.isIntersecting) return;
-				obs.unobserve(entry.target);
-				const start = performance.now();
-				const duration = 900;
-				function step(now) {
-					const t = Math.min((now - start) / duration, 1);
-					const eased = 1 - Math.pow(1 - t, 3);
-					el.textContent = (Number.isInteger(num) ? Math.round(eased * num) : (eased * num).toFixed(1)) + suffix;
-					if (t < 1) requestAnimationFrame(step);
-				}
-				requestAnimationFrame(step);
-			});
-		}, { threshold: 0.6 });
-		obs.observe(el.closest('.kpi') || el);
-	});
-}
-
-/* ── Magnetic buttons ── */
-function initMagneticButtons() {
-	document.querySelectorAll('.sidebar-social-btn').forEach(btn => {
-		btn.addEventListener('mousemove', function(e) {
-			const rect = this.getBoundingClientRect();
-			const x = e.clientX - rect.left - rect.width / 2;
-			const y = e.clientY - rect.top - rect.height / 2;
-			this.style.transform = `translate(${x * 0.22}px, ${y * 0.22}px)`;
-			this.style.transition = 'transform 0.1s ease';
-		});
-		btn.addEventListener('mouseleave', function() {
-			this.style.transform = '';
-			this.style.transition = 'transform 0.4s ease';
-		});
-	});
-}
-
-/* ── Filter count badges ── */
-function initFilterCounts() {
-	// Work filter counts
-	const workBtns  = Array.from(document.querySelectorAll('[data-work-filter]'));
-	const workCards = Array.from(document.querySelectorAll('.work-card[data-type]'));
-	workBtns.forEach(btn => {
-		const f = btn.dataset.workFilter;
-		const count = f === 'all' ? workCards.length : workCards.filter(c => c.dataset.type === f).length;
-		const badge = document.createElement('span');
-		badge.className = 'filter-count-badge';
-		badge.textContent = count;
-		btn.appendChild(badge);
-	});
-
-	// Project filter counts
-	const projBtns  = Array.from(document.querySelectorAll('[data-filter]'));
-	const projCards = Array.from(document.querySelectorAll('.exp-card[data-lang]'));
-	projBtns.forEach(btn => {
-		const f = btn.dataset.filter;
-		const count = f === 'all' ? projCards.length : projCards.filter(c => c.dataset.lang.split(' ').includes(f)).length;
-		const badge = document.createElement('span');
-		badge.className = 'filter-count-badge';
-		badge.textContent = count;
-		btn.appendChild(badge);
-	});
-
-	// Pop animation when a button becomes active
-	[...workBtns, ...projBtns].forEach(btn => {
-		btn.addEventListener('click', () => {
-			const badge = btn.querySelector('.filter-count-badge');
-			if (!badge) return;
-			badge.classList.remove('pop');
-			void badge.offsetWidth;
-			badge.classList.add('pop');
-			badge.addEventListener('animationend', () => badge.classList.remove('pop'), { once: true });
-		});
-	});
-}
-
-/* ── Hash-based card navigation ── */
-function initHashNavigation() {
-	if (!window.location.hash) return;
-	const id = window.location.hash.slice(1);
-	const card = document.getElementById(id);
-	if (!card || !card.classList.contains('expandable-card')) return;
-
-	card.classList.remove('section-hidden');
-	card.classList.remove('hidden');
-
-	if (!card.classList.contains('expanded')) {
-		card.classList.add('expanded');
-		const summary = card.querySelector('.card-summary');
-		const hint    = card.querySelector('.card-hint');
-		if (summary) summary.setAttribute('aria-expanded', 'true');
-		if (hint)    hint.textContent = 'Click to collapse ▴';
-	}
-
-	setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
-}
-
-/* ── Project filter ── */
-function initProjectFilter() {
-	const btns   = document.querySelectorAll('[data-project-filter]');
-	const cards  = document.querySelectorAll('.exp-card[data-tag]');
-	const emptyState = document.getElementById('project-empty-state');
-
-	btns.forEach(btn => {
-		btn.addEventListener('click', () => {
-			btns.forEach(b => b.classList.remove('active'));
-			btn.classList.add('active');
-			const filter = btn.dataset.projectFilter;
-			let visible = 0;
-			cards.forEach(card => {
-				const tags = (card.dataset.tag || '').split(',').map(t => t.trim());
-				const match = filter === 'all' || tags.includes(filter);
-				card.classList.toggle('hidden', !match);
-				if (match) visible++;
-			});
-			if (emptyState) emptyState.style.display = visible === 0 ? 'block' : 'none';
-		});
-	});
-}
+/* =========================================================
+   Interactions for index.html and personal_life.html
+   - light/dark mode toggle (remembered across pages)
+   - filter buttons (experience, projects, publications)
+   - detail pop-ups for experience, education and projects
+   - "3 years" counter
+   - music artist switcher and gallery lightbox
+   ========================================================= */
+(function () {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+  /* ---------- Light / dark mode ---------- */
+  const toggle = $('#themeToggle');
+  const setIcon = () => { if (toggle) toggle.textContent = document.documentElement.classList.contains('dark') ? '☀' : '☾'; };
+  setIcon();
+  if (toggle) toggle.addEventListener('click', () => {
+    const dark = document.documentElement.classList.toggle('dark');
+    try { localStorage.setItem('jg-theme', dark ? 'dark' : 'light'); } catch (e) {}
+    setIcon();
+  });
+
+  /* ---------- Filters ---------- */
+  function setupFilter(group, items, match) {
+    const bar = $(`[data-filter-group="${group}"]`);
+    if (!bar) return;
+    const apply = (val) => {
+      $$('button', bar).forEach(b => b.classList.toggle('active', b.dataset.filter === val));
+      items().forEach(el => { el.hidden = !(val === 'all' || match(el, val)); });
+    };
+    bar.addEventListener('click', e => { const b = e.target.closest('button'); if (b) apply(b.dataset.filter); });
+    const start = $('button.active', bar);
+    apply(start ? start.dataset.filter : 'all');
+  }
+  setupFilter('work', () => $$('.work-card'), (el, v) => el.dataset.type === v);
+  setupFilter('proj', () => $$('.proj-card'), (el, v) => el.dataset.lang.split(' ').includes(v));
+  setupFilter('pub', () => $$('.pub'), (el, v) => el.dataset.status === v);
+
+  /* ---------- Detail pop-up ---------- */
+  const modal = $('#modal');
+  if (modal) {
+    const body = $('.modal-body', modal);
+    const open = (el) => {
+      const tpl = $('template.detail', el);
+      if (!tpl) return;
+      body.innerHTML = '';
+      body.appendChild(tpl.content.cloneNode(true));
+      modal.hidden = false;
+      $('.modal-box', modal).scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => { modal.hidden = true; document.body.style.overflow = ''; };
+    document.addEventListener('click', e => {
+      const link = e.target.closest('.proj-link');
+      if (link) { e.preventDefault(); const t = document.getElementById(link.dataset.open); if (t) open(t); return; }
+      const card = e.target.closest('[data-open]');
+      if (card && !modal.contains(card)) open(card);
+    });
+    modal.addEventListener('click', e => { if (e.target === modal || e.target.closest('.modal-close')) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) close(); });
+  }
+
+  /* ---------- Counter ---------- */
+  $$('[data-count]').forEach(el => {
+    const target = +el.dataset.count; let n = 0; el.textContent = '0';
+    const t = setInterval(() => { n++; el.textContent = n; if (n >= target) clearInterval(t); }, 140);
+  });
+
+  /* ---------- Music: switch artist ---------- */
+  const loadSongs = (panel) => $$('iframe[data-src]', panel).forEach(f => { f.src = f.dataset.src; f.removeAttribute('data-src'); });
+  const firstSongs = $('.songs:not([hidden])');
+  if (firstSongs) loadSongs(firstSongs);
+  $$('.artist').forEach(btn => btn.addEventListener('click', () => {
+    const key = btn.dataset.artist;
+    $$('.artist').forEach(b => b.classList.toggle('active', b === btn));
+    $$('.songs').forEach(p => { p.hidden = p.dataset.artist !== key; if (!p.hidden) loadSongs(p); });
+  }));
+
+  /* ---------- Gallery lightbox ---------- */
+  const lb = $('#lightbox');
+  if (lb) {
+    const photos = $$('.photo');
+    const img = $('img', lb), cap = $('figcaption', lb);
+    let i = 0;
+    const show = (k) => {
+      i = (k + photos.length) % photos.length;
+      const p = $('img', photos[i]);
+      img.src = p.src; img.alt = p.alt;
+      cap.textContent = `${p.alt}  ·  ${i + 1} / ${photos.length}`;
+      lb.hidden = false;
+    };
+    const close = () => { lb.hidden = true; };
+    photos.forEach((p, k) => p.addEventListener('click', () => show(k)));
+    $('.lb-prev', lb).addEventListener('click', e => { e.stopPropagation(); show(i - 1); });
+    $('.lb-next', lb).addEventListener('click', e => { e.stopPropagation(); show(i + 1); });
+    $('.lb-close', lb).addEventListener('click', close);
+    lb.addEventListener('click', e => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', e => {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') show(i + 1);
+      if (e.key === 'ArrowLeft') show(i - 1);
+    });
+  }
+})();

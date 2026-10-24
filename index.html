@@ -1,1691 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Zhongyi (James) Guo 过仲懿</title>
-	<meta name="description" content="Zhongyi (James) Guo — Data Scientist with 5 years of experience in machine learning, statistical modeling, and biomedical research. MS Epidemiology, Stanford; BS Statistics &amp; Biology, Cornell.">
-	<meta property="og:title" content="Zhongyi (James) Guo 过仲懿">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://gzy1s.me">
-	<link rel="stylesheet" href="styles.css">
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-53H4TYHVTY"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zhongyi (James) Guo 过仲懿</title>
+  <meta name="description" content="Zhongyi (James) Guo — Data Scientist. MS Epidemiology, Stanford; BS Statistics &amp; Biology, Cornell.">
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>try{if(localStorage.getItem('jg-theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>
 <body>
+<div class="page">
+  <nav class="nav">
+    <div class="nav-pill">
+      <a href="#top">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#skills">Toolbox</a>
+      <a href="personal_life.html" class="nav-accent" target="_blank" rel="noopener">Personal Life ↗</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">☾</button>
+  </nav>
 
-<!-- ── Page loader ── -->
-<div id="page-loader" aria-hidden="true"><div class="loader-ring"></div></div>
+  <!-- ===== HERO / ABOUT ===== -->
+  <div id="top" class="bento">
+    <div class="tile hero">
+      <div class="hero-text">
+        <div class="hero-hi">Hi, I'm</div>
+        <h1>James Guo<br><span>过仲懿</span></h1>
+      </div>
+      <div class="hero-photo">
+        <img src="images/profile_picture.png" alt="Zhongyi Guo">
+      </div>
+    </div>
+    <div class="tile stat-tile">
+      <div><span class="big" data-count="3">3</span><div class="stat-label">years of experience leading projects end-to-end</div></div>
+    </div>
+    <div class="tile docs-tile">
+      <a href="files/Resume_Zhongyi_Guo.pdf" class="doc-btn dark">Resume <span>↓</span></a>
+      <a href="files/CV_Zhongyi_Guo.pdf" class="doc-btn">CV <span>↓</span></a>
+    </div>
+    <div class="tile bio">
+      <p class="bio-lead">I was made in Wuxi 🇨🇳 and adopted by California 🇺🇸.</p>
+      <p class="bio-sub">Outside of work, I love body building, swimming, and MORE on my Instagram!</p>
+    </div>
+    <article class="tile edu-tile" style="background:#8C1515" data-open="edu-stanford">
+      <div class="edu-years">2023–2025</div>
+      <div>
+        <div class="edu-school">Stanford</div>
+        <div class="edu-degree">MS in Epidemiology and Clinical Research</div>
+        <div class="edu-gpa">GPA 3.86</div>
+        <div class="edu-hint">Tap for coursework →</div>
+      </div>
+      <template class="detail">
+        <div class="m-head"><div><h3>Stanford University</h3><div class="m-sub">MS in Epidemiology and Clinical Research · 2023–2025 · GPA 3.86</div></div></div>
+        <section class="m-sec"><div class="m-sec-head"><h4>Core coursework</h4><span>10 core courses</span></div><div class="tags"><span>Deep Learning</span><span>Data Management and Analysis in SAS</span><span>Data Visualization</span><span>Biostatistics</span><span>Probability</span><span>Causal Inference</span><span>Bioinformatics</span><span>Design and Conduct of Clinical Trials</span><span>Epidemiologic Research Methods</span><span>Meta-analysis</span></div></section>
+      </template>
+    </article>
+    <article class="tile edu-tile" style="background:#B31B1B" data-open="edu-cornell">
+      <div class="edu-years">2020–2023</div>
+      <div>
+        <div class="edu-school">Cornell</div>
+        <div class="edu-degree">BS in Statistics and Biology</div>
+        <div class="edu-gpa">GPA 3.57</div>
+        <div class="edu-hint">Tap for coursework →</div>
+      </div>
+      <template class="detail">
+        <div class="m-head"><div><h3>Cornell University</h3><div class="m-sub">BS in Statistics and Biology · 2020–2023 · GPA 3.57 · Dean’s List</div></div></div>
+        <section class="m-sec"><div class="m-sec-head"><h4>Core coursework</h4><span>18 core courses</span></div><div class="tags"><span>Data Science</span><span>Data Mining &amp; Machine Learning</span><span>Statistical Computing</span><span>Computing using Python</span><span>Object-oriented Programming and Data Structure</span><span>UNIX Tools and Scripting</span><span>Linear Algebra</span><span>Linear Models with Matrices</span><span>Theory of Statistics</span><span>Probability Models and Inference</span><span>Probability</span><span>Macroeconomics</span><span>Medical Statistics</span><span>Biological Statistics</span><span>Advanced Epidemiology</span><span>Quantitative Genomics and Genetics</span><span>Population Genetics</span><span>Genetics and Genomics (lecture &amp; lab)</span></div></section>
+      </template>
+    </article>
+    <div class="tile contact">
+      <div>
+        <div class="contact-title">Let's keep in touch!</div>
+        <div class="contact-email">zhongyig123 at gmail dot com</div>
+      </div>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/zhongyi-guo/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/JG1ANDONLY" target="_blank">GitHub</a>
+        <a href="https://x.com/zhongy1guo" target="_blank">X</a>
+        <a href="https://www.instagram.com/cy.james.guo/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
 
-<!-- ── Fixed Left Sidebar ── -->
-<aside class="sidebar" id="sidebar">
+  <div class="marquee"><div class="marquee-track"><span>Data Science<i>✦</i></span><span>Statistical Modeling<i>✦</i></span><span>Machine Learning<i>✦</i></span><span>Data Visualization<i>✦</i></span><span>Scientific Writing<i>✦</i></span><span>High Performance Computing<i>✦</i></span><span>Data Science<i>✦</i></span><span>Statistical Modeling<i>✦</i></span><span>Machine Learning<i>✦</i></span><span>Data Visualization<i>✦</i></span><span>Scientific Writing<i>✦</i></span><span>High Performance Computing<i>✦</i></span></div></div>
 
-	<div class="sidebar-brand">
-		<span>JG</span>
-		<button class="night-toggle-round" id="nightToggleDesktop" aria-label="Toggle dark mode">🌙</button>
-	</div>
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="section">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <div class="filters" data-filter-group="work">
+        <button data-filter="all">All</button>
+        <button data-filter="technical" class="active">Technical</button>
+        <button data-filter="non-technical">Other</button>
+      </div>
+    </div>
+    <div class="card-grid" id="workGrid">
+      <article class="work-card current" data-type="technical" data-open="work-corcept">
+        <div class="work-top">
+          <img class="logo" src="images/corcept.png" alt="">
+          <span class="chip chip-tech">Technical</span>
+        </div>
+        <div>
+          <h3>Corcept Therapeutics</h3>
+          <div class="roles"><div><span class="role role-current">Clinical Data Management Specialist</span><span class="date">09/2026 – Present</span></div><div><span class="role">Biostatistics Intern</span><span class="date">06/2026 – 08/2026</span></div></div>
+        </div>
+        <div class="more">Details →</div>
+        <template class="detail">
+          <div class="m-head"><img class="logo" src="images/corcept.png" alt=""><div><h3>Corcept Therapeutics</h3><div class="m-sub">Redwood City, CA · 06/2026 – Present</div></div></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Clinical Data Management Specialist</h4><span>09/2026 – Present</span></div><ul><li>Returned as a full-time employee.</li><li>To be updated...</li></ul><div class="tags"><span>Clinical Data Management</span></div></section>
+          <section class="m-sec"><div class="m-sec-head"><h4>Biostatistics Intern</h4><span>06/2026 – 08/2026</span></div><ul><li>Developed strategies to match 120+ external controls from RWD using propensity score, emulating index dates and analyzing outcome with Kaplan-Meier curves, log-rank tests, and Cox proportional hazards models.</li><li>Built and validated patient profiles across ~20 panels in Medidata Clinical Data Studio, mapping data from annotated CRFs and creating derived variables to streamline clinical trial data review.</li><li>Developed three-tier strategies to guide the venture capital arm’s setup, analyzing SEC filings for fund size and constructed portfolios ($50M/$100M/$150M) with real-world companies across stages and deal sizes.</li></ul><div class="tags"><span>Clinical Data Management</span><span>Biostatistics</span><span>Statistical Programming</span><span>Survival Analysis</span><span>Index Date Determination</span><span>Propensity Score Matching</span><span>Kaplan-Meier Curve</span><span>Log-rank Test</span><span>Cox Regression</span><span>Equivalence Test</span><span>R</span><span>SAS</span><span>Medidata Clinical Data Studio</span></div></section>
+        </template>
+      </article>
+      <article class="work-card current" data-type="non-technical" data-open="work-ob">
+        <div class="work-top">
+          <img class="logo" src="images/ob_llc.png" alt="">
+          <span class="chip chip-other">Admin</span>
+        </div>
+        <div>
+          <h3>Oceans Beyond LLC</h3>
+          <div class="roles"><div><span class="role role-current">General Manager</span><span class="date">05/2026 – Present</span></div></div>
+        </div>
+        <div class="more">Details →</div>
+        <template class="detail">
+          <div class="m-head"><img class="logo" src="images/ob_llc.png" alt=""><div><h3>Oceans Beyond LLC</h3><div class="m-sub">05/2026 – Present</div></div></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>General Manager</h4><span>05/2026 – Present</span></div><ul><li>Started my own small business.</li></ul><div class="tags"><span>Entrepreneurship</span><span>Small Business</span></div></section>
+        </template>
+      </article>
+      <article class="work-card" data-type="technical" data-open="work-w74">
+        <div class="work-top">
+          <img class="logo" src="images/w74.png" alt="">
+          <span class="chip chip-tech">Technical</span>
+        </div>
+        <div>
+          <h3>W74 Advisors</h3>
+          <div class="roles"><div><span class="role">Data Scientist I</span><span class="date">03/2026 – 06/2026</span></div></div>
+        </div>
+        <div class="more">Details →</div>
+        <template class="detail">
+          <div class="m-head"><img class="logo" src="images/w74.png" alt=""><div><h3>W74 Advisors</h3><div class="m-sub">Remote · 03/2026 – 06/2026</div></div></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Data Scientist I</h4><span>03/2026 – 06/2026</span></div><ul><li>Delivered analytical and statistical solutions for client building energy optimization, owning work end-to-end from problem framing to stakeholder reporting.</li><li>Improved model performance by 25% over baseline by benchmarking XGBoost, LightGBM, Random Forest, Transformer, and DNN architectures with Optuna-based hyperparameter tuning; final model achieved a CVMSE of ~0.2, outperforming industry.</li><li>Used Claude Code to accelerate prototyping and maximize productivity.</li></ul><div class="tags"><span>Data Science</span><span>Energy Consulting</span><span>Python</span><span>Time-series</span><span>XGBoost</span><span>Random Forest</span><span>LSTM</span><span>Transformer</span><span>Pytorch</span></div></section>
+        </template>
+      </article>
+      <article class="work-card" data-type="non-technical" data-open="work-scc">
+        <div class="work-top">
+          <img class="logo" src="images/santa_clara_county.png" alt="">
+          <span class="chip chip-other">Service</span>
+        </div>
+        <div>
+          <h3>Santa Clara County</h3>
+          <div class="roles"><div><span class="role">Election Official</span><span class="date">04/2026 – 06/2026</span></div></div>
+        </div>
+        <div class="more">Details →</div>
+        <template class="detail">
+          <div class="m-head"><img class="logo" src="images/santa_clara_county.png" alt=""><div><h3>Santa Clara County</h3><div class="m-sub">Palo Alto, CA · 04/2026 – 06/2026</div></div></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Election Official</h4><span>04/2026 – 06/2026</span></div><ul><li>Worked to support the 2026 California Primary Election voting.</li><li>Guided 200+ voters through forms, check-in, and the voting process using in-depth knowledge of voting procedures and the Disney H.E.A.R.D. model, driven by a commitment to public service.</li></ul><div class="tags"><span>Customer Service</span><span>Public Service</span><span>Community Engagement</span></div></section>
+        </template>
+      </article>
+      <article class="work-card" data-type="technical" data-open="work-gladstone">
+        <div class="work-top">
+          <img class="logo" src="images/Gladstone.webp" alt="">
+          <span class="chip chip-tech">Technical</span>
+        </div>
+        <div>
+          <h3>the Gladstone Institutes</h3>
+          <div class="roles"><div><span class="role">Researcher</span><span class="date">07/2025 – 04/2026</span></div></div>
+        </div>
+        <div class="more">Details →</div>
+        <template class="detail">
+          <div class="m-head"><img class="logo" src="images/Gladstone.webp" alt=""><div><h3>the Gladstone Institutes</h3><div class="m-sub">San Francisco, CA · 07/2025 – 04/2026</div></div></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Researcher</h4><span>07/2025 – 04/2026</span></div><ul><li>Pioneered the development of an R package (<a href="#" class="proj-link" data-open="proj-permutede">permuteDE</a>) with a permutation testing-based pipeline to reduce false positives in differential gene expression analysis in Alzheimer's disease.</li><li>Collected and integrated 10 massive-scale public scRNA-seq datasets from <i>Synapse</i> to demonstrate the package's usability.</li><li>Applied AlphaGenome to study how the <i>MAPT</i> gene variants might alter splicing patterns.</li><li>Removed doublets, performed dimensionality reduction and clustering of scATAC-seq data.</li><li>Communicated complex statistical findings and effective data visualizations clearly to diverse audiences.</li></ul><div class="tags"><span>R Package Dev</span><span>Differential Gene Expression Analysis</span><span>Multi-omics</span><span>scRNA-seq</span><span>scATAC-seq</span><span>R</span><span>Python</span><span>Permutation Testing</span><span>Seurat</span><span>AlphaGenome</span></div></section>
+        </template>
+      </article>
+      <article class="work-card" data-type="non-technical" data-open="work-ohs">
+        <div class="work-top">
+          <img class="logo" src="images/stanford_ohs.png" alt="">
+          <span class="chip chip-other">Operations</span>
+        </div>
+        <div>
+          <h3>Stanford Online High School</h3>
+          <div class="roles"><div><span class="role">Student Life Assistant</span><span class="date">02/2024 – 01/2025</span></div></div>
+        </div>
+        <div class="more">Details →</div>
+        <template class="detail">
+          <div class="m-head"><img class="logo" src="images/stanford_ohs.png" alt=""><div><h3>Stanford Online High School</h3><div class="m-sub">Remote · 02/2024 – 01/2025</div></div></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Student Life Assistant</h4><span>02/2024 – 01/2025</span></div><ul><li>Supported various event planning such as meeting agenda, student activities, arrival/departure bus schedules, etc.</li><li>Designed engaging slides for weekly themed class meetings.</li><li>Maintained student records in Google Sheets, using data entry and Excel functions with strong attention to details.</li></ul><div class="tags"><span>Administrative Support</span><span>Schedule Planning</span><span>Event Coordination</span><span>Google Sheet/Excel</span></div></section>
+        </template>
+      </article>
+      <article class="work-card" data-type="technical" data-open="work-stanford">
+        <div class="work-top">
+          <img class="logo" src="images/stanford.png" alt="">
+          <span class="chip chip-tech">Technical</span>
+        </div>
+        <div>
+          <h3>Stanford University &amp; UCSF</h3>
+          <div class="roles"><div><span class="role">Graduate Student Researcher</span><span class="date">10/2023 – 06/2025</span></div></div>
+        </div>
+        <div class="more">Details →</div>
+        <template class="detail">
+          <div class="m-head"><img class="logo" src="images/stanford.png" alt=""><div><h3>Stanford University &amp; UCSF</h3><div class="m-sub">Stanford, CA · 10/2023 – 06/2025</div></div></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Graduate Student Researcher</h4><span>10/2023 – 06/2025</span></div><ul><li>Co-mentored by Dr. Rebecca Graff at UCSF and Dr. John Witte at Stanford University.</li><li>Conducted <a href="#" class="proj-link" data-open="proj-metab">(1) metabolomics analyses to investigate racial disparities</a> and <a href="#" class="proj-link" data-open="proj-psych">(2) deep learning–driven single-cell multi-omics studies of schizophrenia and bipolar disorder</a> in parallel.</li></ul><div class="tags"><span>Biomedical Research</span><span>Disease Modeling</span><span>scRNA-seq</span><span>scATAC-seq</span><span>LC-MS Metabolomics</span><span>R</span><span>Python</span><span>Deep Learning</span></div></section>
+        </template>
+      </article>
+      <article class="work-card" data-type="technical" data-open="work-match">
+        <div class="work-top">
+          <img class="logo" src="images/match.png" alt="">
+          <span class="chip chip-tech">Technical</span>
+        </div>
+        <div>
+          <h3>Match Group</h3>
+          <div class="roles"><div><span class="role">iOS Development Intern</span><span class="date">07/2022 – 08/2022</span></div></div>
+        </div>
+        <div class="more">Details →</div>
+        <template class="detail">
+          <div class="m-head"><img class="logo" src="images/match.png" alt=""><div><h3>Match Group</h3><div class="m-sub">Remote · 07/2022 – 08/2022</div></div></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>iOS Development Intern</h4><span>07/2022 – 08/2022</span></div><ul><li>Revised the “Enhanced Interests” feature in SwiftUI, allowing users to personalize their tags with text and emojis for richer self-expression.</li><li>Improved code efficiency by migrating UIKit components to SwiftUI.</li></ul><div class="tags"><span>iOS App Dev</span><span>Swift</span><span>SwiftUI</span><span>Protocol-oriented Programming</span></div></section>
+        </template>
+      </article>
+      <article class="work-card" data-type="non-technical" data-open="work-ta">
+        <div class="work-top">
+          <img class="logo" src="images/cornell.png" alt="">
+          <span class="chip chip-other">Teaching</span>
+        </div>
+        <div>
+          <h3>Cornell University</h3>
+          <div class="roles"><div><span class="role">Undergraduate Teaching Assistant</span><span class="date">01/2021 – 05/2023</span></div></div>
+        </div>
+        <div class="more">Details →</div>
+        <template class="detail">
+          <div class="m-head"><img class="logo" src="images/cornell.png" alt=""><div><h3>Cornell University</h3><div class="m-sub">Ithaca, NY · 01/2021 – 05/2023</div></div></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Undergraduate Teaching Assistant</h4><span>01/2021 – 05/2023</span></div><ul><li>Taught a variety of courses.</li><li>Led discussions, graded homework and assignments, held office hours, and bridged communication between professors and students.</li><li>Maintained course materials and student records in Canvas and Gradescope.</li></ul><div class="tags"><span>Teaching</span><span>Grading</span><span>Canvas</span><span>Gradescope</span></div></section>
+        </template>
+      </article>
+      <article class="work-card" data-type="non-technical" data-open="work-dining">
+        <div class="work-top">
+          <img class="logo" src="images/cornell.png" alt="">
+          <span class="chip chip-other">Operations</span>
+        </div>
+        <div>
+          <h3>Cornell Dining</h3>
+          <div class="roles"><div><span class="role">Student Food Assistant</span><span class="date">02/2022 – 05/2022</span></div></div>
+        </div>
+        <div class="more">Details →</div>
+        <template class="detail">
+          <div class="m-head"><img class="logo" src="images/cornell.png" alt=""><div><h3>Cornell Dining</h3><div class="m-sub">Ithaca, NY · 02/2022 – 05/2022</div></div></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Student Food Assistant</h4><span>02/2022 – 05/2022</span></div><ul><li>Replenished food in the Morrison dining hall.</li><li>Made pizzas and chow meins to feed hungry students.</li><li>Learned about dietary guidelines and protocols.</li></ul><div class="tags"><span>Customer Service</span><span>Dietary Protocol</span></div></section>
+        </template>
+      </article>
+    </div>
+  </section>
 
-	<div class="sidebar-avatar-wrap">
-		<img class="sidebar-avatar" src="images/profile_picture.png" alt="Zhongyi Guo"/>
-	</div>
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <div class="filters" data-filter-group="proj">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="r">R</button>
+        <button data-filter="python">Python</button>
+        <button data-filter="sas">SAS</button>
+        <button data-filter="other">Other</button>
+      </div>
+    </div>
+    <div class="proj-grid" id="projGrid">
+      <article class="proj-card wide" data-lang="python" data-open="proj-btc" id="proj-btc">
+        <div class="proj-img"><img src="images/Bitcoin.png" alt=""></div>
+        <div class="proj-text">
+          <div class="proj-meta">2026 HKU Summer Camp · 05/2026</div>
+          <h3>Bitcoin Portfolio Allocation</h3>
+          <div class="proj-stat"><b>+40%</b><span>max-Sharpe lift with BTC</span></div>
+        </div>
+        <template class="detail">
+          <div class="m-cover"><img src="images/Bitcoin.png" alt=""></div>
+          <div class="m-head"><div><h3>Bitcoin Portfolio Allocation</h3><div class="m-sub">2026 HKU Summer Camp · 05/2026</div></div></div>
+          <p class="m-summary">How much Bitcoin should a moderate-risk household hold alongside an ETF portfolio? This project answers this question end-to-end: data collection, descriptive analysis, mean–variance optimization under multiple risk constraints, and a forward-looking Black–Litterman adjustment.</p>
+          <div class="m-stat"><b>+40%</b><span>max-Sharpe lift with BTC</span></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Technical details</h4></div><ul><li>Universe: SPY, VEU, TLT, GLD, and BTC-USD; risk-free rate built dynamically from the 3-month T-Bill (^IRX); 2,917 aligned trading days (2014-09-17 to 2026-04-21). Target client: 5–10 year horizon, long-only, no leverage, ~15% annualized vol budget.</li><li>Computed annualized return, volatility, Sharpe, skew, max drawdown, and the full correlation matrix; estimated CAPM beta of BTC vs SPY over full / pre-2017 / post-2017 sub-samples, showing BTC's structural shift from idiosyncratic (β ≈ 0.01) to risk-asset-like (β ≈ 0.97) while pairwise correlations with every other asset stay ≤ 0.22.</li><li>Solved six long-only mean–variance scenarios across two universes (eleven portfolios total) in cvxpy (OSQP / SCS): max-Sharpe, vol caps at 10% and 15% p.a., a daily 95% Expected Shortfall cap at 5% and a loose 25% sanity check, and a max-return BTC ≤ 10% cap.</li><li>Implemented Black–Litterman algorithm on the post-2017 sample so the prior covariance isn't dominated by the 2017 BTC bubble: reverse-optimized the equilibrium prior from an assumed market-cap-style weight vector and imposed three views (BTC outperforms VEU by 15% p.a.; SPY earns 10% p.a.; GLD outperforms TLT by 3% p.a.), then fed posterior expected returns into a max-Sharpe optimizer.</li></ul><figure><img src="images/btc_cumulative_returns.png" alt="Log-scale cumulative return of BTC, SPY, VEU, TLT, and GLD from 2014 to 2026" loading="lazy"><figcaption>Log-scale cumulative return of BTC, SPY, VEU, TLT, and GLD from 2014 to 2026</figcaption></figure><figure><img src="images/btc_efficient_frontier.png" alt="Mean-variance efficient frontier with and without BTC-USD" loading="lazy"><figcaption>Mean-variance efficient frontier with and without BTC-USD</figcaption></figure></section><section class="m-sec"><div class="m-sec-head"><h4>Results</h4></div><ul><li>Including BTC lifted max-Sharpe from 0.81 to 1.13 (+40%); the Vol-Cap-15% portfolio with BTC simultaneously raised Sharpe to 1.12 and improved max drawdown from -29.0% to -26.2%, while a return-only objective with a 5% ES cap permitted a 50% BTC weight (drawdown -56%) — confirming ES alone is the wrong knob.</li><li>Recommendation: allocate 5–10% to BTC, anchored on the Vol-Cap-15% with BTC portfolio (Sharpe 1.12, max DD -26%) and independently validated by Black–Litterman, which assigned BTC ~9.5% — almost exactly the 10% cap result. Rebalance quarterly; review annually.</li></ul><figure><img src="images/btc_portfolio_weights.png" alt="Mean-variance portfolio weights by optimization scenario with BTC-USD" loading="lazy"><figcaption>Mean-variance portfolio weights by optimization scenario with BTC-USD</figcaption></figure><figure><img src="images/btc_bl_weights.png" alt="Black-Litterman max-Sharpe portfolio weights vs the market-cap prior" loading="lazy"><figcaption>Black-Litterman max-Sharpe portfolio weights vs the market-cap prior</figcaption></figure></section>
+          
+          <div class="tags"><span>Portfolio Optimization</span><span>Python</span><span>Mean–Variance Optimization</span><span>Black–Litterman</span><span>cvxpy</span></div>
+          <div class="m-links"><a href="https://github.com/JG1ANDONLY/bitcoinAllocation" target="_blank">GitHub Repo ↗</a><a href="files/Zhongyi_Guo_bitcoin_allocation.pdf" target="_blank">Slides (PDF) ↗</a></div>
+          
+        </template>
+      </article>
+      <article class="proj-card" data-lang="r" data-open="proj-permutede" id="proj-permutede">
+        <div class="proj-img"><img src="images/permuteDE.png" alt=""></div>
+        <div class="proj-text">
+          <div class="proj-meta">the Gladstone Institutes · 07/2025 – 04/2026</div>
+          <h3>permuteDE</h3>
+          <div class="proj-stat"><b>Novel</b><span>permutation-based method to combat false positives</span></div>
+        </div>
+        <template class="detail">
+          <div class="m-cover"><img src="images/permuteDE.png" alt="permuteDE logo"><div class="cap">permuteDE logo</div></div>
+          <div class="m-head"><div><h3>permuteDE</h3><div class="m-sub">the Gladstone Institutes · 07/2025 – 04/2026</div></div></div>
+          <p class="m-summary">Differential expression analyses are susceptible to false positives. permuteDE uses permutation testing to identify which comparisons have a higher number of significant differentially expressed features than would be expected by chance.</p>
+          <div class="m-stat"><b>Novel</b><span>permutation-based method to combat false positives</span></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Technical details</h4></div><ul><li>Developed the permuteDE R package, overseeing maintenance, debugging, and feature development.</li><li>Collected and integrated eight large-scale public snRNA-seq datasets from Synapse, performing rigorous data cleaning, metadata curation, and structuring data into Seurat objects and BPCells matrices.</li><li>Applied the permuteDE pipeline across eight datasets to demonstrate its real-world utility.</li></ul><figure><img src="images/volcano_plot.jpg" alt="permuteDE Volcano Plot" loading="lazy"><figcaption>permuteDE Volcano Plot</figcaption></figure><figure><img src="images/histogram.jpg" alt="permuteDE Histogram" loading="lazy"><figcaption>permuteDE Histogram</figcaption></figure></section>
+          <p class="m-note">Note: Currently we are finalizing the package and analyses; permuteDE will be released upon manuscript publication.</p>
+          <div class="tags"><span>R Package Dev</span><span>Permutation Testing</span><span>Pseudobulk</span><span>Seurat</span><span>DESeq2</span></div>
+          
+          
+        </template>
+      </article>
+      <article class="proj-card" data-lang="r python" data-open="proj-psych" id="proj-psych">
+        <div class="proj-img"><img src="images/chrombpnet.png" alt=""></div>
+        <div class="proj-text">
+          <div class="proj-meta">Stanford University · 04/2024 – 06/2025</div>
+          <h3>Deep Learning + Single-Cell Multi-Omics</h3>
+          <div class="proj-stat"><b>ChromBPNet</b><span>cell type-specific models to pinpoint causal variants</span></div>
+        </div>
+        <template class="detail">
+          <div class="m-cover"><img src="images/chrombpnet.png" alt="ChromBPNet Model Architecture"><div class="cap">ChromBPNet Model Architecture</div></div>
+          <div class="m-head"><div><h3>Deep Learning + Single-Cell Multi-Omics</h3><div class="m-sub">Stanford University · 04/2024 – 06/2025</div></div></div>
+          <p class="m-summary">I joined the PsychENCODE project at Prof. Anshul Kundaje's lab. I led this project analyzing scRNA-seq and scATAC-seq multiome data from three brain regions to investigate cell type-specific chromatin accessibility and gene expression patterns underlying schizophrenia and bipolar disorder to better understand their pathogeneses.</p>
+          <div class="m-stat"><b>ChromBPNet</b><span>cell type-specific models to pinpoint causal variants</span></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Technical details</h4></div><ul><li>Preprocessed high-dimensional multiome data through quality control, dimensionality reduction, clustering, doublet detection, marker identification, and cell type annotation.</li><li>Performed differential gene expression &amp; peak accessibility analyses (pseudobulk: Wald test; single-cell: Wilcoxon + MAST) across multiple cell types.</li><li>Trained cell type-specific ChromBPNet models to identify causal genomic variants and their downstream effects on chromatin accessibility and gene regulation.</li></ul><figure><img src="images/mark_gerstein_paper.png" alt="Chromatin Accessibilities across Cell Types" loading="lazy"><figcaption>Chromatin Accessibilities across Cell Types</figcaption></figure><figure><img src="images/variant_effect.png" alt="Disruptive Effect of a Variant" loading="lazy"><figcaption>Disruptive Effect of a Variant</figcaption></figure></section>
+          
+          <div class="tags"><span>Multi-omics Integration</span><span>scRNA-seq</span><span>scATAC-seq</span><span>ChromBPNet</span><span>DeepLIFT/SHAP</span></div>
+          <div class="m-links"><a href="https://github.com/kundajelab/chrombpnet" target="_blank">ChromBPNet ↗</a></div>
+          <div class="m-sources"><b>Figure sources:</b> <a href="https://www.science.org/doi/10.1126/science.adi5199" target="_blank">Emani et al., Science 2024</a> · <a href="https://www.biorxiv.org/content/10.1101/2024.12.25.630221v2" target="_blank">Pampari et al., bioRxiv preprint 2025</a> · <a href="https://www.sciencedirect.com/science/article/pii/S0092867422015033?via%3Dihub" target="_blank">Ameen et al., Cell 2022</a></div>
+        </template>
+      </article>
+      <article class="proj-card" data-lang="r" data-open="proj-metab" id="proj-metab">
+        <div class="proj-img"><img src="images/pca_incidence.jpg" alt=""></div>
+        <div class="proj-text">
+          <div class="proj-meta">UCSF · 10/2023 – 06/2025</div>
+          <h3>Black–White Metabolomic Disparities in Prostate Cancer</h3>
+          <div class="proj-stat"><b>MS Thesis</b><span>defended before Stanford Epidemiology faculty</span></div>
+        </div>
+        <template class="detail">
+          <div class="m-cover"><img src="images/pca_incidence.jpg" alt="PCA Incidence Rates"><div class="cap">PCA Incidence Rates</div></div>
+          <div class="m-head"><div><h3>Black–White Metabolomic Disparities in Prostate Cancer</h3><div class="m-sub">UCSF · 10/2023 – 06/2025</div></div></div>
+          <p class="m-summary">Black men face higher prostate cancer incidence and mortality than White men. This project leverages LC-MS metabolomics on a cohort of 34 men (17 Black, 17 White) from the IRONMAN Registry to characterize metabolites associated with such disparities. I presented this project as my Master's thesis.</p>
+          <div class="m-stat"><b>MS Thesis</b><span>defended before Stanford Epidemiology faculty</span></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Technical details</h4></div><ul><li>Applied t-test, PCA, PLS-DA, random forest, logistic &amp; linear regression, chemical similarity enrichment analysis, pathway analysis, and WGCNA to LC-MS metabolomics data, characterizing metabolites associated with Black-White prostate cancer disparities.</li><li>Interpreted complex statistical findings and communicated them through clear scientific writing and effective data visualizations; defended before Stanford Epidemiology faculty and students.</li></ul><figure><img src="images/pca_incidence_and_mortality.jpg" alt="PCA Incidence and Mortality Rates" loading="lazy"><figcaption>PCA Incidence and Mortality Rates</figcaption></figure><figure><img src="images/wgcna.jpeg" alt="WGCNA" loading="lazy"><figcaption>WGCNA</figcaption></figure></section>
+          
+          <div class="tags"><span>Health Disparities</span><span>LC-MS Metabolomics</span><span>PLS-DA</span><span>WGCNA</span><span>MetaboAnalystR</span></div>
+          <div class="m-links"><a href="files/thesis_presentation_v3.pptx" target="_blank">Slides (PPTX) ↗</a><a href="files/thesis_presentation_v3.pdf" target="_blank">Slides (PDF) ↗</a></div>
+          <div class="m-sources"><b>Figure sources:</b> <a href="https://www.cancer.gov/news-events/cancer-currents-blog/2019/prostate-cancer-death-disparities-black-men" target="_blank">National Cancer Institute 2019</a> · <a href="https://doi.org/10.1016/j.canlet.2022.01.028" target="_blank">Lowder et al., Cancer Letters 2022</a> · <a href="https://link.springer.com/article/10.1186/1471-2105-9-559" target="_blank">Langfelder &amp; Horvath, BMC Bioinformatics 2008</a></div>
+        </template>
+      </article>
+      <article class="proj-card" data-lang="other" data-open="proj-death" id="proj-death">
+        <div class="proj-img"><img src="images/global_central_death_ratesxdevelopmental_indicator.png" alt=""></div>
+        <div class="proj-text">
+          <div class="proj-meta">Stanford University · 10/2024 – 12/2024</div>
+          <h3>Global Disparities in Central Death Rates</h3>
+          <div class="proj-stat"><b>D3</b><span>interactive dashboards</span></div>
+        </div>
+        <template class="detail">
+          <div class="m-cover"><img src="images/global_central_death_ratesxdevelopmental_indicator.png" alt="Global Central Death Rates x Developmental Indicators"><div class="cap">Global Central Death Rates x Developmental Indicators</div></div>
+          <div class="m-head"><div><h3>Global Disparities in Central Death Rates</h3><div class="m-sub">Stanford University · 10/2024 – 12/2024</div></div></div>
+          <p class="m-summary">This project visualized the interplay between life expectancy (measured by central death rates) and economic development, healthcare access, energy production, and consumption patterns.</p>
+          <div class="m-stat"><b>D3</b><span>interactive dashboards</span></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Technical details</h4></div><ul><li>Developed interactive data visualization dashboards (global heatmaps, cross-country correlation analyses, and time-evolving bubble charts) using JavaScript D3.</li></ul><figure><img src="images/correlation_between_mortality_and_developmental_conditions.png" alt="Correlation between Mortality and Developmental Conditions" loading="lazy"><figcaption>Correlation between Mortality and Developmental Conditions</figcaption></figure><figure><img src="images/dynamic_bubble_chart.gif" alt="Dynamic Bubble Chart over Time" loading="lazy"><figcaption>Dynamic Bubble Chart over Time</figcaption></figure></section>
+          
+          <div class="tags"><span>Data Visualization</span><span>Interactive Website</span><span>Javascript</span><span>D3</span></div>
+          <div class="m-links"><a href="https://dkristheltorres.github.io/CS-448B/" target="_blank">Website ↗</a></div>
+          
+        </template>
+      </article>
+      <article class="proj-card wide" data-lang="other" data-open="proj-nih" id="proj-nih">
+        <div class="proj-img"><img src="images/mofa.png" alt=""></div>
+        <div class="proj-text">
+          <div class="proj-meta">Stanford University · 03/2024 – 06/2024</div>
+          <h3>Multi-omics Alzheimer's Grant Proposal</h3>
+          <div class="proj-stat"><b>~30</b><span>professors &amp; students presented to</span></div>
+        </div>
+        <template class="detail">
+          <div class="m-cover"><img src="images/mofa.png" alt="Multi-Omics Factor Analysis"><div class="cap">Multi-Omics Factor Analysis</div></div>
+          <div class="m-head"><div><h3>Multi-omics Alzheimer's Grant Proposal</h3><div class="m-sub">Stanford University · 03/2024 – 06/2024</div></div></div>
+          <p class="m-summary">In this project, I practiced NIH-style grant proposal writing by developing a theoretical proposal that integrates single-cell multiomics data to investigate the molecular mechanisms using factor analysis underlying Alzheimer's Disease.</p>
+          <div class="m-stat"><b>~30</b><span>professors &amp; students presented to</span></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Technical details</h4></div><ul><li>Drafted the Specific Aims section of a conceptual NIH grant proposal and presented the multi-omics factor analysis plan to ~30 professors and students.</li></ul><figure><img src="images/multiomics.png" alt="Multi-omics Analysis" loading="lazy"><figcaption>Multi-omics Analysis</figcaption></figure></section>
+          
+          <div class="tags"><span>NIH Grant Proposal Practice</span><span>Literature Review</span><span>Team Collaboration</span></div>
+          <div class="m-links"><a href="files/Zhongyi_Guo_BIOMEDIN217_final_specific_aims.pdf" target="_blank">Final Proposal ↗</a><a href="files/Zhongyi_Guo_BIOMEDIN217_final_presentation.pdf" target="_blank">Final Presentation ↗</a></div>
+          <div class="m-sources"><b>Figure sources:</b> <a href="https://link.springer.com/article/10.15252/msb.20178124" target="_blank">Argelaguet et al., 2018</a> · <a href="https://www.gowinglife.com/longevity-briefs-scientists-discover-new-molecular-driver-of-alzheimers/" target="_blank">Growing Life</a></div>
+        </template>
+      </article>
+      <article class="proj-card" data-lang="sas" data-open="proj-sah" id="proj-sah">
+        <div class="proj-img"><img src="images/SH_boxplot.png" alt=""></div>
+        <div class="proj-text">
+          <div class="proj-meta">Stanford University · 10/2023 – 12/2023</div>
+          <h3>Subarachnoid Hemorrhage Risk Modeling</h3>
+          <div class="proj-stat"><b>SAS</b><span>OnDemand</span></div>
+        </div>
+        <template class="detail">
+          <div class="m-cover"><img src="images/SH_boxplot.png" alt="Boxplot of Body Mass Index"><div class="cap">Boxplot of Body Mass Index</div></div>
+          <div class="m-head"><div><h3>Subarachnoid Hemorrhage Risk Modeling</h3><div class="m-sub">Stanford University · 10/2023 – 12/2023</div></div></div>
+          <p class="m-summary">This project evaluated associations between multiple exposures (age [categorical and continuous], sex, race, and smoking) and assessed alcohol as an effect modifier of the smoking–SAH relationship.</p>
+          <div class="m-stat"><b>SAS</b><span>OnDemand</span></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Technical details</h4></div><ul><li>Cleaned and managed case-control datasets in SAS OnDemand: resolved duplicate records, standardized missing values, and created derived variables.</li><li>Conducted descriptive analyses (chi-square tests and t-tests) and applied univariate and multivariable logistic regression to estimate crude and adjusted odds ratios for smoking.</li><li>Performed stratified analysis using Mantel–Haenszel testing to adjust for alcohol use as a confounder.</li><li>Generated summary tables and data visualizations for reporting.</li></ul><figure><img src="images/SH_table1.png" alt="Summary Table 1" loading="lazy"><figcaption>Summary Table 1</figcaption></figure><figure><img src="images/SH_table2.png" alt="Summary Table 2" loading="lazy"><figcaption>Summary Table 2</figcaption></figure></section>
+          
+          <div class="tags"><span>Data Management</span><span>Disease Modeling</span><span>SAS</span><span>Logistic regression</span><span>Mantel–Haenszel test</span></div>
+          <div class="m-links"><a href="files/Zhongyi_Guo_EPI223_final_project_report.pdf" target="_blank">Final Delivery ↗</a><a href="files/Zhongyi_Guo_EPI223_final_project_code.sas" target="_blank">SAS code ↗</a></div>
+          
+        </template>
+      </article>
+      <article class="proj-card" data-lang="other" data-open="proj-booked" id="proj-booked">
+        <div class="proj-img"><img src="images/booked.png" alt=""></div>
+        <div class="proj-text">
+          <div class="proj-meta">Cornell University · 04/2022 – 05/2022</div>
+          <h3>BOOKED — an iOS App</h3>
+          <div class="proj-stat"><b>HM</b><span>Best UI, Hack Challenge</span></div>
+        </div>
+        <template class="detail">
+          <div class="m-cover"><img src="images/booked.png" alt="BOOKED"><div class="cap">BOOKED</div></div>
+          <div class="m-head"><div><h3>BOOKED — an iOS App</h3><div class="m-sub">Cornell University · 04/2022 – 05/2022</div></div></div>
+          <p class="m-summary">This project developed an iOS app to ease the booking of a study space on campus in one of Cornell's many open libraries and study spaces.</p>
+          <div class="m-stat"><b>HM</b><span>Best UI, Hack Challenge</span></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Technical details</h4></div><ul><li>Programmatically developed a Cornell library study room booking system iOS app by integrating UIKit, AutoLayout, Navigation, UITable &amp; UICollectionView, MVC, Delegation, and Animation.</li><li>Implemented GET all libraries and available rooms, POST new reservation(s), UPDATE reservation history &amp; DELETE reservation(s) that interact with backend API using Alamofire.</li><li>Implemented UI with designers and collaborated with backend teammates for backend requests.</li></ul></section><section class="m-sec"><div class="m-sec-head"><h4>Results</h4></div><ul><li>Nominated as Honorable Mention for Best UI for Hack Challenge Spring 2022.</li></ul></section>
+          
+          <div class="tags"><span>iOS App Dev</span><span>Swift</span><span>UIKit</span><span>Alamofire</span><span>MVC</span></div>
+          <div class="m-links"><a href="https://github.com/thuypham03/cu-libraries" target="_blank">GitHub Repo ↗</a><a href="https://www.youtube.com/watch?v=4wOO3DZTrUA" target="_blank">Demo Video ↗</a></div>
+          
+        </template>
+      </article>
+    </div>
+  </section>
 
-	<div class="sidebar-name"><span class="sidebar-name-z">Z.</span> <span class="sidebar-name-en">James Guo</span></div>
-	<div class="sidebar-chinese">过仲懿</div>
-	<div class="sidebar-title">Data Scientist</div>
+  <!-- ===== PUBLICATIONS ===== -->
+  <section id="publications" class="section pub-layout">
+    <div class="tile pub-side">
+      <h2>Publi&shy;cations</h2>
+      <div class="pub-filters" data-filter-group="pub">
+        <button data-filter="all" class="active"><span>All</span><b>6</b></button>
+        <button data-filter="Submitted"><span>Submitted</span><b>2</b></button>
+        <button data-filter="Published"><span>Published</span><b>1</b></button>
+        <button data-filter="In Preparation"><span>In Preparation</span><b>3</b></button>
+      </div>
+    </div>
+    <div class="tile pub-list" id="pubList">
+      <div class="pub" data-status="Submitted">
+        <div class="pub-status">Submitted · <i>Cell</i> 2026</div>
+        <div class="pub-title">APOE4 Drives Uniquely Dysfunctional Human Microglial States in Alzheimer’s Disease.</div>
+        <div class="pub-authors">Bendall, S., Ee, R., Amouzgar, M., … Guo, Z., … Corces, M.R., Montine, T.</div>
+      </div>
+      <div class="pub" data-status="Submitted">
+        <div class="pub-status">Submitted · <i>Nature Neuroscience</i> 2025</div>
+        <div class="pub-title">APOE4 and Aβ synergize to drive neuronal network dysfunction and lysosomal-ER proteostasis dysregulation in the preclinical stages of Alzheimer's disease.</div>
+        <div class="pub-authors">Shin, J.‡, Brady, E.‡, … Guo, Z., … Palop, J.</div>
+      </div>
+      <div class="pub" data-status="Published">
+        <div class="pub-status">Published · <i>AACR Special Conference: Aging and Cancer</i> 2022</div>
+        <div class="pub-title">Causal effect of type II diabetes on prostate cancer in the East Asian population: A two-sample Mendelian randomization study.</div>
+        <div class="pub-authors">Poster session presenter and first author</div>
+      </div>
+      <div class="pub" data-status="In Preparation">
+        <div class="pub-status">In Preparation · <i>BMC Medicine</i> </div>
+        <div class="pub-title">Metabolomic Disparities Between Black and Non-Hispanic White Men with Metastatic Hormone-Sensitive Prostate Cancer: A Pilot Study.</div>
+        <div class="pub-authors">Guo, Z.‡, Chen, D.‡, Stopsack, K. H., … Graff, R. E.</div>
+      </div>
+      <div class="pub" data-status="In Preparation">
+        <div class="pub-status">In Preparation · <i>Cell</i> </div>
+        <div class="pub-title">Multi-modal functional genomics analysis of bipolar disorder and schizophrenia.</div>
+        <div class="pub-authors">Qu, P., Wang, T., Jessa, S., Guo, Z., … Snyder, M. P.</div>
+      </div>
+      <div class="pub" data-status="In Preparation">
+        <div class="pub-status">In Preparation · <i>Nature Neuroscience</i> </div>
+        <div class="pub-title">Preventing false discoveries in Alzheimer's disease single-cell sequencing data using permutation testing.</div>
+        <div class="pub-authors">Sant, C., Guo, Z., Corces, M. R.</div>
+      </div>
+      <div class="pub-foot">‡ indicates co-first authorship.</div>
+    </div>
+  </section>
 
-	<div class="sidebar-divider"></div>
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section">
+    <h2 class="solo">Toolbox</h2>
+    <div class="card-grid">
+      <div class="skill-card">
+        <div class="skill-group">Languages</div>
+        <div class="skill-items"><span class="skill"><span class="skill-icon"><img src="images/R_icon.png" alt=""></span>R</span><span class="skill"><span class="skill-icon"><img src="images/sas_icon.png" alt=""></span>SAS</span><span class="skill"><span class="skill-icon"><img src="images/python_icon.webp" alt=""></span>Python</span><span class="skill"><span class="skill-icon"><b>J</b></span>Java</span><span class="skill"><span class="skill-icon"><img src="images/js.png" alt=""></span>JavaScript</span><span class="skill"><span class="skill-icon"><img src="images/swift_icon.png" alt=""></span>Swift</span><span class="skill"><span class="skill-icon"><img src="images/code_gray.svg" alt=""></span>HTML</span><span class="skill"><span class="skill-icon"><img src="images/snippet_gray.svg" alt=""></span>CSS</span><span class="skill"><span class="skill-icon"><img src="images/latex_icon.png" alt=""></span>LaTeX</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-group">IDEs &amp; Editors</div>
+        <div class="skill-items"><span class="skill"><span class="skill-icon"><img src="images/jupyter.svg" alt=""></span>Jupyter</span><span class="skill"><span class="skill-icon"><img src="images/rstudio_icon.png" alt=""></span>RStudio</span><span class="skill"><span class="skill-icon"><img src="images/pycharm.png" alt=""></span>PyCharm</span><span class="skill"><span class="skill-icon"><img src="images/vs_code.png" alt=""></span>VS Code</span><span class="skill"><span class="skill-icon"><img src="images/overleaf_icon.png" alt=""></span>Overleaf</span><span class="skill"><span class="skill-icon"><img src="images/Xcode.png" alt=""></span>Xcode</span><span class="skill"><span class="skill-icon"><img src="images/sas_icon.png" alt=""></span>SAS OnDemand</span><span class="skill"><span class="skill-icon"><img src="images/eclipse.png" alt=""></span>Eclipse</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-group">CLI &amp; Cloud</div>
+        <div class="skill-items"><span class="skill"><span class="skill-icon"><img src="images/unix_icon.png" alt=""></span>UNIX</span><span class="skill"><span class="skill-icon"><img src="images/hyper_logo.png" alt=""></span>Terminal</span><span class="skill"><span class="skill-icon"><img src="images/ssh.png" alt=""></span>SSH</span><span class="skill"><span class="skill-icon"><img src="images/aws.jpg" alt=""></span>AWS EC2</span><span class="skill"><span class="skill-icon"><img src="images/conda.png" alt=""></span>Conda</span><span class="skill"><span class="skill-icon"><img src="images/claude.svg" alt=""></span>Claude</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-group">High Performance Computing</div>
+        <div class="skill-items"><span class="skill"><span class="skill-icon"><img src="images/git_icon.png" alt=""></span>Git</span><span class="skill"><span class="skill-icon"><img src="images/github.png" alt=""></span>GitHub</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-group">Office</div>
+        <div class="skill-items"><span class="skill"><span class="skill-icon"><img src="images/word.png" alt=""></span>MS Word</span><span class="skill"><span class="skill-icon"><img src="images/excel.png" alt=""></span>MS Excel</span><span class="skill"><span class="skill-icon"><img src="images/ppt.png" alt=""></span>MS PowerPoint</span><span class="skill"><span class="skill-icon"><img src="images/outlook.png" alt=""></span>MS Outlook</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-group">Design</div>
+        <div class="skill-items"><span class="skill"><span class="skill-icon"><img src="images/Adobe_Illustrator.png" alt=""></span>Illustrator</span><span class="skill"><span class="skill-icon"><img src="images/photoshop.png" alt=""></span>Photoshop</span><span class="skill"><span class="skill-icon"><img src="images/procreate.png" alt=""></span>Procreate</span><span class="skill"><span class="skill-icon"><img src="images/after_effect.png" alt=""></span>After Effects</span></div>
+      </div>
+      <div class="skill-card dark">
+        <div class="skill-group">SAS</div>
+        <div class="cert">SAS Certified Specialist: Base Programming Using SAS 9.4</div>
+      </div>
+      <div class="skill-card dark">
+        <div class="skill-group">DeepLearning.AI</div>
+        <div class="cert">Neural Networks and Deep Learning</div><div class="cert">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</div><div class="cert">Structuring Machine Learning Projects</div><div class="cert">Convolutional Neural Networks</div><div class="cert">Sequence Models</div>
+      </div>
+    </div>
+  </section>
 
-	<nav class="sidebar-nav">
-		<a href="#about_me"          class="sidebar-link" data-section="about_me">About Me</a>
-		<a href="#education"         class="sidebar-link" data-section="education">Education</a>
-		<a href="#experience"        class="sidebar-link" data-section="experience">Experience</a>
-		<a href="#publications"      class="sidebar-link" data-section="publications">Publications</a>
-		<a href="#technical_summary" class="sidebar-link" data-section="technical_summary">Skills</a>
-		<a href="#certifications"    class="sidebar-link" data-section="certifications">Certifications &amp; More</a>
-		<a href="personal_life.html" target="_blank" class="sidebar-link sidebar-link-ext ext">Personal Life</a>
-	</nav>
+  <footer class="footer">© Designed and implemented by Zhongyi Guo 2023–2026. All rights reserved.</footer>
+</div>
 
-	<div class="sidebar-divider"></div>
-
-	<div class="sidebar-contact">
-		<div class="sidebar-contact-item">
-			<img loading="lazy" decoding="async" src="images/mail_gray.svg" alt="" class="sidebar-icon"> zhongyig123 at gmail dot com
-		</div>
-		<div class="sidebar-contact-item">
-			<img loading="lazy" decoding="async" src="images/phone.svg" alt="" class="sidebar-icon"> M+P-AMA-DG1J
-		</div>
-	</div>
-
-	<div class="sidebar-social">
-		<a href="https://www.linkedin.com/in/zhongyi-guo/" target="_blank" class="sidebar-social-btn social-link">
-			<img loading="lazy" decoding="async" src="images/linkedin_icon.png" alt="LinkedIn">
-		</a>
-		<a href="https://github.com/JG1ANDONLY" target="_blank" class="sidebar-social-btn social-link">
-			<img loading="lazy" decoding="async" src="images/github.png" alt="GitHub">
-		</a>
-		<a href="https://x.com/zhongy1guo" target="_blank" class="sidebar-social-btn social-link">
-			<img loading="lazy" decoding="async" src="images/x_icon.png" alt="X">
-		</a>
-	</div>
-
-	<div class="sidebar-docs">
-		<a href="files/Resume_Zhongyi_Guo.pdf" target="_blank" class="sidebar-doc-btn">&#x2B07; Resume</a>
-		<a href="files/CV_Zhongyi_Guo.pdf" target="_blank" class="sidebar-doc-btn sidebar-doc-btn-outline">&#x2B07; CV</a>
-	</div>
-
-
-</aside>
-
-<!-- ── Mobile Top Bar ── -->
-<header class="mobile-header" id="mobileHeader">
-	<button class="burger-btn" id="burgerBtn" aria-label="Open menu">
-		<span></span><span></span><span></span>
-	</button>
-	<span class="mobile-brand">Zhongyi (James) Guo</span>
-	<img class="mobile-avatar" src="images/profile_picture.png" alt="Zhongyi Guo"/>
-	<button class="night-toggle" id="nightToggle" aria-label="Toggle dark mode">🌙</button>
-</header>
-
-<!-- ── Main content ── -->
-<main class="main-content">
-
-	<!-- ── ABOUT ── -->
-	<section id="about_me" class="section">
-		<div class="section-label"><span class="section-num">01</span>About Me</div>
-		<div class="section-rule"></div>
-
-		<div class="about-layout">
-			<div class="about-bio">
-				<p>My name is James Guo 过仲懿. I was made in Wuxi 🇨🇳 and adopted by California 🇺🇸.</p>
-				<p>I am a data scientist with <strong>5+ years of experience leading</strong> projects end-to-end, including data cleaning, mining, exploratory data analysis, statistical analyses and machine learning modeling, data visualization, and scientific writing. I provide evidence-based recommendations through written reports and presentations for both technical and non-technical audiences.</p>
-				<p>Outside of work, I love body building, swimming, and MORE on my <a href="https://www.instagram.com/cy.james.guo/" target="_blank" class="ext">Instagram</a>!</p>
-				<p>Let's keep in touch!</p>
-			</div>
-			<div class="about-kpi-row">
-				<!-- <div class="kpi"><div class="kpi-num">5+</div><div class="kpi-lbl">Years Exp</div></div> -->
-				<div class="kpi kpi-accent"><div class="kpi-num">MS</div><div class="kpi-lbl">Stanford</div></div>
-				<div class="kpi kpi-accent"><div class="kpi-num">BS</div><div class="kpi-lbl">Cornell</div></div>
-			</div>
-			<div class="skill-pills">
-				<span>👨🏻‍💻 Data Science</span>
-				<span>📊 Statistical Modeling</span>
-				<span>🤖 Machine Learning</span>
-				<span>📈 Data Visualization</span>
-				<span>📝 Scientific Writing</span>
-				<span>🖥️ High Performance Computing</span>
-			</div>
-		</div>
-	</section>
-
-	<!-- ── EDUCATION ── -->
-	<section id="education" class="section">
-		<div class="section-label"><span class="section-num">02</span>Education</div>
-		<div class="section-rule"></div>
-
-		<div class="edu-bar-wrapper">
-			<div class="edu-bar">
-				<div class="edu-segment" style="width: 16.67%; background: #003071; --edu-accent: #003071;">
-					<div class="edu-segment-label">Case Western Reserve<br/>Biochemistry</div>
-					<div class="edu-panel edu-panel-left" role="tooltip">
-						<div class="edu-panel-head">
-							<div class="edu-panel-school">Case Western Reserve University</div>
-							<div class="edu-panel-degree">Biochemistry <span class="edu-panel-dot">&middot;</span> 2019&ndash;2020</div>
-						</div>
-						<div class="edu-panel-stats">
-							<div class="edu-stat"><span class="edu-stat-k">GPA</span><span class="edu-stat-v">4.0</span></div>
-							<div class="edu-stat"><span class="edu-stat-k">Honors</span><span class="edu-stat-v">Dean&rsquo;s List</span></div>
-						</div>
-						<div class="edu-panel-label">Core coursework <span class="edu-panel-count">4</span></div>
-						<div class="edu-panel-courses">
-							<span class="edu-course">Microeconomics</span>
-							<span class="edu-course">Calculus I, II, III</span>
-							<span class="edu-course">College Writing</span>
-							<span class="edu-course">Intro-level pre-med</span>
-						</div>
-					</div>
-				</div>
-				<div class="edu-segment" style="width: 50%; background: #B31B1B; --edu-accent: #B31B1B;">
-					<div class="edu-segment-label">Cornell<br/>BS in Statistics and Biology</div>
-					<div class="edu-panel edu-panel-center edu-panel-wide" role="tooltip">
-						<div class="edu-panel-head">
-							<div class="edu-panel-school">Cornell University</div>
-							<div class="edu-panel-degree">BS in Statistics and Biology <span class="edu-panel-dot">&middot;</span> 2020&ndash;2023</div>
-						</div>
-						<div class="edu-panel-stats">
-							<div class="edu-stat"><span class="edu-stat-k">GPA</span><span class="edu-stat-v">3.57</span></div>
-							<div class="edu-stat"><span class="edu-stat-k">Honors</span><span class="edu-stat-v">Dean&rsquo;s List</span></div>
-						</div>
-						<div class="edu-panel-label">Core coursework <span class="edu-panel-count">18</span></div>
-						<div class="edu-panel-courses">
-							<span class="edu-course">Data Science</span>
-							<span class="edu-course">Data Mining &amp; Machine Learning</span>
-							<span class="edu-course">Statistical Computing</span>
-							<span class="edu-course">Computing using Python</span>
-							<span class="edu-course">Object-oriented Programming and Data Structure</span>
-							<span class="edu-course">UNIX Tools and Scripting</span>
-							<span class="edu-course">Linear Algebra</span>
-							<span class="edu-course">Linear Models with Matrices</span>
-							<span class="edu-course">Theory of Statistics</span>
-							<span class="edu-course">Probability Models and Inference</span>
-							<span class="edu-course">Probability</span>
-							<span class="edu-course">Macroeconomics</span>
-							<span class="edu-course">Medical Statistics</span>
-							<span class="edu-course">Biological Statistics</span>
-							<span class="edu-course">Advanced Epidemiology</span>
-							<span class="edu-course">Quantitative Genomics and Genetics</span>
-							<span class="edu-course">Population Genetics</span>
-							<span class="edu-course">Genetics and Genomics (lecture &amp; lab)</span>
-						</div>
-					</div>
-				</div>
-				<div class="edu-segment" style="width: 33.33%; background: #8C1515; --edu-accent: #8C1515;">
-					<div class="edu-segment-label">Stanford<br/>MS in Epidemiology and Clinical Research</div>
-					<div class="edu-panel edu-panel-right" role="tooltip">
-						<div class="edu-panel-head">
-							<div class="edu-panel-school">Stanford University</div>
-							<div class="edu-panel-degree">MS in Epidemiology and Clinical Research <span class="edu-panel-dot">&middot;</span> 2023&ndash;2025</div>
-						</div>
-						<div class="edu-panel-stats">
-							<div class="edu-stat"><span class="edu-stat-k">GPA</span><span class="edu-stat-v">3.86</span></div>
-						</div>
-						<div class="edu-panel-label">Core coursework <span class="edu-panel-count">10</span></div>
-						<div class="edu-panel-courses">
-							<span class="edu-course">Deep Learning</span>
-							<span class="edu-course">Data Management and Analysis in SAS</span>
-							<span class="edu-course">Data Visualization</span>
-							<span class="edu-course">Biostatistics</span>
-							<span class="edu-course">Probability</span>
-							<span class="edu-course">Causal Inference</span>
-							<span class="edu-course">Bioinformatics</span>
-							<span class="edu-course">Design and Conduct of Clinical Trials</span>
-							<span class="edu-course">Epidemiologic Research Methods</span>
-							<span class="edu-course">Meta-analysis</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="edu-legend">
-				<div class="edu-legend-item" style="width:16.67%">2019–2020</div>
-				<div class="edu-legend-item" style="width:50%">2020–2023</div>
-				<div class="edu-legend-item" style="width:33.33%">2023–2025</div>
-			</div>
-		</div>
-		<div class="edu-mobile-list">
-			<div class="edu-mobile-item" style="border-left-color:#8C1515;"><div class="edu-mobile-school">Stanford University</div><div class="edu-mobile-degree">MS in Epidemiology and Clinical Research</div><div class="edu-mobile-meta">2023–2025 · GPA 3.86</div></div>
-			<div class="edu-mobile-item" style="border-left-color:#B31B1B;"><div class="edu-mobile-school">Cornell University</div><div class="edu-mobile-degree">BS in Statistics and Biology</div><div class="edu-mobile-meta">2020–2023 · GPA 3.57 · Dean's List</div></div>
-			<div class="edu-mobile-item" style="border-left-color:#003071;"><div class="edu-mobile-school">Case Western Reserve</div><div class="edu-mobile-degree">Biochemistry</div><div class="edu-mobile-meta">2019–2020 · GPA 4.0 · Dean's List</div></div>
-		</div>
-	</section>
-
-	<!-- ── EXPERIENCE ── -->
-	<section id="experience" class="section">
-		<div class="section-label"><span class="section-num">03</span>Experience</div>
-		<div class="section-rule"></div>
-
-		<div class="exp-sub-label">Work</div>
-		<div class="work-filter-bar">
-			<span class="project-filter-label">Filter by</span>
-			<button class="project-filter-btn" data-work-filter="all">All</button>
-			<button class="project-filter-btn active" data-work-filter="technical">Technical</button>
-			<button class="project-filter-btn" data-work-filter="non-technical">Admin/Operation/Service</button>
-		</div>
-
-		<div class="tap-hint" aria-hidden="true"><span class="tap-hint-icon"></span>Tap a card to view full details</div>
-		<div class="work-md" id="work-md">
-			<ul class="work-md-list" role="tablist" aria-label="Work experiences">
-				<li class="work-md-item active" data-target="md-corcept" data-type="technical" role="tab" aria-selected="true">
-					<div class="md-item-logo">
-						<img loading="lazy" decoding="async" src="images/corcept.png" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<div class="md-item-line1">
-							<span class="md-org">Corcept Therapeutics</span>
-						</div>
-						<div class="md-item-line2">
-							<div class="md-item-role">
-								<span class="md-role">Clinical Data Management Specialist</span>
-								<span class="md-date">09/2026 &ndash; Present</span>
-							</div>
-							<div class="md-item-role">
-								<span class="md-role">Biostatistics Intern</span>
-								<span class="md-date">06/2026 &ndash; 08/2026</span>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="work-md-item" data-target="md-ob-llc" data-type="non-technical" role="tab" aria-selected="false">
-					<div class="md-item-logo">
-						<img loading="lazy" decoding="async" src="images/ob_llc.png" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<div class="md-item-line1">
-							<span class="md-org">Oceans Beyond LLC</span>
-						</div>
-						<div class="md-item-line2">
-							<span class="md-role">General Manager</span>
-							<span class="md-date">05/2026 &ndash; Present</span>
-						</div>
-					</div>
-				</li>
-				<li class="work-md-item" data-target="md-w74" data-type="technical" role="tab" aria-selected="false">
-					<div class="md-item-logo">
-						<img loading="lazy" decoding="async" src="images/w74.png" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<div class="md-item-line1">
-							<span class="md-org">W74 Advisors</span>
-						</div>
-						<div class="md-item-line2">
-							<span class="md-role">Data Scientist I</span>
-							<span class="md-date">03/2026 &ndash; 06/2026</span>
-						</div>
-					</div>
-				</li>
-				<li class="work-md-item" data-target="md-election-official" data-type="non-technical" role="tab" aria-selected="false">
-					<div class="md-item-logo">
-						<img loading="lazy" decoding="async" src="images/santa_clara_county.png" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<div class="md-item-line1">
-							<span class="md-org">Santa Clara County</span>
-						</div>
-						<div class="md-item-line2">
-							<span class="md-role">Election Official</span>
-							<span class="md-date">04/2026 &ndash; 06/2026</span>
-						</div>
-					</div>
-				</li>
-				<li class="work-md-item" data-target="md-gladstone" data-type="technical" role="tab" aria-selected="false">
-					<div class="md-item-logo">
-						<img loading="lazy" decoding="async" src="images/Gladstone.webp" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<div class="md-item-line1">
-							<span class="md-org">the Gladstone Institutes</span>
-						</div>
-						<div class="md-item-line2">
-							<span class="md-role">Researcher</span>
-							<span class="md-date">07/2025 &ndash; 04/2026</span>
-						</div>
-					</div>
-				</li>
-				<li class="work-md-item" data-target="md-stanford-ohs" data-type="non-technical" role="tab" aria-selected="false">
-					<div class="md-item-logo">
-						<img loading="lazy" decoding="async" src="images/stanford_ohs.png" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<div class="md-item-line1">
-							<span class="md-org">Stanford Online High School</span>
-						</div>
-						<div class="md-item-line2">
-							<span class="md-role">Student Life Assistant</span>
-							<span class="md-date">02/2024 &ndash; 01/2025</span>
-						</div>
-					</div>
-				</li>
-				<li class="work-md-item" data-target="md-stanford-ucsf" data-type="technical" role="tab" aria-selected="false">
-					<div class="md-item-logo md-item-logo--dual">
-						<img loading="lazy" decoding="async" src="images/stanford.png" alt="">
-						<img loading="lazy" decoding="async" src="images/ucsf.svg" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<div class="md-item-line1">
-							<span class="md-org">Stanford University &amp; UCSF</span>
-						</div>
-						<div class="md-item-line2">
-							<span class="md-role">Graduate Student Researcher</span>
-							<span class="md-date">10/2023 &ndash; 06/2025</span>
-						</div>
-					</div>
-				</li>
-				<li class="work-md-item" data-target="md-match-group" data-type="technical" role="tab" aria-selected="false">
-					<div class="md-item-logo">
-						<img loading="lazy" decoding="async" src="images/match.png" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<div class="md-item-line1">
-							<span class="md-org">Match Group</span>
-						</div>
-						<div class="md-item-line2">
-							<span class="md-role">iOS Development Intern</span>
-							<span class="md-date">07/2022 &ndash; 08/2022</span>
-						</div>
-					</div>
-				</li>
-				<li class="work-md-item" data-target="md-cornell-ta" data-type="non-technical" role="tab" aria-selected="false">
-					<div class="md-item-logo">
-						<img loading="lazy" decoding="async" src="images/cornell.png" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<div class="md-item-line1">
-							<span class="md-org">Cornell University</span>
-						</div>
-						<div class="md-item-line2">
-							<span class="md-role">Undergraduate Teaching Assistant</span>
-							<span class="md-date">01/2021 &ndash; 05/2023</span>
-						</div>
-					</div>
-				</li>
-				<li class="work-md-item" data-target="md-cornell-dining" data-type="non-technical" role="tab" aria-selected="false">
-					<div class="md-item-logo">
-						<img loading="lazy" decoding="async" src="images/cornell.png" alt="">
-						<span class="md-type-dot" aria-hidden="true"></span>
-					</div>
-					<div class="md-item-main">
-						<div class="md-item-line1">
-							<span class="md-org">Cornell Dining</span>
-						</div>
-						<div class="md-item-line2">
-							<span class="md-role">Student Food Assistant</span>
-							<span class="md-date">02/2022 &ndash; 05/2022</span>
-						</div>
-					</div>
-				</li>
-			</ul>
-
-			<div class="work-md-detail">
-				<button type="button" class="md-modal-close" id="work-md-close" aria-label="Close">&times;</button>
-				<article class="md-detail-panel" id="md-ob-llc" data-type="non-technical" role="tabpanel">
-					<header class="md-detail-header">
-						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/ob_llc.png" alt="Oceans Beyond LLC"></div>
-						<div class="md-detail-meta">
-							<h3 class="md-detail-org">Oceans Beyond LLC</h3>
-							<div class="md-detail-role">General Manager</div>
-							<div class="md-detail-date">05/2026 &ndash; Present</div>
-						</div>
-					</header>
-					<div class="md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Entrepreneurship</span>
-							<span class="tag blue">Small Business</span>
-						</div>
-						<ul class="work-bullets">
-							<li>Started my own small business.</li>
-						</ul>
-					</div>
-				</article>
-
-				<article class="md-detail-panel" id="md-w74" data-type="technical" role="tabpanel">
-					<header class="md-detail-header">
-						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/w74.png" alt="W74"></div>
-						<div class="md-detail-meta">
-							<h3 class="md-detail-org">W74 Advisors &nbsp;&middot;&nbsp; Remote</h3>
-							<div class="md-detail-role">Data Scientist I</div>
-							<div class="md-detail-date">03/2026 &ndash; 06/2026</div>
-						</div>
-					</header>
-					<div class="md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Data Science</span>
-							<span class="tag blue">Energy Consulting</span>
-							<span class="tag blue">Vibe Coding</span>
-							<span class="tag orange">Building Energy Consumption</span>
-							<span class="tag yellow">Python</span>
-							<span class="tag purple">Time-series</span>
-							<span class="tag purple">XGBoost</span>
-							<span class="tag purple">Random Forest</span>
-							<span class="tag purple">Deep Neural Network</span>
-							<span class="tag purple">LSTM</span>
-							<span class="tag purple">Transformer</span>
-							<span class="tag green">Sklearn</span>
-							<span class="tag green">Pytorch</span>
-							<span class="tag green">Github Codespace</span>
-							<span class="tag green">Claude CLT</span>
-						</div>
-						<ul class="work-bullets">
-							<li>Delivered analytical and statistical solutions for client building energy optimization, owning work end-to-end from problem framing to stakeholder reporting.</li>
-							<li>Improved model performance by 25% over baseline by benchmarking XGBoost, LightGBM, Random Forest, Transformer, and DNN architectures with Optuna-based hyperparameter tuning; final model achieved a CVMSE of ~0.2, outperforming industry.</li>
-							<li>Used Claude Code to accelerate prototyping and maximize productivity.</li>
-						</ul>
-					</div>
-				</article>
-
-				<article class="md-detail-panel active" id="md-corcept" data-type="technical" role="tabpanel">
-					<header class="md-detail-header">
-						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/corcept.png" alt="Corcept Therapeutics"></div>
-						<div class="md-detail-meta">
-							<h3 class="md-detail-org">Corcept Therapeutics &nbsp;&middot;&nbsp; Redwood City, CA</h3>
-							<div class="md-detail-role">Clinical Data Management Specialist &nbsp;&middot;&nbsp; Biostatistics Intern</div>
-							<div class="md-detail-date">06/2026 &ndash; Present</div>
-						</div>
-					</header>
-					<div class="md-detail-body">
-						<section class="md-role-block">
-							<div class="md-role-head">
-								<h4 class="md-role-title">Clinical Data Management Specialist</h4>
-								<span class="md-role-date">09/2026 &ndash; Present</span>
-							</div>
-							<div class="exp-tags">
-								<span class="tag blue">Clinical Data Management</span>
-								<!-- <span class="tag green">Medidata Clinical Data Studio</span> -->
-							</div>
-							<ul class="work-bullets">
-								<li>Returned as a full-time employee.</li>
-								<li>To be updated...</li>
-							</ul>
-						</section>
-						<section class="md-role-block">
-							<div class="md-role-head">
-								<h4 class="md-role-title">Biostatistics Intern</h4>
-								<span class="md-role-date">06/2026 &ndash; 08/2026</span>
-							</div>
-							<div class="exp-tags">
-								<span class="tag blue">Clinical Data Management</span>
-								<span class="tag blue">Biostatistics</span>
-								<span class="tag blue">Statistical Programming</span>
-								<span class="tag purple">Survival Analysis</span>
-								<span class="tag purple">Index Date Determination</span>
-								<span class="tag purple">Propensity Score Matching</span>
-								<span class="tag purple">Kaplan-Meier Curve</span>
-								<span class="tag purple">Log-rank Test</span>
-								<span class="tag purple">Cox Regression</span>
-								<span class="tag purple">Equivalence Test</span>
-								<span class="tag yellow">R</span>
-								<span class="tag yellow">SAS</span>
-								<span class="tag green">Medidata Clinical Data Studio</span>
-
-							</div>
-							<ul class="work-bullets">
-								<li>Developed strategies to match 120+ external controls from RWD using propensity score, emulating index dates and analyzing outcome with Kaplan-Meier curves, log-rank tests, and Cox proportional hazards models.</li>
-								<li>Built and validated patient profiles across ~20 panels in Medidata Clinical Data Studio, mapping data from annotated CRFs and creating derived variables to streamline clinical trial data review.</li>
-								<li>Developed three-tier strategies to guide the venture capital arm’s setup, analyzing <a href="https://www.sec.gov/edgar/browse/?CIK=1088856&owner=exclude" target="_blank" class="ext" style="text-decoration: none; color: #528DFA;">SEC filings</a> for fund size and constructed portfolios ($50M/$100M/$150M) with real-world companies across stages and deal sizes.</li>
-							</ul>
-						</section>
-					</div>
-				</article>
-
-				<article class="md-detail-panel" id="md-election-official" data-type="non-technical" role="tabpanel">
-					<header class="md-detail-header">
-						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/santa_clara_county.png" alt="Election Official at Santa Clara County"></div>
-						<div class="md-detail-meta">
-							<h3 class="md-detail-org">Registrar of Voters Office, County of Santa Clara &nbsp;&middot;&nbsp; Palo Alto, CA</h3>
-							<div class="md-detail-role">Election Official</div>
-							<div class="md-detail-date">04/2026 &ndash; 06/2026</div>
-						</div>
-					</header>
-					<div class="md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Customer Service</span>
-							<span class="tag blue">Public Service</span>
-							<span class="tag blue">Community Engagement</span>
-						</div>
-						<ul class="work-bullets">
-							<li>Worked to support the 2026 California Primary Election voting.</li>
-							<li>Guided 200+ voters through forms, check-in, and the voting process using in-depth knowledge of voting procedures and the Disney H.E.A.R.D. model, driven by a commitment to public service.</li>
-						</ul>
-					</div>
-				</article>
-
-				<article class="md-detail-panel" id="md-gladstone" data-type="technical" role="tabpanel">
-					<header class="md-detail-header">
-						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/Gladstone.webp" alt="Gladstone Institute at UCSF"></div>
-						<div class="md-detail-meta">
-							<h3 class="md-detail-org">the Corces Lab @ the Gladstone Institutes &nbsp;&middot;&nbsp; San Francisco, CA</h3>
-							<div class="md-detail-role">Researcher</div>
-							<div class="md-detail-date">07/2025 &ndash; 04/2026</div>
-						</div>
-					</header>
-					<div class="md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">R Package Dev</span>
-							<span class="tag blue">Differential Gene Expression Analysis</span>
-							<span class="tag blue">Variant Effect Prediction</span>
-							<span class="tag blue">Multi-omics</span>
-							<span class="tag orange">scRNA-seq</span>
-							<span class="tag orange">scATAC-seq</span>
-							<span class="tag yellow">R</span>
-							<span class="tag yellow">Python</span>
-							<span class="tag purple">Permutation Testing</span>
-							<span class="tag purple">Pseudobulk</span>
-							<span class="tag purple">Case-control</span>
-							<span class="tag purple">Transformer</span>
-							<span class="tag green">devtools</span>
-							<span class="tag green">Seurat</span>
-							<span class="tag green">ArchR</span>
-							<span class="tag green">tidyverse</span>
-							<span class="tag green">ggplot2</span>
-							<span class="tag green">AlphaGenome</span>
-							<span class="tag green">Synapse</span>
-						</div>
-						<ul class="work-bullets">
-							<li>Pioneered the development of an R package (<code><a href="#permuteDE" class="anchor-link" style="color: #e74c3c;">permuteDE</a></code>) with a permutation testing-based pipeline to reduce false positives in differential gene expression analysis in Alzheimer's disease.</li>
-							<li>Collected and integrated 10 massive-scale public scRNA-seq datasets from <i>Synapse</i> to demonstrate the package's usability.</li>
-							<li>Applied <a href="https://deepmind.google.com/science/alphagenome/" target="_blank" class="ext" style="text-decoration: none; color: #528DFA;">AlphaGenome</a> to study how the <i>MAPT</i> gene variants might alter splicing patterns.</li>
-							<li>Removed doublets, performed dimensionality reduction and clustering of scATAC-seq data.</li>
-							<li>Communicated complex statistical findings and effective data visualizations clearly to diverse audiences.</li>
-						</ul>
-					</div>
-				</article>
-
-				<article class="md-detail-panel" id="md-stanford-ohs" data-type="non-technical" role="tabpanel">
-					<header class="md-detail-header">
-						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/stanford_ohs.png" alt="Stanford OHS"></div>
-						<div class="md-detail-meta">
-							<h3 class="md-detail-org">Stanford Online High School &nbsp;&middot;&nbsp; Remote</h3>
-							<div class="md-detail-role">Student Life Assistant</div>
-							<div class="md-detail-date">02/2024 &ndash; 01/2025</div>
-						</div>
-					</header>
-					<div class="md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Administrative Support</span>
-							<span class="tag blue">Schedule Planning</span>
-							<span class="tag blue">Event Coordination</span>
-							<span class="tag blue">Student Records Management</span>
-							<span class="tag blue">Presentation Slide Creation</span>
-							<span class="tag green">Google Sheet/Excel</span>
-							<span class="tag green">Google Slide/PowerPoint</span>
-						</div>
-						<ul class="work-bullets">
-							<li>Supported various event planning such as meeting agenda, student activities, arrival/departure bus schedules, etc.</li>
-							<li>Designed engaging slides for weekly themed class meetings.</li>
-							<li>Maintained student records in Google Sheets, using data entry and Excel functions with strong attention to details.</li>
-						</ul>
-					</div>
-				</article>
-
-				<article class="md-detail-panel" id="md-stanford-ucsf" data-type="technical" role="tabpanel">
-					<header class="md-detail-header">
-						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/stanford.png" alt="Stanford University"><img loading="lazy" decoding="async" src="images/ucsf.svg" alt="UCSF"></div>
-						<div class="md-detail-meta">
-							<h3 class="md-detail-org">Stanford University and UCSF &nbsp;&middot;&nbsp; Stanford, CA</h3>
-							<div class="md-detail-role">Graduate Student Researcher</div>
-							<div class="md-detail-date">10/2023 &ndash; 06/2025</div>
-						</div>
-					</header>
-					<div class="md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Biomedical Research</span>
-							<span class="tag blue">Disease Modeling</span>
-							<span class="tag blue">Multi-tasking</span>
-							<span class="tag orange">scRNA-seq</span>
-							<span class="tag orange">scATAC-seq</span>
-							<span class="tag orange">LC-MS Metabolomics</span>
-							<span class="tag yellow">R</span>
-							<span class="tag yellow">Python</span>
-							<span class="tag purple">Statistical Testing</span>
-							<span class="tag purple">Deep Learning</span>
-							<span class="tag green">Seurat</span>
-							<span class="tag green">ArchR</span>
-							<span class="tag green">tidyverse</span>
-							<span class="tag green">ggplot2</span>
-							<span class="tag green">MetaboAnalystR</span>
-						</div>
-						<ul class="work-bullets">
-							<li>Co-mentored by Dr. Rebecca Graff at UCSF and Dr. John Witte at Stanford University.</li>
-							<li>Conducted <a href='#metabolomics' class="anchor-link">(1) metabolomics analyses to investigate racial disparities</a> and <a href='#psychencode' class="anchor-link">(2) deep learning&ndash;driven single-cell multi-omics studies of schizophrenia and bipolar disorder</a> in parallel.</li>
-						</ul>
-					</div>
-				</article>
-
-				<article class="md-detail-panel" id="md-match-group" data-type="technical" role="tabpanel">
-					<header class="md-detail-header">
-						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/match.png" alt="Match Group"></div>
-						<div class="md-detail-meta">
-							<h3 class="md-detail-org">Match Group &nbsp;&middot;&nbsp; Remote</h3>
-							<div class="md-detail-role">iOS Development Intern</div>
-							<div class="md-detail-date">07/2022 &ndash; 08/2022</div>
-						</div>
-					</header>
-					<div class="md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">iOS App Dev</span>
-							<span class="tag blue">Code Optimization</span>
-							<span class="tag yellow">Swift</span>
-							<span class="tag purple">Protocol-oriented Programming</span>
-							<span class="tag green">SwiftUI</span>
-						</div>
-						<ul class="work-bullets">
-							<li>Revised the <i>&ldquo;Enhanced Interests&rdquo;</i> feature in SwiftUI, allowing users to personalize their tags with text and emojis for richer self-expression.</li>
-							<li>Improved code efficiency by migrating UIKit components to SwiftUI.</li>
-						</ul>
-					</div>
-				</article>
-
-				<article class="md-detail-panel" id="md-cornell-ta" data-type="non-technical" role="tabpanel">
-					<header class="md-detail-header">
-						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/cornell.png" alt="Cornell University Seal"></div>
-						<div class="md-detail-meta">
-							<h3 class="md-detail-org">Cornell University &nbsp;&middot;&nbsp; Ithaca, NY</h3>
-							<div class="md-detail-role">Undergraduate Teaching Assistant</div>
-							<div class="md-detail-date">01/2021 &ndash; 05/2023</div>
-						</div>
-					</header>
-					<div class="md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Teaching</span>
-							<span class="tag blue">Grading</span>
-							<span class="tag green">Canvas</span>
-							<span class="tag green">Gradescope</span>
-						</div>
-						<ul class="work-bullets">
-							<li>Taught a variety of <a href='#teaching' class="anchor-link">courses</a>.</li>
-							<li>Led discussions, graded homework and assignments, held office hours, and bridged communication between professors and students.</li>
-							<li>Maintained course materials and student records in Canvas and Gradescope.</li>
-						</ul>
-					</div>
-				</article>
-
-				<article class="md-detail-panel" id="md-cornell-dining" data-type="non-technical" role="tabpanel">
-					<header class="md-detail-header">
-						<div class="md-detail-logo"><img loading="lazy" decoding="async" src="images/cornell.png" alt="Cornell University Seal"></div>
-						<div class="md-detail-meta">
-							<h3 class="md-detail-org">Cornell Dining &nbsp;&middot;&nbsp; Ithaca, NY</h3>
-							<div class="md-detail-role">Student Food Assistant</div>
-							<div class="md-detail-date">02/2022 &ndash; 05/2022</div>
-						</div>
-					</header>
-					<div class="md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Customer Service</span>
-							<span class="tag blue">Dietary Protocol</span>
-						</div>
-						<ul class="work-bullets">
-							<li>Replenished food in the Morrison dining hall.</li>
-							<li>Made pizzas and chow meins to feed hungry students.</li>
-							<li>Learned about dietary guidelines and protocols.</li>
-						</ul>
-					</div>
-				</article>
-			</div>
-		</div>
-
-
-		<!-- Projects -->
-		<div class="exp-sub-label">Project Highlight</div>
-		<div class="project-filter-bar">
-			<span class="project-filter-label">Filter by</span>
-			<button class="project-filter-btn active" data-filter="all">All</button>
-			<button class="project-filter-btn" data-filter="r">R</button>
-			<button class="project-filter-btn" data-filter="python">Python</button>
-			<button class="project-filter-btn" data-filter="sas">SAS</button>
-			<button class="project-filter-btn" data-filter="other">Other</button>
-		</div>
-
-		<div class="tap-hint" aria-hidden="true"><span class="tap-hint-icon"></span>Tap a card to view full details</div>
-		<div class="proj-md" id="proj-md">
-			<ul class="proj-md-list" role="tablist" aria-label="Projects">
-				<!-- <li class="proj-md-item active" data-target="md-corcept-project" data-lang="sas" role="tab" aria-selected="true">
-					<div class="proj-md-thumb proj-md-thumb-empty">
-						<span class="proj-md-lang-dot" aria-hidden="true"></span>
-					</div>
-					<div class="proj-md-main">
-						<div class="proj-md-title">Project TBD</div>
-						<div class="proj-md-meta">
-							<span class="proj-md-org">Corcept Therapeutics</span>
-							<span class="proj-md-date">(est.) 06/2026 &ndash; 08/2026</span>
-						</div>
-					</div>
-				</li> -->
-				<li class="proj-md-item active" data-target="md-HKU-summer-2026-project" data-lang="python" role="tab" aria-selected="true">
-					<div class="proj-md-thumb">
-						<img loading="lazy" decoding="async" src="images/Bitcoin.png" alt="">
-						<span class="proj-md-lang-dot" aria-hidden="true"></span>
-					</div>
-					<div class="proj-md-main">
-						<div class="proj-md-title">Bitcoin Portfolio Allocation</div>
-						<div class="proj-md-meta">
-							<span class="proj-md-org">2026 HKU Summer Camp</span>
-							<span class="proj-md-date">05/2026</span>
-						</div>
-					</div>
-				</li>
-				<li class="proj-md-item" data-target="md-crypto-return" data-lang="python" role="tab" aria-selected="false" hidden>
-					<div class="proj-md-thumb">
-						<img loading="lazy" decoding="async" src="images/crypto_combined_curve.png" alt="">
-						<span class="proj-md-lang-dot" aria-hidden="true"></span>
-					</div>
-					<div class="proj-md-main">
-						<div class="proj-md-title">Cross-Sectional Crypto Return Prediction</div>
-						<div class="proj-md-meta">
-							<span class="proj-md-org">2026 HKU Summer Camp backup project</span>
-							<span class="proj-md-date">04/2026</span>
-						</div>
-					</div>
-				</li>
-				<li class="proj-md-item" data-target="md-permuteDE" data-lang="r" role="tab" aria-selected="false">
-					<div class="proj-md-thumb">
-						<img loading="lazy" decoding="async" src="images/permuteDE.png" alt="">
-						<span class="proj-md-lang-dot" aria-hidden="true"></span>
-					</div>
-					<div class="proj-md-main">
-						<div class="proj-md-title"><code>permuteDE</code></div>
-						<div class="proj-md-meta">
-							<span class="proj-md-org">the Gladstone Institutes</span>
-							<span class="proj-md-date">07/2025 &ndash; 04/2026</span>
-						</div>
-					</div>
-				</li>
-				<li class="proj-md-item" data-target="md-psychencode" data-lang="r python" role="tab" aria-selected="false">
-					<div class="proj-md-thumb">
-						<img loading="lazy" decoding="async" src="images/mark_gerstein_paper.png" alt="">
-						<span class="proj-md-lang-dot" aria-hidden="true"></span>
-					</div>
-					<div class="proj-md-main">
-						<div class="proj-md-title">Deep Learning + Single-Cell Multi-Omics</div>
-						<div class="proj-md-meta">
-							<span class="proj-md-org">Stanford University</span>
-							<span class="proj-md-date">04/2024 &ndash; 06/2025</span>
-						</div>
-					</div>
-				</li>
-				<li class="proj-md-item" data-target="md-metabolomics" data-lang="r" role="tab" aria-selected="false">
-					<div class="proj-md-thumb">
-						<img loading="lazy" decoding="async" src="images/pca_incidence.jpg" alt="">
-						<span class="proj-md-lang-dot" aria-hidden="true"></span>
-					</div>
-					<div class="proj-md-main">
-						<div class="proj-md-title">Black&ndash;White Metabolomic Disparities in Prostate Cancer</div>
-						<div class="proj-md-meta">
-							<span class="proj-md-org">UCSF</span>
-							<span class="proj-md-date">10/2023 &ndash; 06/2025</span>
-						</div>
-					</div>
-				</li>
-				<li class="proj-md-item" data-target="md-death-rates" data-lang="other" role="tab" aria-selected="false">
-					<div class="proj-md-thumb">
-						<img loading="lazy" decoding="async" src="images/global_central_death_ratesxdevelopmental_indicator.png" alt="">
-						<span class="proj-md-lang-dot" aria-hidden="true"></span>
-					</div>
-					<div class="proj-md-main">
-						<div class="proj-md-title">Global Disparities in Central Death Rates</div>
-						<div class="proj-md-meta">
-							<span class="proj-md-org">Stanford University</span>
-							<span class="proj-md-date">10/2024 &ndash; 12/2024</span>
-						</div>
-					</div>
-				</li>
-				<li class="proj-md-item" data-target="md-nih-grant" data-lang="other" role="tab" aria-selected="false">
-					<div class="proj-md-thumb">
-						<img loading="lazy" decoding="async" src="images/mofa.png" alt="">
-						<span class="proj-md-lang-dot" aria-hidden="true"></span>
-					</div>
-					<div class="proj-md-main">
-						<div class="proj-md-title">Multi-omics Alzheimer's Grant Proposal</div>
-						<div class="proj-md-meta">
-							<span class="proj-md-org">Stanford University</span>
-							<span class="proj-md-date">03/2024 &ndash; 06/2024</span>
-						</div>
-					</div>
-				</li>
-				<li class="proj-md-item" data-target="md-subarachnoid" data-lang="sas" role="tab" aria-selected="false">
-					<div class="proj-md-thumb">
-						<img loading="lazy" decoding="async" src="images/SH_boxplot.png" alt="">
-						<span class="proj-md-lang-dot" aria-hidden="true"></span>
-					</div>
-					<div class="proj-md-main">
-						<div class="proj-md-title">Subarachnoid Hemorrhage Risk Modeling</div>
-						<div class="proj-md-meta">
-							<span class="proj-md-org">Stanford University</span>
-							<span class="proj-md-date">10/2023 &ndash; 12/2023</span>
-						</div>
-					</div>
-				</li>
-				<li class="proj-md-item" data-target="md-booked" data-lang="other" role="tab" aria-selected="false">
-					<div class="proj-md-thumb">
-						<img loading="lazy" decoding="async" src="images/booked.png" alt="">
-						<span class="proj-md-lang-dot" aria-hidden="true"></span>
-					</div>
-					<div class="proj-md-main">
-						<div class="proj-md-title">BOOKED &mdash; an iOS App</div>
-						<div class="proj-md-meta">
-							<span class="proj-md-org">Cornell University</span>
-							<span class="proj-md-date">04/2022 &ndash; 05/2022</span>
-						</div>
-					</div>
-				</li>
-			</ul>
-
-			<div class="proj-md-detail">
-				<button type="button" class="md-modal-close" id="proj-md-close" aria-label="Close">&times;</button>
-				<!-- <article class="proj-md-detail-panel active" id="md-corcept-project" data-lang="r" role="tabpanel">
-					<header class="proj-md-detail-header">
-						<h3 class="proj-md-detail-title">Project TBD</h3>
-						<div class="proj-md-detail-org">Biostatistics Intern &nbsp;&middot;&nbsp; Corcept Therapeutics</div>
-						<div class="proj-md-detail-date">(est.) 06/2026 &ndash; 08/2026</div>
-					</header>
-					<div class="proj-md-detail-body">
-						<ul class="exp-bullets">
-							<li>To be udpated...</li>
-						</ul>
-					</div>
-				</article> -->
-
-				<article class="proj-md-detail-panel active" id="md-HKU-summer-2026-project" data-lang="python" role="tabpanel">
-					<header class="proj-md-detail-header">
-						<h3 class="proj-md-detail-title">Bitcoin Portfolio Allocation</h3>
-						<div class="proj-md-detail-org">2026 HKU Future Leaders Quest &ndash; Dean&rsquo;s Master Fellowship Summer Selection Camp &nbsp;&middot;&nbsp; The University of Hong Kong, Hong Kong SAR</div>
-						<div class="proj-md-detail-date">05/2026</div>
-					</header>
-					<div class="proj-md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Portfolio Optimization</span>
-							<span class="tag blue">Asset Allocation</span>
-							<span class="tag blue">Risk Modeling</span>
-							<span class="tag orange">Daily Price &amp; Return Series</span>
-							<span class="tag yellow">Python</span>
-							<span class="tag purple">Mean&ndash;Variance Optimization</span>
-							<span class="tag purple">CAPM Beta</span>
-							<span class="tag purple">Expected Shortfall</span>
-							<span class="tag purple">Black&ndash;Litterman</span>
-							<span class="tag green">cvxpy</span>
-							<span class="tag green">OSQP / SCS</span>
-							<span class="tag green">yfinance</span>
-							<span class="tag green">pandas</span>
-							<span class="tag green">numpy</span>
-							<span class="tag green">matplotlib</span>
-						</div>
-						<div class="exp-images-strip">
-							<img loading="lazy" decoding="async" src="images/btc_cumulative_returns.png" alt="Log-scale cumulative return of BTC, SPY, VEU, TLT, and GLD from 2014 to 2026">
-							<img loading="lazy" decoding="async" src="images/btc_efficient_frontier.png" alt="Mean-variance efficient frontier with and without BTC-USD">
-							<img loading="lazy" decoding="async" src="images/btc_portfolio_weights.png" alt="Mean-variance portfolio weights by optimization scenario with BTC-USD">
-							<img loading="lazy" decoding="async" src="images/btc_bl_weights.png" alt="Black-Litterman max-Sharpe portfolio weights vs the market-cap prior">
-						</div>
-						<p class="exp-summary">How much Bitcoin should a moderate-risk household hold alongside an ETF portfolio? This project answers this question end-to-end: data collection, descriptive analysis, mean&ndash;variance optimization under multiple risk constraints, and a forward-looking Black&ndash;Litterman adjustment.</p>
-						
-						<p class="exp-summary">Universe: SPY, VEU, TLT, GLD, and BTC-USD; risk-free rate built dynamically from the 3-month T-Bill (^IRX); 2,917 aligned trading days (2014-09-17 to 2026-04-21). Target client: 5&ndash;10 year horizon, long-only, no leverage, ~15% annualized vol budget.</p>
-						<ul class="exp-bullets">
-							<li>Computed annualized return, volatility, Sharpe, skew, max drawdown, and the full correlation matrix; estimated CAPM beta of BTC vs SPY over full / pre-2017 / post-2017 sub-samples, showing BTC's structural shift from idiosyncratic (&beta; &asymp; 0.01) to risk-asset-like (&beta; &asymp; 0.97) while pairwise correlations with every other asset stay &le; 0.22.</li>
-							<li>Solved six long-only mean&ndash;variance scenarios across two universes (eleven portfolios total) in <code>cvxpy</code> (OSQP / SCS): max-Sharpe, vol caps at 10% and 15% p.a., a daily 95% Expected Shortfall cap at 5% and a loose 25% sanity check, and a max-return BTC&nbsp;&le;&nbsp;10% cap.</li>
-							<li>Implemented Black&ndash;Litterman algorithm on the post-2017 sample so the prior covariance isn't dominated by the 2017 BTC bubble: reverse-optimized the equilibrium prior from an assumed market-cap-style weight vector and imposed three views (BTC outperforms VEU by 15% p.a.; SPY earns 10% p.a.; GLD outperforms TLT by 3% p.a.), then fed posterior expected returns into a max-Sharpe optimizer.</li>
-							<li>Including BTC lifted max-Sharpe from 0.81 to 1.13 (+40%); the Vol-Cap-15% portfolio with BTC simultaneously raised Sharpe to 1.12 and improved max drawdown from -29.0% to -26.2%, while a return-only objective with a 5% ES cap permitted a 50% BTC weight (drawdown -56%) &mdash; confirming ES alone is the wrong knob.</li>
-							<li>Recommendation: allocate 5&ndash;10% to BTC, anchored on the Vol-Cap-15% with BTC portfolio (Sharpe 1.12, max DD -26%) and independently validated by Black&ndash;Litterman, which assigned BTC ~9.5% &mdash; almost exactly the 10% cap result. Rebalance quarterly; review annually.</li>
-						</ul>
-						<div style="margin-top:0.8em;">
-							<a class="exp-download-link ext" href="https://github.com/JG1ANDONLY/bitcoinAllocation" target="_blank">GitHub Repo</a>
-							<a class="exp-download-link" href="files/Zhongyi_Guo_bitcoin_allocation.pdf" download="bitcoin_presentation.pdf">&#x2B07; Slides (PDF)</a>
-						</div>
-					</div>
-				</article>
-
-				<article class="proj-md-detail-panel" id="md-crypto-return" data-lang="python" role="tabpanel">
-					<header class="proj-md-detail-header">
-						<h3 class="proj-md-detail-title">Cross-Sectional Crypto Return Prediction</h3>
-						<div class="proj-md-detail-org">2026 HKU Future Leaders Quest – Dean’s Master Fellowship Summer Selection Camp</div>
-						<div class="proj-md-detail-date">05/2026</div>
-					</header>
-					<div class="proj-md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Quant Strategy Research</span>
-							<span class="tag blue">Cross-Sectional Factor Investing</span>
-							<span class="tag blue">Long/Short Backtesting</span>
-							<span class="tag orange">Binance Perpetual Futures</span>
-							<span class="tag orange">Hourly Klines &amp; Funding Rates</span>
-							<span class="tag yellow">Python</span>
-							<span class="tag yellow">SQL</span>
-							<span class="tag purple">Fama&ndash;MacBeth Regression</span>
-							<span class="tag purple">Newey&ndash;West HAC SE</span>
-							<span class="tag purple">Amihud Illiquidity</span>
-							<span class="tag purple">Momentum &amp; Reversal</span>
-							<span class="tag purple">Realized Volatility</span>
-							<span class="tag purple">RandomForest</span>
-							<span class="tag purple">XGBoost</span>
-							<span class="tag purple">LightGBM</span>
-							<span class="tag purple">PyTorch DNN</span>
-							<span class="tag purple">Model Ensembling</span>
-							<span class="tag green">ClickHouse</span>
-							<span class="tag green">pandas</span>
-							<span class="tag green">numpy</span>
-							<span class="tag green">scikit-learn</span>
-							<span class="tag green">statsmodels</span>
-							<span class="tag green">pyarrow</span>
-							<span class="tag green">matplotlib</span>
-						</div>
-						<div class="exp-images-strip">
-							<img loading="lazy" decoding="async" src="images/crypto_combined_curve.png" alt="Combined factor blend cumulative PnL">
-							<img loading="lazy" decoding="async" src="images/crypto_ml_curves.png" alt="ML stack cumulative PnL (gross)">
-							<img loading="lazy" decoding="async" src="images/crypto_single_factors.png" alt="Single-factor cumulative PnL">
-							<img loading="lazy" decoding="async" src="images/crypto_factor_correlation.png" alt="Cross-sectional factor correlation">
-						</div>
-						<p class="exp-summary">Daily long/short strategy on ~620 USDT-quoted Binance perpetual futures (2020 &ndash; 2026, 381k symbol-days). Pulled hourly klines and funding rates from a <code>ClickHouse</code> warehouse, built seven literature-backed factors as cross-sectional rank z-scores, validated them with Fama&ndash;MacBeth regressions, and traded a top-<i>N</i> / bottom-<i>N</i> portfolio rebalanced daily &mdash; benchmarking a transparent factor blend against a stack of ML models.</p>
-						<ul class="exp-bullets">
-							<li>Engineered the data pipeline against a remote <code>ClickHouse</code> binance database, pushing OHLCV / funding aggregation server-side (<code>argMin</code> / <code>argMax</code> / <code>HAVING hours = 24</code>) so 11M hourly rows never crossed the wire; cached as parquet and applied a $5M 30-day average dollar-volume filter to control for survivorship and liquidity.</li>
-							<li>Constructed 7 factors &mdash; momentum (7d, 30d), 1-day reversal, funding rate, taker-buy imbalance, Amihud illiquidity, 30-day realized volatility &mdash; all standardized as daily cross-sectional rank z-scores under a strict no-lookahead invariant (factors at close of <i>t</i>, return <i>t</i>&rarr;<i>t+1</i>).</li>
-							<li>Ran daily Fama&ndash;MacBeth regressions with Newey&ndash;West (lag 5) HAC standard errors; three factors cleared |t| &gt; 2.5 &mdash; Amihud illiquidity (t = +4.36), funding rate (t = &minus;2.96, sign consistent with basis-trade theory), and taker-buy imbalance (t = +2.83, the unique-to-Binance signal).</li>
-							<li>Backtested a combined factor blend (top-10 / bot-10, equal-weight, 2&times; gross book) achieving Sharpe 1.89 gross / 1.28 net of 10 bps round-trip, +135% annualized gross return, max drawdown &minus;60% across 2,048 trading days.</li>
-							<li>Benchmarked an ML stack &mdash; OLS, RidgeCV, RandomForest, XGBoost, LightGBM, a small PyTorch DNN (9&rarr;64&rarr;32&rarr;1, BatchNorm + dropout), and an equal-weighted ensemble of the four nonlinear models &mdash; using expanding-window monthly refits, target winsorization, and a chronological 10% validation slice for early stopping; reported OOS R<sup>2</sup> in the Gu&ndash;Kelly&ndash;Xiu (2020) sense. The nonlinear ensemble reached Sharpe 2.14 gross / 1.23 net, beating linear baselines by capturing factor interactions (e.g., funding works harder on illiquid names).</li>
-							<li>Conclusion: the simple combined-factor blend is the winner net of costs &mdash; transparent attribution and Sharpe 1.28 net &mdash; while the ensemble's higher gross edge is partly given back through turnover. Three factors carry most of the signal; ML's contribution is interaction terms, not net new alpha.</li>
-						</ul>
-						<div style="margin-top:0.8em;">
-							<a class="exp-download-link ext" href="https://github.com/JG1ANDONLY/predictCryptoReturn" target="_blank">GitHub Repo</a>
-						</div>
-					</div>
-				</article>
-
-				<article class="proj-md-detail-panel" id="md-permuteDE" data-lang="r" role="tabpanel">
-					<header class="proj-md-detail-header">
-						<h3 class="proj-md-detail-title"><code>permuteDE</code>: Permutation Testing Pipeline for Differential Gene Expression Analysis</h3>
-						<div class="proj-md-detail-org">Researcher &nbsp;&middot;&nbsp; the Corces Lab @ the Gladstone Institutes</div>
-						<div class="proj-md-detail-date">07/2025 &ndash; 04/2026</div>
-					</header>
-					<div class="proj-md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">R Package Dev</span>
-							<span class="tag blue">Case-control Statistical Testing</span>
-							<span class="tag blue">Differential Gene Expression Analysis</span>
-							<span class="tag orange">sc/snRNA-seq</span>
-							<span class="tag yellow">R</span>
-							<span class="tag purple">Pseudobulk</span>
-							<span class="tag purple">Permutation Testing</span>
-							<span class="tag green">Seurat</span>
-							<span class="tag green">BPCells</span>
-							<span class="tag green">edgeR</span>
-							<span class="tag green">DESeq2</span>
-							<span class="tag green">tidyverse</span>
-							<span class="tag green">ggplot2</span>
-						</div>
-						<div class="exp-images-strip">
-							<img loading="lazy" decoding="async" src="images/permuteDE.png" alt="`permuteDE` logo">
-							<img loading="lazy" decoding="async" src="images/volcano_plot.jpg" alt="`permuteDE` Volcano Plot">
-							<img loading="lazy" decoding="async" src="images/histogram.jpg" alt="`permuteDE` Histogram">
-						</div>
-						<p class="exp-summary">Differential expression analyses are susceptible to false positives. <code>permuteDE</code> uses permutation testing to identify which comparisons have a higher number of significant differentially expressed features than would be expected by chance.</p>
-						<ul class="exp-bullets">
-							<li>Developed the <code>permuteDE</code> R package, overseeing maintenance, debugging, and feature development.</li>
-							<li>Collected and integrated eight large-scale public snRNA-seq datasets from <i>Synapse</i>, performing rigorous data cleaning, metadata curation, and structuring data into <code>Seurat</code> objects and <code>BPCells</code> matrices.</li>
-							<li>Applied the <code>permuteDE</code> pipeline across eight datasets to demonstrate its real-world utility.</li>
-						</ul>
-						<p class="exp-summary">Note: Currently we are finalizing the package and analyses; <code>permuteDE</code> will be released upon manuscript publication.</p>
-					</div>
-				</article>
-
-				<article class="proj-md-detail-panel" data-lang="r python" id="md-psychencode" role="tabpanel">
-					<header class="proj-md-detail-header">
-						<h3 class="proj-md-detail-title">Deep Learning + Single-Cell Multi-Omics to Study Schizophrenia &amp; Bipolar Disorder</h3>
-						<div class="proj-md-detail-org">Graduate Student Researcher &nbsp;&middot;&nbsp; the Kundaje Lab @ Stanford University</div>
-						<div class="proj-md-detail-date">04/2024 &ndash; 06/2025</div>
-					</header>
-					<div class="proj-md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Multi-omics Integration</span>
-							<span class="tag blue">Case-control Statistical Testing</span>
-							<span class="tag blue">Differential Expression &amp; Accessibility Analyses</span>
-							<span class="tag blue">Variant Effect Prediction</span>
-							<span class="tag orange">scRNA-seq</span>
-							<span class="tag orange">scATAC-seq</span>
-							<span class="tag yellow">R</span>
-							<span class="tag yellow">Python</span>
-							<span class="tag purple">Pseudobulk</span>
-							<span class="tag purple">Wilcoxon Rank-sum Test</span>
-							<span class="tag purple">Wald Test</span>
-							<span class="tag purple">MAST</span>
-							<span class="tag green">Seurat</span>
-							<span class="tag green">ArchR</span>
-							<span class="tag green">DESeq2</span>
-							<span class="tag green">ChromBPNet</span>
-							<span class="tag green">DeepLIFT/SHAP</span>
-							<span class="tag green">TF-MoDISco</span>
-							<span class="tag green">finemo-gpu</span>
-						</div>
-						<div class="exp-images-strip">
-							<img loading="lazy" decoding="async" src="images/mark_gerstein_paper.png" alt="Chromatin Accessibilities across Cell Types">
-							<img loading="lazy" decoding="async" src="images/chrombpnet.png" alt="ChromBPNet Model Architecture">
-							<img loading="lazy" decoding="async" src="images/variant_effect.png" alt="Disruptive Effect of a Variant">
-						</div>
-						<p class="exp-figcaption">Figure Source: <a href="https://www.science.org/doi/10.1126/science.adi5199" target="_blank" style="color:#528DFA;">Emani et al., Science 2024</a> &nbsp;&middot;&nbsp; <a href="https://www.biorxiv.org/content/10.1101/2024.12.25.630221v2" target="_blank" style="color:#528DFA;">Pampari et al., bioRxiv preprint 2025</a> &nbsp;&middot;&nbsp; <a href="https://www.sciencedirect.com/science/article/pii/S0092867422015033?via%3Dihub" target="_blank" style="color:#528DFA;">Ameen et al., Cell 2022</a></p>
-						<p class="exp-summary">I joined the <i>PsychENCODE</i> project at Prof. Anshul Kundaje's lab. I led this project analyzing scRNA-seq and scATAC-seq multiome data from three brain regions to investigate cell type-specific chromatin accessibility and gene expression patterns underlying schizophrenia and bipolar disorder to better understand their pathogeneses.</p>
-						<ul class="exp-bullets">
-							<li>Preprocessed high-dimensional multiome data through quality control, dimensionality reduction, clustering, doublet detection, marker identification, and cell type annotation.</li>
-							<li>Performed differential gene expression &amp; peak accessibility analyses (pseudobulk: Wald test; single-cell: Wilcoxon + MAST) across multiple cell types.</li>
-							<li>Trained cell type-specific <code><a href="https://github.com/kundajelab/chrombpnet" target="_blank" class="doc-link ext">ChromBPNet</a></code> models to identify causal genomic variants and their downstream effects on chromatin accessibility and gene regulation.</li>
-						</ul>
-					</div>
-				</article>
-
-				<article class="proj-md-detail-panel" data-lang="r" id="md-metabolomics" role="tabpanel">
-					<header class="proj-md-detail-header">
-						<h3 class="proj-md-detail-title">Black&ndash;White Metabolomic Disparities in Prostate Cancer</h3>
-						<div class="proj-md-detail-org">Graduate Student Researcher &nbsp;&middot;&nbsp; the Graff Lab @ UCSF</div>
-						<div class="proj-md-detail-date">10/2023 &ndash; 06/2025</div>
-					</header>
-					<div class="proj-md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Health Disparities</span>
-							<span class="tag blue">Case-control Statistical Testing</span>
-							<span class="tag orange">LC-MS Metabolomics</span>
-							<span class="tag orange">Metabolon Panels</span>
-							<span class="tag yellow">R</span>
-							<span class="tag purple">t-test</span>
-							<span class="tag purple">linear regression</span>
-							<span class="tag purple">logistic regression</span>
-							<span class="tag purple">PCA</span>
-							<span class="tag purple">PLS-DA</span>
-							<span class="tag purple">Random Forest</span>
-							<span class="tag purple">Support Vector Machine</span>
-							<span class="tag purple">Pathway Analysis</span>
-							<span class="tag green">ChemRICH</span>
-							<span class="tag green">WGCNA</span>
-							<span class="tag green">MetaboAnalystR</span>
-							<span class="tag green">tidyverse</span>
-							<span class="tag green">ggplot2</span>
-						</div>
-						<div class="exp-images-strip">
-							<img loading="lazy" decoding="async" src="images/pca_incidence.jpg" alt="PCA Incidence Rates">
-							<img loading="lazy" decoding="async" src="images/pca_incidence_and_mortality.jpg" alt="PCA Incidence and Mortality Rates">
-							<img loading="lazy" decoding="async" src="images/wgcna.jpeg" alt="WGCNA">
-						</div>
-						<p class="exp-figcaption">Figure Source: <a href="https://www.cancer.gov/news-events/cancer-currents-blog/2019/prostate-cancer-death-disparities-black-men" target="_blank" style="color:#528DFA;">National Cancer Institute 2019</a> &nbsp;&middot;&nbsp; <a href="https://doi.org/10.1016/j.canlet.2022.01.028" target="_blank" style="color:#528DFA;">Lowder et al., Cancer Letters 2022</a> &nbsp;&middot;&nbsp; <a href="https://link.springer.com/article/10.1186/1471-2105-9-559" target="_blank" style="color:#528DFA;">Langfelder &amp; Horvath, BMC Bioinformatics 2008</a></p>
-						<p class="exp-summary">Black men face higher prostate cancer incidence and mortality than White men. This project leverages LC-MS metabolomics on a cohort of 34 men (17 Black, 17 White) from <a href="https://doi.org/10.1200/GO.22.00154" target="_blank" class="doc-link ext">the IRONMAN Registry</a> to characterize metabolites associated with such disparities. I presented this project as my Master's thesis.</p>
-						<ul class="exp-bullets">
-							<li>Applied t-test, PCA, PLS-DA, random forest, logistic &amp; linear regression, chemical similarity enrichment analysis, pathway analysis, and WGCNA to LC-MS metabolomics data, characterizing metabolites associated with Black-White prostate cancer disparities.</li>
-							<li>Interpreted complex statistical findings and communicated them through clear scientific writing and effective data visualizations; defended before Stanford Epidemiology faculty and students.</li>
-						</ul>
-						<div style="margin-top:0.8em;">
-							<a class="exp-download-link" href="files/thesis_presentation_v3.pptx" download="thesis_presentation.pptx">&#x2B07; Slides (PPTX)</a>
-							<a class="exp-download-link" href="files/thesis_presentation_v3.pdf" download="thesis_presentation.pdf">&#x2B07; Slides (PDF)</a>
-						</div>
-					</div>
-				</article>
-
-				<article class="proj-md-detail-panel" data-lang="other" id="md-death-rates" role="tabpanel">
-					<header class="proj-md-detail-header">
-						<h3 class="proj-md-detail-title">Interactive Data Visualization Dashboards: Global Disparities in Central Death Rates</h3>
-						<div class="proj-md-detail-org">Class Project &nbsp;&middot;&nbsp; Stanford University</div>
-						<div class="proj-md-detail-date">10/2024 &ndash; 12/2024</div>
-					</header>
-					<div class="proj-md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Data Visualization</span>
-							<span class="tag blue">Interactive Website</span>
-							<span class="tag blue">Socio-economic Progress</span>
-							<span class="tag blue">Team Collaboration</span>
-							<span class="tag orange">Demographic Data</span>
-							<span class="tag yellow">Javascript</span>
-							<span class="tag purple">D3</span>
-						</div>
-						<div class="exp-images-strip">
-							<img loading="lazy" decoding="async" src="images/global_central_death_ratesxdevelopmental_indicator.png" alt="Global Central Death Rates x Developmental Indicators">
-							<img loading="lazy" decoding="async" src="images/correlation_between_mortality_and_developmental_conditions.png" alt="Correlation between Mortality and Developmental Conditions">
-							<img loading="lazy" decoding="async" src="images/dynamic_bubble_chart.gif" alt="Dynamic Bubble Chart over Time">
-						</div>
-						<p class="exp-summary">This project visualized the interplay between life expectancy (measured by central death rates) and economic development, healthcare access, energy production, and consumption patterns.</p>
-						<ul class="exp-bullets">
-							<li>Developed interactive data visualization dashboards (global heatmaps, cross-country correlation analyses, and time-evolving bubble charts) using JavaScript D3.</li>
-						</ul>
-						<div style="margin-top:0.8em;">
-							<a class="exp-download-link ext" href="https://dkristheltorres.github.io/CS-448B/" target="_blank">Website</a>
-						</div>
-					</div>
-				</article>
-
-				<article class="proj-md-detail-panel" id="md-nih-grant" data-lang="other" role="tabpanel">
-					<header class="proj-md-detail-header">
-						<h3 class="proj-md-detail-title">[Hypothetical] Integrating Single-Cell Multi-omics to Investigate Alzheimer's Disease</h3>
-						<div class="proj-md-detail-org">Class Project &nbsp;&middot;&nbsp; Stanford University</div>
-						<div class="proj-md-detail-date">03/2024 &ndash; 06/2024</div>
-					</header>
-					<div class="proj-md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">NIH Grant Proposal Practice</span>
-							<span class="tag blue">Literature Review</span>
-							<span class="tag blue">Team Collaboration</span>
-							<span class="tag green">Google Doc</span>
-						</div>
-						<div class="exp-images-strip">
-							<img loading="lazy" decoding="async" src="images/mofa.png" alt="Multi-Omics Factor Analysis">
-							<img loading="lazy" decoding="async" src="images/multiomics.png" alt="Multi-omics Analysis">
-						</div>
-						<p class="exp-figcaption">Figure Source: <a href="https://link.springer.com/article/10.15252/msb.20178124" target="_blank" style="color:#528DFA;">Argelaguet et al., 2018</a> &nbsp;&middot;&nbsp; <a href="https://www.gowinglife.com/longevity-briefs-scientists-discover-new-molecular-driver-of-alzheimers/" target="_blank" style="color:#528DFA;">Growing Life</a></p>
-						<p class="exp-summary">In this project, I practiced NIH-style grant proposal writing by developing a theoretical proposal that integrates single-cell multiomics data to investigate the molecular mechanisms using factor analysis underlying Alzheimer's Disease.</p>
-						<ul class="exp-bullets">
-							<li>Drafted the <i>Specific Aims</i> section of a conceptual NIH grant proposal and presented the multi-omics factor analysis plan to ~30 professors and students.</li>
-						</ul>
-						<div style="margin-top:0.8em;">
-							<a class="exp-download-link" href="files/Zhongyi_Guo_BIOMEDIN217_final_specific_aims.pdf" download="Zhongyi_Guo_BIOMEDIN217_final_specific_aims.pdf">&#x2B07; Final Proposal</a>
-							<a class="exp-download-link" href="files/Zhongyi_Guo_BIOMEDIN217_final_presentation.pdf" download="Zhongyi_Guo_BIOMEDIN217_final_presentation.pdf">&#x2B07; Final Presentation</a>
-						</div>
-					</div>
-				</article>
-
-				<article class="proj-md-detail-panel" id="md-subarachnoid" data-lang="sas" role="tabpanel">
-					<header class="proj-md-detail-header">
-						<h3 class="proj-md-detail-title">Subarachnoid Hemorrhage Covariate Association and Risk Modeling</h3>
-						<div class="proj-md-detail-org">Class Project &nbsp;&middot;&nbsp; Stanford University</div>
-						<div class="proj-md-detail-date">10/2023 &ndash; 12/2023</div>
-					</header>
-					<div class="proj-md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">Data Management</span>
-							<span class="tag blue">Disease Modeling</span>
-							<span class="tag blue">Case-control Statistical Testing</span>
-							<span class="tag orange">Clinical and Demographic Data</span>
-							<span class="tag yellow">SAS</span>
-							<span class="tag purple">t-test</span>
-							<span class="tag purple">chi-square</span>
-							<span class="tag purple">Univariate and multivariate logistic regression</span>
-							<span class="tag purple">Mantel&ndash;Haenszel test</span>
-							<span class="tag green">SAS OnDemand</span>
-						</div>
-						<div class="exp-images-strip">
-							<img loading="lazy" decoding="async" src="images/SH_boxplot.png" alt="Boxplot of Body Mass Index">
-							<img loading="lazy" decoding="async" src="images/SH_table1.png" alt="Summary Table 1">
-							<img loading="lazy" decoding="async" src="images/SH_table2.png" alt="Summary Table 2">
-						</div>
-						<p class="exp-summary">This project evaluated associations between multiple exposures (age [categorical and continuous], sex, race, and smoking) and assessed alcohol as an effect modifier of the smoking&ndash;SAH relationship.</p>
-						<ul class="exp-bullets">
-							<li>Cleaned and managed case-control datasets in SAS OnDemand: resolved duplicate records, standardized missing values, and created derived variables.</li>
-							<li>Conducted descriptive analyses (chi-square tests and t-tests) and applied univariate and multivariable logistic regression to estimate crude and adjusted odds ratios for smoking.</li>
-							<li>Performed stratified analysis using Mantel&ndash;Haenszel testing to adjust for alcohol use as a confounder.</li>
-							<li>Generated summary tables and data visualizations for reporting.</li>
-						</ul>
-						<div style="margin-top:0.8em;">
-							<a class="exp-download-link" href="files/Zhongyi_Guo_EPI223_final_project_report.pdf" download="Zhongyi_Guo_EPI223_final_project_report.pdf">&#x2B07; Final Delivery</a>
-							<a class="exp-download-link" href="files/Zhongyi_Guo_EPI223_final_project_code.sas" download="Zhongyi_Guo_EPI223_final_project_code.sas">&#x2B07; SAS code</a>
-						</div>
-					</div>
-				</article>
-
-				<article class="proj-md-detail-panel" id="md-booked" data-lang="other" role="tabpanel">
-					<header class="proj-md-detail-header">
-						<h3 class="proj-md-detail-title">BOOKED</h3>
-						<div class="proj-md-detail-org">Class Project &nbsp;&middot;&nbsp; Cornell University</div>
-						<div class="proj-md-detail-date">04/2022 &ndash; 05/2022</div>
-					</header>
-					<div class="proj-md-detail-body">
-						<div class="exp-tags">
-							<span class="tag blue">iOS App Dev</span>
-							<span class="tag yellow">Swift</span>
-							<span class="tag purple">UIKit</span>
-							<span class="tag purple">Alamofire</span>
-							<span class="tag purple">AutoLayout</span>
-							<span class="tag purple">Navigation</span>
-							<span class="tag purple">UITable &amp; UICollectionView</span>
-							<span class="tag purple">MVC</span>
-							<span class="tag purple">Delegation</span>
-							<span class="tag purple">Animation</span>
-							<span class="tag purple">GET</span>
-							<span class="tag purple">POST</span>
-							<span class="tag purple">UPDATE</span>
-							<span class="tag purple">DELETE</span>
-							<span class="tag green">Xcode</span>
-						</div>
-						<div class="exp-images-strip">
-							<img loading="lazy" decoding="async" src="images/booked.png" alt="BOOKED">
-						</div>
-						<p class="exp-summary">Nominated as <b>Honorable Mention</b> for <b>Best UI</b> for Hack Challenge Spring 2022.</p>
-						<p class="exp-summary">This project developed an iOS app to ease the booking of a study space on campus in one of Cornell's many open libraries and study spaces.</p>
-						<ul class="exp-bullets">
-							<li>Programmatically developed a Cornell library study room booking system iOS app by integrating UIKit, AutoLayout, Navigation, UITable &amp; UICollectionView, MVC, Delegation, and Animation.</li>
-							<li>Implemented GET all libraries and available rooms, POST new reservation(s), UPDATE reservation history &amp; DELETE reservation(s) that interact with backend API using Alamofire.</li>
-							<li>Implemented UI with designers and collaborated with backend teammates for backend requests.</li>
-						</ul>
-						<div style="margin-top:0.8em;">
-							<a class="exp-download-link ext" href="https://github.com/thuypham03/cu-libraries" target="_blank">GitHub Repo</a>
-							<a class="exp-download-link ext" href="https://www.youtube.com/watch?v=4wOO3DZTrUA" target="_blank">Demo Video</a>
-						</div>
-					</div>
-				</article>
-			</div>
-		</div>
-
-		<p class="project-collab-note">Interested in project collab? Email me!</p>
-
-		<!-- Teaching -->
-		<div class="exp-sub-label" id="teaching">Teaching</div>
-		<div class="teaching-grid">
-			<div class="teaching-card">
-				<div class="teaching-role">Beta Tester &amp; Teaching Assistant</div>
-				<div class="teaching-course">INFO 2950: Introduction to Data Science</div>
-				<div class="teaching-inst">Cornell University</div>
-				<div class="teaching-date">01/2023 &ndash; 05/2023</div>
-				<p class="teaching-desc">Led discussions, graded homework and exams, held office hours, and proofread problem sets before release.</p>
-			</div>
-			<div class="teaching-card">
-				<div class="teaching-role">Grader</div>
-				<div class="teaching-course">BTRY 3080: Probability Models and Inference</div>
-				<div class="teaching-inst">Cornell University</div>
-				<div class="teaching-date">08/2022 &ndash; 08/2022</div>
-				<p class="teaching-desc">Graded homework and exams.</p>
-			</div>
-			<div class="teaching-card">
-				<div class="teaching-role">Teaching Assistant (Summer)</div>
-				<div class="teaching-course">Introductory Biology &amp; Physics I</div>
-				<div class="teaching-inst">JNC Study Abroad Platform</div>
-				<div class="teaching-date">07/2022 &ndash; 08/2022</div>
-				<p class="teaching-desc">Led discussions, graded homework and assignments, held office hours, and bridged communication between professors and students.</p>
-			</div>
-			<div class="teaching-card">
-				<div class="teaching-role">Teaching Assistant</div>
-				<div class="teaching-course">BIOMG 2801: Laboratory in Genetics and Genomics</div>
-				<div class="teaching-inst">Cornell University</div>
-				<div class="teaching-date">01/2021 &ndash; 05/2021</div>
-				<p class="teaching-desc">CRISPR/Cas9 knockout work on fruit flies; guided 20 students in mutation analysis on the UCSC Genome Browser.</p>
-			</div>
-		</div>
-	</section>
-
-	<!-- ── PUBLICATIONS ── -->
-	<section id="publications" class="section">
-		<div class="section-label"><span class="section-num">04</span>Publication</div>
-		<div class="section-rule"></div>
-
-		<div class="pub-list">
-			<div class="pub-item pub-prep"><span class="pub-badge pub-badge-submitted">Submitted</span><span class="tag journal">Cell</span>
-				<p>[1] Bendall, S., Ee, R., Amouzgar, M., Afaghani, J., Vijayaragavan, K., Cannon, B., Mrdjen, D., Tebaykin, D., Spence, A., Sant, C., Aley, D., <b>Guo, Z.</b>, Sedov, K., Zafar, F., Montine, K., Perna, A., Serrano, G., Beach, T., Angelo, M., Schüle, B., Corces, M.R., Montine, T.. APOE4 Drives Uniquely Dysfunctional Human Microglial States in Alzheimer’s Disease. <i>Cell,</i> 2026.</p>
-			</div>
-
-			<div class="pub-item pub-submitted"><span class="pub-badge pub-badge-submitted">Submitted</span><span class="tag journal">Nature Neuroscience</span>
-				<p>[2] Shin, J.<sup>‡</sup>, Brady, E.<sup>‡</sup>, Chen, C., Lauderdale, K., Agrawal, A., Zhang, Y., Jiang, X., Nambiar, P., Herbert, J., Mallen, D., Ly, K., <b>Guo, Z.</b>, Sant, C., Thomas, R., Miller, S., Cobos, I., Palop, J.. <a href="https://pubmed.ncbi.nlm.nih.gov/41292846/" target="_blank" class="ext">APOE4 and A&beta; synergize to drive neuronal network dysfunction and lysosomal-ER proteostasis dysregulation in the preclinical stages of Alzheimer's disease.</a> <i>Nature Neuroscience,</i> 2025.</p>
-			</div>
-			<div class="pub-item pub-published"><span class="pub-badge pub-badge-published">Published</span><span class="tag journal">AACR Special Conference: Aging and Cancer</span>
-				<p>[3] Poster session presenter and first author, <a href="https://aacrjournals.org/cancerres/article/83/2_Supplement_1/B003/712467/Abstract-B003-Causal-effect-of-type-II-diabetes-on" target="_blank" class="ext">Causal effect of type II diabetes on prostate cancer in the East Asian population: A two-sample Mendelian randomization study.</a> <i>AACR Special Conference: Aging and Cancer,</i> 2022.</p>
-			</div>
-		
-			<div class="pub-item pub-prep"><span class="pub-badge pub-badge-prep">In Preparation</span>
-				<p>[4] (Aiming for <u>BMC Medicine</u>) <b>Guo, Z.<sup>‡</sup></b>, Chen, D.<sup>‡</sup>, Stopsack, K. H., Soule, P., Ajit, D., Ramamoorthy, P., Hoffmann, T. J., Chan, J. M., Mucci L. A., Graff, R. E.. <a href="#metabolomics" class="anchor-link">Metabolomic Disparities Between Black and Non-Hispanic White Men with Metastatic Hormone-Sensitive Prostate Cancer: A Pilot Study.</a> <u>(Title is tentative.)</u></p>
-			</div>
-			
-			<div class="pub-item pub-prep"><span class="pub-badge pub-badge-prep">In Preparation</span>
-				<p>[5] (Aiming for <u>Cell</u>) Qu, P., Wang, T., Jessa, S., <b>Guo, Z.</b>, Guo, H., Purmann, C., Monte, E., Jiang, L., Yang, X., Zhou, B., Kundu, S., Kundaje, A., Wong, W., Hallmayer, J. F., Urban, A. E., Snyder, M. P.. <a href="#psychencode" class="anchor-link">Multi-modal functional genomics analysis of bipolar disorder and schizophrenia.</a> <u>(Title is tentative.)</u></p>
-			</div>
-			
-			<div class="pub-item pub-prep"><span class="pub-badge pub-badge-prep">In Preparation</span>
-				<p>[6] (Aiming for <u>Nature Neuroscience</u>) Sant, C., <b>Guo, Z.</b>, Corces, M. R.. <a href="#permuteDE" class="anchor-link">Preventing false discoveries in Alzheimer's disease single-cell sequencing data using permutation testing.</a> <u>(Title is tentative.)</u></p>
-			</div>
-
-		<p class="pub-footnote"><sup>‡</sup> indicates co-first authorship.</p>
-	</section>
-
-	<!-- ── TECHNICAL SUMMARY ── -->
-	<section id="technical_summary" class="section">
-		<div class="section-label"><span class="section-num">05</span>Technical Summary</div>
-		<div class="section-rule"></div>
-		<div class="tech-table">
-			<div class="tech-row"><div class="tech-cat">Languages</div><div class="tech-chips">
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/R_icon.png" alt="">R</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/sas_icon.png" alt="">SAS</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/python_icon.webp" alt="">Python</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/java_icon.svg" alt="">Java</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/js.png" alt="">JavaScript</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/swift_icon.png" alt="">Swift</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/code_gray.svg" alt="">HTML</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/snippet_gray.svg" alt="">CSS</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/latex_icon.png" alt="">LaTeX</span>
-			</div></div>
-			<div class="tech-row"><div class="tech-cat">IDEs &amp; Editors</div><div class="tech-chips">
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/jupyter.svg" alt="">Jupyter</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/rstudio_icon.png" alt="">RStudio</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/pycharm.png" alt="">PyCharm</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/vs_code.png" alt="">VS Code</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/overleaf_icon.png" alt="">Overleaf</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/Xcode.png" alt="">Xcode</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/sas_icon.png" alt="">SAS OnDemand</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/eclipse.png" alt="">Eclipse</span>
-			</div></div>
-			<div class="tech-row"><div class="tech-cat">CLI &amp; Cloud</div><div class="tech-chips">
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/unix_icon.png" alt="">UNIX</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/hyper_logo.png" alt="">Terminal</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/ssh.png" alt="">SSH</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/aws.jpg" alt="">AWS EC2</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/conda.png" alt="">Conda</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/claude.svg" alt="">Claude</span>
-				<span class="tech-chip">High Performance Computing</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/git_icon.png" alt="">Git</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/github.png" alt="">GitHub</span>
-			</div></div>
-			<div class="tech-row"><div class="tech-cat">Office</div><div class="tech-chips">
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/word.png" alt="">MS Word</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/excel.png" alt="">MS Excel</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/ppt.png" alt="">MS PowerPoint</span>
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/outlook.png" alt="">MS Outlook</span>
-			</div></div>
-			<div class="tech-row"><div class="tech-cat">Design</div><div class="tech-chips">
-				<span class="tech-chip"><img loading="lazy" decoding="async" src="images/Adobe_Illustrator.png" alt="">Illustrator</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/photoshop.png" alt="">Photoshop</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/procreate.png" alt="">Procreate</span><span class="tech-chip"><img loading="lazy" decoding="async" src="images/after_effect.png" alt="">After Effects</span>
-			</div></div>
-		</div>
-	</section>
-
-	<!-- ── CERTIFICATIONS ── -->
-	<section id="certifications" class="section">
-		<div class="section-label"><span class="section-num">06</span>Certifications &amp; More</div>
-		<div class="section-rule"></div>
-
-		<div class="cert-grid">
-			<div class="cert-category"><h3 class="cert-cat-title">SAS</h3>
-				<a href="https://www.credly.com/badges/bb7ee41a-552e-4caa-bded-0013253fc917/public_url" target="_blank" class="cert-item ext">→ SAS Certified Specialist: Base Programming Using SAS 9.4</a>
-			</div>
-			<div class="cert-category"><h3 class="cert-cat-title">DeepLearning.AI</h3>
-				<a href="https://coursera.org/share/6c9e5394967e1af39ee548f6ce576028" target="_blank" class="cert-item ext">→ Neural Networks and Deep Learning</a>
-				<a href="https://coursera.org/share/a5ead78579abc86210518dfaece382d4" target="_blank" class="cert-item ext">→ Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</a>
-				<a href="https://coursera.org/share/c94d6f91f79e278bed3b1bcf0066e605" target="_blank" class="cert-item ext">→ Structuring Machine Learning Projects</a>
-				<a href="https://coursera.org/share/0e35d3c2ded7458069c09ff6425b3a1e" target="_blank" class="cert-item ext">→ Convolutional Neural Networks</a>
-				<a href="https://coursera.org/share/591ecc9252bbc85d49351bb7397f6d56" target="_blank" class="cert-item ext">→ Sequence Models</a>
-			</div>
-			<div class="cert-category"><h3 class="cert-cat-title">IBM AI Engineering</h3>
-				<a href="https://www.credly.com/badges/5c6f2591-5698-4639-a2c9-52fbc0016baa/public_url" target="_blank" class="cert-item ext">→ Introduction to Deep Learning &amp; Neural Networks with Keras</a>
-				<span class="cert-item cert-inprogress">→ Neural Networks with PyTorch (In progress)</span>
-			</div>
-			<div class="cert-category"><h3 class="cert-cat-title">Stanford</h3>
-				<span class="cert-item cert-inprogress">→ Writing in the Sciences (In progress)</span>
-			</div>
-		</div>
-
-		<div class="lang-log-grid">
-			<div class="lang-box">
-				<h3 class="lang-title">Languages</h3>
-				<ul class="lang-list"><li>🇺🇸 English</li><li>🇨🇳 Chinese (Mandarin)</li></ul>
-			</div>
-			<div class="log-box">
-				<h3 class="log-title">Log</h3>
-				<p class="log-entry">08/28/2026: Added Corcept experience.</p>
-				<p class="log-entry">04/28/2026: Redesigned the layout of the experience section.</p>
-				<p class="log-entry">04/11/2026: Added more animations, and filtering functionality.</p>
-				<p class="log-entry">03/26/2026: Added animations and redesigned homepage layout by vibe coding using Claude.</p>
-				<p class="log-entry">11/20/2024: Updated research experience. I will update project experience and work experience shortly.</p>
-				<p class="log-entry">11/12/2024: Minor updates applied to the certification section.</p>
-				<p class="log-entry">08/12/2024: I redesigned my website. Now I'm slowly migrating project experience and work experience over.</p>
-			</div>
-		</div>
-	</section>
-
-</main>
-
-<!-- Footer -->
-<footer class="site-footer">
-	<div class="footer-inner">
-		<span>Last Edited: August 2026</span>
-		<span class="footer-sep">|</span>
-		<span>&copy; Designed and implemented by Zhongyi Guo 2023–2026. All rights reserved.</span>
-	</div>
-</footer>
-
-<!-- Back to top -->
-<a class="back-to-top" href="#" id="backToTop" aria-label="Back to top">
-	<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-</a>
-
-<script>
-	// Apply saved theme immediately to avoid flash of unstyled content
-	(function() { if (localStorage.getItem('theme-v4') === 'dark') document.body.classList.add('dark'); })();
-</script>
+<!-- ===== DETAIL MODAL (filled by animations.js) ===== -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close">×</button>
+    <div class="modal-body"></div>
+  </div>
+</div>
 
 <script src="animations.js"></script>
-
-<script>
-	function initFilter({ btnAttr, cardSelector, cardAttr, emptyId, defaultFilter = 'all' }) {
-		const btns = document.querySelectorAll(`[${btnAttr}]`);
-		const cards = document.querySelectorAll(cardSelector);
-		const emptyEl = emptyId ? document.getElementById(emptyId) : null;
-		function updateEmpty() { if (!emptyEl) return; emptyEl.classList.toggle('visible', !Array.from(cards).some(c => !c.classList.contains('hidden'))); }
-		function apply(filter, animate = true) {
-			btns.forEach(b => b.classList.toggle('active', b.getAttribute(btnAttr) === filter));
-			cards.forEach(c => {
-				const show = filter === 'all' || c.dataset[cardAttr].split(' ').includes(filter);
-				if (show) { c.classList.remove('hidden'); if (animate) { c.classList.remove('showing'); void c.offsetWidth; c.classList.add('showing'); } }
-				else { if (animate) { c.classList.add('hiding'); setTimeout(() => { c.classList.add('hidden'); c.classList.remove('hiding'); updateEmpty(); }, 220); } else c.classList.add('hidden'); }
-			});
-			if (animate) setTimeout(updateEmpty, 230); else updateEmpty();
-		}
-		btns.forEach(btn => btn.addEventListener('click', () => apply(btn.getAttribute(btnAttr))));
-		return () => apply(defaultFilter, false);
-	}
-	const resets = [
-		initFilter({ btnAttr: 'data-filter', cardSelector: '.exp-card[data-lang]', cardAttr: 'lang', emptyId: 'project-empty-state' }),
-		initFilter({ btnAttr: 'data-work-filter', cardSelector: '.work-card[data-type]', cardAttr: 'type', emptyId: 'work-empty-state', defaultFilter: 'technical' }),
-	];
-	window.addEventListener('pageshow', () => resets.forEach(r => r()));
-	document.querySelectorAll('a.anchor-link').forEach(link => {
-		link.addEventListener('click', function(e) {
-			const targetId = this.getAttribute('href').slice(1);
-			if (!targetId) return;
-			let target = document.getElementById(targetId);
-			// Project master/detail uses md-prefixed panel IDs; legacy hrefs use bare IDs (e.g., #permuteDE → #md-permuteDE)
-			if (!target) target = document.getElementById('md-' + targetId);
-
-			if (target && target.classList.contains('proj-md-detail-panel')) {
-				e.preventDefault();
-				const projItems  = document.querySelectorAll('.proj-md-item');
-				const projPanels = document.querySelectorAll('.proj-md-detail-panel');
-				projItems.forEach(i => {
-					const on = i.dataset.target === target.id;
-					i.classList.toggle('active', on);
-					i.classList.remove('hidden');
-					i.setAttribute('aria-selected', String(on));
-				});
-				projPanels.forEach(p => p.classList.toggle('active', p === target));
-				// Reset the project filter to "All" so the activated item is visible
-				document.querySelectorAll('[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
-				const container = document.getElementById('proj-md');
-				if (container) openMdModal(container);
-				setTimeout(() => (container || target).scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
-				return;
-			}
-
-			if (target && target.classList.contains('exp-card')) {
-				e.preventDefault(); resets[0]();
-				if (target.classList.contains('section-hidden')) { const btn = document.getElementById('project-show-more'); if (btn) btn.click(); }
-				setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
-			}
-		});
-	});
-
-	/* ── Mobile modal helpers (shared) ── */
-	const isMobileViewport = () => window.matchMedia('(max-width: 768px)').matches;
-	/* Side-by-side master/detail only exists above the 1200px breakpoint; below it the
-	   detail panel is a fullscreen modal, so there is no grid row to stabilise. */
-	const isDetailSideBySide = () => window.matchMedia('(min-width: 1201px)').matches;
-
-	/* ── Detail-column height damping (shared) ──
-	   .work-md / .proj-md are grids with align-items:start, so the row height follows the
-	   active panel: picking a tall card pushes the following section down and picking a short
-	   one pulls it up. The grid already floors the row at the card-list height, so the swing
-	   is (tallest reachable panel - list height). Reserve a fraction of that swing as a
-	   min-height, trading whitespace under short panels against how far the page moves.
-	   0 = original behaviour (shortest box, largest jump); 1 = fully pinned (no jump at all). */
-	const DETAIL_HEIGHT_RESERVE = 0.5;
-	function reserveDetailHeight(detailEl, listEl, panelEls) {
-		if (!detailEl) return;
-		if (!isDetailSideBySide() || !panelEls.length) { detailEl.style.minHeight = ''; return; }
-		detailEl.style.minHeight = '';
-		// The list column already holds the row open to this height, so it costs nothing.
-		const base = listEl ? listEl.offsetHeight : 0;
-		let tallest = 0;
-		// All of this is synchronous, so the browser never paints the intermediate states.
-		panelEls.forEach(pnl => {
-			const wasActive = pnl.classList.contains('active');
-			if (!wasActive) pnl.classList.add('active');
-			tallest = Math.max(tallest, pnl.offsetHeight);
-			if (!wasActive) pnl.classList.remove('active');
-		});
-		const reserved = base + Math.max(0, tallest - base) * DETAIL_HEIGHT_RESERVE;
-		// Stay under the sticky max-height, or min-height would win and break internal scrolling.
-		detailEl.style.minHeight = Math.min(reserved, window.innerHeight - 48) + 'px';
-	}
-	/* Panel heights settle only once webfonts and lazy logos have landed. */
-	function onLayoutSettled(fn) {
-		window.addEventListener('load', fn);
-		if (document.fonts && document.fonts.ready) document.fonts.ready.then(fn);
-		let raf = 0;
-		window.addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(fn); });
-	}
-	function openMdModal(rootEl) {
-		if (!rootEl || !isMobileViewport()) return;
-		rootEl.classList.add('modal-open');
-		document.body.style.overflow = 'hidden';
-	}
-	function closeMdModal(rootEl) {
-		if (!rootEl) return;
-		rootEl.classList.remove('modal-open');
-		const stillLocked = document.querySelector('.work-md.modal-open, .proj-md.modal-open')
-			|| document.querySelector('.sidebar.open');
-		if (!stillLocked) document.body.style.overflow = '';
-	}
-	document.addEventListener('keydown', e => {
-		if (e.key === 'Escape') {
-			document.querySelectorAll('.work-md.modal-open, .proj-md.modal-open').forEach(el => closeMdModal(el));
-		}
-	});
-	window.addEventListener('resize', () => {
-		if (!isMobileViewport()) {
-			document.querySelectorAll('.work-md.modal-open, .proj-md.modal-open').forEach(el => closeMdModal(el));
-		}
-	});
-
-	/* ── Project master/detail switching + filter ── */
-	(function initProjMasterDetail() {
-		const root = document.getElementById('proj-md');
-		if (!root) return;
-		const items  = Array.from(root.querySelectorAll('.proj-md-item'));
-		const panels = Array.from(root.querySelectorAll('.proj-md-detail-panel'));
-
-		function activate(targetId) {
-			items.forEach(i => {
-				const on = i.dataset.target === targetId;
-				i.classList.toggle('active', on);
-				i.setAttribute('aria-selected', String(on));
-			});
-			panels.forEach(p => p.classList.toggle('active', p.id === targetId));
-		}
-
-		items.forEach(item => {
-			item.addEventListener('click', () => { activate(item.dataset.target); openMdModal(root); });
-			item.setAttribute('tabindex', '0');
-			item.addEventListener('keydown', e => {
-				if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(item.dataset.target); openMdModal(root); }
-			});
-		});
-
-		// Only panels whose card is currently visible can be selected, so only those set the floor.
-		const detailEl = root.querySelector('.proj-md-detail');
-		const listEl = root.querySelector('.proj-md-list');
-		function reachablePanels() {
-			const ids = items.filter(i => !i.classList.contains('hidden') && !i.hasAttribute('hidden'))
-				.map(i => i.dataset.target);
-			return panels.filter(pnl => ids.includes(pnl.id));
-		}
-		function syncDetailHeight() { reserveDetailHeight(detailEl, listEl, reachablePanels()); }
-		onLayoutSettled(syncDetailHeight);
-
-		const closeBtn = document.getElementById('proj-md-close');
-		if (closeBtn) closeBtn.addEventListener('click', () => closeMdModal(root));
-
-		// Wire project filter buttons (data-filter) to filter the list
-		const filterBtns = document.querySelectorAll('[data-filter]');
-		filterBtns.forEach(btn => {
-			btn.addEventListener('click', () => {
-				filterBtns.forEach(b => b.classList.toggle('active', b === btn));
-				const f = btn.dataset.filter;
-				let firstVisible = null;
-				let activeStillVisible = false;
-				items.forEach(i => {
-					const langs = (i.dataset.lang || '').split(/\s+/);
-					const match = f === 'all' || langs.includes(f);
-					i.classList.toggle('hidden', !match);
-					if (match) {
-						if (!firstVisible) firstVisible = i;
-						if (i.classList.contains('active')) activeStillVisible = true;
-					}
-				});
-				if (!activeStillVisible && firstVisible) activate(firstVisible.dataset.target);
-				// The reachable set just changed, so the reserved height has to be recomputed.
-				syncDetailHeight();
-			});
-		});
-
-		// Patch filter count badges (initFilterCounts queried .exp-card[data-lang] which is now zero)
-		function patchProjBadges() {
-			filterBtns.forEach(btn => {
-				const f = btn.dataset.filter;
-				const count = f === 'all' ? items.length : items.filter(i => (i.dataset.lang || '').split(/\s+/).includes(f)).length;
-				const badge = btn.querySelector('.filter-count-badge');
-				if (badge) badge.textContent = count;
-			});
-		}
-		if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', patchProjBadges);
-		else patchProjBadges();
-	})();
-
-	/* ── Variant 1: master/detail switching + filter ── */
-	(function initWorkMasterDetail() {
-		const root = document.getElementById('work-md');
-		if (!root) return;
-		const items   = Array.from(root.querySelectorAll('.work-md-item'));
-		const panels  = Array.from(root.querySelectorAll('.md-detail-panel'));
-
-		function activate(targetId) {
-			items.forEach(i => {
-				const on = i.dataset.target === targetId;
-				i.classList.toggle('active', on);
-				i.setAttribute('aria-selected', String(on));
-			});
-			panels.forEach(p => p.classList.toggle('active', p.id === targetId));
-		}
-
-		items.forEach(item => {
-			item.addEventListener('click', () => { activate(item.dataset.target); openMdModal(root); });
-			item.setAttribute('tabindex', '0');
-			item.addEventListener('keydown', e => {
-				if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(item.dataset.target); openMdModal(root); }
-			});
-		});
-
-		// Only panels whose card is currently visible can be selected, so only those set the floor.
-		const detailEl = root.querySelector('.work-md-detail');
-		const listEl = root.querySelector('.work-md-list');
-		function reachablePanels() {
-			const ids = items.filter(i => i.style.display !== 'none' && !i.hasAttribute('hidden'))
-				.map(i => i.dataset.target);
-			return panels.filter(pnl => ids.includes(pnl.id));
-		}
-		function syncDetailHeight() { reserveDetailHeight(detailEl, listEl, reachablePanels()); }
-		onLayoutSettled(syncDetailHeight);
-
-		const closeBtn = document.getElementById('work-md-close');
-		if (closeBtn) closeBtn.addEventListener('click', () => closeMdModal(root));
-
-		// Wire the existing filter buttons to filter list items (and reveal first matching panel)
-		const filterBtns = document.querySelectorAll('[data-work-filter]');
-		const emptyState = document.getElementById('work-empty-state');
-		// Work list opens filtered to Technical; DEFAULT_WORK_FILTER is the single source of that default.
-		const DEFAULT_WORK_FILTER = 'technical';
-		function applyWorkFilter(f) {
-			filterBtns.forEach(b => b.classList.toggle('active', b.dataset.workFilter === f));
-			let firstVisible = null;
-			let activeStillVisible = false;
-			items.forEach(i => {
-				const match = f === 'all' || i.dataset.type === f;
-				i.style.display = match ? '' : 'none';
-				if (match) {
-					if (!firstVisible) firstVisible = i;
-					if (i.classList.contains('active')) activeStillVisible = true;
-				}
-			});
-			if (emptyState) emptyState.style.display = firstVisible ? 'none' : 'block';
-			if (!activeStillVisible && firstVisible) activate(firstVisible.dataset.target);
-			// The reachable set just changed, so the reserved height has to be recomputed.
-			syncDetailHeight();
-		}
-		filterBtns.forEach(btn => {
-			btn.addEventListener('click', () => applyWorkFilter(btn.dataset.workFilter));
-		});
-		applyWorkFilter(DEFAULT_WORK_FILTER);
-		// bfcache restores the DOM as-left; re-assert the default so it matches a cold load.
-		window.addEventListener('pageshow', () => applyWorkFilter(DEFAULT_WORK_FILTER));
-
-		// Patch the filter count badges. initFilterCounts runs on DOMContentLoaded and counts .work-card[data-type] (zero in this variant).
-		// Defer our patch so it runs AFTER initFilterCounts has created the badge spans.
-		function patchBadges() {
-			filterBtns.forEach(btn => {
-				const f = btn.dataset.workFilter;
-				const count = f === 'all' ? items.length : items.filter(i => i.dataset.type === f).length;
-				const badge = btn.querySelector('.filter-count-badge');
-				if (badge) badge.textContent = count;
-			});
-		}
-		if (document.readyState === 'loading') {
-			document.addEventListener('DOMContentLoaded', patchBadges);
-		} else {
-			patchBadges();
-		}
-	})();
-</script>
 </body>
 </html>
