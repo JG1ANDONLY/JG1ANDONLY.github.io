@@ -40,8 +40,8 @@
       <div><span class="big" data-count="3">3</span><div class="stat-label">years of experience leading projects end-to-end</div></div>
     </div>
     <div class="tile docs-tile">
-      <a href="files/Resume_Zhongyi_Guo.pdf" class="doc-btn dark">Resume <span>↓</span></a>
-      <a href="files/CV_Zhongyi_Guo.pdf" class="doc-btn">CV <span>↓</span></a>
+      <a href="files/Resume_Zhongyi_Guo.pdf" target="_blank" rel="noopener" class="doc-btn dark">Resume</a>
+      <a href="files/CV_Zhongyi_Guo.pdf" target="_blank" rel="noopener" class="doc-btn">CV</a>
     </div>
     <div class="tile bio">
       <p class="bio-lead">I was made in Wuxi 🇨🇳 and adopted by California 🇺🇸.</p>
@@ -267,6 +267,25 @@
       </div>
     </div>
     <div class="proj-grid" id="projGrid">
+      <article class="proj-card wide" data-lang="r" data-open="proj-permutede" id="proj-permutede">
+        <div class="proj-img"><img src="images/permuteDE.png" alt=""></div>
+        <div class="proj-text">
+          <div class="proj-meta">the Gladstone Institutes · 07/2025 – 04/2026</div>
+          <h3>permuteDE</h3>
+          <div class="proj-stat"><b>Novel</b><span>permutation-based method to combat false positives</span></div>
+        </div>
+        <template class="detail">
+          <div class="m-cover"><img src="images/permuteDE.png" alt="permuteDE logo"><div class="cap">permuteDE logo</div></div>
+          <div class="m-head"><div><h3>permuteDE</h3><div class="m-sub">the Gladstone Institutes · 07/2025 – 04/2026</div></div></div>
+          <p class="m-summary">Differential expression analyses are susceptible to false positives. permuteDE uses permutation testing to identify which comparisons have a higher number of significant differentially expressed features than would be expected by chance.</p>
+          <div class="m-stat"><b>Novel</b><span>permutation-based method to combat false positives</span></div>
+          <section class="m-sec"><div class="m-sec-head"><h4>Technical details</h4></div><ul><li>Developed the permuteDE R package, overseeing maintenance, debugging, and feature development.</li><li>Collected and integrated eight large-scale public snRNA-seq datasets from Synapse, performing rigorous data cleaning, metadata curation, and structuring data into Seurat objects and BPCells matrices.</li><li>Applied the permuteDE pipeline across eight datasets to demonstrate its real-world utility.</li></ul><figure><img src="images/volcano_plot.jpg" alt="permuteDE Volcano Plot" loading="lazy"><figcaption>permuteDE Volcano Plot</figcaption></figure><figure><img src="images/histogram.jpg" alt="permuteDE Histogram" loading="lazy"><figcaption>permuteDE Histogram</figcaption></figure></section>
+          <p class="m-note">Note: Currently we are finalizing the package and analyses; permuteDE will be released upon manuscript publication.</p>
+          <div class="tags"><span>R Package Dev</span><span>Permutation Testing</span><span>Pseudobulk</span><span>Seurat</span><span>DESeq2</span></div>
+          
+          
+        </template>
+      </article>
       <article class="proj-card wide" data-lang="python" data-open="proj-btc" id="proj-btc">
         <div class="proj-img"><img src="images/Bitcoin.png" alt=""></div>
         <div class="proj-text">
@@ -283,25 +302,6 @@
           
           <div class="tags"><span>Portfolio Optimization</span><span>Python</span><span>Mean–Variance Optimization</span><span>Black–Litterman</span><span>cvxpy</span></div>
           <div class="m-links"><a href="https://github.com/JG1ANDONLY/bitcoinAllocation" target="_blank">GitHub Repo ↗</a><a href="files/Zhongyi_Guo_bitcoin_allocation.pdf" target="_blank">Slides (PDF) ↗</a></div>
-          
-        </template>
-      </article>
-      <article class="proj-card" data-lang="r" data-open="proj-permutede" id="proj-permutede">
-        <div class="proj-img"><img src="images/permuteDE.png" alt=""></div>
-        <div class="proj-text">
-          <div class="proj-meta">the Gladstone Institutes · 07/2025 – 04/2026</div>
-          <h3>permuteDE</h3>
-          <div class="proj-stat"><b>Novel</b><span>permutation-based method to combat false positives</span></div>
-        </div>
-        <template class="detail">
-          <div class="m-cover"><img src="images/permuteDE.png" alt="permuteDE logo"><div class="cap">permuteDE logo</div></div>
-          <div class="m-head"><div><h3>permuteDE</h3><div class="m-sub">the Gladstone Institutes · 07/2025 – 04/2026</div></div></div>
-          <p class="m-summary">Differential expression analyses are susceptible to false positives. permuteDE uses permutation testing to identify which comparisons have a higher number of significant differentially expressed features than would be expected by chance.</p>
-          <div class="m-stat"><b>Novel</b><span>permutation-based method to combat false positives</span></div>
-          <section class="m-sec"><div class="m-sec-head"><h4>Technical details</h4></div><ul><li>Developed the permuteDE R package, overseeing maintenance, debugging, and feature development.</li><li>Collected and integrated eight large-scale public snRNA-seq datasets from Synapse, performing rigorous data cleaning, metadata curation, and structuring data into Seurat objects and BPCells matrices.</li><li>Applied the permuteDE pipeline across eight datasets to demonstrate its real-world utility.</li></ul><figure><img src="images/volcano_plot.jpg" alt="permuteDE Volcano Plot" loading="lazy"><figcaption>permuteDE Volcano Plot</figcaption></figure><figure><img src="images/histogram.jpg" alt="permuteDE Histogram" loading="lazy"><figcaption>permuteDE Histogram</figcaption></figure></section>
-          <p class="m-note">Note: Currently we are finalizing the package and analyses; permuteDE will be released upon manuscript publication.</p>
-          <div class="tags"><span>R Package Dev</span><span>Permutation Testing</span><span>Pseudobulk</span><span>Seurat</span><span>DESeq2</span></div>
-          
           
         </template>
       </article>
