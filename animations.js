@@ -70,10 +70,24 @@
   const loadSongs = (panel) => $$('iframe[data-src]', panel).forEach(f => { f.src = f.dataset.src; f.removeAttribute('data-src'); });
   const firstSongs = $('.songs:not([hidden])');
   if (firstSongs) loadSongs(firstSongs);
+  const songsPanel = $('.songs-panel');
+  const artistsWrap = $('.artists');
+  const narrow = matchMedia('(max-width: 760px)');
+  // On phones, show the songs directly under the selected artist; otherwise below the whole grid
+  const placePanel = () => {
+    const active = $('.artist.active');
+    if (!songsPanel || !artistsWrap) return;
+    if (narrow.matches && active) active.after(songsPanel);
+    else artistsWrap.after(songsPanel);
+  };
+  narrow.addEventListener('change', placePanel);
+  placePanel();
   $$('.artist').forEach(btn => btn.addEventListener('click', () => {
     const key = btn.dataset.artist;
     $$('.artist').forEach(b => b.classList.toggle('active', b === btn));
     $$('.songs').forEach(p => { p.hidden = p.dataset.artist !== key; if (!p.hidden) loadSongs(p); });
+    placePanel();
+    if (narrow.matches && songsPanel) songsPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }));
 
   /* ---------- Gallery lightbox ---------- */

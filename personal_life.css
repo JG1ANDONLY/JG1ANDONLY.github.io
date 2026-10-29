@@ -77,6 +77,7 @@ html.dark img, html.dark iframe { filter: invert(1) hue-rotate(180deg); }
 .artist-cn { display: block; font-size: 16px; margin-top: 6px; opacity: .85; }
 
 .songs-panel { margin-top: 14px; padding: 24px; }
+.artists > .songs-panel { grid-column: 1 / -1; margin-top: 0; }
 .songs[hidden] { display: none; }
 .songs-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
 .songs-head h3 { font-family: var(--display); font-weight: 800; font-size: 28px; letter-spacing: -0.02em; }
@@ -112,4 +113,5 @@ html.dark img, html.dark iframe { filter: invert(1) hue-rotate(180deg); }
   .pl-head { grid-template-columns: minmax(0,1fr); }
   .pl-hero { grid-column: 1 / -1; }
   .section-head p { margin-left: 0; }
+  .artists { grid-template-columns: minmax(0,1fr); }
 }
